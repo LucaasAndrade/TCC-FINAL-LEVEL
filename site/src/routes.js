@@ -1,18 +1,18 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import React from 'react'
 
 // Home / Admin
-import Login from './pages/admin/login';
+import Login from './pages/admin/login'
 
+// LADING
+import Lading from './pages/user/home'
 
-
-export default function Rotas() {
+export default function Index() {
   return (
     <BrowserRouter>
       <Routes>
         
-        {/* Login Admin / Home Admin*/}
+        <Route path='/' element={<Lading />} />
         <Route path='/admin/login' element={<Login />} />
 
       </Routes>

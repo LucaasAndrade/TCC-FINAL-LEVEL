@@ -1,26 +1,20 @@
-import '../../../common/common.scss'
+
 import './index.scss'
-
-
 
 
 export default function Login() {
 
     return(
-        <main className='page-login'>
+        <section className='page-login'>
 
             <div>
 
                 <div>
-                    <h2>g3wyh3w</h2>
-                </div>
-                <div>
-                    <div></div>
-                    <div></div>
+                    <h2>Hello World! </h2>
                 </div>
 
             </div>
 
-        </main>
+        </section>
     )
 }
