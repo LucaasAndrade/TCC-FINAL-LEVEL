@@ -96,7 +96,7 @@ where id_produto = '15';
 select * from tb_imagem_produto;
 
 insert into tb_imagem_produto(id_produto,img_produto,bl_principal)
-		values(2,'imagem',true);
+		values(1,'imagem',true);
         
 -- Alterar Imagem do Produto
 update  tb_imagem_produto
@@ -115,19 +115,19 @@ where id_imagem_produto = '1';
 select * from tb_produto_tamanho;
 
 insert into tb_produto_tamanho (id_produto,ds_tamanho)
-		values ('2','PP');
+		values ('1','PP');
 
 insert into tb_produto_tamanho (id_produto,ds_tamanho)
-		values ('2','P');
+		values ('1','P');
 	
 insert into tb_produto_tamanho (id_produto,ds_tamanho)
-		values ('2','M');
+		values ('1','M');
         
 insert into tb_produto_tamanho (id_produto,ds_tamanho)
-		values ('2','G');
+		values ('1','G');
         
 insert into tb_produto_tamanho (id_produto,ds_tamanho)
-		values ('2','GG');
+		values ('1','GG');
         
 -- Alterar Tamanho Do Produto
 update  tb_produto_tamanho
@@ -161,7 +161,7 @@ where id_usuario = '1';
  select * from  tb_usuario_favorito;
  
 insert into  tb_usuario_favorito (id_produto,id_usuario,bl_favorito)
-		values('2','1',true);
+		values('1','1',true);
    
 -- Alterar Favorito
 update  tb_usuario_favorito
@@ -177,7 +177,7 @@ where  id_usuario_favorito= '2';
 select * from tb_produto_avaliacao;
 
 insert into  tb_produto_avaliacao(id_produto,id_usuario,ds_avaliacao,nr_nota,bl_like,dt_avaliacao)
-		values('2','1','Uma Peça Bonita',4.8,true,'2020-02-05');
+		values('1','1','Uma Peça Bonita',4.8,true,'2020-02-05');
         
 -- Altera Avaliacao
 update  tb_produto_avaliacao
@@ -217,7 +217,7 @@ where  id_cupom= '1';
 select * from tb_pedido;
 
 insert into tb_pedido (id_produto,id_usuario,id_cupom,dt_pedido,vl_total,ds_situacao)  
-	values ('2','1','1','2022-10-05', 167,'Em Andamento');
+	values ('1','1','1','2022-10-05', 60.5,'Em Andamento');
     
     
 -- Alterar Pedido
@@ -232,7 +232,11 @@ delete from tb_pedido
 where  id_pedido= '1';
 
 
+-- Cadastra item 
+select * from tb_pedido_item;
 
+insert into tb_pedido_item (id_produto,id_pedido)
+		 values ('1','1');
 
 
 
@@ -306,24 +310,3 @@ delete from tb_login
 where  id_usuario = '1';
 
   
-  
-
-
-
-        
-
-
-
-
-        
-        
-
-  
-        
-        
-	
-
-
-
-
-        
