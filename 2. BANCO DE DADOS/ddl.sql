@@ -5,7 +5,7 @@ show tables;
 create table tb_adm(
     id_adm            int primary key auto_increment,
     nm_adm            varchar(100),
-    ds_cpf            varchar(11),
+    ds_cpf            varchar(20),
     dt_nascimento     datetime,
     ds_cargo           varchar(100)
 );
@@ -64,7 +64,7 @@ id_produto_tamanho        	int primary key auto_increment,
 
 create table tb_usuario(
 id_usuario        	 int primary key auto_increment,
-  nm_usario          	 varchar(100),
+  nm_usuario          	 varchar(100),
     nm_sobrenome      	 varchar(100),
     img_foto           	 varchar(100),
     dt_nascimento      	 datetime,
@@ -167,3 +167,4 @@ id_login         	int primary key auto_increment,
 foreign key (id_usuario) references  tb_usuario(id_usuario)
 );
 
+drop database TCC2022;
