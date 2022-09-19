@@ -146,8 +146,8 @@ delete from tb_produto_tamanho
 where id_produto_tamanho = '5';
 
 
-select * from tb_usuario;
 -- Cadastra Usuario
+select * from tb_usuario;
 insert into tb_usuario (nm_usuario,nm_sobrenome,img_foto,dt_nascimento,ds_cpf,nr_telefone,nr_telefone2,ds_cep,nm_rua,nm_estado,nm_cidade,nr_casa,ds_ponto_referencia)
 		values ('Lucas',' Marcelo','Imagem Do Lucas', '2004-11-10','476.175.558-66','(11)95319-5154','(11)5921-6389','04896-300','Rua Paineira','SP', 'São Paulo','139','Proximo ao mercadinho');
 
