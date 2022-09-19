@@ -1,0 +1,83 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+}
+
+.page-login{
+    display: flex;
+    flex-direction: column;
+    background-color: #EAD9C1;
+    min-height: 100vh;
+
+
+    .bem-vindo-login{
+        background-color: #D1BC9F;
+        margin-top: 50px;
+        padding: 10px 40px;
+        border-radius: 10px;
+    }
+
+    .bem-vindo-p{
+        color: #ffffff;
+    }
+
+    .fundo-tela-login{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .fundo-imagem{
+        background-color: #D1BC9F;
+    }
+
+    .fundo-page-login{
+        display: flex;
+        flex-direction: row;
+        margin-top: 5em;
+        border: 1px solid #B6B6B6;
+        border-radius: 20px;
+    }
+
+    .fundo-login{
+        background-color: #ffffff;
+        padding: 2em 10em;
+    }
+
+    .info-login{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    *input{
+        border: 1px solid #B6B6B6;   
+    }
+
+    .olho-senha{
+        position: absolute;
+    }
+
+    .botao-entrar{
+        background-color: #987F5B;
+        color: #ffffff;
+    }
+
+    .botao-cancelar{
+        background-color: #ffffff;
+        border: 1px solid #987F5B;
+        color: #987F5B;
+    }
+
+    .mensagem-erro{
+        color: #ff0000;
+    }
+
+    .alinhar-linha{
+       
+    }
+
+    .linha-login{
+        background-color: #987F5B;
+    }
+}
