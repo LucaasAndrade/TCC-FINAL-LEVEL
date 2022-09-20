@@ -1,13 +1,14 @@
-
 import './index.scss'
+
+
 
 
 export default function Login() {
 
     return(
-        <section className='page-login'>
+        <main className='page-login'>
 
-            <div className='fundo-tela-login'>
+            <section className='fundo-tela-login'>
 
                 <div className='bem-vindo-login'>
                     <h2 className='bem-vindo-p'>BEM-VINDO(a), você está prestes a entrar na área de administradores</h2>
@@ -42,8 +43,8 @@ export default function Login() {
                     </div>
                 </div>
 
-            </div>
+            </section>
 
-        </section>
+        </main>
     )
 }
