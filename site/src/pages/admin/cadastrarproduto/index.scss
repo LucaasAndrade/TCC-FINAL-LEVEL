@@ -15,6 +15,7 @@
         justify-content: space-around;
         align-items: center;
         background-color: #ffffff;
+        border-bottom: 1px solid #B6B6B6;
     }
 
     .topicos{
@@ -34,6 +35,18 @@
         color: #ffffff;
     }
 
+    .fundo-cadastrar{
+        display: flex;
+        flex-direction: row;
+        background-color: #ffffff;
+    }
+
+    .elementos-esquerda{
+        display: flex;
+        flex-direction: column;
+        padding: 3em 5em 3em;
+    }
+
     .adicionar-imagens{
         display: flex;
         flex-direction: row;
@@ -42,6 +55,7 @@
     .adicionar-imagens-dois{
         display: flex;
         flex-direction: column;
+        padding: 0em 3em;
     }
 
     .campo-imagem{
@@ -61,5 +75,14 @@
         border: 1px solid #B6B6B6;
         padding: 1em 1em;
         margin-left: .5em;
+    }
+
+    .textarea{
+        padding: 3em 0em;
+    }
+
+    .botoes{
+        display: flex;
+        flex-direction: row;
     }
 }

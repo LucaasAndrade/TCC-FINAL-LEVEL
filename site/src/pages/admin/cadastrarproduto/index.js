@@ -5,7 +5,7 @@ import './index.scss'
 
 export default function Cadastrarproduto() {
 
-    return(
+    return (
         <main className='page-cadastro'>
 
             <header>
@@ -30,25 +30,28 @@ export default function Cadastrarproduto() {
             <section>
 
                 <div>
-                    <div>
-                        <div>
+                    <div className='fundo-cadastrar'>
+
+                        <div className='elementos-esquerda'>
                             <div className='adicionar-imagens'>
                                 <input type='image' className='campo-imagem' src='/images/adicionar-imagem.png' alt='adicionar-imagem' />
                                 <div className='adicionar-imagens-dois'>
                                     <div>
                                         <input type='image' className='campo-imagem-dois' src='/images/adicionar2.png' alt='adicionar-imagem' />
                                         <input type='image' className='imagem-dois' src='/images/adicionar2.png' alt='adicionar-imagem' />
-                                    </div> 
+                                    </div>
                                     <div>
                                         <input type='image' className='campo-imagem-dois' src='/images/adicionar2.png' alt='adicionar-imagem' />
                                         <input type='image' className='imagem-dois' src='/images/adicionar2.png' alt='adicionar-imagem' />
-                                    </div> 
+                                    </div>
                                 </div>
                             </div>
-                            <div>
+                            <div className='textarea'>
                                 <p>INFORMAÇÕES DO PRODUTO</p>
                                 <textarea></textarea>
                             </div>
+                        </div>
+                        <div>
                             <div>
                                 <div>
                                     <p>NOME DO PRODUTO</p>
@@ -62,10 +65,36 @@ export default function Cadastrarproduto() {
                                     <p>MARCA</p>
                                     <input></input>
                                 </div>
+                            </div>
+                            <div>
                                 <div>
                                     <div>
                                         <p>CATEGORIA</p>
                                     </div>
+                                    <div>
+                                        <p>TAMANHO</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div>
+                                        <p>DISPONÍVEL</p>
+                                        <input type='checkbox' checked=''></input>
+                                    </div>
+                                    <div>
+                                        <p>DESTAQUE</p>
+                                        <input type='checkbox' checked=''></input>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='botoes'>
+                                <div>
+                                    <button>EXCLUIR PRODUTO</button>
+                                </div>
+                                <div>
+                                    <button>CADASTRA PRODUTO</button>
+                                </div>
+                                <div>
+                                    <button>SALVAR ALTERAÇÃO</button>
                                 </div>
                             </div>
                         </div>
