@@ -29,9 +29,8 @@ export default function Cadastrarproduto() {
 
             <section>
 
-                <div>
+                <div className='fundo'>
                     <div className='fundo-cadastrar'>
-
                         <div className='elementos-esquerda'>
                             <div className='adicionar-imagens'>
                                 <input type='image' className='campo-imagem' src='/images/adicionar-imagem.png' alt='adicionar-imagem' />
@@ -48,10 +47,12 @@ export default function Cadastrarproduto() {
                             </div>
                             <div className='textarea'>
                                 <p>INFORMAÇÕES DO PRODUTO</p>
-                                <textarea></textarea>
+                                <textarea id="story" name="story"
+                                    rows="7" cols="46">
+                                </textarea>
                             </div>
                         </div>
-                        <div>
+                        <div className='campo-informacao'>
                             <div>
                                 <div>
                                     <p>NOME DO PRODUTO</p>
@@ -67,7 +68,7 @@ export default function Cadastrarproduto() {
                                 </div>
                             </div>
                             <div>
-                                <div>
+                                <div className='cate-tama'>
                                     <div>
                                         <p>CATEGORIA</p>
                                     </div>
@@ -88,13 +89,13 @@ export default function Cadastrarproduto() {
                             </div>
                             <div className='botoes'>
                                 <div>
-                                    <button>EXCLUIR PRODUTO</button>
+                                    <button className='botao-excluir'>EXCLUIR PRODUTO</button>
                                 </div>
                                 <div>
-                                    <button>CADASTRA PRODUTO</button>
+                                    <button className='botao-c-d'>CADASTRA PRODUTO</button>
                                 </div>
                                 <div>
-                                    <button>SALVAR ALTERAÇÃO</button>
+                                    <button className='botao-c-d'>SALVAR ALTERAÇÃO</button>
                                 </div>
                             </div>
                         </div>

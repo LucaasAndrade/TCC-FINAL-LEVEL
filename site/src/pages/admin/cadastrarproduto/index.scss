@@ -35,10 +35,15 @@
         color: #ffffff;
     }
 
+    .fundo{
+        padding: 3em 5em;
+    }
+
     .fundo-cadastrar{
         display: flex;
         flex-direction: row;
         background-color: #ffffff;
+        border: 1px solid #B6B6B6;
     }
 
     .elementos-esquerda{
@@ -78,11 +83,40 @@
     }
 
     .textarea{
-        padding: 3em 0em;
+        padding: 4em 0em
     }
 
+    textarea {
+        padding: 10px;
+        max-width: 100%;
+        line-height: 1.5;
+        border: 1px solid #ccc;
+        box-shadow: 1px 1px 1px #999;
+    }
+
+    .campo-informacao{
+        
+    }
+
+    .cate-tama{
+        display: flex;
+        flex-direction: row;
+    }
+    
     .botoes{
         display: flex;
         flex-direction: row;
+    }
+
+    .botao-excluir{
+        background-color: #BE6161;
+        border: 1px solid #B14444;
+        color: #ffffff;
+    }
+
+    .botao-c-d{
+        background-color: #987F5B;
+        border: 1px solid #876B43;
+        color: #ffffff;
     }
 }
