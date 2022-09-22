@@ -1,7 +1,7 @@
 import 'dotenv/config';
 
 import AdmController from './controller/AdmController.js';
-
+import ProdutoControlLer from './controller/ProdutoController.js';
 
 import express from 'express';
 import cors from 'cors';
@@ -12,6 +12,7 @@ server.use(express.json());
 
 
 server.use(AdmController);
+server.use(ProdutoControlLer);
 
 
 server.listen(process.env.PORT, 
