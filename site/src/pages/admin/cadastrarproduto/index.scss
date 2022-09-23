@@ -27,6 +27,11 @@
         margin-left: 2em;
     }
 
+    .topicos p:hover{
+        color: #987F5B;
+        cursor: pointer;
+    }
+
     .botao-painel{
         background-color: #D1BC9F;
         border: 1px solid #D1BC9F;
@@ -36,7 +41,7 @@
     }
 
     .fundo{
-        padding: 3em 5em;
+        padding: 3em 7em;
     }
 
     .fundo-cadastrar{
@@ -49,7 +54,7 @@
     .elementos-esquerda{
         display: flex;
         flex-direction: column;
-        padding: 3em 5em 3em;
+        padding: 3em 5em;
     }
 
     .adicionar-imagens{
@@ -60,63 +65,106 @@
     .adicionar-imagens-dois{
         display: flex;
         flex-direction: column;
-        padding: 0em 3em;
+        padding: 0em 1em;
+    }
+
+    *input{
+        background-color: #ffffff;
+        border: 1px solid #B6B6B6;
+    }
+
+    .campo-input input{
+        width: 20em;
+        min-height: 3em;
+        border: 1px solid #B6B6B6;   
     }
 
     .campo-imagem{
-        background-color: #ffffff;
-        border: 1px solid #B6B6B6;
         padding: 5em 5em;
     }
 
     .campo-imagem-dois{
-        background-color: #ffffff;
-        border: 1px solid #B6B6B6;
         padding: 1em 1em;
     }
 
     .imagem-dois{
-        background-color: #ffffff;
-        border: 1px solid #B6B6B6;
         padding: 1em 1em;
         margin-left: .5em;
     }
 
+    *P{
+        font-family: 'lexendR';
+    }
+
+    .fundo p{
+        color: #696969;
+    }
+
     .textarea{
-        padding: 4em 0em
+        padding: 3em 0em 0em;
     }
 
     textarea {
         padding: 10px;
         max-width: 100%;
         line-height: 1.5;
-        border: 1px solid #ccc;
-        box-shadow: 1px 1px 1px #999;
+        border: 1px solid #B6B6B6;
     }
 
     .campo-informacao{
-        
+        padding: 3em 0em;
     }
 
+    .campo-info{
+        margin-top: 1em;
+    }
+
+    .campo-info-1{
+        margin-top: 1em;
+        margin-left: 3em;       
+    }
+    
     .cate-tama{
         display: flex;
         flex-direction: row;
+    }
+
+    *select{
+        border: 1px solid #B6B6B6;
+        color: #828282;
+    }
+
+    .checkbox{
+        display: flex;
+        margin-top: 1em;
+    }
+
+    .chek{
+        margin-left: .5em;
     }
     
     .botoes{
         display: flex;
         flex-direction: row;
+        margin-top: 9em;
     }
 
     .botao-excluir{
+        font-family: 'lexendR';
+        font-size: 11px;
         background-color: #BE6161;
-        border: 1px solid #B14444;
+        border: 1px solid #BE6161;
         color: #ffffff;
+        padding: 1em 2em;
     }
 
     .botao-c-d{
+        font-family: 'lexendR';
+        font-size: 11px;
         background-color: #987F5B;
-        border: 1px solid #876B43;
+        border: 1px solid #987F5B;
         color: #ffffff;
+        padding: 1em 2em;
+        margin-left: 1em;
     }
 }

@@ -11,8 +11,9 @@
 
 
     .bem-vindo-login{
+        font-family: 'lexendSB';
         background-color: #D1BC9F;
-        margin-top: 50px;
+        margin-top: 2em;
         padding: 10px 40px;
         border-radius: 10px;
     }
@@ -29,52 +30,82 @@
 
     .fundo-imagem{
         background-color: #D1BC9F;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
     }
 
     .fundo-page-login{
         display: flex;
         flex-direction: row;
-        margin-top: 5em;
+        margin: 2em 0em;
         border: 1px solid #B6B6B6;
         border-radius: 20px;
     }
 
     .fundo-login{
+        font-family: 'lexendSB';
         background-color: #ffffff;
         padding: 2em 10em;
+        border-top-right-radius: 20px;
+        border-end-end-radius: 20px;
     }
 
     .info-login{
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-top: .5em;
+    }
+
+    .input{
+        display: flex;
+        flex-direction: column;   
+        margin-top: 1.5em;
     }
 
     *input{
+        width: 20em;
+        min-height: 3.2em;
         border: 1px solid #B6B6B6;   
     }
 
-    .olho-senha{
-        position: absolute;
+    .p-input{
+        font-family: 'lexendR';
+        color: #474747;
+        margin: .2em 1em;
     }
 
     .botao-entrar{
+        font-family: 'lexendR';
         background-color: #987F5B;
+        border: 1px solid #987F5B;
         color: #ffffff;
+        margin-top: 2.5em;
+        width: 20em;
+        min-height: 3.2em;
     }
 
     .botao-cancelar{
+        font-family: 'lexendM';
         background-color: #ffffff;
         border: 1px solid #987F5B;
         color: #987F5B;
+        margin-top: 2em;
+        width: 20em;
+        min-height: 3.2em;
     }
 
     .mensagem-erro{
+        font-family: 'lexendM';
+        font-size: 12px;
         color: #ff0000;
+        margin-top: 1em;
     }
 
     .alinhar-linha{
-       
+        font-family: 'lexendL';
+        color: #707070;
+        margin-top: 2em;
     }
 
     .linha-login{
