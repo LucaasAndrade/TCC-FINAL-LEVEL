@@ -5,6 +5,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './pages/admin/login'
 import Cadastrarproduto from './pages/admin/cadastrarproduto';
 
+// Login usuario
+import LoginUsuario from './pages//usua/usuario';
+
 // LADING
 import Lading from './pages/user/home'
 
@@ -19,6 +22,9 @@ export default function Index() {
 
         {/* área do user */}
         <Route path='/admin/cadastrarproduto' element={<Cadastrarproduto />} />
+
+       {/* área do usuario */}
+       <Route path= '/usua/usuario' element= {<LoginUsuario />}/>
 
       </Routes>
     </BrowserRouter>

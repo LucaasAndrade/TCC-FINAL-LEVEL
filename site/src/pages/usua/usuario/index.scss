@@ -1,0 +1,90 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+}
+
+.page-login{
+display: flex;
+flex-direction: column;
+background-color: #F5F5F5;
+min-height: 100vh;
+}
+
+.Faixa{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #ffffff;
+    border-bottom: 1px solid #B6B6B6;
+}
+
+.botao-voltar{
+    background-color: #D1BC9F;
+    border: 1px solid #D1BC9F;
+    border-radius: 10px;
+    padding: 1em 2em;
+    color: #ffffff;
+   
+}
+
+.quadrado-login{
+background-color: #FFFFFF;
+border: 1px solid #B6B6B6;
+width: 400px;
+margin-left: auto;
+margin-right: auto;
+padding: 20px 30px;
+margin-bottom: 10vh;
+border-radius: 5px;
+text-align: center;
+height: 525px;
+}
+
+.input{
+    display: flex;
+    flex-direction: column;   
+    margin-top: 1.5em;
+}
+
+*input{
+    width: 20em;
+    min-height: 3.2em;
+    border: 1px solid #B6B6B6;   
+}
+
+.p-input{
+    font-family: 'lexendR';
+    color: #474747;
+    margin: 2em 1em;
+   
+}
+
+
+.botao-entrar{
+    font-family: 'lexendR';
+    background-color: #987F5B;
+    border: 1px solid #987F5B;
+    color: #ffffff;
+    margin-top: 2.5em;
+    width: 20em;
+    min-height: 3.2em;
+}
+
+.alinhar-linha{
+    font-family: 'lexendL';
+    color: #707070;
+    margin-top: 2em;
+}
+
+.t1{
+    font-size: 20px;
+    color: #000000;
+}
+
+.t2{
+    font-size: 15px;
+    color: #828282;
+}
+
+
