@@ -1,4 +1,8 @@
-import "./index.scss";
+import './index.scss';
+
+
+
+
 
 export default function Cadastrarproduto() {
   return (

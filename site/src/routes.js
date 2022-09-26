@@ -1,15 +1,13 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-
-// Home / Admin
-import Login from './pages/admin/login'
-import Cadastrarproduto from './pages/admin/cadastrarproduto';
-
-// Login usuario
-import LoginUsuario from './pages//usua/usuario';
-
 // LADING
 import Lading from './pages/user/home'
+
+// Área / Admin
+import Login from './pages/admin/login'
+import Cadastrarproduto from './pages/admin/cadastrarproduto';
+import Homeadmin from './pages/admin/home';
+
 
 export default function Index() {
   return (
@@ -19,12 +17,11 @@ export default function Index() {
         {/* área de admin */}
         <Route path='/' element={<Lading />} />
         <Route path='/admin/login' element={<Login />} />
-
-        {/* área do user */}
+        <Route path='/admin/homeadmin' element={<Homeadmin />} />
         <Route path='/admin/cadastrarproduto' element={<Cadastrarproduto />} />
 
-       {/* área do usuario */}
-       <Route path= '/usua/usuario' element= {<LoginUsuario />}/>
+        {/* área do user */}
+
 
       </Routes>
     </BrowserRouter>
