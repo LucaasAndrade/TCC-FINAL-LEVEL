@@ -1,12 +1,11 @@
-import './index.scss';
-
+import "./index.scss";
 
 export default function Cadastrarproduto() {
   return (
     <main className="page-cadastro">
       <header>
         <div className="faixa-header">
-          <img src="/images/logo.png" alt="logo"></img>
+          <img className="logo" src="/images/logo.png" alt="logo"></img>
           <div className="topicos">
             <p>ADICIONAR PRODUTO</p>
             <p className="p-topicos">LISTAR PEDIDOS</p>
@@ -120,16 +119,16 @@ export default function Cadastrarproduto() {
               </div>
 
               <div className="botoes">
-          <div>
-            <button className="botao-excluir">EXCLUIR PRODUTO</button>
-          </div>
-          <div>
-            <button className="botao-c-d">CADASTRA PRODUTO</button>
-          </div>
-          <div>
-            <button className="botao-c-d">SALVAR ALTERAÇÃO</button>
-          </div>
-        </div>
+                <div>
+                  <button className="botao-excluir">EXCLUIR PRODUTO</button>
+                </div>
+                <div>
+                  <button className="botao-c-d">CADASTRA PRODUTO</button>
+                </div>
+                <div>
+                  <button className="botao-c-d">SALVAR ALTERAÇÃO</button>
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -67,6 +67,7 @@
         width: 20em;
         min-height: 3.2em;
         border: 1px solid #B6B6B6;   
+        cursor: pointer;
     }
 
     .p-input{
@@ -84,6 +85,11 @@
         width: 20em;
         min-height: 3.2em;
     }
+    
+    .botao-entrar:hover{
+        opacity: 90%;
+        cursor: pointer;
+    }
 
     .botao-cancelar{
         font-family: 'lexendM';
@@ -93,6 +99,7 @@
         margin-top: 2em;
         width: 20em;
         min-height: 3.2em;
+        cursor: pointer;
     }
 
     .mensagem-erro{

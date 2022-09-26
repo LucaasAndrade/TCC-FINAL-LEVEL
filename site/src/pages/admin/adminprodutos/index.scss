@@ -1,0 +1,47 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+}
+
+.page-produtos{
+    display: flex;
+    flex-direction: column;
+    background-color: #F5F6F5;
+    min-height: 100vh;
+
+    .faixa-header{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        background-color: #ffffff;
+        border-bottom: 1px solid #B6B6B6;
+    }
+
+    .topicos{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .p-topicos{
+        margin-left: 2em;
+    }
+
+    .topicos p:hover{
+        color: #987F5B;
+        border-bottom: 2px solid #987F5B;
+        cursor: pointer;
+    }
+
+    .botao-painel{
+        background-color: #D1BC9F;
+        border: 1px solid #D1BC9F;
+        border-radius: 10px;
+        padding: 1em 2em;
+        color: #ffffff;
+    }
+
+    .botao-painel:hover{
+        opacity: 80%;
+    }
+}

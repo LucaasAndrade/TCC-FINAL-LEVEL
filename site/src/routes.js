@@ -7,6 +7,7 @@ import Lading from './pages/user/home'
 import Login from './pages/admin/login'
 import Cadastrarproduto from './pages/admin/cadastrarproduto';
 import Homeadmin from './pages/admin/home';
+import Adminprodutos from './pages/admin/adminprodutos';
 
 
 export default function Index() {
@@ -19,6 +20,7 @@ export default function Index() {
         <Route path='/admin/login' element={<Login />} />
         <Route path='/admin/homeadmin' element={<Homeadmin />} />
         <Route path='/admin/cadastrarproduto' element={<Cadastrarproduto />} />
+        <Route path='/admin/produtos' element={<Adminprodutos />} />
 
         {/* área do user */}
 
