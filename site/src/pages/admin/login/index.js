@@ -1,10 +1,37 @@
 import './index.scss';
 
+import { useNavigate } from 'react-router-dom';
 
-
+import { useState } from 'react';
+import { loginAdm } from '../../../api/loginAdm';
 
 
 export default function Login() {
+
+  const [email, setEmail] = useState('');
+  const [senha, setSenha] = useState('');
+  const [erro, setErro] = useState('');
+
+  const navigate = useNavigate('');
+
+
+  function cancelarClick() {
+    navigate("/")
+  }
+
+  async function loginClick() {
+    try {
+      const resp = await loginAdm(email, senha)
+
+      navigate("/admin/homeamdin")
+    }
+    catch (err) {
+      if (err.response.status === 401) {
+        setErro(err.response.data.erro);
+      }
+    }
+  }
+
   return (
     <main className="page-login">
       <section className="fundo-tela-login">
@@ -22,24 +49,24 @@ export default function Login() {
               <p>LOGIN</p>
               <div className="input">
                 <label className="p-input">E-mail</label>
-                <input type="text" id="E-mail"></input>
+                <input type="text" id="E-mail" placeholder='exemplo@exemplo.com' value={email} onChange={e => setEmail(e.target.value)}></input>
               </div>
 
               <div className="input">
                 <label className="p-input">Senha</label>
-                <input type="password" id="Senha"></input>
+                <input type="password" id="Senha" placeholder='*****' value={senha} onChange={e => setSenha(e.target.value)}></input>
 
                 <div className="olho">
                   
                 </div>
               </div>
 
-              <button className="botao-entrar">ENTRAR</button>
+              <button className="botao-entrar" onClick={loginClick}>ENTRAR</button>
               <div className="alinhar-linha">
                 <p>------------------ ou ------------------</p>
               </div>
-              <button className="botao-cancelar">CANCELAR</button>
-              <p className="mensagem-erro">MENSAGEM DE ERRO</p>
+              <button className="botao-cancelar" onClick={cancelarClick}>CANCELAR</button>
+              <p className="mensagem-erro"> { erro } </p>
             </div>
           </div>
         </div>

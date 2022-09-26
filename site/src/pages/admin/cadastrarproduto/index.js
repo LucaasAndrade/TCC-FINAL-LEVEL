@@ -1,9 +1,6 @@
 import './index.scss';
 
 
-
-
-
 export default function Cadastrarproduto() {
   return (
     <main className="page-cadastro">
