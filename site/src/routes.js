@@ -3,10 +3,13 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // LADING
 import Lading from './pages/user/home'
 
-// Área / Admin
+// Area / usuario
+import Pesquisa from './pages/user/pesquisa'
+
+// Area / Admin
 import Login from './pages/admin/login'
-import Cadastrarproduto from './pages/admin/cadastrarproduto';
 import Homeadmin from './pages/admin/home';
+import Cadastrarproduto from './pages/admin/cadastrarproduto';
 import Adminprodutos from './pages/admin/adminprodutos';
 
 
@@ -23,7 +26,7 @@ export default function Index() {
         <Route path='/admin/produtos' element={<Adminprodutos />} />
 
         {/* área do user */}
-
+        <Route path='/pesquisar' element={<Pesquisa />} />
 
       </Routes>
     </BrowserRouter>

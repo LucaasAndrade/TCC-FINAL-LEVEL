@@ -179,4 +179,8 @@
         margin-left: 1em;
         cursor: pointer;
     }
+
+    .botao-excluir:hover, .botao-c-d:hover{
+        opacity: 90%;
+    }
 }

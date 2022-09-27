@@ -57,7 +57,7 @@ export default function Login() {
                 <input type="password" id="Senha" placeholder='*****' value={senha} onChange={e => setSenha(e.target.value)}></input>
 
                 <div className="olho">
-                  
+
                 </div>
               </div>
 
@@ -66,7 +66,7 @@ export default function Login() {
                 <p>------------------ ou ------------------</p>
               </div>
               <button className="botao-cancelar" onClick={cancelarClick}>CANCELAR</button>
-              <p className="mensagem-erro"> { erro } </p>
+              <p className="mensagem-erro"> {erro} </p>
             </div>
           </div>
         </div>
