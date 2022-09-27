@@ -13,6 +13,8 @@ export async function CadastrarProduto(produto){
 
 }
 
+
+
 export async function InserirCategoria(categoria){
     const comando =
     `insert into tb_categoria (nm_categoria)
@@ -39,8 +41,17 @@ export async function InserirTamanho(tamanho){
 
 }
 
-export async function EnviarImagem(imagem){
-    const comando = 
-    ``
-}
+export  async function AlterarProduto(id,produto){
+    const comando =
+    `update  tb_produto
+    set nm_produto =?,
+    vl_preco =      ?,
+    nm_marca=       ?,
+    ds_informacoes= ?,
+     bl_disponivel= ?,
+     bl_destaque =  ?
+  where id_produto= ?`
 
+  const [resposta] = await con.query(comando,[produto.nome,produto.preco,produto.marca,produto.informacoes,produto.disponivel,produto.destaque,id])
+  return resposta.affectedRows;
+}
