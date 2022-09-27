@@ -2,8 +2,11 @@
 
 import "./index.scss";
 
-import { useState } from 'react';
-import { cadastrarProduto } from "../../../api/cadastrarProduto";
+import { toast } from 'react-toastify';
+
+import { CadastrarProduto } from "../../../api/cadastrarProduto";
+import {  useState } from 'react'
+
  
 
 export default function Cadastrarproduto() {
@@ -20,11 +23,14 @@ export default function Cadastrarproduto() {
 
   async function cadastrarClick() {
     try {
+      
+      const PrecoProduto = Number(valor.replace(',', '.'));
 
-
+      const r = await CadastrarProduto(tamanho,PrecoProduto, categoria,marca, nome,   informacoes, disponivel, destaque);
+      toast.dark('Produto Salvo Com Sucesso!')
 
     } catch (err) {
-
+      toast.error(err.response.data.erro);
       
 
     }
