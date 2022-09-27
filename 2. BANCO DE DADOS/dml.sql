@@ -71,7 +71,7 @@ where id_marca_produto = '2';
 
 
 -- Produto
-select * from tb_produto;
+select * from tb_produto; 
 
 -- Inserir Produto
 insert into tb_produto (id_categoria,id_marca_produto,nm_produto,vl_preco,nm_marca,ds_informacoes,bl_disponivel, bl_destaque)
