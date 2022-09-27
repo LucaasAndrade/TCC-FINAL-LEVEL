@@ -20,8 +20,9 @@ export default function Cadastrarproduto() {
   const [destaque, setDestaque] = useState(false);
   const [informacoes, setInformacoes] = useState("");
 
+  
 
-  async function cadastrarClick() {
+  async function salvar() {
     try {
       
       const PrecoProduto = Number(valor.replace(',', '.'));
@@ -153,7 +154,7 @@ export default function Cadastrarproduto() {
                 </div>
               </div>
 
-              <div className="botoes">
+              <div className="botoes" >
                 <div>
                   <button className="botao-excluir">EXCLUIR PRODUTO</button>
                 </div>
@@ -161,7 +162,8 @@ export default function Cadastrarproduto() {
                   <button className="botao-c-d">CADASTRA PRODUTO</button>
                 </div>
                 <div>
-                  <button className="botao-c-d">SALVAR ALTERAÇÃO</button>
+                  <button className="botao-c-d"  onClick={salvar}>SALVAR ALTERAÇÃO</button>
+                  
                 </div>
               </div>
             </div>
