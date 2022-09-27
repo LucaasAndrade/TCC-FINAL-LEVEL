@@ -10,11 +10,12 @@ server.post('/produto',async(req,resp) =>{
         const produtoInserido = await CadastrarProduto(produtoParaInserir);
 
         resp.send(produtoInserido);
-    }catch (err){
-        resp.send(400).send({
-            erro:err.message
-        })
     }
+    catch (err){
+        resp.send(400).send({
+            erro: err.message
+        })
+    }   
 })
 
 server.post ('/produto/categoria',async(req,resp) =>{
@@ -26,7 +27,7 @@ server.post ('/produto/categoria',async(req,resp) =>{
         resp.send(CategoriaInserido);
     }catch (err){
         resp.send(400).send({
-            erro:err.message
+            erro: err.message
         })
     }
 })
@@ -40,7 +41,7 @@ server.post('/produto/tamanho',async(req,resp) =>{
         resp.send(TamanhoInserido);
     }catch (err){
         resp.send(400).send({
-            erro:err.message
+            erro: err.message
         })
     }
 })

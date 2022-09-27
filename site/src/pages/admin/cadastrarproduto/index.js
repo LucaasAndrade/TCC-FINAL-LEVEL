@@ -1,6 +1,36 @@
+
+
 import "./index.scss";
 
+import { useState } from 'react';
+import { cadastrarProduto } from "../../../api/cadastrarProduto";
+ 
+
 export default function Cadastrarproduto() {
+
+  const [nome, setNome] = useState("");
+  const [valor, setValor] = useState("");
+  const [marca, setMarca] = useState("");
+  const [categoria, setCategoria] = useState("");
+  const [tamanho, setTamanho] = useState("");
+  const [disponivel, setDisponivel] = useState(false);
+  const [destaque, setDestaque] = useState(false);
+  const [informacoes, setInformacoes] = useState("");
+
+
+  async function cadastrarClick() {
+    try {
+
+
+
+    } catch (err) {
+
+      
+
+    }
+  }
+
+
   return (
     <main className="page-cadastro">
       <header>
@@ -64,40 +94,39 @@ export default function Cadastrarproduto() {
               </div>
               <div className="textarea">
                 <p>INFORMAÇÕES DO PRODUTO</p>
-                <textarea id="story" name="story" rows="7" cols="46"></textarea>
+                <textarea id="story" name="story" rows="7" cols="46" value={informacoes} onChange={e => setInformacoes(e.target.value)}></textarea>
               </div>
             </div>
             <div className="campo-informacao">
               <div className="campo-input">
                 <div>
                   <p>NOME DO PRODUTO</p>
-                  <input></input>
+                  <input value={nome} onChange={e => setNome(e.target.value)}></input>
                 </div>
                 <div className="campo-info">
                   <p>VALOR</p>
-                  <input></input>
+                  <input value={valor} onChange={e => setValor(e.target.value)}></input>
                 </div>
                 <div className="campo-info">
                   <p>MARCA</p>
-                  <input></input>
+                  <input value={marca} onChange={e => setMarca(e.target.value)}></input>
                 </div>
               </div>
               <div>
                 <div className="cate-tama">
                   <div className="campo-info">
                     <p>CATEGORIA</p>
-                    <select>
-                      <option value="" data-default disabled selected></option>
-                      <option value="Acessórios">ACESSÓRIOS</option>
-                      <option value="Masculino">MASCULINO</option>
-                      <option value="Feminino">FEMININO</option>
-                      <option value="Infantil">INFANTIL</option>
+                    <select onChange={e => setCategoria(e.target.value)}>
+                      <option selected disabled hidden ></option>
+                      {categoria.map(item =>
+                        <option value={item.id}>{item.categoria}</option>
+                      )}
                     </select>
                   </div>
                   <div className="campo-info-1">
                     <p>TAMANHO</p>
-                    <select>
-                      <option value="" data-default disabled selected></option>
+                    <select onChange={e => setTamanho(e.target.value)}>
+                      <option value="" selected disabled hidden></option>
                       <option value="Acessórios">PP</option>
                       <option value="Acessórios">P</option>
                       <option value="Masculino">M</option>
@@ -109,11 +138,11 @@ export default function Cadastrarproduto() {
                 <div>
                   <div className="checkbox">
                     <p>DISPONÍVEL</p>
-                    <input className="chek" type="checkbox" checked=""></input>
+                    <input className="chek" type="checkbox" checked={disponivel} onChange={e => setDisponivel(e.target.checked)}></input>
                   </div>
                   <div className="checkbox">
                     <p>DESTAQUE</p>
-                    <input className="chek" type="checkbox" checked=""></input>
+                    <input className="chek" type="checkbox" checked={destaque} onChange={e => setDestaque(e.target.checked)}></input>
                   </div>
                 </div>
               </div>
