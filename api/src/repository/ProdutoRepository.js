@@ -56,7 +56,7 @@ export  async function AlterarProduto(id,produto){
   return resposta.affectedRows;
 }
 
-export  default async function listarMarcas() {
+export async function listarMarcas() {
     const comando = `
         select nm_marca
             from tb_marca_produto
@@ -67,4 +67,27 @@ export  default async function listarMarcas() {
 };
 
 
-export default async function
+export async function listarCategorias() {
+    const comando = 
+        `
+        select nm_categoria
+            from tb_categoria
+        `
+
+    const [resposta] = await con.query(comando);
+    return resposta;
+}
+
+export async function listarTamanhosProduto(id) {
+    const comando =
+        `
+        select ds_tamanho as tamanho
+        from tb_produto_tamanho
+        where id_produto = ?;
+        
+        `
+    console.log(id)
+    const [resposta] = await con.query(comando, [id]);
+    console.log(resposta)
+    return resposta
+}
