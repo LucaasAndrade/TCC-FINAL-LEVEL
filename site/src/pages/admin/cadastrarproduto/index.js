@@ -5,7 +5,7 @@ import "./index.scss";
 import { toast } from 'react-toastify';
 
 import { CadastrarProduto } from "../../../api/cadastrarProduto";
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 
 
@@ -13,8 +13,15 @@ export default function Cadastrarproduto() {
 
   const [nome, setNome] = useState("");
   const [valor, setValor] = useState("");
-  const [marca, setMarca] = useState("");
-  const [categoria, setCategoria] = useState([]);
+  
+  const [categoriaId, setCategoriaId] = useState();
+  const [categorias, setCategorias] = useState([]);
+
+  const [marcaId, setMarcaId] = useState();
+  const [marcas, setMarcas] = useState([]);
+
+
+
   const [tamanho, setTamanho] = useState("");
   const [disponivel, setDisponivel] = useState(false);
   const [destaque, setDestaque] = useState(false);
@@ -33,16 +40,27 @@ export default function Cadastrarproduto() {
     } catch (err) {
 
       toast.error(err.response.data.erro);
-      
+
     }
   }
+
+  function buscarNomeCategoria(id) {
+    const cat = categorias.find(item => item.id === id);
+    return cat.categoria;
+  }
+
+  function buscarNomeMarca(id) {
+    const marca = marcas.find(item => item.id === id);
+    return marca.marca
+  }
+
 
 
   return (
     <main className="page-cadastro">
       <header>
         <div className="faixa-header">
-          <img className="logo" src="/images/logo.png" alt="logo"></img>
+          <img className="logo" src="/images/logoo.png" alt="logo"></img>
           <div className="topicos">
             <p>ADICIONAR PRODUTO</p>
             <p className="p-topicos">LISTAR PEDIDOS</p>
@@ -101,7 +119,7 @@ export default function Cadastrarproduto() {
               </div>
               <div className="textarea">
                 <p>INFORMAÇÕES DO PRODUTO</p>
-                <textarea id="story" name="story" rows="7" cols="46" value={informacoes} onChange={e => setInformacoes(e.target.value)}></textarea>
+                <textarea className="descricao" name="story" rows="7" cols="46" value={informacoes} onChange={e => setInformacoes(e.target.value)}></textarea>
               </div>
             </div>
             <div className="campo-informacao">
@@ -116,7 +134,21 @@ export default function Cadastrarproduto() {
                 </div>
                 <div className="campo-info">
                   <p>MARCA</p>
-                  <input value={marca} onChange={e => setMarca(e.target.value)}></input>
+                  <select  value={marca} onChange={e => setMarca(e.target.value)}>
+                      <option value="" selected disabled hidden></option>
+                      <option value="Acessórios">ADIDAS</option>
+                      <option value="Acessórios">NIKE</option>
+                      <option value="Masculino">FILA</option>
+                      <option value="Feminino">PUMA</option>
+                      <option value="Infantil">KINGS SNEAKERS</option>
+                      <option value="Infantil">VANS</option>
+                      <option value="Infantil">JORDAN</option>
+                      <option value="Infantil">NEW BALANCE</option>
+                      <option value="Infantil">MIZUNO</option>
+                      <option value="Infantil">CHAMPION</option>
+                      <option value="Infantil">LACOSTE</option>
+                      <option value="Infantil">CONVERSE</option>
+                    </select>
                 </div>
               </div>
               <div>

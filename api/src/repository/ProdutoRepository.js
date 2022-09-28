@@ -55,3 +55,16 @@ export  async function AlterarProduto(id,produto){
   const [resposta] = await con.query(comando,[produto.nome,produto.preco,produto.marca,produto.informacoes,produto.disponivel,produto.destaque,id])
   return resposta.affectedRows;
 }
+
+export  default async function listarMarcas() {
+    const comando = `
+        select nm_marca
+            from tb_marca_produto
+    `
+
+    const [resposta] = await con.query(comando);
+    return resposta
+};
+
+
+export default async function
