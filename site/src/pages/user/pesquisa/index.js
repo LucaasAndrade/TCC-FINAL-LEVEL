@@ -1,5 +1,7 @@
+import './index.scss'
+
 import Cabecalho from '../../../components/header';
-import './index.scss';
+import Footer from '../../../components/footer';
 
 
 
@@ -11,6 +13,10 @@ export default function Pesquisa() {
         <main className='page-pesquisa'>
             <div>
                 <Cabecalho />
+            </div>
+
+            <div>
+                <Footer />
             </div>
         </main>
     )
