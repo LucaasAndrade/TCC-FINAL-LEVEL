@@ -5,7 +5,7 @@ import "./index.scss";
 import { toast } from 'react-toastify';
 
 import { CadastrarProduto } from "../../../api/cadastrarProduto";
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 
 
@@ -13,8 +13,15 @@ export default function Cadastrarproduto() {
 
   const [nome, setNome] = useState("");
   const [valor, setValor] = useState("");
-  const [marca, setMarca] = useState("");
-  const [categoria, setCategoria] = useState([]);
+  
+  const [categoriaId, setCategoriaId] = useState();
+  const [categorias, setCategorias] = useState([]);
+
+  const [marcaId, setMarcaId] = useState();
+  const [marcas, setMarcas] = useState([]);
+
+
+
   const [tamanho, setTamanho] = useState("");
   const [disponivel, setDisponivel] = useState(false);
   const [destaque, setDestaque] = useState(false);
@@ -33,9 +40,20 @@ export default function Cadastrarproduto() {
     } catch (err) {
 
       toast.error(err.response.data.erro);
-      
+
     }
   }
+
+  function buscarNomeCategoria(id) {
+    const cat = categorias.find(item => item.id === id);
+    return cat.categoria;
+  }
+
+  function buscarNomeMarca(id) {
+    const marca = marcas.find(item => item.id === id);
+    return marca.marca
+  }
+
 
 
   return (
