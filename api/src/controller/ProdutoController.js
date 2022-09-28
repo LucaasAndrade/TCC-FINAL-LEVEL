@@ -1,4 +1,4 @@
-import listarMarcas, { AlterarProduto, CadastrarProduto,InserirCategoria, InserirTamanho } from '../repository/ProdutoRepository.js';
+import  { AlterarProduto, CadastrarProduto,InserirCategoria, InserirTamanho, listarMarcas, listarCategorias, listarTamanhosProduto } from '../repository/ProdutoRepository.js';
 
 import { Router } from 'express'
 const server = Router();
@@ -95,8 +95,27 @@ server.get('/listarMarcas', async (req, resp) => {
     }
 })
 
+server.get('/listarCategorias', async (req, resp) => {
+    try{
+        const linhas = await listarCategorias();
+        resp.send(linhas)
+    }catch(err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
 
-
-
+server.get('/listarTamanhos/:id', async (req, resp) => {
+    try {
+        const { id } = req.params
+        const linhas = await listarTamanhosProduto(id);
+        resp.send(linhas);
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
 
 export default server;

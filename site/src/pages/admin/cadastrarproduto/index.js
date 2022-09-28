@@ -4,7 +4,7 @@ import "./index.scss";
 
 import { toast } from 'react-toastify';
 
-import { CadastrarProduto } from "../../../api/cadastrarProduto";
+import { CadastrarProduto, listarCategorias, listarMarcas } from "../../../api/cadastrarProduto";
 import { useState, useEffect } from 'react'
 
 
@@ -20,7 +20,7 @@ export default function Cadastrarproduto() {
   const [marcaId, setMarcaId] = useState();
   const [marcas, setMarcas] = useState([]);
 
-
+  const []
 
   const [tamanho, setTamanho] = useState("");
   const [disponivel, setDisponivel] = useState(false);
@@ -54,7 +54,17 @@ export default function Cadastrarproduto() {
     return marca.marca
   }
 
+  async function carregarMarcas() {
+    const r = await listarMarcas();
+    setMarcas(r);
+  }
 
+  async function carregarCategorias() {
+    const r = await listarCategorias();
+    setCategorias(r);
+  }
+
+  async function carregaTamanhosProdutos(id)
 
   return (
     <main className="page-cadastro">
