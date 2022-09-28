@@ -1,0 +1,41 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+}
+
+.page-home-admin{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    .faixa-header{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        color: #ffffff;
+    }
+
+    .logo{
+        margin-left: 2em;
+        cursor: pointer;
+    }
+
+    .botao-painel{
+        background-color: #D1BC9F;
+        border: 1px solid #D1BC9F;
+        border-radius: 10px;
+        padding: 1em 2em;
+        color: #ffffff;
+        margin-right: 3em;
+    }
+
+    .botao-painel:hover{
+        opacity: 80%;
+        cursor: pointer;
+    }
+
+    .fundo-login{
+        background-color: #F5F6F5;
+    }
+}

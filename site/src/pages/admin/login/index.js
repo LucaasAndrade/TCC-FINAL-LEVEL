@@ -49,12 +49,12 @@ export default function Login() {
               <p>LOGIN</p>
               <div className="input">
                 <label className="p-input">E-mail</label>
-                <input type="text" id="E-mail" placeholder='exemplo@exemplo.com' value={email} onChange={e => setEmail(e.target.value)}></input>
+                <input type="text" placeholder='exemplo@exemplo.com' value={email} onChange={e => setEmail(e.target.value)}></input>
               </div>
 
               <div className="input">
                 <label className="p-input">Senha</label>
-                <input type="password" id="Senha" placeholder='*****' value={senha} onChange={e => setSenha(e.target.value)}></input>
+                <input type="password" placeholder='*****' value={senha} onChange={e => setSenha(e.target.value)}></input>
 
                 <div className="olho">
 
