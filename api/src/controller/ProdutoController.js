@@ -12,7 +12,7 @@ server.post('/produto',async(req,resp) =>{
         resp.send(produtoInserido);
     }
     catch (err){
-        resp.send(400).send({
+        resp.send(404).send({
             erro: err.message
         })
     }   

@@ -5,35 +5,35 @@ import "./index.scss";
 import { toast } from 'react-toastify';
 
 import { CadastrarProduto } from "../../../api/cadastrarProduto";
-import {  useState } from 'react'
+import { useState } from 'react'
 
- 
+
 
 export default function Cadastrarproduto() {
 
   const [nome, setNome] = useState("");
   const [valor, setValor] = useState("");
   const [marca, setMarca] = useState("");
-  const [categoria, setCategoria] = useState("");
+  const [categoria, setCategoria] = useState([]);
   const [tamanho, setTamanho] = useState("");
   const [disponivel, setDisponivel] = useState(false);
   const [destaque, setDestaque] = useState(false);
   const [informacoes, setInformacoes] = useState("");
 
-  
+
 
   async function salvar() {
     try {
-      
+
       const PrecoProduto = Number(valor.replace(',', '.'));
 
-      const r = await CadastrarProduto(tamanho,PrecoProduto, categoria,marca, nome,   informacoes, disponivel, destaque);
+      const r = await CadastrarProduto(tamanho, PrecoProduto, categoria, marca, nome, informacoes, disponivel, destaque);
       toast.dark('Produto Salvo Com Sucesso!')
 
     } catch (err) {
+
       toast.error(err.response.data.erro);
       
-
     }
   }
 
@@ -159,11 +159,11 @@ export default function Cadastrarproduto() {
                   <button className="botao-excluir">EXCLUIR PRODUTO</button>
                 </div>
                 <div>
-                  <button className="botao-c-d">CADASTRA PRODUTO</button>
+                  <button className="botao-c-d" onClick={salvar}>CADASTRAR PRODUTO</button>
                 </div>
                 <div>
-                  <button className="botao-c-d"  onClick={salvar}>SALVAR ALTERAÇÃO</button>
-                  
+                  <button className="botao-c-d">SALVAR ALTERAÇÃO</button>
+
                 </div>
               </div>
             </div>

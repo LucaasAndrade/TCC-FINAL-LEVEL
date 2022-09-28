@@ -6,7 +6,8 @@ select* from tb_adm;
 insert into tb_adm (nm_adm,ds_cpf,dt_nascimento,ds_cargo)
 		values ('ADM','016.558.990-67', '2000-10-05 ', 'Vendedor');
         
-  
+  select  * from tb_categoria;
+  select * from tb_produto_tamanho;
 
 -- Login
 
@@ -56,7 +57,7 @@ where id_categoria = '6';
 select * from tb_marca_produto;
 
 insert into tb_marca_produto (nm_marca,img_marca)
-		values ('Adidas', 'Imagem.png');
+		values ('Lacoste', 'Imagem');
         
         
 -- Alterar marca_produto
@@ -75,7 +76,7 @@ select * from tb_produto;
 
 -- Inserir Produto
 insert into tb_produto (id_categoria,id_marca_produto,nm_produto,vl_preco,nm_marca,ds_informacoes,bl_disponivel, bl_destaque)
-		values (1,1,'Camiseta',9.5,'Nike','Produto de otima qualidade',true,false);
+		values (1,1,'Camiseta',911.5,'Nike','Produto de otima qualidade',true,false);
         
 -- Alterar Produto
 update  tb_produto

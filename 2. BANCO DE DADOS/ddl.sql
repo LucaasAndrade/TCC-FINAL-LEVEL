@@ -24,19 +24,33 @@ create table tb_categoria(
     nm_categoria      varchar(100)
 );
 
+-- Marca Produto
+
+select *
+	from tb_produto;
+
 create table tb_marca_produto(
     id_marca_produto     	int primary key auto_increment,
     nm_marca				varchar(100),
     img_marca				varchar(100)
 );
 
+use TCC2022;
+
+show tables;
+
+select *
+	from tb_produto;
+    
+ALTER TABLE tb_produto
+	DROP COLUMN nm_marca;
+
 create table tb_produto(
 	id_produto         	  	int primary key auto_increment,
     id_categoria			int,
     id_marca_produto        		int,
     nm_produto        			varchar(100),
-    vl_preco                		decimal(3,2),
-    nm_marca                		varchar(11),
+    vl_preco                		decimal(5,2),
     ds_informacoes			varchar(110),
     bl_disponivel			bool,
     bl_destaque				bool,
@@ -54,6 +68,10 @@ create table tb_imagem_produto(
     foreign key (id_produto) references  tb_produto(id_produto)
 );
 
+-- tamanho produto
+
+select *
+	from tb_produto_tamanho;
 
 create table tb_produto_tamanho(
 id_produto_tamanho        	int primary key auto_increment,
@@ -167,4 +185,3 @@ id_login         	int primary key auto_increment,
 foreign key (id_usuario) references  tb_usuario(id_usuario)
 );
 
-drop database TCC2022;
