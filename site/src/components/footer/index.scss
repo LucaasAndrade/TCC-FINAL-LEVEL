@@ -1,0 +1,43 @@
+#componente-footer{
+    display: flex;
+    flex-direction: column;
+
+    .input{
+        width: 20em;
+        min-height: 3.2em;
+        border: 1px solid #B6B6B6;  
+        padding: 0em 1em; 
+    }
+
+    .botao-enviar{
+        font-family: 'lexendR';
+        background-color: #987F5B;
+        border: 1px solid #987F5B;
+        color: #ffffff;
+        width: 7em;
+        height: 3.2em;
+    }
+    
+    .botao-enviar:hover{
+        opacity: 90%;
+        cursor: pointer;
+    }
+
+    .linha{}
+
+    .parte-dois{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .redes-sociais{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .icones{
+        margin-left: .5em
+    }
+}

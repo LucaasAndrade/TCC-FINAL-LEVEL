@@ -22,6 +22,7 @@
         display: flex;
         flex-direction: row;
         align-items: center;
+        justify-content: space-around;
     }
 
     .logo{
@@ -39,7 +40,6 @@
         display: flex;
         flex-direction: row;
         font-family: 'lexendM';
-        margin-left: 4em;
     }
 
     .topico{
@@ -49,7 +49,6 @@
     .input-pesquisa{
         display: flex;
         flex-direction: row;
-        margin-left: 4em;
     }
 
     *input{
@@ -70,7 +69,6 @@
     .elementos-usuario{
         display: flex;
         flex-direction: row;
-        margin-left: 5em;
     }
 
     .elemento-img{

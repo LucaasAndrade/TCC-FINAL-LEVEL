@@ -1,6 +1,6 @@
 
 
-import "./index.scss";
+/*import "./index.scss";
 
 import { toast } from 'react-toastify';
 
@@ -214,4 +214,4 @@ export default function Cadastrarproduto() {
       </section>
     </main>
   );
-}
+}*/

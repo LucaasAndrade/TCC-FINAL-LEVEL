@@ -46,7 +46,7 @@ export default function Login() {
           </div>
           <div className="fundo-login">
             <div className="info-login">
-              <p>LOGIN</p>
+              <h4>LOGIN</h4>
               <div className="input">
                 <label className="p-input">E-mail</label>
                 <input type="text" placeholder='exemplo@exemplo.com' value={email} onChange={e => setEmail(e.target.value)}></input>
@@ -55,14 +55,10 @@ export default function Login() {
               <div className="input">
                 <label className="p-input">Senha</label>
                 <input type="password" placeholder='*****' value={senha} onChange={e => setSenha(e.target.value)}></input>
-
-                <div className="olho">
-
-                </div>
               </div>
 
               <button className="botao-entrar" onClick={loginClick}>ENTRAR</button>
-              <div className="alinhar-linha">
+              <div className="alinhar-ou">
                 <p>------------------ ou ------------------</p>
               </div>
               <button className="botao-cancelar" onClick={cancelarClick}>CANCELAR</button>

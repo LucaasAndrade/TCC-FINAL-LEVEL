@@ -11,13 +11,13 @@ export default function Pesquisa() {
 
     return (
         <main className='page-pesquisa'>
-            <div>
+            <section>
                 <Cabecalho />
-            </div>
-
-            <div>
+            </section>
+            
+            <section>
                 <Footer />
-            </div>
+            </section>
         </main>
     )
 }
