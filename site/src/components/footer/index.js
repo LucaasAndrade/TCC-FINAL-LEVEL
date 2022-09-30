@@ -28,9 +28,9 @@ export default function Footer() {
         <div>
             <img src='/images/logoo.png' alt='logo' />
         </div>
-        <div>
+        <div className='redes-sociais'>
             <p>SIGA A STREET ELEGANCE</p>
-            <div className='redes-sociais'>
+            <div>
                 <img src='/images/twitter.png' alt='twitter' />
                 <img className='icones' src='/images/whatsapp2.png' alt='whastapp' />
                 <img className='icones' src='/images/face1.png' alt='facebook' />
