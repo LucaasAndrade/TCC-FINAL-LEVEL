@@ -1,28 +1,38 @@
 
 
-/*import "./index.scss";
+import "./index.scss";
 
 import { toast } from 'react-toastify';
 
-import { CadastrarProduto, listarCategorias, listarMarcas } from "../../../api/cadastrarProduto";
+import { CadastrarProduto, listarCategorias, listarMarcas, listarTamanhoProduto } from "../../../api/cadastrarProduto";
 import { useState, useEffect } from 'react'
 
 
 
 export default function Cadastrarproduto() {
 
+  const [produtoId, setProdutoId] = useState(0);
   const [nome, setNome] = useState("");
   const [valor, setValor] = useState("");
   
   const [categoriaId, setCategoriaId] = useState();
   const [categorias, setCategorias] = useState([]);
+  
+  console.log(categorias);
+  console.log(categoriaId);
 
   const [marcaId, setMarcaId] = useState();
   const [marcas, setMarcas] = useState([]);
+  const [marca, setMarca] = useState('')
 
-  const []
 
-  const [tamanho, setTamanho] = useState("");
+
+  const [tamanhoId, setTamanhoId] = useState();
+  const [tamanhos, setTamanhos] = useState([]);
+  const [tamanhoProduto, setTamanhoProduto] = useState([]);
+  const [tamanhosSelecionados, setTamanhosSelecionados] = useState([]);
+
+
   const [disponivel, setDisponivel] = useState(false);
   const [destaque, setDestaque] = useState(false);
   const [informacoes, setInformacoes] = useState("");
@@ -34,7 +44,7 @@ export default function Cadastrarproduto() {
 
       const PrecoProduto = Number(valor.replace(',', '.'));
 
-      const r = await CadastrarProduto(tamanho, PrecoProduto, categoria, marca, nome, informacoes, disponivel, destaque);
+      const r = await CadastrarProduto(categoriaId, marcaId , nome,PrecoProduto, categorias, informacoes, disponivel, destaque);
       toast.dark('Produto Salvo Com Sucesso!')
 
     } catch (err) {
@@ -42,16 +52,6 @@ export default function Cadastrarproduto() {
       toast.error(err.response.data.erro);
 
     }
-  }
-
-  function buscarNomeCategoria(id) {
-    const cat = categorias.find(item => item.id === id);
-    return cat.categoria;
-  }
-
-  function buscarNomeMarca(id) {
-    const marca = marcas.find(item => item.id === id);
-    return marca.marca
   }
 
   async function carregarMarcas() {
@@ -64,7 +64,23 @@ export default function Cadastrarproduto() {
     setCategorias(r);
   }
 
-  async function carregaTamanhosProdutos(id)
+  async function carregaTamanhosProdutos(id){
+    const r = await listarTamanhoProduto(id);
+    setTamanhos(r);
+  }
+
+  function adicionarTamanhos() {
+    if (!tamanhosSelecionados.find(item => item == tamanhoId)) {
+      const tamanhos = [...tamanhos, tamanhoId];
+      setTamanhosSelecionados(tamanhos);
+    }
+  }
+
+  useEffect(() => {
+    carregarMarcas();
+    carregaTamanhosProdutos (produtoId);
+    carregarCategorias();
+  }, [])
 
   return (
     <main className="page-cadastro">
@@ -144,20 +160,11 @@ export default function Cadastrarproduto() {
                 </div>
                 <div className="campo-info">
                   <p>MARCA</p>
-                  <select  value={marca} onChange={e => setMarca(e.target.value)}>
+                  <select  value={marcaId} onChange={e => setMarca(e.target.value)}>
                       <option value="" selected disabled hidden></option>
-                      <option value="Acessórios">ADIDAS</option>
-                      <option value="Acessórios">NIKE</option>
-                      <option value="Masculino">FILA</option>
-                      <option value="Feminino">PUMA</option>
-                      <option value="Infantil">KINGS SNEAKERS</option>
-                      <option value="Infantil">VANS</option>
-                      <option value="Infantil">JORDAN</option>
-                      <option value="Infantil">NEW BALANCE</option>
-                      <option value="Infantil">MIZUNO</option>
-                      <option value="Infantil">CHAMPION</option>
-                      <option value="Infantil">LACOSTE</option>
-                      <option value="Infantil">CONVERSE</option>
+                    {marcas.map(item =>
+                      <option value={item.id_marca}> {item.nm_marca}</option>
+                        )}
                     </select>
                 </div>
               </div>
@@ -165,23 +172,26 @@ export default function Cadastrarproduto() {
                 <div className="cate-tama">
                   <div className="campo-info">
                     <p>CATEGORIA</p>
-                    <select onChange={e => setCategoria(e.target.value)}>
+                    <select onChange={e => setCategoriaId(e.target.value)}>
                       <option selected disabled hidden ></option>
-                      {categoria.map(item =>
-                        <option value={item.id}>{item.categoria}</option>
+                      {categorias.map(item =>
+                        <option value={item.id_categoria}> {item.nm_categoria} </option>
                       )}
                     </select>
                   </div>
                   <div className="campo-info-1">
                     <p>TAMANHO</p>
-                    <select onChange={e => setTamanho(e.target.value)}>
+                    <select onChange={e => setTamanhoProduto(e.target.value)}>
                       <option value="" selected disabled hidden></option>
-                      <option value="Acessórios">PP</option>
-                      <option value="Acessórios">P</option>
-                      <option value="Masculino">M</option>
-                      <option value="Feminino">G</option>
-                      <option value="Infantil">GG</option>
+                      {tamanhos.map(item => 
+                        <option value={item.id}> { item.tamanho }</option>)}
                     </select>
+                    <hr />
+                    <ul>
+                      {tamanhosSelecionados.map(item => 
+                        <li> {item.tamanho}</li>
+                        )}
+                    </ul>
                   </div>
                 </div>
                 <div>
@@ -214,4 +224,4 @@ export default function Cadastrarproduto() {
       </section>
     </main>
   );
-}*/
+}
