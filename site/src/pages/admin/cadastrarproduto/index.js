@@ -14,10 +14,10 @@ export default function Cadastrarproduto() {
   const [produtoId, setProdutoId] = useState(0);
   const [nome, setNome] = useState("");
   const [valor, setValor] = useState("");
-  
+
   const [categoriaId, setCategoriaId] = useState();
   const [categorias, setCategorias] = useState([]);
-  
+
   console.log(categorias);
   console.log(categoriaId);
 
@@ -44,7 +44,7 @@ export default function Cadastrarproduto() {
 
       const PrecoProduto = Number(valor.replace(',', '.'));
 
-      const r = await CadastrarProduto(categoriaId, marcaId , nome,PrecoProduto, categorias, informacoes, disponivel, destaque);
+      const r = await CadastrarProduto(categoriaId, marcaId, nome, PrecoProduto, categorias, informacoes, disponivel, destaque);
       toast.dark('Produto Salvo Com Sucesso!')
 
     } catch (err) {
@@ -64,7 +64,7 @@ export default function Cadastrarproduto() {
     setCategorias(r);
   }
 
-  async function carregaTamanhosProdutos(id){
+  async function carregaTamanhosProdutos(id) {
     const r = await listarTamanhoProduto(id);
     setTamanhos(r);
   }
@@ -78,7 +78,7 @@ export default function Cadastrarproduto() {
 
   useEffect(() => {
     carregarMarcas();
-    carregaTamanhosProdutos (produtoId);
+    carregaTamanhosProdutos(produtoId);
     carregarCategorias();
   }, [])
 
@@ -156,16 +156,16 @@ export default function Cadastrarproduto() {
                 </div>
                 <div className="campo-info">
                   <p>VALOR</p>
-                  <input value={valor} onChange={e => setValor(e.target.value)}></input>
+                  <input type='number' value={valor} onChange={e => setValor(e.target.value)}></input>
                 </div>
                 <div className="campo-info">
                   <p>MARCA</p>
-                  <select  value={marcaId} onChange={e => setMarca(e.target.value)}>
-                      <option value="" selected disabled hidden></option>
+                  <select value={marcaId} onChange={e => setMarca(e.target.value)}>
+                    <option value="" selected disabled hidden></option>
                     {marcas.map(item =>
                       <option value={item.id_marca}> {item.nm_marca}</option>
-                        )}
-                    </select>
+                    )}
+                  </select>
                 </div>
               </div>
               <div>
@@ -183,15 +183,12 @@ export default function Cadastrarproduto() {
                     <p>TAMANHO</p>
                     <select onChange={e => setTamanhoProduto(e.target.value)}>
                       <option value="" selected disabled hidden></option>
-                      {tamanhos.map(item => 
-                        <option value={item.id}> { item.tamanho }</option>)}
+                      <option value="PP"> PP </option>
+                      <option value="P"> P </option>
+                      <option value="M"> M </option>
+                      <option value="G"> G </option>
+                      <option value="GG"> GG </option>
                     </select>
-                    <hr />
-                    <ul>
-                      {tamanhosSelecionados.map(item => 
-                        <li> {item.tamanho}</li>
-                        )}
-                    </ul>
                   </div>
                 </div>
                 <div>
