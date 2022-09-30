@@ -30,7 +30,7 @@ export async function listarMarcas() {
     return r.data;
 }
 
-export async function listarCategorias(id) {
-    const r = await api.get(`/listarMarcas/${id}`)
+export async function listarTamanhoProduto(id) {
+    const r = await api.get(`/listarTamanhos/${id}`)
     return r.data;
 }

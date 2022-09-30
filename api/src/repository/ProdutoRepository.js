@@ -58,7 +58,7 @@ export  async function AlterarProduto(id,produto){
 
 export async function listarMarcas() {
     const comando = `
-        select nm_marca
+        select *
             from tb_marca_produto
     `
 
@@ -70,10 +70,9 @@ export async function listarMarcas() {
 export async function listarCategorias() {
     const comando = 
         `
-        select nm_categoria
+        select *
             from tb_categoria
         `
-
     const [resposta] = await con.query(comando);
     return resposta;
 }
