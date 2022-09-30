@@ -7,14 +7,16 @@ import Footer from '../../../components/footer';
 
 
 
-export default function Pesquisa() {
+export default function Buscar() {
 
     return (
-        <main className='page-pesquisa'>
+        <main className='page-buscar'>
             <section>
                 <Cabecalho />
             </section>
+            <section>
             
+            </section>
             <section>
                 <Footer />
             </section>

@@ -1,6 +1,14 @@
 #componente-footer{
+    font-family: 'lexendR';
     display: flex;
     flex-direction: column;
+    align-items: center;
+
+    .carta-mensagem{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
     .input{
         width: 20em;
@@ -28,6 +36,12 @@
     .parte-dois{
         display: flex;
         flex-direction: row;
+        align-items: center;
+    }
+
+    .f-pagamento{
+        display: flex;
+        flex-direction: column;
         align-items: center;
     }
 

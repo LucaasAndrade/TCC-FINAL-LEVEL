@@ -19,6 +19,7 @@ export default function Login() {
           <div className="info-login">
           <h4>LOGIN</h4>
           <h6 className="p-informacao">Já é cliente Street Elegance?</h6>
+          <div className='inputs'>
           <div className="input">
             <label className="p-input">E-mail</label>
             <input type="text" placeholder="exemplo@exemplo.com"></input>
@@ -27,11 +28,12 @@ export default function Login() {
             <label className="p-input">Senha</label>
             <input type="password" placeholder="*****"></input>
           </div>
+          </div>
           <button className="botao-entrar">ENTRAR</button>
           <div className="alinhar-ou">
             <p>------------------ ou ------------------</p>
           </div>
-          <h5 className="criar-conta">CRIE UMA CONTA</h5>
+          <h5 className="criar-conta">Crie uma conta</h5>
           <h6 className="p-informacao">Já é cliente Street Elegance?</h6>
           <button className="botao-cadastrar">CADASTRE-SE</button>
           <p className="mensagem-erro"></p>

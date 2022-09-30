@@ -36,21 +36,22 @@
     }
 
     .fundo-login{
+        font-family: 'lexendSB';
         display: flex;
         justify-content: center;
-        align-items: center;
         background-color: #e6e6e6;
         min-height: 100vh;
-        font-family: 'lexendSB';
     }
     
     .login{
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-top: 5em;
         background-color: #ffffff;
         border: 1px solid #B6B6B6;
-        padding: 2em 6em 4em;
+        padding: 3em 4em 4em;
+        max-height: 38em;
     }
 
     .info-login{
@@ -62,6 +63,10 @@
     .p-informacao{
         font-family: 'lexendL';
         color: #828282;
+    }
+
+    .inputs{
+        margin-top: .5em;
     }
 
     .input{

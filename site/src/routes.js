@@ -5,7 +5,7 @@ import Lading from './pages/user/home'
 
 // Area / usuario
 import Login from './pages/user/login'
-import Pesquisa from './pages/user/pesquisa'
+import Pesquisa from '../src/pages/user/pesquisa'
 
 // Area / Admin
 import LoginAdmin from './pages/admin/login'

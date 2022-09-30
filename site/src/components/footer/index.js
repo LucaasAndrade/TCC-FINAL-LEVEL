@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer id="componente-footer">
       <div>
-        <div>
+        <div className='carta-mensagem'>
           <img src="/images/carta.png" alt="mensagem" />
           <p>RECEBA AS NOVIDADES DA STREET ELEGANCE</p>
         </div>
@@ -14,9 +14,9 @@ export default function Footer() {
           <button className='botao-enviar'>ENVIAR</button>
         </div>
       </div>
-      <hr className='linha' />
+      
       <div className='parte-dois'>
-        <div>
+        <div className='f-pagamento'>
             <p>FORMAS DE PAGAMENTO</p>
             <div>
                 <img src='/images/cartao-azul.png' alt='cartao-azul' />
