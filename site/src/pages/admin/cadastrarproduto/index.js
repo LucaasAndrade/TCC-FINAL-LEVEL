@@ -71,7 +71,7 @@ export default function Cadastrarproduto() {
 
   function adicionarTamanhos() {
     if (!tamanhosSelecionados.find(item => item == tamanhoId)) {
-      const tamanhos = [...tamanhos, tamanhoId];
+      const tamanhos = [...tamanhos,];
       setTamanhosSelecionados(tamanhos);
     }
   }
