@@ -12,7 +12,7 @@ export default function Home() {
             <header>
                 <Cabecalho />
             </header>
-            <section>
+            <section className='fundo-home'>
                 <div>
                     <img className='imagem-inicio' src='/images/imagem-inicio.png' alt='imagem-principal' />
                 </div>

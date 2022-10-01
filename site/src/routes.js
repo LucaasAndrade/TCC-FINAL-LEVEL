@@ -5,7 +5,7 @@ import Lading from './pages/user/home'
 
 // Area / usuario
 import Login from './pages/user/login'
-import Pesquisa from '../src/pages/user/pesquisa'
+import Buscar from '../src/pages/user/buscar'
 import CadastrarUsuario from './pages/user/CadastarUsuario/cadastrarUsuario';
 
 // Area / Admin
@@ -29,7 +29,7 @@ export default function Index() {
 
         {/* área do user */}
         <Route path='/login' element={<Login />} />
-        <Route path='/buscar' element={<Pesquisa />} />
+        <Route path='/buscar' element={<Buscar />} />
         <Route path='/Cadastrar' element = {<CadastrarUsuario />} />
         <Route path='/home' element = {<Lading />} />
 
