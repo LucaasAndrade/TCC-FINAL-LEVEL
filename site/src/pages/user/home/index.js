@@ -30,7 +30,7 @@ export default function Home() {
             <section className='fundo-acessorios'>
                 <div className='acessorios-info'>
                     <button className='botao-acessorios'>ACESSÓRIOS</button>
-                    <h5 className='p-ver-mais'>Ver mais >> </h5>
+                    <h5 className='p-ver-mais'>Ver mais >> </h5> 
                 </div>
                 <div></div>
             </section>
