@@ -145,6 +145,13 @@ select * from tb_usuario;
 insert into tb_usuario (nm_usuario,nm_sobrenome,img_foto,dt_nascimento,ds_cpf,nr_telefone,nr_telefone2,ds_cep,nm_rua,nm_estado,nm_cidade,nr_casa,ds_ponto_referencia)
 		values ('Lucas',' Marcelo','Imagem Do Lucas', '2004-11-10','476.175.558-66','(11)95319-5154','(11)5921-6389','04896-300','Rua Paineira','SP', 'São Paulo','139','Proximo ao mercadinho');
 
+insert into tb_usuario (nm_usuario,nm_sobrenome,img_foto,dt_nascimento,ds_cpf,nr_telefone,nr_telefone2,ds_cep,nm_rua,nm_estado,nm_cidade,nr_casa,ds_ponto_referencia)
+		values ('Ester',' Queiroz','Imagem Da Ester', '2005-08-02','476.175.558-06','(11)95319-5154','(11)5921-6389','04896-300','Rua Paineira','SP', 'São Paulo','139','Proximo ao mercadinho');
+
+insert into tb_usuario (nm_usuario,nm_sobrenome,img_foto,dt_nascimento,ds_cpf,nr_telefone,nr_telefone2,ds_cep,nm_rua,nm_estado,nm_cidade,nr_casa,ds_ponto_referencia)
+		values ('Rayssa',' Rodrigues','Imagem Da Rayssa', '2005-10-27','476.175.558-05','(11)95319-5154','(11)5921-6389','04896-300','Rua Paineira','SP', 'São Paulo','139','Proximo ao mercadinho');
+
+
   -- Alterar Cadastro de usuario
 update  tb_usuario
     set ds_cpf= '476.175.558-65',
@@ -299,6 +306,12 @@ select * from  tb_login;
 
 insert into  tb_login(id_usuario,ds_email,ds_senha 	) 
 		values('1', 'LucasMarcelo@gmail.com','123456789');
+
+insert into  tb_login(id_usuario,ds_email,ds_senha 	) 
+		values('1', 'esterq292@gmail.com','ESter12#');
+
+insert into  tb_login(id_usuario,ds_email,ds_senha 	) 
+		values('2', 'RayssaRodrigues@gmail.com','1234');
         
 -- Altera login
 update  tb_login
