@@ -4,14 +4,16 @@ import '../../common/common.scss'
 
 
 
-export default function Pesquisar(props) {
+export default function Pesquisa(props) {
     return (
-        <main>
-            <div>
-                <img src={props.imagem} />
-                <div>
-                    <p>{props.nome}</p>
-                    <p>{props.preco}</p>
+        <main id='page-pesquisar'>
+            <div className='cartao-produto'>
+                <img className='imagem' src={props.imagem} />
+                <div className='info-produto'>
+                    <div className='info'>
+                        <p className='nome-produto'>{props.nome}</p>
+                        <p className='preco-produto'>{props.preco}</p>
+                    </div>
                 </div>
             </div>
         </main>
