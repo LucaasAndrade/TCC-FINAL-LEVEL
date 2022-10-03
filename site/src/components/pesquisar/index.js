@@ -1,5 +1,5 @@
 import './index.scss'
-import '../../common/common'
+import '../../common/common.scss'
 
 
 
@@ -7,9 +7,13 @@ import '../../common/common'
 export default function Pesquisar(props) {
     return (
         <main>
-            <img src={props.imagem}></img>
-            <p>{props.nome}</p>
-            <p>{props.preco}</p>
+            <div>
+                <img src={props.imagem} />
+                <div>
+                    <p>{props.nome}</p>
+                    <p>{props.preco}</p>
+                </div>
+            </div>
         </main>
     )
 }
