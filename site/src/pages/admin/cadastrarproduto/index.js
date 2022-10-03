@@ -18,25 +18,29 @@ export default function Cadastrarproduto() {
   const [categoriaId, setCategoriaId] = useState();
   const [categorias, setCategorias] = useState([]);
 
-  console.log(categorias);
-  console.log(categoriaId);
-
   const [marcaId, setMarcaId] = useState();
   const [marcas, setMarcas] = useState([]);
-  const [marca, setMarca] = useState('')
 
-
-
-  const [tamanhoId, setTamanhoId] = useState();
   const [tamanhos, setTamanhos] = useState([]);
-  const [tamanhoProduto, setTamanhoProduto] = useState([]);
   const [tamanhosSelecionados, setTamanhosSelecionados] = useState([]);
+  const [tamanho, setTamanho] = useState("");
 
 
   const [disponivel, setDisponivel] = useState(false);
   const [destaque, setDestaque] = useState(false);
   const [informacoes, setInformacoes] = useState("");
 
+  // console.log(nome);
+  // console.log(valor);
+  // console.log(marcaId);
+  // console.log(marca);
+  // console.log(tamanhos);
+  // console.log(disponivel);
+  // console.log(destaque);
+  // console.log(informacoes);
+
+  console.log(tamanhos);
+  console.log(tamanhosSelecionados);
 
 
   async function salvar() {
@@ -70,10 +74,8 @@ export default function Cadastrarproduto() {
   }
 
   function adicionarTamanhos() {
-    if (!tamanhosSelecionados.find(item => item == tamanhoId)) {
-      const tamanhos = [...tamanhos,];
-      setTamanhosSelecionados(tamanhos);
-    }
+    const tam = [...tamanhosSelecionados, tamanho];
+    setTamanhosSelecionados(tam);
   }
 
   useEffect(() => {
@@ -160,10 +162,10 @@ export default function Cadastrarproduto() {
                 </div>
                 <div className="campo-info">
                   <p>MARCA</p>
-                  <select value={marcaId} onChange={e => setMarca(e.target.value)}>
+                  <select value={marcaId} onChange={e => setMarcaId(e.target.value)}>
                     <option value="" selected disabled hidden></option>
                     {marcas.map(item =>
-                      <option value={item.id_marca}> {item.nm_marca}</option>
+                      <option value={item.id_marca_produto}> {item.nm_marca} </option>
                     )}
                   </select>
                 </div>
@@ -181,7 +183,7 @@ export default function Cadastrarproduto() {
                   </div>
                   <div className="campo-info-1">
                     <p>TAMANHO</p>
-                    <select onChange={e => setTamanhoProduto(e.target.value)}>
+                    <select onChange={e => setTamanho(e.target.value)}>
                       <option value="" selected disabled hidden></option>
                       <option value="PP"> PP </option>
                       <option value="P"> P </option>
@@ -189,6 +191,7 @@ export default function Cadastrarproduto() {
                       <option value="G"> G </option>
                       <option value="GG"> GG </option>
                     </select>
+                    <button onClick={adicionarTamanhos}> adicionar tamanhos </button>
                   </div>
                 </div>
                 <div>

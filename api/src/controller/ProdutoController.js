@@ -12,13 +12,13 @@ server.post('/produto',async(req,resp) =>{
         resp.send(produtoInserido);
     }
     catch (err){
-        resp.send(404).send({
+        resp.status(404).send({
             erro: err.message
         })
     }   
 })
 
-server.post ('/produto/categoria',async(req,resp) =>{
+server.post('/produto/categoria',async(req,resp) =>{
     try {
         const CategoriaParaInserir = req.body;
 
