@@ -5,8 +5,9 @@ import Lading from './pages/user/home'
 
 // Area / usuario
 import Login from './pages/user/login'
-import Buscar from '../src/pages/user/buscar'
 import CadastrarUsuario from './pages/user/CadastarUsuario/cadastrarUsuario';
+import Buscar from './pages/user/buscar'
+import Masculino from '../src/pages/user/masculino'
 
 // Area / Admin
 import LoginAdmin from './pages/admin/login'
@@ -29,9 +30,10 @@ export default function Index() {
 
         {/* área do user */}
         <Route path='/login' element={<Login />} />
-        <Route path='/buscar' element={<Buscar />} />
         <Route path='/Cadastrar' element = {<CadastrarUsuario />} />
         <Route path='/home' element = {<Lading />} />
+        <Route path='/buscar' element = {<Buscar />} />
+        <Route path='/masculino' element={<Masculino />} />
 
       </Routes>
     </BrowserRouter>

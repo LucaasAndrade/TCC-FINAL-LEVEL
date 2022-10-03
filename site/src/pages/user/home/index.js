@@ -9,7 +9,7 @@ export default function Home() {
 
     return (
         <main id='page-lading'>
-            <header>
+            <header className='cabecalho'>
                 <Cabecalho />
             </header>
             <section className='fundo-home'>

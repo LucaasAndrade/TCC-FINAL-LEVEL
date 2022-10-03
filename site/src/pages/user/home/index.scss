@@ -8,6 +8,11 @@
     flex-direction: column;
     min-height: 100vh;
 
+    .cabecalho{
+        min-width: 100%;
+        position: fixed;
+    }
+
     .fundo-home{
         margin-top: 13%;
     }
