@@ -3,10 +3,10 @@ import  { AlterarProduto, CadastrarProduto,InserirCategoria, InserirTamanho, lis
 import { Router } from 'express'
 const server = Router();
 
-server.post('/produto',async(req,resp) =>{
+server.post('/produto', async (req, resp) => {
+    
     try {
         const produtoParaInserir = req.body;
-
         const produtoInserido = await CadastrarProduto(produtoParaInserir);
 
         resp.send(produtoInserido);

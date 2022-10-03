@@ -45,7 +45,6 @@ export default function Cadastrarproduto() {
 
   async function salvar() {
     try {
-
       const PrecoProduto = Number(valor.replace(',', '.'));
 
       const r = await CadastrarProduto(categoriaId, marcaId, nome, PrecoProduto, categorias, informacoes, disponivel, destaque);
