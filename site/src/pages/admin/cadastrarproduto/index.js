@@ -4,14 +4,14 @@ import "./index.scss";
 
 import { toast } from 'react-toastify';
 
-import { CadastrarProduto, listarCategorias, listarMarcas, listarTamanhoProduto } from "../../../api/cadastrarProduto";
+import { CadastrarProduto, InserirTamanho, listarCategorias, listarMarcas, listarTamanhoProduto } from "../../../api/cadastrarProduto";
 import { useState, useEffect } from 'react'
 
 
 
 export default function Cadastrarproduto() {
 
-  const [produtoId, setProdutoId] = useState(0);
+  const [produtoId, setProdutoId] = useState();
   const [nome, setNome] = useState("");
   const [valor, setValor] = useState("");
 
@@ -25,6 +25,10 @@ export default function Cadastrarproduto() {
   const [tamanhosSelecionados, setTamanhosSelecionados] = useState([]);
   const [tamanho, setTamanho] = useState("");
 
+  // console.log(tamanhos);
+  // console.log(tamanhosSelecionados);
+  // console.log(tamanho); 
+
 
   const [disponivel, setDisponivel] = useState(false);
   const [destaque, setDestaque] = useState(false);
@@ -33,26 +37,28 @@ export default function Cadastrarproduto() {
   // console.log(nome);
   // console.log(valor);
   // console.log(marcaId);
-  // console.log(marca);
+  // console.log(marcaId);
   // console.log(tamanhos);
   // console.log(disponivel);
   // console.log(destaque);
   // console.log(informacoes);
-
-  console.log(tamanhos);
-  console.log(tamanhosSelecionados);
 
 
   async function salvar() {
     try {
       const PrecoProduto = Number(valor.replace(',', '.'));
 
-      const r = await CadastrarProduto(categoriaId, marcaId, nome, PrecoProduto, categorias, informacoes, disponivel, destaque);
-      toast.dark('Produto Salvo Com Sucesso!')
+      const r = await CadastrarProduto(categoriaId, marcaId, nome, PrecoProduto, informacoes, disponivel, destaque);
+      const x = (idProduto) => {
+        for (let i = 0; i < tamanhosSelecionados.length()) {
+          
+        }
+      }
+      alert('Produto Salvo Com Sucesso!')
 
     } catch (err) {
 
-      toast.error(err.response.data.erro);
+      alert(err.response.data.erro)
 
     }
   }
