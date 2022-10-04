@@ -8,10 +8,10 @@ import Pesquisa from '../../../components/pesquisar';
 
 
 
-export default function Buscar() {
+export default function Acessorios() {
 
     return (
-        <main id='page-buscar'>
+        <main id='page-acessorios'>
             <section>
                 <Cabecalho />
             </section>

@@ -8,10 +8,10 @@ import Pesquisa from '../../../components/pesquisar';
 
 
 
-export default function Buscar() {
+export default function Feminino() {
 
     return (
-        <main id='page-buscar'>
+        <main id='page-feminino'>
             <section>
                 <Cabecalho />
             </section>

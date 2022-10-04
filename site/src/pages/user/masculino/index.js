@@ -8,7 +8,7 @@ import Pesquisa from '../../../components/pesquisar';
 
 
 
-export default function Buscar() {
+export default function Masculino() {
 
     return (
         <main id='page-masculino'>

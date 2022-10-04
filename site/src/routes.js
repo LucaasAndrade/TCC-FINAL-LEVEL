@@ -7,6 +7,7 @@ import Lading from './pages/user/home'
 import Login from './pages/user/login'
 import CadastrarUsuario from './pages/user/CadastarUsuario/cadastrarUsuario';
 import Buscar from './pages/user/buscar'
+import Destaques from './pages/user/destaques'
 import Acessorios from '../src/pages/user/acessorios'
 import Masculino from '../src/pages/user/masculino'
 import Feminino from '../src/pages/user/feminino'
@@ -35,6 +36,7 @@ export default function Index() {
         <Route path='/Cadastrar' element = {<CadastrarUsuario />} />
         <Route path='/home' element = {<Lading />} />
         <Route path='/buscar' element = {<Buscar />} />
+        <Route path='/destaques' element = {<Destaques />} />
         <Route path='/acessorios' element={<Acessorios />} />
         <Route path='/masculino' element={<Masculino />} />
         <Route path='/feminino' element={<Feminino />} />
