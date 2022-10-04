@@ -1,5 +1,7 @@
 import  { AlterarProduto, CadastrarProduto,InserirCategoria, InserirTamanho, listarMarcas, listarCategorias, listarTamanhosProduto } from '../repository/ProdutoRepository.js';
 
+import { VerificarInformacoesProduto } from '../services/verificacaoProduto.js'
+
 import { Router } from 'express'
 const server = Router();
 
@@ -7,12 +9,13 @@ server.post('/produto', async (req, resp) => {
     
     try {
         const produtoParaInserir = req.body;
-        const produtoInserido = await CadastrarProduto(produtoParaInserir);
 
+        const produtoInserido = await CadastrarProduto(produtoParaInserir);
+        VerificarInformacoesProduto(produtoParaInserir)
         resp.send(produtoInserido);
     }
     catch (err){
-        resp.status(404).send({
+        resp.status(400).send({
             erro: err.message
         })
     }   

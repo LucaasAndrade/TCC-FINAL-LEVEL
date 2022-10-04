@@ -1,11 +1,11 @@
 import {con} from './connection.js';
 
 
-export async function CadastrarProduto(produto){
+export async function CadastrarProduto(produto) {
+    console.log(produto);
     const comando =
     `insert into tb_produto (id_categoria, id_marca_produto, nm_produto, vl_preco, ds_informacoes, bl_disponivel, bl_destaque)
     values (?,?,?,?,?,?,?)`
-    console.log(produto)
     const [resposta] = await con.query(comando,
         [produto.categoria, produto.marca_produto, produto.nome, produto.preco, produto.informacoes, produto.disponivel, produto.destaque])
     produto.id = resposta.insertId;
@@ -85,8 +85,6 @@ export async function listarTamanhosProduto(id) {
         where id_produto = ?;
         
         `
-    console.log(id)
     const [resposta] = await con.query(comando, [id]);
-    console.log(resposta)
     return resposta
 }

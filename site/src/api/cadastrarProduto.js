@@ -1,4 +1,4 @@
-import { API_URL } from "./config";
+import { API_URL } from "./config.js";
 
 import axios from "axios";
 
@@ -7,7 +7,6 @@ const api = axios.create({
 });
 
 export async function CadastrarProduto(categoria, marca_produto, nome, preco, informacoes, disponivel, destaque) {
-    console.log(API_URL)
     const r = await api.post('/produto', {
         categoria,
         marca_produto,
@@ -17,7 +16,17 @@ export async function CadastrarProduto(categoria, marca_produto, nome, preco, in
         disponivel,
         destaque
     });
+    console.log('r.data')
+    console.log(r)
     return r.data
+}
+
+export async function InserirTamanho(produtoId, tamanho) {
+    const r = await api.post('/produto/tamanho', {
+        produtoId,
+        tamanho
+    });
+    return r.data;
 }
 
 export async function listarCategorias() {
