@@ -34,14 +34,14 @@ export default function Cadastrarproduto() {
   const [destaque, setDestaque] = useState(false);
   const [informacoes, setInformacoes] = useState("");
 
-  console.log(nome);
-  console.log(valor);
-  console.log(marcaId);
-  console.log(marcaId);
-  console.log(tamanhos);
-  console.log(disponivel);
-  console.log(destaque);
-  console.log(informacoes);
+  // console.log(nome);
+  // console.log(valor);
+  // console.log(marcaId);
+  // console.log(marcaId);
+  // console.log(tamanhos);
+  // console.log(disponivel);
+  // console.log(destaque);
+  // console.log(informacoes);
 
 
   async function salvar() {
@@ -49,7 +49,11 @@ export default function Cadastrarproduto() {
       const PrecoProduto = Number(valor.replace(',', '.'));
 
       const r = await CadastrarProduto(categoriaId, marcaId, nome, PrecoProduto, informacoes, disponivel, destaque);
-
+      const x = (idProduto) => {
+        for (let i = 0; i < tamanhosSelecionados.length()) {
+          
+        }
+      }
       alert('Produto Salvo Com Sucesso!')
 
     } catch (err) {
