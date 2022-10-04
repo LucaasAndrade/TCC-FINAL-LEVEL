@@ -9,7 +9,7 @@ export default function Pesquisa(props) {
         <main id='page-pesquisar'>
             <div className='cartao-produto'>
                 <img className='imagem' src={props.imagem} />
-                <div className='info-produto'>
+                <div>
                     <div className='info'>
                         <p className='nome-produto'>{props.nome}</p>
                         <p className='preco-produto'>{props.preco}</p>
