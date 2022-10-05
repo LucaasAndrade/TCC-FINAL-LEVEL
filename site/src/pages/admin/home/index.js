@@ -12,7 +12,7 @@ export default function Home() {
                     <div>
                         <img src='/images/retan-branco.png' alt='retangulo'></img>
                     </div>
-                        <img className='logo' src="/images/logo.png" alt="logo"></img>
+                        <img className='logo' src="/images/logoo.png" alt="logo"></img>
                     <div>
                         <button className="botao-painel">PAINEL</button>
                     </div>
