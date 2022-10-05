@@ -26,7 +26,7 @@ export default function Cadastrarproduto() {
   const [tamanho, setTamanho] = useState("");
 
   // console.log(tamanhos);
-  // console.log(tamanhosSelecionados);
+  console.log(tamanhosSelecionados);
   // console.log(tamanho); 
 
 
@@ -48,12 +48,8 @@ export default function Cadastrarproduto() {
     try {
       const PrecoProduto = Number(valor.replace(',', '.'));
 
-      const r = await CadastrarProduto(categoriaId, marcaId, nome, PrecoProduto, informacoes, disponivel, destaque);
-      const x = (idProduto) => {
-        for (let i = 0; i < tamanhosSelecionados.length()) {
-          
-        }
-      }
+      const r = await CadastrarProduto(categoriaId, marcaId, nome, PrecoProduto, informacoes, disponivel, destaque, tamanhosSelecionados);
+      
       alert('Produto Salvo Com Sucesso!')
 
     } catch (err) {
@@ -78,8 +74,29 @@ export default function Cadastrarproduto() {
     setTamanhos(r);
   }
 
+  async function adicionarTamnahos() {
+    
+  }
+
   function adicionarTamanhos() {
+    let permissao = true;
+    if (!tamanho) {
+      alert('Por favor, escolha um tamanho')
+      permissao = false;
+    }
+    for (let i = 0; i < tamanhosSelecionados.length; i++) {
+      if (tamanho === tamanhosSelecionados[i]) {
+        alert('Este tamanho já foi selecionado')
+        permissao = false
+      }
+    }
+    if(permissao){
     const tam = [...tamanhosSelecionados, tamanho];
+    setTamanhosSelecionados(tam);}
+  }
+
+  function todosTamanhos() {
+    const tam = ['PP', 'P', 'M', 'G', 'GG'];
     setTamanhosSelecionados(tam);
   }
 
@@ -197,6 +214,12 @@ export default function Cadastrarproduto() {
                       <option value="GG"> GG </option>
                     </select>
                     <button onClick={adicionarTamanhos}> adicionar tamanhos </button>
+                    <button onClick={todosTamanhos}>todos tamanhos </button>
+                        <ul>
+                    {tamanhosSelecionados.map(item => 
+                      <li> {item}</li>
+                      )}
+                      </ul>
                   </div>
                 </div>
                 <div>

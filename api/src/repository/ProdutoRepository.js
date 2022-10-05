@@ -7,7 +7,15 @@ export async function CadastrarProduto(produto) {
     `insert into tb_produto (id_categoria, id_marca_produto, nm_produto, vl_preco, ds_informacoes, bl_disponivel, bl_destaque)
     values (?,?,?,?,?,?,?)`
     const [resposta] = await con.query(comando,
-        [produto.categoria, produto.marca_produto, produto.nome, produto.preco, produto.informacoes, produto.disponivel, produto.destaque])
+        [
+            produto.categoria,
+            produto.marca_produto,
+            produto.nome,
+            produto.preco,
+            produto.informacoes,
+            produto.disponivel,
+            produto.destaque
+        ]);
     produto.id = resposta.insertId;
 
     return produto;
@@ -29,14 +37,12 @@ export async function InserirCategoria(categoria){
 
 }
 
-export async function InserirTamanho(tamanho){
+export async function InserirTamanho(tamanhoProduto,tamanho){
     const comando = 
     `insert into tb_produto_tamanho (id_produto,ds_tamanho)
     values (?,?)`
 
-    const [resposta] = await con.query(comando,[tamanho.id_produto,tamanho.ds_tamanho])
-    tamanho.id =resposta.insertId;
-
+    const [resposta] = await con.query(comando,[tamanhoProduto,tamanho])
     return tamanho;
 
 }

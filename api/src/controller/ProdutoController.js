@@ -9,12 +9,21 @@ server.post('/produto', async (req, resp) => {
     
     try {
         const produtoParaInserir = req.body;
-
+        
+        console.log(produtoParaInserir)
         const produtoInserido = await CadastrarProduto(produtoParaInserir);
         VerificarInformacoesProduto(produtoParaInserir)
-        resp.send(produtoInserido);
+
+        for (const idTam of produtoParaInserir.tamanhosSelecionados) {
+            await InserirTamanho(Number(produtoInserido.id), idTam);
+        }
+
+        resp.send({
+            id: produtoInserido.id
+        });
     }
-    catch (err){
+    catch (err) {
+        console.log(err)
         resp.status(400).send({
             erro: err.message
         })

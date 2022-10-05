@@ -6,7 +6,7 @@ const api = axios.create({
     baseURL: API_URL
 });
 
-export async function CadastrarProduto(categoria, marca_produto, nome, preco, informacoes, disponivel, destaque) {
+export async function CadastrarProduto(categoria, marca_produto, nome, preco, informacoes, disponivel, destaque, tamanhosSelecionados) {
     const r = await api.post('/produto', {
         categoria,
         marca_produto,
@@ -14,7 +14,8 @@ export async function CadastrarProduto(categoria, marca_produto, nome, preco, in
         preco,
         informacoes,
         disponivel,
-        destaque
+        destaque,
+        tamanhosSelecionados    
     });
     console.log('r.data')
     console.log(r)
