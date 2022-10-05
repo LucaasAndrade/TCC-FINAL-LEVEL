@@ -26,7 +26,7 @@ export default function Index() {
       <Routes>
         
         {/* área de admin */}
-        <Route path='/home' element={<Lading />} />
+        <Route path='/' element={<Lading />} />
         <Route path='/admin/login' element={<LoginAdmin />} />
         <Route path='/admin/homeadmin' element={<Homeadmin />} />
         <Route path='/admin/cadastrarproduto' element={<Cadastrarproduto />} />
