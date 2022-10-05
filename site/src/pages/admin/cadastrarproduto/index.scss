@@ -192,4 +192,15 @@
     .botao-excluir:hover, .botao-c-d:hover{
         opacity: 90%;
     }
+
+    .botao-add-tamanhos{
+        font-family: 'lexendR';
+        font-size: 13px;
+        background-color: #D1BC9F;
+        border: 1px solid #D1BC9F;
+        color: #ffffff;
+        margin-left: .5em;
+        padding: .1em 1em;
+        cursor: pointer;
+    }
 }

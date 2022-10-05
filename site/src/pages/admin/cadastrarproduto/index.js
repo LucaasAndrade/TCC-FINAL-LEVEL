@@ -196,7 +196,7 @@ export default function Cadastrarproduto() {
                       <option value="G"> G </option>
                       <option value="GG"> GG </option>
                     </select>
-                    <button onClick={adicionarTamanhos}> adicionar tamanhos </button>
+                    <button className="botao-add-tamanhos" onClick={adicionarTamanhos}> Adicionar Tamanhos </button>
                   </div>
                 </div>
                 <div>
