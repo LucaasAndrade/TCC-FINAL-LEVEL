@@ -9,8 +9,9 @@
     min-height: 100vh;
 
     .cabecalho{
-        min-width: 100%;
         position: fixed;
+        width: 100%;
+        z-index: 998;
     }
 
     .fundo-home{
@@ -26,6 +27,10 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+
+    .fundo-categorias{
+        margin-top: 2em;
     }
 
     .p-categoria {
@@ -62,9 +67,12 @@
         margin-top: 2em;
     }
 
+    .acesso{
+        margin: 2em 0em 2em;
+    }
+
     .acessorios-info{
         display: flex;
-        flex-direction: row;
         align-items: center;
         justify-content: space-between;
         margin-top: 1em;
@@ -86,7 +94,14 @@
         margin-right: 5em;
         cursor: pointer;
     }
-
+    
+    .produtos{
+        display: flex; 
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 2em;
+    }
+    
     .fundo-marcas{
         margin-top: 2em;
     }

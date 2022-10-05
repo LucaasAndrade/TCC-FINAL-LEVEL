@@ -18,8 +18,8 @@ export default function Destaques() {
             <section className='fundo-cartao'>
                 <div className='div-cartao'>
                     <div className='produtos'>
-                        <Destacar imagem='/images/produto31.png' numero= '212' nome='Boné Lacoste Masculino' preco='R$ 60,00' />
-                        <Destacar imagem='/images/produto32.png' numero='6' nome='Tênis Nike Maculino' preco='R$ 60,00' />
+                        <Destacar imagem='/images/produto31.png' numero= '212' nome='Moletom Street Masculino' preco='R$ 60,00' />
+                        <Destacar imagem='/images/produto32.png' numero='6' nome='Tênis Adidas Masculino' preco='R$ 60,00' />
                     </div> 
                     <div className='produtos'>
                        
