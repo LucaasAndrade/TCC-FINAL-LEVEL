@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Router } from 'react-router-dom';
 
 // LADING
 import Lading from './pages/user/home'
@@ -7,9 +7,11 @@ import Lading from './pages/user/home'
 import Login from './pages/user/login'
 import CadastrarUsuario from './pages/user/CadastarUsuario/cadastrarUsuario';
 import Buscar from './pages/user/buscar'
+import Destaques from './pages/user/destaques'
 import Acessorios from '../src/pages/user/acessorios'
 import Masculino from '../src/pages/user/masculino'
 import Feminino from '../src/pages/user/feminino'
+import Infantil from '../src/pages/user/infantil'
 
 // Area / Admin
 import LoginAdmin from './pages/admin/login'
@@ -35,9 +37,11 @@ export default function Index() {
         <Route path='/Cadastrar' element = {<CadastrarUsuario />} />
         <Route path='/home' element = {<Lading />} />
         <Route path='/buscar' element = {<Buscar />} />
+        <Route path='/destaques' element = {<Destaques />} />
         <Route path='/acessorios' element={<Acessorios />} />
         <Route path='/masculino' element={<Masculino />} />
         <Route path='/feminino' element={<Feminino />} />
+        <Route path='/infantil' element={<Infantil />} />
 
       </Routes>
     </BrowserRouter>
