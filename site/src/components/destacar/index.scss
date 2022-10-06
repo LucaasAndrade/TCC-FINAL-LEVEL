@@ -1,11 +1,27 @@
 #page-destaque{
-
+    
     .cartao-produto{
+        position: relative;
         border: 1px solid #B6B6B6;
         margin-left: .5em;
         margin-right: .5em;
+        cursor: pointer;
     }
-
+    
+    .cartao-produto .lixo{
+        display: flex;
+        flex-direction: row-reverse;
+        visibility: hidden;
+        transition: .1s;
+    }
+    
+    .cartao-produto:hover{
+        .lixo{
+            visibility: visible;
+            opacity: 80%;
+        }
+    }
+   
     .imagem{
         min-width: none;
         border-bottom: 1px solid #B6B6B6;
@@ -44,17 +60,6 @@
     .info-produto{
         background-color: #ffffff;
         max-width: 100%;
-    }
-
-    .lixo{
-        display: flex;
-        flex-direction: row-reverse;
-        opacity: 0%;
-    }
-
-    .lixo:hover{
-        cursor: pointer;
-        opacity: 100%;
     }
 
 }

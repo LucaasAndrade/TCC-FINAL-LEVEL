@@ -20,10 +20,7 @@ export default function Destaques() {
                     <div className='produtos'>
                         <Destacar imagem='/images/produto31.png' numero= '212' nome='Moletom Street Masculino' preco='R$ 60,00' />
                         <Destacar imagem='/images/produto32.png' numero='6' nome='Tênis Adidas Masculino' preco='R$ 60,00' />
-                    </div> 
-                    <div className='produtos'>
-                       
-                    </div> 
+                    </div>  
                 </div>           
             </section>
             <section>

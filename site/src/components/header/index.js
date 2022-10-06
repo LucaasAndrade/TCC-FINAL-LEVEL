@@ -48,7 +48,6 @@ export default function Cabecalho() {
                 </div>
                 <div className="input-pesquisa">
                     <input className="pesquisa" type="text" id="lupa" placeholder="O que você está procurando?" />
-                    <span id="lupa"></span>
                 </div>
                 <div className='elementos-usuario'>
                     <img src='/images/perfil.png' alt='perfil' />

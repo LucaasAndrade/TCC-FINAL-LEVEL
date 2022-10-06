@@ -15,13 +15,11 @@ export default function Destacar(props) {
                     </div>
                     <img className='imagem' src={props.imagem} />
                 </div>
-                <div>
-                    <div className='info'>
-                        <p className='nome-produto'>{props.nome}</p>
-                        <p className='preco-produto'>{props.preco}</p>
-                        <div className='lixo'>
-                            <img src='/images/lixeira.png' />
-                        </div>
+                <div className='info'>
+                    <p className='nome-produto'>{props.nome}</p>
+                    <p className='preco-produto'>{props.preco}</p>
+                    <div className='lixo'>
+                        <img src='/images/lixeira.png' />
                     </div>
                 </div>
             </div>

@@ -21,9 +21,6 @@ export default function Buscar() {
                         <Pesquisa imagem='/images/produto01.png' nome='Boné Lacoste Masculino' preco='R$ 60,00' />
                         <Pesquisa imagem='/images/produto06.png' nome='Tênis Nike Masculino' preco='R$ 270,00' />
                     </div> 
-                    <div className='produtos'>
-                       
-                    </div> 
                 </div>           
             </section>
             <section>
