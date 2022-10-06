@@ -7,6 +7,8 @@ import { toast } from 'react-toastify';
 import { CadastrarProduto, InserirTamanho, listarCategorias, listarMarcas, listarTamanhoProduto } from "../../../api/cadastrarProduto";
 import { useState, useEffect } from 'react'
 
+import HeaderAdm from '../../../components/headerAdm'
+
 
 
 export default function Cadastrarproduto() {
@@ -109,20 +111,7 @@ export default function Cadastrarproduto() {
   return (
     <main className="page-cadastro">
       <header>
-        <div className="faixa-header">
-          <img className="logo" src="/images/logoo.png" alt="logo"></img>
-          <div className="topicos">
-            <p>ADICIONAR PRODUTO</p>
-            <p className="p-topicos">LISTAR PEDIDOS</p>
-            <p className="p-topicos">LISTAR PRODUTOS</p>
-            <p className="p-topicos">CHAT</p>
-            <p className="p-topicos">CUPONS</p>
-            <p className="p-topicos">HISTÓRICO</p>
-          </div>
-          <div>
-            <button className="botao-painel">PAINEL</button>
-          </div>
-        </div>
+        <HeaderAdm />
       </header>
 
       <section>

@@ -9,13 +9,7 @@ export default function Home() {
         <main className='page-home-admin'>
             <header>
                 <div className="faixa-header">
-                    <div>
-                        <img src='/images/retan-branco.png' alt='retangulo'></img>
-                    </div>
                         <img className='logo' src="/images/logoo.png" alt="logo"></img>
-                    <div>
-                        <button className="botao-painel">PAINEL</button>
-                    </div>
                 </div>
             </header>
 
