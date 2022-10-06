@@ -182,6 +182,24 @@ export default function Cadastrarproduto() {
                   <p>VALOR</p>
                   <input type='number' value={valor} onChange={e => setValor(e.target.value)}></input>
                 </div>
+                <div className="campo-info-1">
+                    <p>TAMANHO</p>
+                    <select onChange={e => setTamanho(e.target.value)}>
+                      <option value="" selected disabled hidden></option>
+                      <option value="PP"> PP </option>
+                      <option value="P"> P </option>
+                      <option value="M"> M </option>
+                      <option value="G"> G </option>
+                      <option value="GG"> GG </option>
+                    </select>
+                    <button className="botao-adicionar-tamanho" onClick={adicionarTamanhos}> Adicionar Tamanhos </button>
+                    <button className="botao-adicionar-tamanho" onClick={todosTamanhos}> Adicionar Todos </button>
+                        <ul>
+                    {tamanhosSelecionados.map(item => 
+                      <li> {item}</li>
+                      )}
+                      </ul>
+                  </div>
                 <div className="campo-info">
                   <p>MARCA</p>
                   <select value={marcaId} onChange={e => setMarcaId(e.target.value)}>
@@ -202,24 +220,6 @@ export default function Cadastrarproduto() {
                         <option value={item.id_categoria}> {item.nm_categoria} </option>
                       )}
                     </select>
-                  </div>
-                  <div className="campo-info-1">
-                    <p>TAMANHO</p>
-                    <select onChange={e => setTamanho(e.target.value)}>
-                      <option value="" selected disabled hidden></option>
-                      <option value="PP"> PP </option>
-                      <option value="P"> P </option>
-                      <option value="M"> M </option>
-                      <option value="G"> G </option>
-                      <option value="GG"> GG </option>
-                    </select>
-                    <button onClick={adicionarTamanhos}> adicionar tamanhos </button>
-                    <button onClick={todosTamanhos}>todos tamanhos </button>
-                        <ul>
-                    {tamanhosSelecionados.map(item => 
-                      <li> {item}</li>
-                      )}
-                      </ul>
                   </div>
                 </div>
                 <div>
