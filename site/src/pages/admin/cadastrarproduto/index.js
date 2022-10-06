@@ -49,7 +49,7 @@ export default function Cadastrarproduto() {
       const PrecoProduto = Number(valor.replace(',', '.'));
 
       const r = await CadastrarProduto(categoriaId, marcaId, nome, PrecoProduto, informacoes, disponivel, destaque, tamanhosSelecionados);
-      
+
       alert('Produto Salvo Com Sucesso!')
 
     } catch (err) {
