@@ -25,9 +25,12 @@ export default function Footer() {
                 <img className='icones' src='/images/pix.png' alt='pix' />
             </div>
         </div>
-        <div>
+        <div className="back-to-top">
+        </div>
+        <div> 
             <img className='logo' src='/images/logoo.png' alt='logo' />
         </div>
+
         <div className='redes-sociais'>
             <p>SIGA A STREET ELEGANCE</p>
             <div className='cartoes'>

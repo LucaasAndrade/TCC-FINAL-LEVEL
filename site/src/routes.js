@@ -1,11 +1,12 @@
-import { BrowserRouter, Routes, Route, Router } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 // LADING
-import Lading from './pages/user/home'
+import Landing from './pages/user/home'
 
 // Area / usuario
 import Login from './pages/user/login'
-import CadastrarUsuario from './pages/user/CadastarUsuario/cadastrarUsuario';
+import CadastroUser from './pages/user/cadastroUser'
+import Produto from './pages/user/produto';
 import Buscar from './pages/user/buscar'
 import Destaques from './pages/user/destaques'
 import Acessorios from '../src/pages/user/acessorios'
@@ -26,7 +27,6 @@ export default function Index() {
       <Routes>
         
         {/* área de admin */}
-        <Route path='/' element={<Lading />} />
         <Route path='/admin/login' element={<LoginAdmin />} />
         <Route path='/admin/home' element={<Homeadmin />} />
         <Route path='/admin/cadastrarproduto' element={<Cadastrarproduto />} />
@@ -34,8 +34,9 @@ export default function Index() {
 
         {/* área do user */}
         <Route path='/login' element={<Login />} />
-        <Route path='/Cadastrar' element = {<CadastrarUsuario />} />
-        <Route path='/home' element = {<Lading />} />
+        <Route path='/cadastro' element={<CadastroUser />} />
+        <Route path='/home' element = {<Landing />} />
+        <Route path='/produto' element = {<Produto />} />
         <Route path='/buscar' element = {<Buscar />} />
         <Route path='/destaques' element = {<Destaques />} />
         <Route path='/acessorios' element={<Acessorios />} />

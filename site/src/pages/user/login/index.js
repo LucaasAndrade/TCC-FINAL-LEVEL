@@ -64,7 +64,7 @@ useEffect(()=>{
 
   return (
     <main className="page-user-login">
-      <LoadingBar color='#f11946' ref={ref} />
+      <LoadingBar color='#987F5B' ref={ref} />
       <header>
         <div className="faixa-header">
           <div>
