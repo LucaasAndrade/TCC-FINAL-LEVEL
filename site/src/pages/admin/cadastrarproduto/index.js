@@ -4,12 +4,10 @@ import "./index.scss";
 
 import { toast } from 'react-toastify';
 
-import { CadastrarProduto, InserirTamanho, listarCategorias, listarMarcas, listarTamanhoProduto } from "../../../api/cadastrarProduto";
+import { CadastrarProduto, InserirTamanho, listarCategorias, listarMarcas, listarTamanhoProduto, salvarImagens } from "../../../api/cadastrarProduto";
 import { useState, useEffect } from 'react'
 
 import HeaderAdm from '../../../components/headerAdm'
-
-
 
 export default function Cadastrarproduto() {
 
@@ -27,31 +25,22 @@ export default function Cadastrarproduto() {
   const [tamanhosSelecionados, setTamanhosSelecionados] = useState([]);
   const [tamanho, setTamanho] = useState("");
 
-  // console.log(tamanhos);
-  console.log(tamanhosSelecionados);
-  // console.log(tamanho); 
-
-
   const [disponivel, setDisponivel] = useState(false);
   const [destaque, setDestaque] = useState(false);
   const [informacoes, setInformacoes] = useState("");
 
-  // console.log(nome);
-  // console.log(valor);
-  // console.log(marcaId);
-  // console.log(marcaId);
-  // console.log(tamanhos);
-  // console.log(disponivel);
-  // console.log(destaque);
-  // console.log(informacoes);
-
+  const [imagem1, setImagem1] = useState();
+  const [imagem2, setImagem2] = useState();
+  const [imagem3, setImagem3] = useState();
+  const [imagem4, setImagem4] = useState();
+  const [imagem5, setImagem5] = useState();
 
   async function salvar() {
     try {
       const PrecoProduto = Number(valor.replace(',', '.'));
 
       const r = await CadastrarProduto(categoriaId, marcaId, nome, PrecoProduto, informacoes, disponivel, destaque, tamanhosSelecionados);
-
+      await salvarImagens(r.id, imagem1, imagem2, imagem3, imagem4, imagem5);
       alert('Produto Salvo Com Sucesso!')
 
     } catch (err) {
@@ -76,9 +65,7 @@ export default function Cadastrarproduto() {
     setTamanhos(r);
   }
 
-  async function adicionarTamnahos() {
-    
-  }
+  
 
   function adicionarTamanhos() {
     let permissao = true;
@@ -108,6 +95,28 @@ export default function Cadastrarproduto() {
     carregarCategorias();
   }, [])
 
+  function escolherImagem(inputId) {
+    document.getElementById(inputId).click();
+  }
+
+  
+  function exibirImagem(imagem) {
+    if (imagem == undefined) {
+      return '/images/adicionar-imagem.png'
+    } else {
+      return URL.createObjectURL(imagem);
+    }
+  }
+
+  
+  function exibirImagemDois(imagem) {
+    if (imagem == undefined) {
+      return '/images/adicionar2.png'
+    } else {
+      return URL.createObjectURL(imagem);
+    }
+  }
+
   return (
     <main className="page-cadastro">
       <header>
@@ -119,40 +128,52 @@ export default function Cadastrarproduto() {
           <div className="fundo-cadastrar">
             <div className="elementos-esquerda">
               <div className="adicionar-imagens">
-                <input
-                  type="image"
+                <img
                   className="campo-imagem"
-                  src="/images/adicionar-imagem.png"
+                  src={exibirImagem(imagem1)}
                   alt="adicionar-imagem"
+                  onClick={() => escolherImagem('imagem1')}
                 />
+                <input type='file' id='imagem1' onChange={e => setImagem1(e.target.files[0])} />
+
                 <div className="adicionar-imagens-dois">
                   <div>
-                    <input
-                      type="image"
+                    <img
                       className="campo-imagem-dois"
-                      src="/images/adicionar2.png"
+                      src={exibirImagemDois(imagem2)}
                       alt="adicionar-imagem"
+                      onClick={() => escolherImagem('imagem2')}
                     />
-                    <input
-                      type="image"
+                    <input type='file' id='imagem2' onChange={e => setImagem2(e.target.files[0])} />
+
+                    <img
                       className="imagem-dois"
-                      src="/images/adicionar2.png"
+                      src={exibirImagemDois(imagem3)}
                       alt="adicionar-imagem"
+                      onClick={() => escolherImagem('imagem3')}
                     />
+                    <input type='file' id='imagem3' onChange={e => setImagem3(e.target.files[0])} />
+
                   </div>
                   <div>
-                    <input
-                      type="image"
+                    <img
                       className="campo-imagem-dois"
-                      src="/images/adicionar2.png"
+                      src={exibirImagemDois(imagem4)}
                       alt="adicionar-imagem"
+                      type="image"
+                      onClick={() => escolherImagem('imagem4')}
                     />
-                    <input
+                    <input type='file' id='imagem4' onChange={e => setImagem4(e.target.files[0])} />
+
+                    <img
                       type="image"
                       className="imagem-dois"
-                      src="/images/adicionar2.png"
+                      src={exibirImagemDois(imagem5)}
                       alt="adicionar-imagem"
+                      onClick={() => escolherImagem('imagem5')}
                     />
+                    <input type='file' id='imagem5' onChange={e => setImagem5(e.target.files[0])} />
+
                   </div>
                 </div>
               </div>

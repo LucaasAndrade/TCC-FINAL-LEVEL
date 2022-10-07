@@ -44,3 +44,21 @@ export async function listarTamanhoProduto(id) {
     const r = await api.get(`/listarTamanhos/${id}`)
     return r.data;
 }
+
+
+export async function salvarImagens(id, imagem1, imagem2, imagem3, imagem4, imagem5) {
+    let form = new FormData();
+    form.append('imagens', imagem1);
+    form.append('imagens', imagem2);
+    form.append('imagens', imagem3);
+    form.append('imagens', imagem4);
+    form.append('imagens', imagem5);
+
+    const r = await api.put('/produto/' + id, form, {
+        headers: {
+            'Content-Type': 'multipart/form-data'
+        }
+    });
+
+    return r.data;
+}

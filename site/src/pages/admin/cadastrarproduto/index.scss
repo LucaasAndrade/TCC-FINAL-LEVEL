@@ -73,6 +73,10 @@
         flex-direction: row;
     }
 
+    .adicionar-imagens input[type=file]{
+        visibility: hidden;
+    }
+
     .adicionar-imagens-dois{
         display: flex;
         flex-direction: column;

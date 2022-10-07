@@ -33,8 +33,14 @@ export async function InserirCategoria(categoria){
     categoria.id =resposta.insertId;
 
     return categoria;
+}
 
+export async function InserirImagem(imagem){
+    const comando =
+    `insert into tb_imagem_produto(id_produto, img_produto, bl_principal)
+    values (?, ?, ?, ?)`
 
+    const [resposta] = await con.query(comando, [id_produto, imagem, bl_principal]);
 }
 
 export async function InserirTamanho(tamanhoProduto,tamanho){

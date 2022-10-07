@@ -1,9 +1,15 @@
-import  { AlterarProduto, CadastrarProduto,InserirCategoria, InserirTamanho, listarMarcas, listarCategorias, listarTamanhosProduto } from '../repository/ProdutoRepository.js';
+
+import multer from 'multer'
+
+import { AlterarProduto, CadastrarProduto, InserirCategoria, InserirTamanho, listarMarcas, listarCategorias, listarTamanhosProduto, InserirImagem } from '../repository/ProdutoRepository.js';
 
 import { VerificarInformacoesProduto } from '../services/verificacaoProduto.js'
 
 import { Router } from 'express'
 const server = Router();
+
+
+const upload = multer({dest: '/storage/produto'})
 
 server.post('/produto', async (req, resp) => {
     
@@ -29,6 +35,23 @@ server.post('/produto', async (req, resp) => {
         })
     }   
 })
+
+
+server.put('/produto/:id', upload.array('imagens'), async (req, resp) => {
+    try {
+        const id = req.params.id
+        const imagens = req.files;
+
+        for (const imagem of imagens) {
+            await InserirImagem(id, imagem.path, false);
+        }
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
+
 
 server.post('/produto/categoria',async(req,resp) =>{
     try {
