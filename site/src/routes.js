@@ -19,6 +19,7 @@ import LoginAdmin from './pages/admin/login'
 import Homeadmin from './pages/admin/home';
 import Cadastrarproduto from './pages/admin/cadastrarproduto';
 import Adminprodutos from './pages/admin/adminprodutos';
+import ConsultarProduto from './pages/admin/consultarProduto';
 
 
 export default function Index() {
@@ -31,6 +32,7 @@ export default function Index() {
         <Route path='/admin/home' element={<Homeadmin />} />
         <Route path='/admin/cadastrarproduto' element={<Cadastrarproduto />} />
         <Route path='/admin/produtos' element={<Adminprodutos />} />
+        <Route path='/admin/produto/buscar' element={<ConsultarProduto />} />
 
         {/* área do user */}
         <Route path='/login' element={<Login />} />

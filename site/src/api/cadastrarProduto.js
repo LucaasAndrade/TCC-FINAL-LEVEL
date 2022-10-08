@@ -62,3 +62,19 @@ export async function salvarImagens(id, imagem1, imagem2, imagem3, imagem4, imag
 
     return r.data;
 }
+
+export async function buscarProdutos(){
+    const r = await api.get ('/admin/produto');
+    return r.data;
+}
+
+export async function buscarProdutoPorId(id){
+    const r = await api.get ('/admin/produto/' + id);
+    return r.data;
+}
+
+export async function removerProduto(id){
+    const r = await api.delete ('/admin/produto/' + id);
+    return r.data;
+}
+
