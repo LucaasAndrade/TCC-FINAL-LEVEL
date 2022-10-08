@@ -4,10 +4,11 @@ import "./index.scss";
 
 import { toast } from 'react-toastify';
 
-import { CadastrarProduto, InserirTamanho, listarCategorias, listarMarcas, listarTamanhoProduto, salvarImagens } from "../../../api/cadastrarProduto";
+import { CadastrarProduto, InserirTamanho,buscarProdutoPorId,listarCategorias, listarMarcas, listarTamanhoProduto, salvarImagens } from "../../../api/cadastrarProduto";
 import { useState, useEffect } from 'react'
 
 import HeaderAdm from '../../../components/headerAdm'
+import { useParams } from "react-router-dom";
 
 export default function Cadastrarproduto() {
 
@@ -34,6 +35,8 @@ export default function Cadastrarproduto() {
   const [imagem3, setImagem3] = useState();
   const [imagem4, setImagem4] = useState();
   const [imagem5, setImagem5] = useState();
+
+  const {id} = useParams();
 
   async function salvar() {
     try {
@@ -89,10 +92,28 @@ export default function Cadastrarproduto() {
     setTamanhosSelecionados(tam);
   }
 
+  async function carregarProduto(){
+    if(!id)  return;
+
+    const r  = await buscarProdutoPorId(id);
+    setProdutoId(r.info.id);
+        setNome(r.info.produto);
+        setValor(r.info.preco.toString());
+        setMarcas(r.info.marca);
+        setDestaque(r.info.destaque);
+        setDisponivel(r.info.disponivel);
+        setInformacoes(r.info.informacoes);
+        setMarcaId(r.info.marcaId);
+        setCategoriaId(r.info.categoriaId);
+
+
+  }
+
   useEffect(() => {
     carregarMarcas();
     carregaTamanhosProdutos(produtoId);
     carregarCategorias();
+    carregarProduto();
   }, [])
 
   function escolherImagem(inputId) {
