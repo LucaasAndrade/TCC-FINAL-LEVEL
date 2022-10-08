@@ -54,6 +54,7 @@ export async function salvarImagens(id, imagem1, imagem2, imagem3, imagem4, imag
     form.append('imagens', imagem4);
     form.append('imagens', imagem5);
 
+    console.log(id)
     const r = await api.put('/produto/' + id, form, {
         headers: {
             'Content-Type': 'multipart/form-data'

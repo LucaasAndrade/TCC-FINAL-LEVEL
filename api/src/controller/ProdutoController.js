@@ -16,7 +16,6 @@ server.post('/produto', async (req, resp) => {
     try {
         const produtoParaInserir = req.body;
         
-        console.log(produtoParaInserir)
         const produtoInserido = await CadastrarProduto(produtoParaInserir);
         VerificarInformacoesProduto(produtoParaInserir)
 
@@ -29,7 +28,6 @@ server.post('/produto', async (req, resp) => {
         });
     }
     catch (err) {
-        console.log(err)
         resp.status(400).send({
             erro: err.message
         })
@@ -45,8 +43,11 @@ server.put('/produto/:id', upload.array('imagens'), async (req, resp) => {
         for (const imagem of imagens) {
             await InserirImagem(id, imagem.path, false);
         }
+
     } catch (err) {
+        console.log(err)
         resp.status(400).send({
+
             erro: err.message
         })
     }

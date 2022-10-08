@@ -2,7 +2,6 @@ import {con} from './connection.js';
 
 
 export async function CadastrarProduto(produto) {
-    console.log(produto);
     const comando =
     `insert into tb_produto (id_categoria, id_marca_produto, nm_produto, vl_preco, ds_informacoes, bl_disponivel, bl_destaque)
     values (?,?,?,?,?,?,?)`
@@ -35,10 +34,10 @@ export async function InserirCategoria(categoria){
     return categoria;
 }
 
-export async function InserirImagem(imagem){
+export async function InserirImagem(id_produto,imagem, bl_principal){
     const comando =
     `insert into tb_imagem_produto(id_produto, img_produto, bl_principal)
-    values (?, ?, ?, ?)`
+    values (?, ?, ?)`
 
     const [resposta] = await con.query(comando, [id_produto, imagem, bl_principal]);
 }

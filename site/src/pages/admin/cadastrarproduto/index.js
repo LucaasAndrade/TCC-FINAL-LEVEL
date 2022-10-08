@@ -44,10 +44,11 @@ export default function Cadastrarproduto() {
 
       const r = await CadastrarProduto(categoriaId, marcaId, nome, PrecoProduto, informacoes, disponivel, destaque, tamanhosSelecionados);
       await salvarImagens(r.id, imagem1, imagem2, imagem3, imagem4, imagem5);
+      
       alert('Produto Salvo Com Sucesso!')
 
     } catch (err) {
-
+      console.log(err)
       alert(err.response.data.erro)
 
     }
@@ -67,8 +68,6 @@ export default function Cadastrarproduto() {
     const r = await listarTamanhoProduto(id);
     setTamanhos(r);
   }
-
-  
 
   function adicionarTamanhos() {
     let permissao = true;
@@ -92,34 +91,16 @@ export default function Cadastrarproduto() {
     setTamanhosSelecionados(tam);
   }
 
-  async function carregarProduto(){
-    if(!id)  return;
-
-    const r  = await buscarProdutoPorId(id);
-    setProdutoId(r.info.id);
-        setNome(r.info.produto);
-        setValor(r.info.preco.toString());
-        setMarcas(r.info.marca);
-        setDestaque(r.info.destaque);
-        setDisponivel(r.info.disponivel);
-        setInformacoes(r.info.informacoes);
-        setMarcaId(r.info.marcaId);
-        setCategoriaId(r.info.categoriaId);
-
-
-  }
 
   useEffect(() => {
     carregarMarcas();
     carregaTamanhosProdutos(produtoId);
     carregarCategorias();
-    carregarProduto();
   }, [])
 
   function escolherImagem(inputId) {
     document.getElementById(inputId).click();
   }
-
   
   function exibirImagem(imagem) {
     if (imagem == undefined) {
@@ -128,7 +109,6 @@ export default function Cadastrarproduto() {
       return URL.createObjectURL(imagem);
     }
   }
-
   
   function exibirImagemDois(imagem) {
     if (imagem == undefined) {
