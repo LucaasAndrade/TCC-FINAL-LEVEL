@@ -1,7 +1,7 @@
 
 import multer from 'multer'
 
-import { AlterarProduto, CadastrarProduto, InserirCategoria, InserirTamanho, listarMarcas, listarCategorias, listarTamanhosProduto, InserirImagem } from '../repository/ProdutoRepository.js';
+import { AlterarProduto, CadastrarProduto,buscarProduto, buscarProdutoPorId,removerProduto,InserirCategoria, InserirTamanho, listarMarcas, listarCategorias, listarTamanhosProduto, InserirImagem } from '../repository/ProdutoRepository.js';
 
 import { VerificarInformacoesProduto } from '../services/verificacaoProduto.js'
 
@@ -152,5 +152,59 @@ server.get('/listarTamanhos/:id', async (req, resp) => {
         })
     }
 })
+
+server.get('/admin/produto',async(req,resp)=>{
+    try{
+        const r = await buscarProduto();
+        resp.send(r);
+    }
+    catch{
+        resp.status(400).send({
+            erro:err.message
+        })
+    }
+} )
+
+server.delete('/admin/produto/:id',async(req,resp) => {
+    try{
+        const id = req.params.id;
+
+        
+       
+        await removerProduto(id);
+       
+
+        resp.status(204).send();
+    }
+    catch(err){
+        resp.status(400).send({
+            erro:err.message
+        })
+    }
+})
+
+server.get('/admin/produto/:id',async(req,resp) => {
+    try{
+        const id = req.params.id;
+
+      const produto=  await buscarProdutoPorId(id);
+      const categorias = await buscarProdutoPorId(id);
+      
+        resp.send({
+            info: produto,
+            categoria: categorias
+        })
+    }
+    catch(err){
+        resp.status(400).send({
+            erro:err.message
+        })
+    }
+})
+
+
+
+
+
 
 export default server;

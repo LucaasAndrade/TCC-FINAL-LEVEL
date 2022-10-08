@@ -100,3 +100,58 @@ export async function listarTamanhosProduto(id) {
     const [resposta] = await con.query(comando, [id]);
     return resposta
 }
+
+export async function buscarProduto(){
+    const comando = 
+    `select  tb_produto.id_produto      as id,
+    nm_produto                          as produto,
+    vl_preco                            as preco,
+    tb_produto.nm_marca                 as marca,
+    ds_informacoes                      as informacoes,
+    bl_disponivel                       as disponivel,
+    bl_destaque                         as destaque
+from tb_produto
+inner  join tb_categoria on tb_produto.id_categoria = tb_categoria.id_categoria
+inner join tb_marca_produto on tb_produto.id_marca_produto = tb_marca_produto.id_marca_produto;
+`
+  const [registros] = await con.query(comando);
+  return registros
+}
+
+export async function buscarProdutoPorId(id){
+    const comando = 
+    `select  id_produto      as id,
+    nm_produto                          as produto,
+    vl_preco                            as preco,
+    tb_produto.nm_marca                 as marca,
+    ds_informacoes                      as informacoes,
+    bl_disponivel                       as disponivel,
+    bl_destaque                         as destaque,
+    id_categoria                        as categoria,
+    id_marca_produto                    as marcaProduto
+from tb_produto
+where id_produto =?
+`
+  const [registros] = await con.query(comando,[id]);
+  return registros [0];
+}
+
+
+
+
+
+export async function removerProduto(idProduto){
+    const comando =
+    `delete from tb_produto
+    where id_produto = ?
+    `
+
+    const [resp] = await con.query(comando,[idProduto])
+    return resp.affectedRows;
+}
+
+
+
+
+
+
