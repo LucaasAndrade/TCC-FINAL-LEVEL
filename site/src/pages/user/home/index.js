@@ -13,6 +13,29 @@ import AcessoriosHome from '../../../components/acessoriosHome'
 
 export default function Home() {
 
+    
+    /*function inicialModal(modalID) {
+        if(localStorage.fecharModal !== modalID){
+        const modal = document.getElementById(modalID);
+            if(modal) {
+                modal.classList.add('mostrar');
+                modal.addEventListener('click', (e) => {
+                    if(e.target.id == modalID || e.target. className == 'fechar') {
+                    modal.classList.remove('mostrar');
+                    localStorage.fecharModal = modalID;
+                    }
+                });
+            }
+        }
+    }
+
+    const perfil = document.querySelector('.elementos-usuario');
+    perfil.addEventListener('click', () => inicialModal('modal-promocao'));*/
+                
+
+
+
+
     const navigate = useNavigate('');
     
     function AcessoriosPage() {
@@ -94,6 +117,55 @@ export default function Home() {
             </section>
             <section>
                 <Footer />
+            </section>
+
+
+            <section id='modal-info-perfil' className='modal-container'>
+                <div className='modal'>
+                    <button className='fechar'> X </button>
+                    <div className='fundo-perfil'>
+                        <img src='/images/usuario-perfil.png'></img>
+                        <h5>Nome Sobrenome</h5>
+                    </div>
+                    <div>
+                        <p>E-mail</p>
+                        <p>Telefone</p>
+                    </div>
+                    <div>
+                        <div className='img-topico'>
+                            <img src='/images/mensagens.png' alt='mensagens'></img>
+                            <p>Minhas Mensagens</p>
+                        </div>
+                        <div className='img-topico'>
+                            <img src='/images/cupons.png' alt='cupons'></img>
+                            <p>Meus Cupons</p>
+                        </div>
+                        <div className='img-topico'>
+                            <img src='/images/pedidos.png' alt='Meus Pedidos'></img>
+                            <p>Meus Pedidos</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div className='img-topico'>
+                            <img src='/images/curtidos.png' alt='curtidos'></img>
+                            <p>Curtidos</p>
+                        </div>
+                        <div className='img-topico'>
+                            <img src='/images/sacola-perfil.png'></img>
+                            <p>Adicionados ao Carrinho</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div className='img-topico'>
+                            <img src='/images/editar.png'></img>
+                            <p>Editar</p>
+                        </div>
+                        <div className='img-topico'>
+                            <img src='/images/sair.png'></img>
+                            <p>Sair</p>
+                        </div>
+                    </div>
+                </div>
             </section>
         </main>
     )
