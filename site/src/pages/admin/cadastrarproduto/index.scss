@@ -19,7 +19,7 @@
     }
 
     .logo:hover{
-        opacity: 70%;
+        opacity: 80%;
         cursor: pointer;
     }
 
@@ -112,15 +112,21 @@
 
     .campo-imagem{
         padding: 5em 5em;
+        border: 1px solid #B6B6B6;
+        cursor: pointer;
     }
 
     .campo-imagem-dois{
         padding: 1em 1em;
+        border: 1px solid #B6B6B6;
+        cursor: pointer;
     }
 
     .imagem-dois{
         padding: 1em 1em;
         margin-left: .5em;
+        border: 1px solid #B6B6B6;
+        cursor: pointer;
     }
 
     *P{

@@ -132,10 +132,10 @@ export default function Cadastrarproduto() {
                 <img
                   className="campo-imagem"
                   src={exibirImagem(imagem1)}
-                  alt="adicionar-imagem"
+                  alt="adicionar-imagem" id="camera"
                   onClick={() => escolherImagem('imagem1')}
                 />
-                <input type='file' id='imagem1' onChange={e => setImagem1(e.target.files[0])} />
+                <input type='file' id='imagem1' name="imagem-arq" onChange={e => setImagem1(e.target.files[0])} />
 
                 <div className="adicionar-imagens-dois">
                   <div>
@@ -184,7 +184,7 @@ export default function Cadastrarproduto() {
               </div>
             </div>
             <div className="campo-informacao">
-              <div className="campo-input">
+              <div>
                 <div>
                   <p>NOME DO PRODUTO</p>
                   <input value={nome} onChange={e => setNome(e.target.value)}></input>

@@ -96,7 +96,7 @@ useEffect(()=>{
             <p>------------------ ou ------------------</p>
           </div>
           <h5 className="criar-conta">Crie uma conta</h5>
-          <h6 className="p-informacao">Já é cliente Street Elegance?</h6>
+          <h6 className="p-informacao">Ainda não tem conta na Street Elegance?</h6>
           <button className="botao-cadastrar" onClick={Cadastrar}>CADASTRE-SE</button>
           <p className="mensagem-erro">{erro}</p>
           </div>
