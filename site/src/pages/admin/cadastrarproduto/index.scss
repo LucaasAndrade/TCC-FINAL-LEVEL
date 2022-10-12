@@ -78,10 +78,48 @@
         visibility: hidden;
     }
 
-    .adicionar-imagens-dois{
+    .image-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 40px;
+    }
+
+    .image-container img {
+        display: flex;
+        margin:25px;
+        width: 50px;
+        cursor: pointer;
+    }
+
+    .image-container input[type=file] {
+        visibility: hidden;
+    }
+
+    .image-container > div {
         display: flex;
         flex-direction: column;
-        padding: 0em 1em;
+        text-align: center;
+        font-size: 10px;
+        text-transform: uppercase;
+    }
+
+    .image-container > div span {
+        cursor: pointer;
+    }
+
+    .campo-imagem{
+        border: 1px solid #B6B6B6;
+    }
+    
+    .campo-imagem-dois{
+        border: 1px solid #B6B6B6;
+    
+    }
+
+    .dois{
+        display: flex;
+        flex-direction: row;
     }
 
     *input{
@@ -89,10 +127,9 @@
         border: 1px solid #B6B6B6;
     }
 
-    .campo-input input{
+    .input-info{
         width: 20em;
         min-height: 3em;
-        border: 1px solid #B6B6B6;   
     }
 
     .campo-info-1 select{
@@ -109,25 +146,6 @@
         font-family: 'lexendM';
         background-color: #ffffff;
         color: #828282;
-    }
-
-    .campo-imagem{
-        padding: 5em 5em;
-        border: 1px solid #B6B6B6;
-        cursor: pointer;
-    }
-
-    .campo-imagem-dois{
-        padding: 1em 1em;
-        border: 1px solid #B6B6B6;
-        cursor: pointer;
-    }
-
-    .imagem-dois{
-        padding: 1em 1em;
-        margin-left: .5em;
-        border: 1px solid #B6B6B6;
-        cursor: pointer;
     }
 
     *P{
