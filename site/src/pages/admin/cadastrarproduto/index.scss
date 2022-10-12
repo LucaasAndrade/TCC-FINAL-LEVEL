@@ -65,7 +65,7 @@
     .elementos-esquerda{
         display: flex;
         flex-direction: column;
-        padding: 3em 5em;
+        padding: 3em 5em 3em;
     }
 
     .adicionar-imagens{
@@ -82,13 +82,23 @@
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        width: 40px;
+        //width: 40px;
     }
 
-    .image-container img {
+    .sub-um img{
+        width: 150px;
+        border: 1px solid #B6B6B6;
+        padding: 10px;
+        margin: 5px;
+        cursor: pointer;
+    }
+
+    .sub-dois img {
         display: flex;
-        margin:25px;
-        width: 50px;
+        width: 60px;
+        border: 1px solid #B6B6B6;
+        padding: 5px;
+        margin: 10px;
         cursor: pointer;
     }
 
@@ -100,6 +110,7 @@
         display: flex;
         flex-direction: column;
         text-align: center;
+        font-family: 'lexendEL';
         font-size: 10px;
         text-transform: uppercase;
     }
@@ -108,16 +119,7 @@
         cursor: pointer;
     }
 
-    .campo-imagem{
-        border: 1px solid #B6B6B6;
-    }
-    
-    .campo-imagem-dois{
-        border: 1px solid #B6B6B6;
-    
-    }
-
-    .dois{
+    .sub-dois{
         display: flex;
         flex-direction: row;
     }
@@ -157,7 +159,7 @@
     }
 
     .textarea{
-        padding: 3em 0em 0em;
+        margin-top: 3em;
     }
     
     .descricao{
@@ -177,20 +179,14 @@
     }
 
     .campo-informacao{
-        padding: 3em 0em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0em 5em 1em 1em;
     }
 
     .campo-info{
         margin-top: 1em;
-    }
-
-    .campo-info-1{
-        margin-top: 1em;       
-    }
-    
-    .cate-tama{
-        display: flex;
-        flex-direction: row;
     }
 
     *select{
@@ -210,7 +206,7 @@
     .botoes{
         display: flex;
         flex-direction: row;
-        margin-top: 9em;
+        margin-top: 6em;
     }
 
     .botao-excluir{
@@ -220,6 +216,7 @@
         border: 1px solid #BE6161;
         color: #ffffff;
         padding: 1em 2em;
+        width: 14em;
         cursor: pointer;
     }
 
@@ -230,6 +227,7 @@
         border: 1px solid #987F5B;
         color: #ffffff;
         padding: 1em 2em;
+        width: 16em;
         margin-left: 1em;
         cursor: pointer;
     }
@@ -237,8 +235,6 @@
     .botao-excluir:hover, .botao-c-d:hover{
         opacity: 90%;
     }
-
-   
 
     .botao-adicionar-tamanho{
         font-family: 'lexendM';

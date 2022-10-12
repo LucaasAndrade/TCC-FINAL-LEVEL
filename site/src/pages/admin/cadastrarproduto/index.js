@@ -132,34 +132,32 @@ export default function Cadastrarproduto() {
 
             <div className='image-container'>
                     
-                    <div>
-                        <img className="campo-imagem" src={exibirImagem(imagem1)} alt="" onClick={() => escolherImagem('imagem1')} />
+                    <div className="sub-um">
+                        <img src={exibirImagem(imagem1)} alt="" onClick={() => escolherImagem('imagem1')} />
                         {imagem1 ? <span onClick={() => setImagem1()}>Remover</span> : ''}
                     </div>
-                    <div className="todos">
-                      <div className="dois">
+                    <div>
+                      <div className="sub-dois">
                         <div>
-                          <img className="campo-imagem-dois" src={exibirImagemDois(imagem2)} alt="" onClick={() => escolherImagem('imagem2')} />
+                          <img src={exibirImagemDois(imagem2)} alt="" onClick={() => escolherImagem('imagem2')} />
                           {imagem2 ? <span onClick={() => setImagem2()}>Remover</span> : ''}
                         </div>
                         <div>
-                          <img className="campo-imagem-dois" src={exibirImagemDois(imagem3)} alt="" onClick={() => escolherImagem('imagem3')} />
+                          <img src={exibirImagemDois(imagem3)} alt="" onClick={() => escolherImagem('imagem3')} />
                           {imagem3 ? <span onClick={() => setImagem3()}>Remover</span> : ''}
                         </div>
                       </div>
-                      <div className="dois">
+                      <div className="sub-dois">
                         <div>
-                          <img className="campo-imagem-dois" src={exibirImagemDois(imagem4)} alt="" onClick={() => escolherImagem('imagem4')} />
+                          <img src={exibirImagemDois(imagem4)} alt="" onClick={() => escolherImagem('imagem4')} />
                           {imagem4 ? <span onClick={() => setImagem4()}>Remover</span> : ''}
                         </div>
                         <div>
-                          <img className="campo-imagem-dois" src={exibirImagemDois(imagem5)} alt="" onClick={() => escolherImagem('imagem5')} />
+                          <img src={exibirImagemDois(imagem5)} alt="" onClick={() => escolherImagem('imagem5')} />
                           {imagem5 ? <span onClick={() => setImagem5()}>Remover</span> : ''}
                         </div>
                       </div>
                     </div>
-                    
-
                     
                     <input type='file' id='imagem1' onChange={e => setImagem1(e.target.files[0])} />
                     <input type='file' id='imagem2' onChange={e => setImagem2(e.target.files[0])} />
@@ -184,7 +182,7 @@ export default function Cadastrarproduto() {
                   <p>VALOR</p>
                   <input className="input-info" type='number' value={valor} onChange={e => setValor(e.target.value)}></input>
                 </div>
-                <div className="campo-info-1">
+                <div className="campo-info">
                     <p>TAMANHO</p>
                     <select onChange={e => setTamanho(e.target.value)}>
                       <option value="" selected disabled hidden></option>
@@ -213,7 +211,7 @@ export default function Cadastrarproduto() {
                 </div>
               </div>
               <div>
-                <div className="cate-tama">
+                <div>
                   <div className="campo-info">
                     <p>CATEGORIA</p>
                     <select onChange={e => setCategoriaId(e.target.value)}>
