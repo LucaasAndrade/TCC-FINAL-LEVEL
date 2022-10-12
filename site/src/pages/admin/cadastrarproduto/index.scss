@@ -71,6 +71,7 @@
     .adicionar-imagens{
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
     }
 
     .adicionar-imagens input[type=file]{
