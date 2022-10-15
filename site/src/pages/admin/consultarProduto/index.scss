@@ -1,11 +1,15 @@
-.pagina-admin-consultar-produto {
-    padding: 1.5em;
-    border-top: 8px solid #987F5B;
+*{
+    box-sizing: border-box;
+    margin: 0px;
+}
 
+#page-consultar-produto {
 
     .form {
         display: flex;
         flex-direction: column;
+        //font-family: 'lexendEL';
+        margin-top: 2em;
         width: 100%;
         max-width: 1024px;
         overflow-x: auto;
@@ -16,11 +20,12 @@
     }
 
     th {
-        background-color: #987F5B;
+        background-color: #D1BC9F;
         color: #fff;
         padding: 10px 15px;
         text-align: left;
     }
+
     td {
         padding: 10px 15px;
     }
@@ -31,7 +36,6 @@
     tr:nth-child(even) td {
         background-color: #f1f1f1;
     }
-
     
     tr td:nth-last-child(1), tr td:nth-last-child(2) {
         padding: 0px;
@@ -51,7 +55,47 @@
         color: #fff;
     }
 
-    
+    .fundo-consulta{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .fundo-cartao{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #F5F6F5;
+        min-height: 100vh;
+    }
+
+    .fundo-filtro{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #D1BC9F;
+        padding: 0em 2em 0em;
+        margin-top: 1em;
+        height: 8vh;
+        width: 85vw;
+    }
+
+    .fundo-filtro p{
+        font-family: 'lexendEL';
+        color: #ffffff;
+    }
+
+    .div-filtrar{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    select{
+        margin-left: 1em;
+    }
+
     
 
     @media (max-width: 425px) {

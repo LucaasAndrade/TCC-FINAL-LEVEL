@@ -24,6 +24,7 @@
         flex-direction: row;
         align-items: center;
         justify-content: space-around;
+        box-sizing: border-box;
     }
 
     .logo:hover{
@@ -31,20 +32,50 @@
         cursor: pointer;
     }
 
-    .header p:hover{
-        opacity: 70%;
-        border-bottom: 2px solid #987F5B;
-        cursor: pointer;
-    }
-    
     .topicos-p{
         display: flex;
         flex-direction: row;
         font-family: 'lexendM';
     }
-
+    
     .topico{
+        position: relative;
         margin-left: 2em;
+    }
+    
+    .topico::after {
+    content: "";
+        position: absolute;
+        border-bottom: 2px solid #987F5B;
+        height: 2px;
+        width: 0;
+        left: 0;
+        bottom: -10px;
+        transition: 0.3s;
+    }
+
+    .topicoo{
+        position: relative;
+    }
+    
+    .topicoo::after {
+    content: "";
+        position: absolute;
+        border-bottom: 2px solid #987F5B;
+        height: 2px;
+        width: 0;
+        left: 0;
+        bottom: -10px;
+        transition: 0.3s;
+    }
+
+    .header p:hover{
+        opacity: 70%;
+        cursor: pointer;
+    }
+
+    .header p:hover::after{
+        width: 100%;
     }
 
     .input-pesquisa{

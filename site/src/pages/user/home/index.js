@@ -120,7 +120,7 @@ export default function Home() {
             </section>
 
 
-            <section id='modal-info-perfil' className='modal-container'>
+            {/*<section id='modal-info-perfil' className='modal-container'>
                 <div className='modal'>
                     <button className='fechar'> X </button>
                     <div className='fundo-perfil'>
@@ -166,7 +166,7 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section>*/}
         </main>
     )
 }

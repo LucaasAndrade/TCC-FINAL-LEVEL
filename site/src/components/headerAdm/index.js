@@ -48,13 +48,13 @@ export default function Cabecalho() {
             <div>
             <div className='faixa-header'>
                 <img className='logo' src='/images/logoo.png' alt='logo' />
-                <div className='topicos'>
-                    <p>ADICIONAR PRODUTOS</p>
-                    <p className='p-topicos' >LISTAR PEDIDOS</p>
-                    <p className='p-topicos' >LISTAR PRODUTOS</p>
-                    <p className='p-topicos' >CHAT</p>
-                    <p className='p-topicos' >CUPONS</p>
-                    <p className='p-topicos' >HISTÓRICO</p>
+                <div className='topicos-p'>
+                    <p className='topicoo'>ADICIONAR PRODUTOS</p>
+                    <p className='topico' >LISTAR PEDIDOS</p>
+                    <p className='topico' >LISTAR PRODUTOS</p>
+                    <p className='topico' >CHAT</p>
+                    <p className='topico' >CUPONS</p>
+                    <p className='topico' >HISTÓRICO</p>
                 </div>
                 <div>
                     <button className="botao-painel" onClick={HomeAdm}>PAINEL</button>

@@ -41,7 +41,7 @@ export default function Cabecalho() {
             <div className='header'>
                 <img className='logo' src='/images/logoo.png' alt='logo' onClick={Home}/>
                 <div className='topicos-p'>
-                    <p onClick={AcessoriosPage}>ACESSÓRIOS</p>
+                    <p className='topicoo' onClick={AcessoriosPage}>ACESSÓRIOS</p>
                     <p className='topico' onClick={Masculino}>MASCULINO</p>
                     <p className='topico' onClick={Feminino}>FEMININO</p>
                     <p className='topico' onClick={Infantil}>INFANTIL</p>

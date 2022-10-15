@@ -13,19 +13,50 @@
         cursor: pointer;
     }
 
-    .topicos{
+    .topicos-p{
         display: flex;
         flex-direction: row;
+        font-family: 'lexendM';
     }
-
-    .p-topicos{
+    
+    .topico{
+        position: relative;
         margin-left: 2em;
     }
-
-    .topicos p:hover{
-        color: #987F5B;
+    
+    .topico::after {
+    content: "";
+        position: absolute;
         border-bottom: 2px solid #987F5B;
+        height: 2px;
+        width: 0;
+        left: 0;
+        bottom: -10px;
+        transition: 0.3s;
+    }
+
+    .topicoo{
+        position: relative;
+    }
+    
+    .topicoo::after {
+    content: "";
+        position: absolute;
+        border-bottom: 2px solid #987F5B;
+        height: 2px;
+        width: 0;
+        left: 0;
+        bottom: -10px;
+        transition: 0.3s;
+    }
+
+    .faixa-header p:hover{
+        opacity: 70%;
         cursor: pointer;
+    }
+
+    .faixa-header p:hover::after{
+        width: 100%;
     }
 
     .botao-painel{
