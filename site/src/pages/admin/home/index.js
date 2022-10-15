@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'
 import './index.scss'
 
 
@@ -5,11 +6,43 @@ import './index.scss'
 
 
 export default function Home() {
+
+    const navigate = useNavigate('');
+
+    function Home(){
+        navigate('/home')
+    }
+
+    function Adicionar(){
+        navigate ("/admin/cadastrarproduto")
+    }
+
+
+    function ListarPedidos() {
+        navigate ("/admin/buscar/pedidos")
+    }
+
+    function ListarProdutos() {
+        navigate ("/admin/produtos")
+    }
+
+    function Chat() {
+        navigate ("/chat")
+    }
+
+    function Cupons() {
+        navigate ("/cupons")
+    }
+
+    function Historico() {
+        navigate ("/historico")
+    }
+
     return (
         <main className='page-home-admin'>
             <header>
                 <div className="faixa-header">
-                        <img className='logo' src="/images/logoo.png" alt="logo"></img>
+                    <img className='logo' onClick={Home} src="/images/logoo.png" alt="logo"></img>
                 </div>
             </header>
 
@@ -20,13 +53,13 @@ export default function Home() {
                         <div className='botoes'>
                             <div>
                                 <div>
-                                    <button className='botao'>ADICIONAR PRODUTOS</button>
+                                    <button className='botao'onClick={Adicionar}>ADICIONAR PRODUTOS</button>
                                 </div>
                                 <div>
-                                    <button className='botao'>REMOVER PRODUTOS</button>
+                                    <button className='botao'onClick={ListarPedidos}>LISTAR PEDIDOS</button>
                                 </div>
                                 <div>
-                                    <button className='botao'>LISTAR PRODUTOS</button>
+                                    <button className='botao'onClick={ListarProdutos}>LISTAR PRODUTOS</button>
                                 </div>
                                 <div>
                                     <button className='botao'>CHAT DE ATENDIMENTO</button>
@@ -35,10 +68,10 @@ export default function Home() {
 
                             <div>
                                 <div>
-                                    <button className='botao-dois'>ENCOMENDAS</button>
+                                    <button className='botao-dois'>HISTÓRICO DE CUPONS</button>
                                 </div>
                                 <div>
-                                    <button className='botao-dois'>HISTÓRICO DE ENCOMENDAS</button>
+                                    <button className='botao-dois'>HISTÓRICO DE PEDIDOS</button>
                                 </div>
                                 <div>
                                     <button className='botao-dois'>GERENCIAR CUPONS</button>

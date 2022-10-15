@@ -16,7 +16,7 @@ export default function ProdutosAdm(props) {
                     <p className='categoria-produto'>{props.categoria}</p>
                     <div className='lixo'>
                         <img src='/images/lixeira.png' />
-                        <img src='/images/ee.png' />
+                        <img src='/images/lapis.png' />
                     </div>
                 </div>
             </div>

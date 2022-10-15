@@ -10,24 +10,25 @@ export default function Cabecalho() {
 
     const navigate = useNavigate('');
     
+    function Home(){
+        navigate('/home')
+    }
+
     function HomeAdm(){
         navigate ("/admin/home")
     }
 
     function Adicionar(){
-        navigate ("/adicionarprodutos")
+        navigate ("/admin/cadastrarproduto")
     }
 
-    function AcessoriosPage(){
-        navigate ("/acessorios")
-    }
 
     function ListarPedidos() {
-        navigate ("/listarpedidos")
+        navigate ("/admin/buscar/pedidos")
     }
 
     function ListarProdutos() {
-        navigate ("/listarprodutos")
+        navigate ("/admin/produtos")
     }
 
     function Chat() {
@@ -47,14 +48,21 @@ export default function Cabecalho() {
         <header id='componente-header-adm'>
             <div>
             <div className='faixa-header'>
-                <img className='logo' src='/images/logoo.png' alt='logo' />
+                <img className='logo' onClick={Home} src='/images/logoo.png' alt='logo' />
                 <div className='topicos-p'>
-                    <p className='topicoo'>ADICIONAR PRODUTOS</p>
-                    <p className='topico' >LISTAR PEDIDOS</p>
-                    <p className='topico' >LISTAR PRODUTOS</p>
+                    <p className='topicoo' onClick={Adicionar}>ADICIONAR PRODUTOS</p>
+                    <p className='topico' onClick={ListarPedidos}>LISTAR PEDIDOS</p>
+                    <p className='topico' onClick={ListarProdutos}>LISTAR PRODUTOS</p>
                     <p className='topico' >CHAT</p>
                     <p className='topico' >CUPONS</p>
-                    <p className='topico' >HISTÓRICO</p>
+                    <div className='filtro-historico'>
+                        <p className='h-topico' >HISTÓRICO</p>
+                        <select>
+                            <option value="" selected disabled hidden></option>
+                            <option value="Disponíveis"> Cupons </option>
+                            <option value="Não Disponíveis"> Pedidos </option>
+                        </select>
+                    </div>
                 </div>
                 <div>
                     <button className="botao-painel" onClick={HomeAdm}>PAINEL</button>

@@ -38,9 +38,13 @@
     .topicoo{
         position: relative;
     }
+
+    .h-topico:hover {
+        color: #987F5B;
+    }
     
     .topicoo::after {
-    content: "";
+        content: "";
         position: absolute;
         border-bottom: 2px solid #987F5B;
         height: 2px;
@@ -57,6 +61,26 @@
 
     .faixa-header p:hover::after{
         width: 100%;
+    }
+
+    .filtro-historico{
+        display: flex;
+        flex-direction: column;
+        margin-left: 2em;
+    }
+
+    select{
+        position: absolute;
+        margin-top: 2em;
+        margin-left: .7em;
+        color: #987F5B;
+    }
+
+    select:hover,
+    select:focus,
+    select:active,
+    select:checked {
+    color: #333;
     }
 
     .botao-painel{
