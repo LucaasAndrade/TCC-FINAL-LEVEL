@@ -5,12 +5,23 @@
         flex-direction: row;
         justify-content: space-around;
         background-color: #ffffff;
-        max-width: 50%;
+        min-width: 42%;
+        max-width: 42%;
+        height: 10em;
+        margin-top: .5em;
     }
 
     .imagem-carrinho{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .imagem-carrinho img{
         border: 1px solid #B6B6B6;
-        width: 50%;
+        min-width: 7em;
+        max-width: 7em;
+        cursor: pointer;
     }
 
     .info-card{
@@ -18,21 +29,74 @@
         flex-direction: column;
     }
 
+    .card-nome{
+        font-family: 'lexendM';
+        margin: 1em 0em .5em;
+    }
+
+    .card-marca{
+        font-family: 'lexendEL';
+        color: #595959;
+    }
+
+    .card-preco{
+        font-family: 'lexendM';
+        margin: .5em 0em 1em;
+    }
+
+    select{
+        width: 4em;
+        margin-left: .5em;
+        color: #987F5B;
+        cursor: pointer;
+    }
+
+    select:hover,
+    select:focus,
+    select:active,
+    select:checked {
+    color: #333;
+    }
+
+    .excluir-salvar{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .botao{
+        display: flex;
+        justify-content: end;
+        margin-top: 3em;
+    }
+
     button{
         border: 1px solid #987F5B;
         background-color: #987F5B;
         font-family: 'lexendSB';
         color: #ffffff;
+        cursor: pointer;
+    }
+
+    .botao:hover{
+        opacity: 90%;
     }
 
     .salvar-tarde{
         display: flex;
         flex-direction: row;
+        margin-top: 2.5em;
+        cursor: pointer;
     }
 
     .salvar-tarde p{
         font-family: 'lexendEL';
         font-size: 12px;
         margin-left: .5em;
+        opacity: 80%;
+    }
+
+    .salvar-tarde p:hover{
+        opacity: 100%;
     }
 }

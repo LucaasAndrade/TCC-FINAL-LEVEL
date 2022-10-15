@@ -1,6 +1,13 @@
-#page-carrinho{
+*{
+    box-sizing: border-box;
+    margin: 0px;
+}
 
-    .fundo-carrinho{
-        background-color: #E6E6E6;
+#page-carrinho{
+    background-color: #E6E6E6;
+    min-height: 100vh;
+
+    #componente-footer{
+        background-color: #ffffff;
     }
 }

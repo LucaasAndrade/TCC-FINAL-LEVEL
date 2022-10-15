@@ -8,16 +8,16 @@ export default function CardCarrinho(props) {
     return (
         <main id='page-card-carrinho'>
             <div className='cartao-carrinho'>
-                <div>
+                <div className='imagem-carrinho'>
                     <img className='imagem-carrinho' src={props.imagem}></img>
                 </div>
                 <div className='info-card'>
                     <div>
-                        <p>{props.nome}</p>
-                        <p>{props.marca}</p>
-                        <p>{props.preco}</p>
+                        <p className='card-nome'>{props.nome}</p>
+                        <p className='card-marca'>{props.marca}</p>
+                        <p className='card-preco'>{props.preco}</p>
                     </div>
-                    <div className='selects'>
+                    <div>
                         <select>
                             <option value="" selected disabled hidden></option>
                             <option value="PP"> PP </option>
@@ -27,19 +27,21 @@ export default function CardCarrinho(props) {
                             <option value="GG"> GG </option>
                         </select>
 
-                        <select>
+                        <select className='select'>
                             <option value="" selected disabled hidden></option>
                             <option>{props.quantidade}</option>
                         </select>
                     </div>
                 </div>
-                <div>
+                <div className='excluir-salvar'>
                     <div>
-                        <button>X</button>
-                    </div>
-                    <div className='salvar-tarde'>
-                        <img src='/images/curtidos.png'></img>
-                        <p>Salvar para mais tarde</p>
+                        <div className='botao'>
+                            <button>X</button>
+                        </div>
+                        <div className='salvar-tarde'>
+                            <img src='/images/curtidos.png'></img>
+                            <p>Salvar para mais tarde</p>
+                        </div>
                     </div>
                 </div>
             </div>
