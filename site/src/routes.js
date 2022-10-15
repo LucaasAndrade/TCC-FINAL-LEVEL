@@ -13,6 +13,7 @@ import Acessorios from '../src/pages/user/acessorios'
 import Masculino from '../src/pages/user/masculino'
 import Feminino from '../src/pages/user/feminino'
 import Infantil from '../src/pages/user/infantil'
+import Carrinho from '../src/pages/user/carrinho'
 
 // Area / Admin
 import LoginAdmin from './pages/admin/login'
@@ -47,6 +48,7 @@ export default function Index() {
         <Route path='/masculino' element={<Masculino />} />
         <Route path='/feminino' element={<Feminino />} />
         <Route path='/infantil' element={<Infantil />} />
+        <Route path='/carrinho' element={<Carrinho />} />
 
       </Routes>
     </BrowserRouter>

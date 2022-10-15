@@ -1,0 +1,38 @@
+#page-card-carrinho{
+
+    .cartao-carrinho{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        background-color: #ffffff;
+        max-width: 50%;
+    }
+
+    .imagem-carrinho{
+        border: 1px solid #B6B6B6;
+        width: 50%;
+    }
+
+    .info-card{
+        display: flex;
+        flex-direction: column;
+    }
+
+    button{
+        border: 1px solid #987F5B;
+        background-color: #987F5B;
+        font-family: 'lexendSB';
+        color: #ffffff;
+    }
+
+    .salvar-tarde{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .salvar-tarde p{
+        font-family: 'lexendEL';
+        font-size: 12px;
+        margin-left: .5em;
+    }
+}
