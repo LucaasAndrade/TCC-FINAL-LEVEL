@@ -4,6 +4,7 @@ import Cabecalho from '../../../components/header';
 import Footer from '../../../components/footer';
 import CardCarrinho from '../../../components/CardCarrinho';
 import FinalizarCompra from '../../../components/finalizarCompra';
+import CodigoPromocional from '../../../components/codigoPromocional';
 
 
 
@@ -12,7 +13,7 @@ import FinalizarCompra from '../../../components/finalizarCompra';
 export default function Carrinho() {
 
     return (
-        <main id='page-carrinho'>
+        <main className='page-carrinho'>
             <section>
                 <Cabecalho />
             </section>
@@ -20,6 +21,7 @@ export default function Carrinho() {
                 <CardCarrinho imagem='/images/produto31.png' nome='Moletom Street Masculino' marca='ADIDAS' preco='R$ 60,00' />
                 <CardCarrinho imagem='/images/produto31.png' nome='Moletom Street Masculino' marca='ADIDAS' preco='R$ 60,00' />
                 <FinalizarCompra />
+                <CodigoPromocional />
             </section>
             <section>
                 <Footer />

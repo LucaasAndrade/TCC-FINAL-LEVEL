@@ -11,7 +11,7 @@ import Destacar from '../../../components/destacar';
 export default function Destaques() {
 
     return (
-        <main id='page-destaques'>
+        <main className='page-destaques'>
             <section>
                 <Cabecalho />
             </section>

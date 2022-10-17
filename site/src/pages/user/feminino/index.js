@@ -11,7 +11,7 @@ import Pesquisa from '../../../components/pesquisar';
 export default function Feminino() {
 
     return (
-        <main id='page-feminino'>
+        <main className='page-feminino'>
             <section>
                 <Cabecalho />
             </section>

@@ -47,7 +47,7 @@ export default function Cabecalho() {
                     <p className='topico' onClick={Infantil}>INFANTIL</p>
                 </div>
                 <div className="input-pesquisa">
-                    <input className="pesquisa" type="text" id="lupa" placeholder="O que você está procurando?" />
+                    <input type="text" id="lupa" placeholder="O que você está procurando?" />
                 </div>
                 <div className='elementos-usuario'>
                     <img src='/images/perfil.png' alt='perfil' />
