@@ -24,6 +24,7 @@ export default function Destaques() {
                     </div>  
                 </div>           
             </section>
+            {/*Tela de meus pedidos -  teste*/}
             <section>
                 <CardMeusPedidos />
             </section>

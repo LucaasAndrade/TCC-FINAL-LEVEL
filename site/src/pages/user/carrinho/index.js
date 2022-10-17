@@ -4,7 +4,7 @@ import Cabecalho from '../../../components/header';
 import Footer from '../../../components/footer';
 import CardCarrinho from '../../../components/CardCarrinho';
 import FinalizarCompra from '../../../components/finalizarCompra';
-import CodigoPromocional from '../../../components/codigoPromocional';
+import CodigoPromocional from '../../../components/codigoPromocional';       
 
 
 
