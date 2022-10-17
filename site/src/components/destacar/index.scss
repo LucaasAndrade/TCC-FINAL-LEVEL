@@ -1,6 +1,17 @@
 #page-destaque{
     margin-top: 1em;
     
+    .numeros{
+        display: flex;  
+        position: absolute;
+        padding: .4em .4em;
+    }
+
+    .n-destac{
+        font-family: 'lexendL';
+        margin-left: .5em;
+    }
+
     .cartao-produto{
         position: relative;
         border: 1px solid #B6B6B6;

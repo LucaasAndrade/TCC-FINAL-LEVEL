@@ -11,7 +11,7 @@ import Pesquisa from '../../../components/pesquisar';
 export default function Acessorios() {
 
     return (
-        <main id='page-acessorios'>
+        <main className='page-acessorios'>
             <section>
                 <Cabecalho />
             </section>

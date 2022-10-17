@@ -36,7 +36,7 @@ export default function Produto() {
 
 
     return (
-        <main id='page-lading'>
+        <main className='page-lading'>
             <header className='cabecalho'>
                 <Cabecalho />
             </header>

@@ -11,7 +11,7 @@ import Pesquisa from '../../../components/pesquisar';
 export default function Infantil() {
 
     return (
-        <main id='page-infantil'>
+        <main className='page-infantil'>
             <section>
                 <Cabecalho />
             </section>

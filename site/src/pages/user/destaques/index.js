@@ -3,6 +3,7 @@ import './index.scss'
 import Cabecalho from '../../../components/header';
 import Footer from '../../../components/footer';
 import Destacar from '../../../components/destacar';
+import CardMeusPedidos from '../../../components/cardMeusPedidos';
 
 
 
@@ -11,7 +12,7 @@ import Destacar from '../../../components/destacar';
 export default function Destaques() {
 
     return (
-        <main id='page-destaques'>
+        <main className='page-destaques'>
             <section>
                 <Cabecalho />
             </section>
@@ -22,6 +23,9 @@ export default function Destaques() {
                         <Destacar imagem='/images/produto32.png' numero='6' nome='Tênis Adidas Masculino' preco='R$ 60,00' />
                     </div>  
                 </div>           
+            </section>
+            <section>
+                <CardMeusPedidos />
             </section>
             <section>
                 <Footer />

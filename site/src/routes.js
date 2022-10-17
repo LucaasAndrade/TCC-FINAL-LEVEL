@@ -22,6 +22,7 @@ import Cadastrarproduto from './pages/admin/cadastrarproduto'
 import ConsultarProduto from './pages/admin/consultarProduto'
 import Produtos from './pages/admin/produtos'
 import Cupom from './pages/admin/cupom'
+import ContinuarCompra from './pages/user/continuarCompra';
 
 
 export default function Index() {
@@ -49,6 +50,7 @@ export default function Index() {
         <Route path='/feminino' element={<Feminino />} />
         <Route path='/infantil' element={<Infantil />} />
         <Route path='/carrinho' element={<Carrinho />} />
+        <Route path='/continuarCompra' element={<ContinuarCompra />} />
 
       </Routes>
     </BrowserRouter>

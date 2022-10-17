@@ -1,0 +1,42 @@
+#page-codigo-promocional{
+
+    .fundo-codigo{
+        background-color: #ffffff;
+        border: 1px solid #B6B6B6;
+        width: 25em;
+    }
+
+    .info-codigo{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1em 0em 1em;
+    }
+
+    .input-pesquisa{
+        display: flex;
+        flex-direction: row;
+        margin-right: 4em;
+    }
+    
+    *input{
+        background-color: #ffffff;
+        border: 1px solid #B6B6B6;
+        padding: .5em 2em .5em 1.5em;
+        width: 19em;
+    }
+
+    #pesquisa{
+        background-image:url(../../../public/images/lupa.png);
+        background-repeat: no-repeat;
+        background-position: right;
+        background-size: 1.5em;
+    }
+
+    .paragrafo{
+        font-family: 'lexendL';
+        font-size: 12px;
+        width: 30em;
+        margin-top: 1em;
+    }
+}
