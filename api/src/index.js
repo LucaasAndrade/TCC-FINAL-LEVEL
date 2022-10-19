@@ -3,7 +3,13 @@ import 'dotenv/config';
 
 import AdmController from './controller/AdmController.js';
 import ProdutoControlLer from './controller/ProdutoController.js';
-import UsuaController from './controller/UsuaController.js';
+
+import adminCategoriaController from './controller/admin/categoriaController.js';
+
+import loginClienteController from './controller/loginClienteController.js'
+
+
+
 
 import express from 'express';
 import cors from 'cors';
@@ -15,7 +21,9 @@ server.use(express.json());
 
 server.use(AdmController);
 server.use(ProdutoControlLer);
-server.use(UsuaController);
+server.use(loginClienteController);
+server.use(adminCategoriaController);
+
 
 
 server.listen(process.env.PORT, 
