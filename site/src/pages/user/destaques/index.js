@@ -4,6 +4,7 @@ import Cabecalho from '../../../components/header';
 import Footer from '../../../components/footer';
 import Destacar from '../../../components/destacar';
 import CardMeusPedidos from '../../../components/cardMeusPedidos';
+import DadosPedidos from '../../../components/dadosCardPedidos';
 
 
 
@@ -26,7 +27,8 @@ export default function Destaques() {
             </section>
             {/*Tela de meus pedidos -  teste*/}
             <section>
-                <CardMeusPedidos />
+                <DadosPedidos data='23/11/2022' preco='R$ 409,90' situacao='entregue' />
+                <CardMeusPedidos imagem='/images/produto31.png' nome='Moletom Street Masculino' marca='Street' tamanho='G' quantidade='1' />
             </section>
             <section>
                 <Footer />

@@ -1,0 +1,56 @@
+.page-card-pedidos {
+
+    .cartao-carrinho {
+        display: flex;
+        flex-direction: row;
+        margin-top: .5em;
+    }
+
+    .imagem-carrinho{
+        margin-left: .5em;
+    }
+
+    .imagem-carrinho img {
+        border: 1px solid #B6B6B6;
+        min-width: 5em;
+        max-width: 5em;
+        cursor: pointer;
+    }
+
+    .info-card{
+        margin-left: 1.5em;
+    }
+
+    .card-nome {
+        font-family: 'lexendM';
+        margin: .5em 0em .5em;
+    }
+
+    .card-marca {
+        font-family: 'lexendEL';
+        color: #595959;
+    }
+
+    .tama-quant{
+        display: flex;
+        flex-direction: row;
+        margin: 1em 0em .5em;
+    }
+
+    .select {
+        display: flex;
+        flex-direction: row;
+        width: 8em;
+        margin-left: .5em;
+    }
+
+    .p-tam-qtd{
+        font-family: 'lexendM';
+        color: #595959;
+    }
+
+    .props-p{
+        font-family: 'lexendM';
+        margin-left: .5em;
+    }
+}
