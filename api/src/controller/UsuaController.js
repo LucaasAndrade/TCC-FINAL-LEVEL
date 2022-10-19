@@ -1,4 +1,4 @@
-import { CadastrarUsuario, UsuaLogin } from "../repository/UsuaRepository.js";
+import { CadastrarUsuario, UsuaLogin } from "../repository/loginClienteRepository.js";
 import  {Router} from 'express';
 const server = Router();
 
