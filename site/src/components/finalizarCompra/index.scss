@@ -1,4 +1,54 @@
-#page-finalizar-compra{
+ .page-finalizar-compra{
+
+    .fundo-continuar-compra{
+        background-color: #ffffff;
+        width: 30em;
+    }
+
+    .div-titulo{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .titulo{
+        font-family: 'lexendR';
+    }
+
+    .info-finalizar{
+        margin: 0em 1.5em 0em;
+    }
+
+    .div-info{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .p-info{
+        color: #595959;
+        font-family: 'lexendR';
+    }
+
+    .p-info-dois{
+        color: #987F5B;
+        font-family: 'lexendR';
+    }
+
+    .props-info{
+        font-family: 'LexendR';
+    }
+
+    .props-info-dois{
+        color: #987F5B;
+        font-family: 'lexendR';
+    }
+
+    .botao-cartao{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
     .cartoes{
         margin-top: .5em;
@@ -6,5 +56,20 @@
 
     .icones{
         margin-left: .7em;
+    }
+    
+    .botao-compra{
+        font-family: 'lexendR';
+        background-color: #987F5B;
+        border: 1px solid #987F5B;
+        color: #ffffff;
+        margin-top: 2.5em;
+        width: 20em;
+        height: 3em;
+    }
+    
+    .botao-compra:hover{
+        opacity: 90%;
+        cursor: pointer;
     }
 }

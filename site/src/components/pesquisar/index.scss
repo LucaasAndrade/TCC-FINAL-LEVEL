@@ -1,8 +1,9 @@
-#page-pesquisar{
+.page-pesquisar{
     display: flex;
     flex-wrap: wrap;
 
     .cartao-produto{
+        background-color: #ffffff;
         border: 1px solid #B6B6B6;
         margin-left: .5em;
         margin-right: .5em;
@@ -14,7 +15,6 @@
     }
 
     .info{
-        background-color: #ffffff;
         padding: 0em .5em 1em;
     }
 

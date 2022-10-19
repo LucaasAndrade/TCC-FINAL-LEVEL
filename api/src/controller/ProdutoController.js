@@ -1,7 +1,7 @@
 
 import multer from 'multer'
 
-import { AlterarProduto, CadastrarProduto,buscarProduto, buscarProdutoPorId,removerProduto,InserirCategoria, InserirTamanho, listarMarcas, listarCategorias, listarTamanhosProduto, InserirImagem } from '../repository/ProdutoRepository.js';
+import { AlterarProduto, CadastrarProduto,buscarProduto, buscarProdutoPorId,removerProduto,InserirCategoria, InserirTamanho, listarMarcas, listarCategorias, listarTamanhosProduto, InserirImagem, listarProdutoInicio } from '../repository/ProdutoRepository.js';
 
 import { VerificarInformacoesProduto } from '../services/verificacaoProduto.js'
 
@@ -202,6 +202,22 @@ server.get('/admin/produto/:id',async(req,resp) => {
         })
     }
 })
+
+server.get('/api/produto',async(req,resp) => {
+    try{
+      
+
+      const r=  await listarProdutoInicio();
+       resp.send(r)
+
+    }
+    catch(err){
+        resp.status(400).send({
+            erro:err.message
+        })
+    }
+})
+
 
 
 

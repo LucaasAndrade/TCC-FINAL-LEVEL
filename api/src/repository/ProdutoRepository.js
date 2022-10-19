@@ -78,15 +78,7 @@ export async function listarMarcas() {
 };
 
 
-export async function listarCategorias() {
-    const comando = 
-        `
-        select *
-            from tb_categoria
-        `
-    const [resposta] = await con.query(comando);
-    return resposta;
-}
+
 
 export async function listarTamanhosProduto(id) {
     const comando =
@@ -147,6 +139,36 @@ export async function removerProduto(idProduto){
 
     const [resp] = await con.query(comando,[idProduto])
     return resp.affectedRows;
+}
+
+export async function listarProdutoInicio(){
+    const comando = 
+    `
+        select tb_produto.id_produto   			  id,
+                tb_produto.id_categoria           id,
+                tb_marca_produto.id_marca_produto    id,
+                nm_produto                        produto,
+                vl_preco                          preco,
+                tb_marca_produto.nm_marca               marca,
+                ds_informacoes                    informacoes,
+                bl_disponivel                     disponivel,
+                bl_destaque                       destaque
+    from tb_produto
+    inner join tb_categoria on tb_produto.id_categoria = tb_categoria.id_categoria
+    inner join tb_marca_produto on tb_produto.id_marca_produto = tb_marca_produto.id_marca_produto
+    group 
+        by tb_produto.id_produto,
+        nm_produto,
+        vl_preco,
+        tb_marca_produto.nm_marca,
+    ds_informacoes,                    
+        bl_disponivel,                     
+        bl_destaque     `
+
+      const [registros] = await con.query(comando);
+      return registros;
+
+
 }
 
 
