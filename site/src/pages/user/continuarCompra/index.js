@@ -12,11 +12,10 @@ export default function ContinuarCompra() {
                 </div>
             </header>
             <section>
-                {/*Parte esquerda*/}
                 <div>
                     <div className='fundo-endereco'>
                         <div>
-                            <p className='p-endereco'>Endereço de Envio</p>
+                            <p className='titulo'>Endereço de Envio</p>
                             <div>
                                 <div>
                                     <input type="text" placeholder="Estado*"></input>
@@ -39,7 +38,7 @@ export default function ContinuarCompra() {
 
                     <div className='fundo-pagamento'>
                         <div>
-                            <p>Forma de Pagamento</p>
+                            <p className='titulo'>Forma de Pagamento</p>
                             <div>
                                 <div className='pagamento'>
                                     <div className="checkbox">
@@ -47,10 +46,10 @@ export default function ContinuarCompra() {
                                         <img src='/images/cartao-azul.png'></img>
                                         <p className="chek">Cartão de Crédito</p>
                                     </div>
-                                    <div className="checkbox">
+                                    <div className="checkbox-dois">
                                         <input type="checkbox"></input>
                                         <img src='/images/cartao-amarelo.png'></img>
-                                        <p className="chek">DESTAQUE</p>
+                                        <p className="chek">Cartão de Débito</p>
                                     </div>
                                 </div>
                                 <div className='pagamento'>
@@ -59,7 +58,7 @@ export default function ContinuarCompra() {
                                         <img src='/images/boleto.png'></img>
                                         <p className="chek">Boleto</p>
                                     </div>
-                                    <div className="checkbox">
+                                    <div className="checkbox-dois">
                                         <input type="checkbox"></input>
                                         <img src='/images/pix.png'></img>
                                         <p className="chek">PIX</p>
@@ -67,11 +66,9 @@ export default function ContinuarCompra() {
                                 </div>
                             </div>
 
-
-
                             <div className='fundo-endereco'>
                                 <div>
-                                    <p className='p-endereco'>Informações do Cartão</p>
+                                    <p className='titulo'>Informações do Cartão</p>
                                     <div>
                                         <div>
                                             <input type="text" placeholder="Número do cartão*"></input>

@@ -29,8 +29,8 @@
         width: 50vw;
     }
 
-    .p-endereco{
-        //font-family: 'lexendM';
+    .titulo{
+        font-family: 'lexendM';
     }
 
     .fundo-endereco input{
@@ -85,9 +85,17 @@
         margin-top: 1em;
     }
 
-    .fundo-pagamento{
+    .checkbox-dois{
         display: flex;
-        //justify-content: center;
+        margin-top: 1em;
+        margin-left: 1em;
+    }
+
+    .chek{
+        font-family: 'lexendR';
+    }
+
+    .fundo-pagamento{
         background-color: #ffffff;
         border: 1px solid#B6B6B6;
         width: 50vw;

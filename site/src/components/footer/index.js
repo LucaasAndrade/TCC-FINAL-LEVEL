@@ -3,7 +3,7 @@ import "../../common/common.scss";
 
 export default function Footer() {
   return (
-    <footer id="componente-footer">
+    <footer className="componente-footer">
       <div className="msg-email">
         <div className="carta-mensagem">
           <img src="/images/carta.png" alt="mensagem" />
