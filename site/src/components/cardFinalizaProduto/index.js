@@ -6,8 +6,8 @@ import '../../common/common.scss'
 
 export default function FinalizarCompra(props) {
     return (
-        <main className='page-finalizar-compra'>
-            <div className='fundo-continuar-compra'>
+        <main className='Finalizar-Compra'>
+            <div className='Fundo-Continuar'>
                 <div>
                     <div className='div-titulo'>
                         <h5 className='titulo'>RESUMO DA COMPRA</h5>
