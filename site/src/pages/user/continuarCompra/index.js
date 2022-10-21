@@ -1,20 +1,18 @@
 import './index.scss'
-
-
+import CardFinalizarProduto from '../../../components/cardFinalizaProduto'
+import LogoContinuarcompa from '../../../components/logoContinuarcompra'
 
 
 export default function ContinuarCompra() {
     return (
         <main className='page-continuar-compra'>
-            <header>
-                <div className="faixa-header">
-                    <img className="logo" src="/images/logoo.png" alt="logo" />
-                </div>
-            </header>
-            <section>
-                <div>
-                    <div className='fundo-endereco'>
-                        <div>
+            <LogoContinuarcompa/>
+            
+            <section className='fundo-endereco'>
+                
+                <div className='Principal-Endereco-Envio'>
+                      <div>
+            
                             <p className='titulo'>Endereço de Envio</p>
                             <div>
                                 <div>
@@ -67,7 +65,8 @@ export default function ContinuarCompra() {
                             </div>
 
                             <div className='fundo-endereco'>
-                                <div>
+                            </div>
+                                <div >
                                     <p className='titulo'>Informações do Cartão</p>
                                     <div>
                                         <div>
@@ -85,12 +84,16 @@ export default function ContinuarCompra() {
                                             <input type="date"></input>
                                             <input className="input-direita" type="text" placeholder="CVV*"></input>
                                         </div>
+                                        
                                     </div>
+                                    
                                 </div>
+
                             </div>
+                          
                         </div>
-                    </div>
-                </div>
+                        <CardFinalizarProduto/>
+                
             </section>
         </main>
     )

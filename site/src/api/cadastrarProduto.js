@@ -79,3 +79,10 @@ export async function removerProduto(id){
     return r.data;
 }
 
+
+export async function listarProdutosInicio(){
+    const r = await api.get ('produto/');
+    return r.data;
+}
+
+

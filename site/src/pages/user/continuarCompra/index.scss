@@ -13,7 +13,7 @@
         display: flex;
         justify-content: center;
         background-color: #ffffff;
-        border-bottom: 1px solid #B6B6B6;
+       
     }
 
     .logo:hover{
@@ -23,13 +23,25 @@
 
     .fundo-endereco{
         display: flex;
+        flex-direction: column;
+        border: 1px solid#ffffff;
+
+        
+    }
+
+    .Principal-Endereco-Envio{
+        margin: 5vh;
+        display: flex;
+        flex-direction: column;
         justify-content: center;
         background-color: #ffffff;
-        border: 1px solid#B6B6B6;
+        border: 1px solid#f5f6f5;
         width: 50vw;
+        height: 40vh;
     }
 
     .titulo{
+        
         font-family: 'lexendM';
     }
 
@@ -96,13 +108,19 @@
     }
 
     .fundo-pagamento{
+        margin: 5vh;
+       display: flex;
+       flex-direction: row-reverse;
         background-color: #ffffff;
         border: 1px solid#B6B6B6;
         width: 50vw;
+        height: 50vh;
     }
 
     .pagamento{
         display: flex;
         flex-direction: row;
     }
+
+    
 }

@@ -14,6 +14,8 @@ import Masculino from '../src/pages/user/masculino'
 import Feminino from '../src/pages/user/feminino'
 import Infantil from '../src/pages/user/infantil'
 import Carrinho from '../src/pages/user/carrinho'
+import ProdutoDetalhe from '../src/pages/user/ProdutoDetalhe'
+
 
 // Area / Admin
 import LoginAdmin from './pages/admin/login'
@@ -23,6 +25,7 @@ import ConsultarProduto from './pages/admin/consultarProduto'
 import Produtos from './pages/admin/produtos'
 import Cupom from './pages/admin/cupom'
 import ContinuarCompra from './pages/user/continuarCompra';
+
 
 
 export default function Index() {
@@ -51,6 +54,8 @@ export default function Index() {
         <Route path='/infantil' element={<Infantil />} />
         <Route path='/carrinho' element={<Carrinho />} />
         <Route path='/continuarCompra' element={<ContinuarCompra />} />
+        <Route path='/produto/:id/detalhe' element={<ProdutoDetalhe />} />
+
 
       </Routes>
     </BrowserRouter>

@@ -1,18 +1,54 @@
 import './index.scss'
 import '../../common/common.scss'
-
-
+import { API_URL } from '../../api/config';
+import { useNavigate } from 'react-router-dom'
 
 
 export default function Pesquisa(props) {
+    
+    const navigate = useNavigate()
+
+
+    function exibir(images) {
+        if (!images)
+            return `/images/produto02.png`;
+            
+           
+            
+        else 
+            return `${API_URL}/${images}`
+    }
+
+    
+    function exibir(images) {
+        if (!images)
+            return `/images/produto01.png`;
+            
+           
+            
+        else 
+            return `${API_URL}/${images}`
+    }
+
+
+    function formatarPreco(preco) {
+        return preco.toFixed(2).replace('.', ',');
+    }
+
+    function abrirDetalhes(id){
+        navigate('/produto/' + id +'/detalhe')
+    }
+    
     return (
-        <main className='page-pesquisar'>
+        <main className='page-pesquisar' onClick={() => abrirDetalhes(props.item.id)}>
                 <div className='cartao-produto'>
-                    <img className='imagem' src={props.imagem} />
+                     <img  src={exibir(props.item.images)}  /> 
                     <div>
                         <div className='info'>
-                            <p className='nome-produto'>{props.nome}</p>
-                            <p className='preco-produto'>{props.preco}</p>
+                        <div> {props.item.categoria} </div>
+                    <div> {props.item.produto} </div>
+                    <div> R$ {formatarPreco(props.item.preco)} 
+                    </div>
                         </div>
                     </div>
                 </div>

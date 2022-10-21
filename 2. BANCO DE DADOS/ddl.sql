@@ -54,8 +54,8 @@ create table tb_produto(
     ds_informacoes			varchar(110),
     bl_disponivel			bool,
     bl_destaque				bool,
-     foreign key ( id_categoria) references tb_categoria ( id_categoria),
-     foreign key ( id_marca_produto ) references tb_marca_produto (  id_marca_produto) 
+     foreign key ( id_categoria) references tb_categoria ( id_categoria) on delete cascade,
+     foreign key ( id_marca_produto ) references tb_marca_produto (  id_marca_produto) on delete cascade
 );
 
 
@@ -84,7 +84,6 @@ create table tb_usuario(
 id_usuario        	 int primary key auto_increment,
   nm_usuario          	 varchar(100),
     nm_sobrenome      	 varchar(100),
-    img_foto           	 varchar(100),
     dt_nascimento      	 datetime,
     ds_cpf 		 varchar(100),
     nr_telefone       	 varchar(100),
@@ -96,6 +95,8 @@ id_usuario        	 int primary key auto_increment,
     nr_casa           	 varchar(100),
    ds_ponto_referencia	 varchar(100)
 );
+
+drop table  tb_usuario;
 
 
 create table tb_usuario_favorito(
@@ -184,4 +185,6 @@ id_login         	int primary key auto_increment,
     ds_senha	        varchar(100),
 foreign key (id_usuario) references  tb_usuario(id_usuario)
 );
+
+drop database TCC2022;
 

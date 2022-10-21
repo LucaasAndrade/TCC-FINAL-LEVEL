@@ -5,12 +5,42 @@ import Footer from '../../../components/footer';
 import CardCarrinho from '../../../components/CardCarrinho';
 import FinalizarCompra from '../../../components/finalizarCompra';
 import CodigoPromocional from '../../../components/codigoPromocional';       
+import {  useEffect, useState } from 'react';
+
+
+import Storage from 'local-storage'
+import {buscarProdutoPorId} from '../../../api/cadastrarProduto'
 
 
 
 
 
 export default function Carrinho() {
+    const [itens,setItens] = useState([]);
+
+    async  function carregarCarrinho(){
+        let carrinho = Storage('carrinho')
+        if(carrinho){
+       
+        for(let produto of Carrinho){
+            let p = await buscarProdutoPorId(produto.id);
+            console.log(p);
+            setItens(...itens,{
+                produto: p,
+                qtd:produto.qtd
+            })
+        }
+
+        }
+      
+    }
+
+    useEffect(() => {
+        carregarCarrinho();
+    },[])
+
+    
+
 
     return (
         <main className='page-carrinho'>

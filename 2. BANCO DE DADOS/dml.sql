@@ -57,7 +57,7 @@ where id_categoria = '6';
 select * from tb_marca_produto;
 
 insert into tb_marca_produto (nm_marca,img_marca)
-		values ('Lacoste', 'Imagem');
+		values ('Nike', 'Imagem');
         
         
 -- Alterar marca_produto
@@ -75,14 +75,13 @@ where id_marca_produto = '2';
 select * from tb_produto; 
 
 -- Inserir Produto
-insert into tb_produto (id_categoria,id_marca_produto,nm_produto,vl_preco,nm_marca,ds_informacoes,bl_disponivel, bl_destaque)
-		values (1,1,'Camiseta',911.5,'Nike','Produto de otima qualidade',true,false);
+insert into tb_produto (id_categoria,id_marca_produto,nm_produto,vl_preco,ds_informacoes,bl_disponivel, bl_destaque)
+		values (1,1,'Boné',300.00,'Produto de otima qualidade',true,false);
         
 -- Alterar Produto
 update  tb_produto
     set nm_produto = 'Blusa De Frio',
     vl_preco = 7.8,
-     nm_marca= 'Adidas',
      ds_informacoes= 'Otimo Produto',
      bl_disponivel= true,
      bl_destaque = false
@@ -90,7 +89,8 @@ update  tb_produto
   
   -- Deleta Produto
 delete from tb_produto
-where id_produto = '15';
+where id_produto= 1;
+
 
 
 --  Cadastra imagem_produto
@@ -108,7 +108,7 @@ update  tb_imagem_produto
   
 -- Deleta Imagem Do Produto
 delete from tb_imagem_produto
-where id_imagem_produto = '1';
+where id_produto = '1';
 
 
 
@@ -137,18 +137,18 @@ update  tb_produto_tamanho
   
 -- Deleta Tamanho
 delete from tb_produto_tamanho
-where id_produto_tamanho = '5';
+where id_produto_tamanho = '6';
 
 
 -- Cadastra Usuario
 select * from tb_usuario;
-insert into tb_usuario (nm_usuario,nm_sobrenome,img_foto,dt_nascimento,ds_cpf,nr_telefone,nr_telefone2,ds_cep,nm_rua,nm_estado,nm_cidade,nr_casa,ds_ponto_referencia)
-		values ('Lucas',' Marcelo','Imagem Do Lucas', '2004-11-10','476.175.558-66','(11)95319-5154','(11)5921-6389','04896-300','Rua Paineira','SP', 'São Paulo','139','Proximo ao mercadinho');
+insert into tb_usuario (nm_usuario,nm_sobrenome,dt_nascimento,ds_cpf,nr_telefone,nr_telefone2,ds_cep,nm_rua,nm_estado,nm_cidade,nr_casa,ds_ponto_referencia)
+		values ('Lucas',' Marcelo', '2004-11-10','476.175.558-66','(11)95319-5154','(11)5921-6389','04896-300','Rua Paineira','SP', 'São Paulo','139','Proximo ao mercadinho');
 
-insert into tb_usuario (nm_usuario,nm_sobrenome,img_foto,dt_nascimento,ds_cpf,nr_telefone,nr_telefone2,ds_cep,nm_rua,nm_estado,nm_cidade,nr_casa,ds_ponto_referencia)
-		values ('Ester',' Queiroz','Imagem Da Ester', '2005-08-02','476.175.558-06','(11)95319-5154','(11)5921-6389','04896-300','Rua Paineira','SP', 'São Paulo','139','Proximo ao mercadinho');
+insert into tb_usuario (nm_usuario,nm_sobrenome,dt_nascimento,ds_cpf,nr_telefone,nr_telefone2,ds_cep,nm_rua,nm_estado,nm_cidade,nr_casa,ds_ponto_referencia)
+		values ('Ester',' Queiroz', '2005-08-02','476.175.558-06','(11)95319-5154','(11)5921-6389','04896-300','Rua Paineira','SP', 'São Paulo','139','Proximo ao mercadinho');
 
-insert into tb_usuario (nm_usuario,nm_sobrenome,img_foto,dt_nascimento,ds_cpf,nr_telefone,nr_telefone2,ds_cep,nm_rua,nm_estado,nm_cidade,nr_casa,ds_ponto_referencia)
+insert into tb_usuario (nm_usuario,nm_sobrenome,dt_nascimento,ds_cpf,nr_telefone,nr_telefone2,ds_cep,nm_rua,nm_estado,nm_cidade,nr_casa,ds_ponto_referencia)
 		values ('Rayssa',' Rodrigues','Imagem Da Rayssa', '2005-10-27','476.175.558-05','(11)95319-5154','(11)5921-6389','04896-300','Rua Paineira','SP', 'São Paulo','139','Proximo ao mercadinho');
 
 
@@ -162,7 +162,7 @@ update  tb_usuario
   
 -- Deleta Dados do Usuario
 delete from tb_usuario
-where id_usuario = '1';
+where id_usuario = '8';
 
 
  --  Usuario_favorito   
@@ -306,9 +306,9 @@ select * from  tb_login;
 
 insert into  tb_login(id_usuario,ds_email,ds_senha 	) 
 		values('1', 'LucasMarcelo@gmail.com','123456789');
-
 insert into  tb_login(id_usuario,ds_email,ds_senha 	) 
 		values('1', 'esterq292@gmail.com','ESter12#');
+
 
 insert into  tb_login(id_usuario,ds_email,ds_senha 	) 
 		values('2', 'RayssaRodrigues@gmail.com','1234');
@@ -322,5 +322,17 @@ update  tb_login
   -- Deleta Login
 delete from tb_login
 where  id_usuario = '1';
+
+  select  tb_produto.id_produto      as id,
+    nm_produto                          as produto,
+    vl_preco                            as preco,
+    ds_informacoes                      as informacoes,
+    bl_disponivel                       as disponivel,
+    bl_destaque                         as destaque,
+    tb_categoria.id_categoria          			as categoria,
+    tb_marca_produto.id_marca_produto                    as marca
+from tb_produto
+inner  join tb_categoria on tb_produto.id_categoria = tb_categoria.id_categoria
+inner join tb_marca_produto on tb_produto.id_marca_produto = tb_marca_produto.id_marca_produto;
 
   

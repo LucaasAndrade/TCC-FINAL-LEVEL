@@ -1,7 +1,7 @@
 
 import multer from 'multer'
 
-import { AlterarProduto, CadastrarProduto,buscarProduto, buscarProdutoPorId,removerProduto,InserirCategoria, InserirTamanho, listarMarcas, listarCategorias, listarTamanhosProduto, InserirImagem, listarProdutoInicio } from '../repository/ProdutoRepository.js';
+import { AlterarProduto, CadastrarProduto,buscarProduto, buscarProdutoPorId,removerProduto,InserirCategoria, InserirTamanho, listarMarcas, listarCategorias, listarTamanhosProduto, InserirImagem,listarProdutosInicio } from '../repository/ProdutoRepository.js';
 
 import { VerificarInformacoesProduto } from '../services/verificacaoProduto.js'
 
@@ -203,11 +203,11 @@ server.get('/admin/produto/:id',async(req,resp) => {
     }
 })
 
-server.get('/api/produto',async(req,resp) => {
+server.get('/produto',async(req,resp) => {
     try{
       
 
-      const r=  await listarProdutoInicio();
+      const r=  await listarProdutosInicio();
        resp.send(r)
 
     }
@@ -217,6 +217,9 @@ server.get('/api/produto',async(req,resp) => {
         })
     }
 })
+
+
+
 
 
 
