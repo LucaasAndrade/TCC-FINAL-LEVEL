@@ -2,6 +2,7 @@ CREATE DATABASE TCC2022;
 USE TCC2022;
 SHOW tables;
 
+
 -- TABELA ADM
 
 create table tb_adm(
@@ -32,8 +33,6 @@ create table tb_categoria(
 
 -- Marca Produto
 
-select *
-	from tb_produto;
 
 -- TABLEA MARCA PRODUTO
 
@@ -70,8 +69,6 @@ create table tb_imagem_produto(
 
 -- tamanho produto
 
-select *
-	from tb_produto_tamanho;
 
 create table tb_produto_tamanho(
 id_produto_tamanho        	int primary key auto_increment,
@@ -302,14 +299,13 @@ where id_marca_produto = '2';
 select * from tb_produto; 
 
 -- Inserir Produto
-insert into tb_produto (id_categoria,id_marca_produto,nm_produto,vl_preco,nm_marca,ds_informacoes,bl_disponivel, bl_destaque)
-		values (1,1,'Camiseta',911.5,'Nike','Produto de otima qualidade',true,false);
+insert into tb_produto (id_categoria,id_marca_produto,nm_produto,vl_preco,ds_informacoes,bl_disponivel, bl_destaque)
+		values (1,1,'Camiseta',911.5,'Produto de otima qualidade',true,false);
         
 -- Alterar Produto
 update  tb_produto
     set nm_produto = 'Blusa De Frio',
     vl_preco = 7.8,
-     nm_marca= 'Adidas',
      ds_informacoes= 'Otimo Produto',
      bl_disponivel= true,
      bl_destaque = false
@@ -396,7 +392,9 @@ where id_usuario = '1';
  select * from  tb_usuario_favorito;
  
 insert into  tb_usuario_favorito (id_produto,id_usuario,bl_favorito)
-		values('1','1',true);
+		values('1','2',true);
+   
+   
    
 -- Alterar Favorito
 update  tb_usuario_favorito
@@ -412,7 +410,7 @@ where  id_usuario_favorito= '2';
 select * from tb_produto_avaliacao;
 
 insert into  tb_produto_avaliacao(id_produto,id_usuario,ds_avaliacao,nr_nota,bl_like,dt_avaliacao)
-		values('1','1','Uma Peça Bonita',4.8,true,'2020-02-05');
+		values('1','2','Uma Peça Bonita',4.8,true,'2020-02-05');
         
 -- Altera Avaliacao
 update  tb_produto_avaliacao
@@ -452,7 +450,7 @@ where  id_cupom= '1';
 select * from tb_pedido;
 
 insert into tb_pedido (id_produto,id_usuario,id_cupom,dt_pedido,vl_total,ds_situacao)  
-	values ('1','1','1','2022-10-05', 60.5,'Em Andamento');
+	values ('1','2','1','2022-10-05', 60.5,'Em Andamento');
     
     
 -- Alterar Pedido
@@ -463,12 +461,14 @@ update  tb_pedido
   where id_pedido= '1';
   
   -- Deleta pedido
-delete from tb_pedido
-where  id_pedido= '1';
+-- delete from tb_pedido
+-- where  id_pedido= '1';
 
 
 -- Cadastra item 
 select * from tb_pedido_item;
+
+
 
 insert into tb_pedido_item (id_produto,id_pedido)
 		 values ('1','1');
@@ -531,14 +531,17 @@ where  id_pagamento_pix = '1';
 -- Login Usúario
 select * from  tb_login;
 
-insert into  tb_login(id_usuario,ds_email,ds_senha 	) 
-		values('1', 'LucasMarcelo@gmail.com','123456789');
+-- insert into  tb_login(id_usuario,ds_email,ds_senha 	) --	values('1', 'LucasMarcelo@gmail.com','123456789');
 
 insert into  tb_login(id_usuario,ds_email,ds_senha 	) 
-		values('1', 'esterq292@gmail.com','ESter12#');
+		values('2', 'esterq292@gmail.com','ESter12#');
 
 insert into  tb_login(id_usuario,ds_email,ds_senha 	) 
-		values('2', 'RayssaRodrigues@gmail.com','1234');
+		values('3', 'RayssaRodrigues@gmail.com','1234');
+        
+        select * 
+			from tb_usuario;
+        
         
 -- Altera login
 update  tb_login
