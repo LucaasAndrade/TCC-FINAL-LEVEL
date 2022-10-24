@@ -6,9 +6,12 @@
 .page-produto{
 
     select{
-        width: 4em;
+        font-family: 'lexendEL';
+        color: #987F5B;  
         margin-left: .5em;
-        color: #987F5B;
+        width: 6em;
+        height: 2em;
+        padding: 0em 1em; 
         cursor: pointer;
     }
 
@@ -25,6 +28,16 @@
         border: 1px solid #B6B6B6;  
         padding: 0em 1em; 
     }
+
+    .botoes{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .frete{
+        font-family: 'lexendEL';
+    }
+
     .botao-adicionar{
         font-family: 'lexendR';
         text-transform: uppercase;

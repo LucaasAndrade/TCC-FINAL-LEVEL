@@ -27,13 +27,16 @@ export default function FinalizarCompra(props) {
                         </div>
                     </div>
                 </div>
-                {/*<hr />*/}
+                <hr className='linha' />
                 <div className='compra'>
+                    <div className='teste'>
+                        <p>Nao sou um robo</p>
+                    </div>
                     <div>
                         <button className='botao-compra'>{props.botao}</button>
                     </div>
                     <div>
-                        <img className='img-pagamento' src='/images/cartao-azul.png' />
+                        <img src='/images/cartao-azul.png' />
                         <img className='img-pagamento' src='/images/cartao-amarelo.png' />
                         <img className='img-pagamento' src='/images/boleto.png' />
                         <img className='img-pagamento' src='/images/pix.png' />

@@ -4,26 +4,31 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        min-width: auto;
-        max-width: 50vw;
-        min-height: 50vh;
-        max-height: 50vh;
+        min-width: 40vw;
+        max-width: 40vw;
+        min-height: 40vh;
+        max-height: 40vh;
         background-color: #ffffff;
     }
 
-    .titulo{}
+    .titulo{
+        font-family: 'lexendEL';
+    }
 
     .info{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        font-family: 'lexendEL';
     }
 
     .info-meio{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        font-family: 'lexendEL';
         color: #987F5B;
+        margin: .2em 0em .2em;
     }
 
     .compra{
@@ -36,13 +41,18 @@
         margin-left: 1em;
     }
 
+    .linha{
+        margin: 1em 0em 1em;
+        min-width: 90%;
+    }
+    
     .botao-compra{
         font-family: 'lexendR';
         text-transform: uppercase;
         background-color: #987F5B;
         border: 1px solid #987F5B;
         color: #ffffff;
-        margin-top: 2.5em;
+        margin-top: 1.5em;
         width: 20em;
         height: 3.2em;
     }
@@ -50,5 +60,11 @@
     .botao-compra:hover{
         opacity: 90%;
         cursor: pointer;
+    }
+
+    .teste{
+        width: 20em;
+        height: 5em;
+        background-color: #c9c9c9;
     }
 }

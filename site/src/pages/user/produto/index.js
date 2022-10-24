@@ -10,6 +10,7 @@ import Footer from '../../../components/footer'
 import CardCarrinho from '../../../components/CardCarrinho';
 import { useEffect, useState } from 'react';
 import { buscarProdutoPorId } from '../../../api/cadastrarProduto';
+import CarrosselProduto from '../../../components/carroselProduto';
 
 
 
@@ -83,7 +84,7 @@ export default function Produto(props) {
                             <p>destaques</p>
                         </div>
                         <div>
-                            {/*carrosel*/}
+                            <CarrosselProduto />
                         </div>
                     </div>
                     <div>
@@ -113,18 +114,18 @@ export default function Produto(props) {
                         <div>
                             <p>{props.situacao}</p>
                         </div>
-                            <div>
-                                <button className='botao-adicionar' onClick={adicionarAoCarrinho}>adicionar ao carrinho</button>
-                                <div>
-                                    <button><img src='/images/curtidos.png'></img> </button>
-                                </div>
+                        <div className='botoes'>
+                            <button className='botao-adicionar' onClick={adicionarAoCarrinho}>adicionar ao carrinho</button>
+                            <div className='botao-curti'>
+                                <button><img src='/images/curtidos.png'></img> </button>
                             </div>
+                        </div>
                         <div>
                             <p>tabela de medidas</p>
                         </div>
 
                         <div>
-                            <p>Calcular frete e entrega</p>
+                            <p className='frete'>Calcular frete e entrega</p>
                             <input type='text'></input>
                             <button className='botao-calcular'>calcular</button>
                         </div>
