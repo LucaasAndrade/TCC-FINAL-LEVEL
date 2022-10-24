@@ -1,0 +1,54 @@
+.componente-compra{
+
+    .fundo-compra{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: auto;
+        max-width: 50vw;
+        min-height: 50vh;
+        max-height: 50vh;
+        background-color: #ffffff;
+    }
+
+    .titulo{}
+
+    .info{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .info-meio{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        color: #987F5B;
+    }
+
+    .compra{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .img-pagamento{
+        margin-left: 1em;
+    }
+
+    .botao-compra{
+        font-family: 'lexendR';
+        text-transform: uppercase;
+        background-color: #987F5B;
+        border: 1px solid #987F5B;
+        color: #ffffff;
+        margin-top: 2.5em;
+        width: 20em;
+        height: 3.2em;
+    }
+
+    .botao-compra:hover{
+        opacity: 90%;
+        cursor: pointer;
+    }
+}

@@ -6,37 +6,37 @@ import '../../common/common.scss'
 
 export default function FinalizarCompra(props) {
     return (
-        <main>
-            <div>
+        <main className='componente-compra'>
+            <div className='fundo-compra'>
                 <div>
                     <div>
-                        <h4>RESUMO DA COMPRA</h4>
+                        <h4 className='titulo'>RESUMO DA COMPRA</h4>
                     </div>
                     <div>
-                        <div>
+                        <div className='info'>
                             <p>Qtd. Produtos:</p>
                             <p>{props.quantidade}</p>
                         </div>
-                        <div>
+                        <div className='info-meio'>
                             <p>Frete:</p>
-                            <p>{props.preco}</p>
+                            <p>{props.frete}</p>
                         </div>
-                        <div>
+                        <div className='info'>
                             <p>Total:</p>
                             <p>{props.total}</p>
                         </div>
                     </div>
                 </div>
                 {/*<hr />*/}
-                <div>
+                <div className='compra'>
                     <div>
-                        <button>finalizar compra</button>
+                        <button className='botao-compra'>{props.botao}</button>
                     </div>
                     <div>
-                        <img src='/images/cartao-azul.png' />
-                        <img src='/images/cartao-amarelo.png' />
-                        <img src='/images/boleto.png' />
-                        <img src='/images/pix.png' />
+                        <img className='img-pagamento' src='/images/cartao-azul.png' />
+                        <img className='img-pagamento' src='/images/cartao-amarelo.png' />
+                        <img className='img-pagamento' src='/images/boleto.png' />
+                        <img className='img-pagamento' src='/images/pix.png' />
                     </div>
                 </div>
             </div>
