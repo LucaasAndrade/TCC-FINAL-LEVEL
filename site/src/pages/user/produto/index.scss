@@ -56,4 +56,28 @@
         opacity: 90%;
         cursor: pointer;
     }
+    @media (max-width: 1024px) {
+        .produto {
+            flex-direction: column-reverse;
+            align-items: flex-start;
+        }
+
+        .detalhes {
+            margin-left: 0px;
+        }
+
+        .imagens {
+            flex-direction: column-reverse;
+            margin-top: 50px;
+
+            .opcoes {
+                flex-direction: row;
+                margin: 0px;
+            }
+        }
+
+    }
+
+
+
 }

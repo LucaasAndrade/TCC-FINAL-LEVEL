@@ -10,4 +10,51 @@
     #componente-footer{
         background-color: #ffffff;
     }
+
+    .fundo-continuar-compra{
+       
+       display: flex;
+       flex-direction: row-reverse;
+       margin-top: -0em;
+       margin-right: 22em;
+    }
+
+    .div-titulo{
+        margin:1vh;
+        background-color:#ffffff ;
+        width: 55vh;
+        height: 47vh;
+
+    }
+
+    .titulo{
+       font-size: 1.8vh;
+        margin: 2vh  15vh;
+    }
+
+    .p-info{
+    margin:0.5vh;
+    }
+
+
+    .p-info-dois{
+        margin: 1vh;
+        color:#987F5B
+    }
+
+    .botao-compra{
+        background-color: #987F5B;
+        border: 1px solid #987F5B;
+        color: #ffffff;
+        margin: 3vh 10vh;
+        width: 29vh;
+        height: 5vh;
+    }
+
+    .cartoes{
+      margin-left: 7em;
+      margin-top: -1em;
+    }
+ 
+    
 }

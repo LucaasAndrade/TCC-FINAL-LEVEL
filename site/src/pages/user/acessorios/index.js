@@ -4,7 +4,7 @@ import Cabecalho from '../../../components/header';
 import Footer from '../../../components/footer';
 import Pesquisa from '../../../components/pesquisar';
 import { listarProdutosInicio} from "../../../api/cadastrarProduto";
-import { useState,useEffect,useRef } from "react";
+import { useState,useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 
@@ -13,9 +13,8 @@ import { useNavigate } from "react-router-dom";
 
 
 export default function Acessorios() {
-    const navigate = useNavigate("");
-    const ref = useRef();
-
+    const navigate = useNavigate();
+   
     const[setprodutos,setProdutos] = useState([]);
     
     async function listar(){

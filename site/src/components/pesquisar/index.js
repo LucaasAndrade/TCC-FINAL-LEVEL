@@ -11,7 +11,8 @@ export default function Pesquisa(props) {
 
     function exibir(images) {
         if (!images)
-            return `/images/produto02.png`;
+        
+            return `/images/produto04.png`;
             
            
             
@@ -20,29 +21,30 @@ export default function Pesquisa(props) {
     }
 
     
-    function exibir(images) {
+    function exibiir(images) {
         if (!images)
-            return `/images/produto01.png`;
+        
+            return `/images/produto05.png`;
             
            
             
         else 
             return `${API_URL}/${images}`
     }
-
-
+    
     function formatarPreco(preco) {
         return preco.toFixed(2).replace('.', ',');
     }
 
-    function abrirDetalhes(id){
-        navigate('/produto/' + id +'/detalhe')
+    function abrirDetalhes(id) {
+        navigate('/produto/' + id + '/detalhe')
     }
-    
+
     return (
         <main className='page-pesquisar' onClick={() => abrirDetalhes(props.item.id)}>
                 <div className='cartao-produto'>
                      <img  src={exibir(props.item.images)}  /> 
+                     
                     <div>
                         <div className='info'>
                         <div> {props.item.categoria} </div>

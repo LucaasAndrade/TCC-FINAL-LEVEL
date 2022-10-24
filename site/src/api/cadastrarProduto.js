@@ -70,7 +70,7 @@ export async function buscarProdutos(){
 }
 
 export async function buscarProdutoPorId(id){
-    const r = await api.get ('/admin/produto/' + id);
+    const r = await api.get ('/api/produto/' + id);
     return r.data;
 }
 

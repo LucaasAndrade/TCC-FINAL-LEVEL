@@ -1,16 +1,35 @@
 import './index.scss'
 
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
+import storage from 'local-storage';
+
+ 
 import Cabecalho from '../../../components/header'
 import Footer from '../../../components/footer'
 import CardCarrinho from '../../../components/CardCarrinho';
+import { useEffect, useState } from 'react';
+import { buscarProdutoPorId } from '../../../api/cadastrarProduto';
 
 
 
 
 
 export default function Produto(props) {
+    const [produto,setProduto] = useState({categoria:[], imagem:[], info:[]})
+
+    const {id } = useParams();
+
+   async function carregarPagina(){
+     const r = await   buscarProdutoPorId(id)
+    setProduto(r)
+    }
+
+    useEffect(() => {
+        carregarPagina();
+    },[])
+
+    
 
     const navigate = useNavigate('');
 
@@ -35,6 +54,23 @@ export default function Produto(props) {
     }
 
 
+    function adicionarAoCarrinho(){
+        let carrinho = [];
+        if(storage('carrinho')){
+            carrinho = storage('carrinho');
+        }
+
+        if(!carrinho.find(item => item.id === id)){
+        carrinho.push({
+            id:id,
+            qtd:1
+        })
+        storage('carrinho',carrinho);
+    }
+      alert ('Produto Adicionada Ao Carrinho!');
+    }
+
+
     return (
         <main className='page-produto'>
             <header className='cabecalho'>
@@ -55,9 +91,9 @@ export default function Produto(props) {
                             <img></img>
                         </div>
                         <div>
-                            <h2>Camiseta Street</h2>
-                            <p>Adidas</p>
-                            <p>R$ 129,90</p>
+                            <h2>{produto.info.produto}</h2>
+                            <p>{produto.info.marca}</p>
+                            <p>{produto.info.preco}</p>
                         </div>
                         <div>
                             <select>
@@ -78,7 +114,7 @@ export default function Produto(props) {
                             <p>{props.situacao}</p>
                         </div>
                             <div>
-                                <button className='botao-adicionar'>adicionar ao carrinho</button>
+                                <button className='botao-adicionar' onClick={adicionarAoCarrinho}>adicionar ao carrinho</button>
                                 <div>
                                     <button><img src='/images/curtidos.png'></img> </button>
                                 </div>
