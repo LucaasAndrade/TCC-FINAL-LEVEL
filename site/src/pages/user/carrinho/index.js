@@ -3,6 +3,7 @@ import './index.scss'
 import Cabecalho from '../../../components/header';
 import Footer from '../../../components/footer';
 import CardCarrinho from '../../../components/CardCarrinho';
+import FinalizarCompra from '../../../components/cardFinalizaProduto';
 
 import CodigoPromocional from '../../../components/codigoPromocional';       
 import { createRef, useEffect, useState } from 'react';
@@ -73,6 +74,11 @@ useEffect(() => {
             <section>
                 <Cabecalho />
             </section>
+
+            <section>
+                <FinalizarCompra quantidade='2' frete='R$ 20,00' total='R$ 189,00' botao='continuar compra'/>
+            </section>
+
             <section>
 
                 {itens.map(item =>
@@ -117,11 +123,14 @@ useEffect(() => {
                 </div>
                 </div>
 
+               
+
                 <CodigoPromocional />
             </section>
+
+
             <section>
                 <Footer />
-             
             </section>
         </main>
     )
