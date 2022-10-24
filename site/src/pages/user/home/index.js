@@ -7,11 +7,27 @@ import Footer from '../../../components/footer'
 import CarroselDestaques from '../../../components/carrosel'
 import CarroselMarcas from '../../../components/carroselmarcas'
 import AcessoriosHome from '../../../components/acessoriosHome'
+import { useEffect, useState } from 'react';
+import { listarProdutosInicio} from "../../../api/cadastrarProduto";
+
+
 
 
 
 
 export default function Home() {
+    const [produtos,setProdutos] = useState([]);
+
+   async function listar(){
+    const r = await listarProdutosInicio();
+    setProdutos(r);
+    }
+
+    useEffect(() => {
+        listar();
+    },[])
+
+    
 
     
     /*function inicialModal(modalID) {
@@ -97,11 +113,9 @@ export default function Home() {
                         <h5 className='p-ver-mais' onClick={AcessoriosPage}>Ver mais >> </h5> 
                     </div>
                     <div className='produtos'>
-                        <AcessoriosHome imagem='/images/acesso1.png' nome='Tênis Vans Masculino' preco='R$ 299,90' />
-                        <AcessoriosHome imagem='/images/acesso4.png' nome='Tênis Adidas Masculino' preco='R$ 400,00' />
-                        <AcessoriosHome imagem='/images/acesso2.png' nome='Tênis Fila Masculino' preco='R$ 220,00' />
-                        <AcessoriosHome imagem='/images/acesso3.png' nome='Boné Adidas Masculino' preco='R$ 69,00' />
-                        <AcessoriosHome imagem='/images/acesso5.png' nome='Boné Adidas Masculino' preco='R$ 69,00' />
+                        {produtos.map(item =>
+                        <AcessoriosHome  item ={item} />
+                        )}
                     </div> 
                 </div>           
             </section>
