@@ -20,18 +20,7 @@ export default function Pesquisa(props) {
             return `${API_URL}/${images}`
     }
 
-    
-    function exibiir(images) {
-        if (!images)
-        
-            return `/images/produto05.png`;
-            
-           
-            
-        else 
-            return `${API_URL}/${images}`
-    }
-    
+
     function formatarPreco(preco) {
         return preco.toFixed(2).replace('.', ',');
     }
@@ -44,7 +33,7 @@ export default function Pesquisa(props) {
         <main className='page-pesquisar' onClick={() => abrirDetalhes(props.item.id)}>
                 <div className='cartao-produto'>
                      <img  src={exibir(props.item.images)}  /> 
-                     
+                    
                     <div>
                         <div className='info'>
                         <div> {props.item.categoria} </div>

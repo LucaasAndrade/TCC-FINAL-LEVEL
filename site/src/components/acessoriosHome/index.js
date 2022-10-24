@@ -1,6 +1,8 @@
 import './index.scss'
 import '../../common/common.scss'
 import { useNavigate } from 'react-router-dom'
+import { API_URL } from '../../api/config';
+import { useState } from 'react';
 
 
 
@@ -15,14 +17,27 @@ export default function AcessoriosHome(props) {
         navigate('/produto/' + id +'/detalhe')
     }
 
+    function exibir(imagem){
+        if(!imagem)
+        return '/images/acesso2.png';
+
+        else
+        return`${API_URL}/${imagem}`
+    }
+
+    function formatarPreco(preco) {
+        return preco.toFixed(2).replace('.', ',');
+    }
+    
+
     return (
         <main id='acessorios-home-page' onClick={() => abrirDetalhes(props.item.id)}>
             <div className='cartao-produto'>
-                <img className='imagem' src={props.imagem} />
+                <img src= {exibir(props.item.images)} />
                 <div>
                     <div className='info'>
-                        <p className='nome-produto'>{props.nome}</p>
-                        <p className='preco-produto'>{props.preco}</p>
+                        <p >{props.item.produto}</p>
+                        <p> R$ {formatarPreco(props.item.preco)}  </p>
                     </div>
                 </div>
             </div>

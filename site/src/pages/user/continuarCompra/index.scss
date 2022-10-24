@@ -7,13 +7,12 @@
     display: flex;
     flex-direction: column;
     background-color: #E6E6E6;
-    min-height: 10vh;
+    min-height: 100vh;
 
     .faixa-header{
         display: flex;
         justify-content: center;
-        background-color: #ffffff;
-       
+        background-color: #ffffff;   
     }
 
     .logo:hover{
@@ -21,38 +20,26 @@
         cursor: pointer;
     }
 
-    .fundo-endereco{
-        display: flex;
-        flex-direction: column;
-        border: 1px solid#ffffff;
-
-        
-    }
-
-    .Principal-Endereco-Envio{
-        margin: 5vh;
+    .principal-endereco-envio{
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
+        margin: 3em 5em 0em;
         background-color: #ffffff;
-        border: 1px solid#f5f6f5;
+        border: 1px solid #B6B6B6;
         width: 50vw;
         height: 40vh;
     }
 
-    .titulo{
-        
-        font-family: 'lexendM';
-    }
-
-    .fundo-endereco input{
-        width: 15em;
+    .principal-endereco-envio input{
+        width: 17em;
         height: 3.2em;
         border: 1px solid #B6B6B6;  
         padding: 0em 1em; 
     }
- 
-    select{
+
+    .principal-endereco-envio select{
         width: 15em;
         height: 3.2em;
         border: 1px solid #B6B6B6;  
@@ -60,8 +47,50 @@
         margin-left: 2em;
     }
 
+    .todos-inputs{
+        margin-top: 2em;
+    }
+
+    .titulo{
+        font-family: 'lexendM';
+    }
+
+    .fundo-pagamento{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 2em 5em 0em;
+        background-color: #ffffff;
+        border: 1px solid #B6B6B6;
+        width: 50vw;
+        height: 40vh;
+    }
+
+    .fundo-endereco{
+        display: flex;
+        flex-direction: column;
+        border: 1px solid#ffffff; 
+    }
+
+    .endereco select{
+        width: 15em;
+        height: 3.2em;
+        border: 1px solid #B6B6B6;  
+        padding: 0em 1em; 
+        margin-left: 2em;
+    }
+
+    .endereco input{
+        width: 17em;
+        height: 3.2em;
+        border: 1px solid #B6B6B6;  
+        padding: 0em 1em; 
+    }
+    
     #input-numero{
         width: 8em;
+        margin-left: 2em;
     }
 
     #input-referencia{
@@ -70,8 +99,8 @@
     }
 
     #input-complemento{
-        min-width: 35vw;
-        max-width: 35vw;
+        min-width: 37.5vw;
+        max-width: 37.5vw;
     }
 
     .inputs{
@@ -92,35 +121,27 @@
         margin-left: 2em;
     }
 
-    .checkbox{
+    .pagamento{
         display: flex;
+        flex-direction: row;
+        justify-content: space-between;
         margin-top: 1em;
     }
 
-    .checkbox-dois{
+    .img-pagamento{
+        margin: 0em .5em 0em;
+    }
+
+    .checkbox{
         display: flex;
-        margin-top: 1em;
-        margin-left: 1em;
+    }
+
+    .checkbox-dois{
+        display: flex;  
     }
 
     .chek{
         font-family: 'lexendR';
     }
 
-    .fundo-pagamento{
-        margin: 5vh;
-       display: flex;
-       flex-direction: row-reverse;
-        background-color: #ffffff;
-        border: 1px solid#B6B6B6;
-        width: 50vw;
-        height: 50vh;
-    }
-
-    .pagamento{
-        display: flex;
-        flex-direction: row;
-    }
-
-    
 }
