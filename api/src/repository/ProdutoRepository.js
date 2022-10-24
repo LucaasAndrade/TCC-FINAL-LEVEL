@@ -105,7 +105,6 @@ export async function buscarProduto(){
     `select  tb_produto.id_produto      as id,
     nm_produto                          as produto,
     vl_preco                            as preco,
-    tb_produto.nm_marca                 as marca,
     ds_informacoes                      as informacoes,
     bl_disponivel                       as disponivel,
     bl_destaque                         as destaque
@@ -158,22 +157,6 @@ export async function buscarProdutoImagens(idProduto) {
     return registros.map(item => item.imagem);
 }
 
-
-
-
-
-
-export async function removerProduto(idProduto){
-    const comando =
-    `delete from tb_produto
-    where id_produto = ?
-    `
-
-    const [resp] = await con.query(comando,[idProduto])
-    return resp.affectedRows;
-}
-
-
 export async function listarProdutosInicio(){
     const comando = 
    ` select tb_produto.id_produto         				id,
@@ -204,4 +187,36 @@ export async function listarProdutosInicio(){
 }
 
 
+/// ### REMOVER PRODUTO //
 
+
+export async function removerProdutoImagem(idProduto){
+    const comando =
+    `delete from tb_imagem_produto
+        where id_produto = ?
+    `
+
+    const [resp] = await con.query(comando,[idProduto])
+    return resp.affectedRows;
+}
+
+export async function removerProdutoTamanho(idProduto){
+    const comando =
+    `delete from tb_produto_tamanho
+        where id_produto = ?
+    `
+
+    const [resp] = await con.query(comando,[idProduto])
+    return resp.affectedRows;
+}
+
+
+export async function removerProduto(idProduto){
+    const comando =
+    `delete from tb_produto
+        where id_produto = ?
+    `
+
+    const [resp] = await con.query(comando,[idProduto])
+    return resp.affectedRows;
+}

@@ -1,7 +1,7 @@
 
 import multer from 'multer'
 
-import { AlterarProduto, CadastrarProduto,buscarProduto, buscarProdutoPorId,removerProduto,InserirCategoria, InserirTamanho, listarMarcas, listarCategorias, listarTamanhosProduto, InserirImagem,listarProdutosInicio,buscarProdutoImagens } from '../repository/ProdutoRepository.js';
+import { AlterarProduto, CadastrarProduto,buscarProduto, buscarProdutoPorId,removerProduto,InserirCategoria, InserirTamanho, listarMarcas, listarCategorias, listarTamanhosProduto, InserirImagem,listarProdutosInicio,buscarProdutoImagens, removerProdutoImagem, removerProdutoTamanho } from '../repository/ProdutoRepository.js';
 
 import { VerificarInformacoesProduto } from '../services/verificacaoProduto.js'
 
@@ -159,7 +159,7 @@ server.get('/admin/produto',async(req,resp)=>{
         const r = await buscarProduto();
         resp.send(r);
     }
-    catch{
+    catch(err){
         resp.status(400).send({
             erro:err.message
         })
@@ -170,14 +170,15 @@ server.delete('/admin/produto/:id',async(req,resp) => {
     try{
         const id = req.params.id;
 
-        
-       
+        await removerProdutoImagem(id);
+        await removerProdutoTamanho(id); 
         await removerProduto(id);
        
 
         resp.status(204).send();
     }
-    catch(err){
+    catch (err) {
+        console.log(err.message)
         resp.status(400).send({
             erro:err.message
         })
