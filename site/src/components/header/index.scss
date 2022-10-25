@@ -1,25 +1,25 @@
-#componente-header{
+.componente-header {
     display: flex;
     flex-direction: column;
     background-color: #ffffff;
     border-bottom: 1px solid #B6B6B6;
-    
-    .frete{
+
+    .frete {
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
         background-color: #D1BC9F;
     }
-    
-    .frete-p{
+
+    .frete-p {
         font-family: 'lexendSB';
         font-size: 18px;
         color: #ffffff;
         margin-left: 2em;
     }
-    
-    .header{
+
+    .header {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -27,24 +27,24 @@
         box-sizing: border-box;
     }
 
-    .logo:hover{
+    .logo:hover {
         opacity: 80%;
         cursor: pointer;
     }
 
-    .topicos-p{
+    .topicos-p {
         display: flex;
         flex-direction: row;
         font-family: 'lexendM';
     }
-    
-    .topico{
+
+    .topico {
         position: relative;
         margin-left: 2em;
     }
-    
+
     .topico::after {
-    content: "";
+        content: "";
         position: absolute;
         border-bottom: 2px solid #987F5B;
         height: 2px;
@@ -54,12 +54,12 @@
         transition: 0.3s;
     }
 
-    .topicoo{
+    .topicoo {
         position: relative;
     }
-    
+
     .topicoo::after {
-    content: "";
+        content: "";
         position: absolute;
         border-bottom: 2px solid #987F5B;
         height: 2px;
@@ -69,21 +69,21 @@
         transition: 0.3s;
     }
 
-    .header p:hover{
+    .header p:hover {
         opacity: 70%;
         cursor: pointer;
     }
 
-    .header p:hover::after{
+    .header p:hover::after {
         width: 100%;
     }
 
-    .input-pesquisa{
+    .input-pesquisa {
         display: flex;
         flex-direction: row;
     }
-    
-    *input{
+
+    *input {
         background-color: #ffffff;
         border: 1px solid #B6B6B6;
         padding: .5em 0em .5em 1.5em;
@@ -91,23 +91,80 @@
         width: 19em;
     }
 
-    #lupa{
-        background-image:url(../../../public/images/lupa.png);
+    #lupa {
+        background-image: url(../../../public/images/lupa.png);
         background-repeat: no-repeat;
         background-position: right;
         background-size: 1.5em;
     }
 
-    .elementos-usuario{
+    .elementos-usuario {
         display: flex;
         flex-direction: row;
     }
 
-    .elemento-img{
+    .elemento-img {
         margin-left: 1em;
     }
 
-    .elementos-usuario img{
+    .elementos-usuario img {
         cursor: pointer;
+    }
+
+
+
+
+
+    .modal-container {
+        background: rgba(0, 0, 0, 0.2);
+
+        width: 100%;
+        height: 100vh;
+
+        position: fixed;
+        left: 0;
+        top: 50px;
+
+        display: grid;
+        place-items: center;
+
+        opacity: 0;
+        pointer-events: none;
+
+        transition: opacity 0.15s;
+    }
+
+    .modal {
+        background-color: #ffffff;
+
+        width: 0;
+        height: 0;
+
+        padding: 15px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px 0 #00000070;
+
+        overflow: hidden;
+
+        transition: width 0.15s, height 0.15s;
+    }
+
+    .modal-show>.modal {
+        width: 400px;
+        height: 600px;
+    }
+
+    .modal-show {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .fundo-perfil {
+        background-color: #987F5B;
+    }
+
+    .img-topico {
+        display: flex;
+        flex-direction: row;
     }
 }

@@ -1,4 +1,4 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0px;
 }
@@ -8,13 +8,13 @@
     flex-direction: column;
     min-height: 100vh;
 
-    .cabecalho{
+    .cabecalho {
         position: fixed;
         width: 100%;
         z-index: 998;
     }
 
-    .fundo-home{
+    .fundo-home {
         margin-top: 13%;
     }
 
@@ -23,13 +23,13 @@
         padding: .5em .5em;
     }
 
-    .categorias{
+    .categorias {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
-    .fundo-categorias{
+    .fundo-categorias {
         margin-top: 2em;
     }
 
@@ -54,32 +54,32 @@
         opacity: 90%;
     }
 
-    .img-categoria img:hover{
+    .img-categoria img:hover {
         opacity: 100%;
         cursor: pointer;
     }
 
-    .imagem-cate{
+    .imagem-cate {
         margin-left: 2em;
     }
 
-    .fundo-acessorios{
+    .fundo-acessorios {
         background-color: #E6E6E6;
         margin-top: 2em;
     }
 
-    .acesso{
+    .acesso {
         margin: 2em 0em 2em;
     }
 
-    .acessorios-info{
+    .acessorios-info {
         display: flex;
         align-items: center;
         justify-content: space-between;
         margin-top: 1em;
     }
 
-    .botao-acessorios{
+    .botao-acessorios {
         font-family: 'lexendM';
         background-color: #D1BC9F;
         border: 1px solid #D1BC9F;
@@ -89,25 +89,25 @@
         margin-left: 5em;
     }
 
-    .p-ver-mais{
+    .p-ver-mais {
         font-family: 'lexendEL';
         color: #987F5B;
         margin-right: 5em;
         cursor: pointer;
     }
-    
-    .produtos{
-        display: flex; 
+
+    .produtos {
+        display: flex;
         flex-direction: row;
         justify-content: center;
         margin-top: 2em;
     }
-    
-    .fundo-marcas{
+
+    .fundo-marcas {
         margin-top: 1em;
     }
 
-    .div-marcas{
+    .div-marcas {
         display: flex;
         justify-content: center;
         font-family: 'lexendM';
@@ -115,81 +115,71 @@
         color: #ffffff;
     }
 
-    .p-marcas{
+    .p-marcas {
         margin: .5em 0em;
     }
 
-    #componente-footer{
+    #componente-footer {
         background-color: #F5F6F5;
     }
 
-    #modal-info-perfil{
-        display: flex;
-        flex-direction: column;
-    }
 
-    .modal-container{
-        width: 100vw;
+
+
+
+
+
+
+
+    .modal-container {
+        background: rgba(0, 0, 0, 0.2);
+
+        width: 100%;
         height: 100vh;
-        //background-color: #E6E6E6;
+
         position: fixed;
-        top: 0px;
-        left: 0px;
-        z-index: 2000;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        left: 0;
+        top: 50px;
+
+        display: grid;
+        place-items: center;
+
+        opacity: 0;
+        pointer-events: none;
+
+        transition: opacity 0.15s;
     }
 
-    .modal{
+    .modal {
         background-color: #ffffff;
-        width: 60%;
-        min-width: 300px;
-        padding: 40px;
-        border: 1px solid #F5F6F5;
-        //box-shadow: 0 0 0 10px white;
+
+        width: 0;
+        height: 0;
+
+        padding: 15px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px 0 #00000070;
+
+        overflow: hidden;
+
+        transition: width 0.15s, height 0.15s;
     }
 
-    .modal-container .mostrar{
-        display: flex;
-
+    .modal-show>.modal {
+        width: 400px;
+        height: 600px;
     }
 
-    @keyframes modal {
-        from {
-            opacity: 0;
-            transform: translate3d(0, -60px, 0);
-        }
-        to {
-            opacity: 1;
-            transform: translate3d(0, 0, 0);
-        }
+    .modal-show {
+        opacity: 1;
+        pointer-events: auto;
     }
 
-    .mostrar .modal{
-        animation: 3s;
-    }
-
-    .fechar{
-        position: absolute;
-        top: -30px;
-        right: -30px;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        border: 4px solid #ffffff;
-        background-color: #987F5B;
-        color: white;
-        font-family: "PT Mono", monospace;
-        cursor: pointer;
-        box-shadow: 0 4px 0 rgba(0,0,0, .3);
-    }
-
-    .fundo-perfil{
+    .fundo-perfil {
         background-color: #987F5B;
     }
 
-    .img-topico{
+    .img-topico {
         display: flex;
         flex-direction: row;
     }
