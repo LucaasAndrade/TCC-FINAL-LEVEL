@@ -1,4 +1,4 @@
-import { CadastrarUsuario, UsuaLogin } from "../repository/UsuaRepository.js";
+import { CadastrarUsuario, UsuaLogin,listar } from "../repository/UsuaRepository.js";
 import  {Router} from 'express';
 const server = Router();
 
@@ -18,6 +18,22 @@ server.post('/usua/login',async(req,resp)=>{
         });
     }
 })
+
+server.get('/api/usuario/:id/endereco',async(req,resp) =>{
+    try{
+        const id =req.params.id;
+
+        const r = await listar(id);
+
+        resp.send(r);
+    }
+    catch{
+        resp.status(400).send({
+            erro:err.message
+        })
+    }
+})
+
 
 server.post('/usuario/',async(req,resp)=>{
   

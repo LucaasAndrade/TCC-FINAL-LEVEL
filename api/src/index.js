@@ -5,6 +5,7 @@ import AdmController from './controller/AdmController.js';
 import ProdutoControlLer from './controller/ProdutoController.js';
 import UsuaController from './controller/UsuaController.js';
 
+
 import express from 'express';
 import cors from 'cors';
    

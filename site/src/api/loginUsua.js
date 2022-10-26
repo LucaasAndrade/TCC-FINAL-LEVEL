@@ -15,7 +15,4 @@ export async function loginUsua(email,senha){
 }
 
 
-export async function CadastrarUsuario(nome,sobrenome,nascimento,cpf,telefone,telefone2,cep,rua,estado,cidade,numero,referencia){
-    const r = await api.post('/usuario', { nome, sobrenome, nascimento,cpf, telefone, telefone2, cep, rua,estado,cidade,numero,referencia  });
-    return r.data
-}
+

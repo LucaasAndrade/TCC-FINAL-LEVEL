@@ -1,9 +1,40 @@
 import './index.scss'
 import CardFinalizarProduto from '../../../components/cardFinalizaProduto'
 import LogoContinuarcompa from '../../../components/logoContinuarcompra'
+import{CadastrarUsuario} from '../../../api/Usuario'
+
+import {useState,useEffect} from 'react' 
+import Storage, { set }  from 'local-storage'
+import { toast } from 'react-toastify'
 
 
 export default function ContinuarCompra() {
+const [estado,setEstado] = useState('');
+const [cidade,setCidade] = useState('');
+const [complemento,setComplemento] = useState('');
+const [cep,setCep] = useState('');
+const [bairro,setBairro] = useState('');
+const [logradouro,setLogradouro] = useState('');
+const [numero,setNumero] = useState('');
+
+
+async function CadastroEndereco (){
+    try{
+        const  r = await CadastrarUsuario(estado,cidade,complemento,cep,bairro,logradouro,numero)
+        alert('Endereço Cadastrado Com Sucesso');
+
+        setTimeout(()=>{
+            
+        },2000 )
+
+    } catch (err) {
+        toast.error(err.response.data.erro)
+    }
+};
+
+
+
+
     return (
         <main className='page-continuar-compra'>
             <LogoContinuarcompa />
@@ -12,22 +43,23 @@ export default function ContinuarCompra() {
 
                 <div className='principal-endereco-envio'>
                     <div>
+                        
                         <p className='titulo'>Endereço de Envio</p>
                         <div className='todos-inputs'>
                             <div>
-                                <input type="text" placeholder="Estado*"></input>
-                                <input className="input-direita" type="text" placeholder="Cidade*"></input>
+                                <input type="text" placeholder="Estado*" value={estado}  onChange={e =>setEstado(e.target.value)}></input>
+                                <input className="input-direita" type="text" placeholder="Cidade*" value={cidade} onChange={e =>setCidade(e.target.value)}></input>
                             </div>
                             <div className='input'>
-                                <input type="text" id='input-complemento' placeholder="Complemento"></input>
+                                <input type="text" id='input-complemento' placeholder="Complemento" value={complemento} onChange={e =>setComplemento(e.target.value)}></input>
                             </div>
                             <div className='input'>
-                                <input type="text" placeholder="CEP*"></input>
-                                <input className="input-direita" type="text" placeholder="Bairro*"></input>
+                                <input type="text" placeholder="CEP*" value={cep} onChange={e =>setCep(e.target.value)}></input>
+                                <input className="input-direita" type="text" placeholder="Bairro*" value={bairro} onChange={e =>setBairro(e.target.value)}></input>
                             </div>
                             <div className="input">
-                                <input type="text" placeholder="Logradouro*" id="input-referencia"></input>
-                                <input type="number" placeholder="Número*" id="input-numero"></input>
+                                <input type="text" placeholder="Logradouro*" id="input-referencia" value={logradouro}  onChange={e =>setLogradouro(e.target.value)}></input>
+                                <input type="number" placeholder="Número*" id="input-numero" value={numero} onChange={e =>setNumero(e.target.value)}></input>
                             </div>
                         </div>
                     </div>

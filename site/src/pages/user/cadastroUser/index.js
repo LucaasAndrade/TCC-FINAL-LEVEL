@@ -3,7 +3,8 @@ import "./index.scss";
 import { useNavigate } from "react-router-dom";
 import storage from 'local-storage';
 
-import { CadastrarUsuario,loginUsua } from "../../../api/loginUsua";
+import { CadastrarUsuario } from "../../../api/Usuario";
+import { loginUsua } from "../../../api/loginUsua";
 
 import Cabecalho from "../../../components/header";
 import Footer from "../../../components/footer";
