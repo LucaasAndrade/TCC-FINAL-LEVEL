@@ -44,15 +44,15 @@ export default function Carrossel() {
                     >   
                     <div><img src='/images/adidas.png' alt='dest' /></div>
                     <div><img src='/images/nike.png' alt='dest' /></div>
+                    <div><img src='/images/lacoste.png' alt='dest' /></div>
                     <div><img src='/images/fila.png' alt='dest' /></div>
+                    <div><img src='/images/newbalance.png' alt='dest' /></div>
                     <div><img src='/images/puma.png' alt='dest' /></div>
-                    <div><img src='/images/kings.png' alt='dest' /></div>
                     <div><img src='/images/vans.png' alt='dest' /></div>
                     <div><img src='/images/jordan.png' alt='dest' style={{width: 100}}/></div>
-                    <div><img src='/images/newbalance.png' alt='dest' /></div>
+                    <div><img src='/images/kings.png' alt='dest' /></div>
                     <div><img src='/images/mizuno.png' alt='dest' /></div>
                     <div><img src='/images/champion.png' alt='dest' /></div>
-                    <div><img src='/images/lacoste.png' alt='dest' /></div>
                     <div><img src='/images/converse.png' alt='dest' /></div>
                 </Carousel>
         </section>

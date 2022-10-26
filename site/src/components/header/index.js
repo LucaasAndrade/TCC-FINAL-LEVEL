@@ -4,13 +4,9 @@ import '../../common/common.scss'
 import { useNavigate } from 'react-router-dom';
 
 
-
-
-export default function Cabecalho() {
-
     ///MODAL 
 
-    {/*const getElement = (...queries) => document.querySelector(...queries);
+    const getElement = (...queries) => document.querySelector(...queries);
 
     const button = getElement('.open-modal-button');
     const container = getElement('.modal-container');
@@ -26,8 +22,9 @@ export default function Cabecalho() {
         if (modal.contains(event.target)) return;
 
         closeModal();
-    });*/}
+    });
 
+export default function Cabecalho(props) {
     const navigate = useNavigate('');
     
     function Home(){
@@ -84,45 +81,52 @@ export default function Cabecalho() {
             <div className="modal-container">
                 <div className="modal">
                     <div className='fundo-perfil'>
-                        <img src='/images/usuario-perfil.png'></img>
-                        <h5>Nome Sobrenome</h5>
+                        <img className='img-perfil' src='/images/usuario-perfil.png'></img>
+                        <h5>{props.nome}Nome Sobrenome</h5>
                     </div>
-                    <div>
-                        <p>E-mail</p>
-                        <p>Telefone</p>
-                    </div>
-                    <div>
-                        <div className='img-topico'>
-                            <img src='/images/mensagens.png' alt='mensagens'></img>
-                            <p>Minhas Mensagens</p>
+                    <div className='dados'>
+                        <div className='div-info-dois'>
+                            <p>{props.email}E-mail</p>
+                            <p className='p-dois'>{props.telefone}Telefone</p>
                         </div>
-                        <div className='img-topico'>
-                            <img src='/images/cupons.png' alt='cupons'></img>
-                            <p>Meus Cupons</p>
+                        <hr className="linha" />
+                        <div className='div-info'>
+                            <div className='img-topico-quatro'>
+                                <img className='img-msg' src='/images/mensagens.png' alt='mensagens'></img>
+                                <p>Minhas Mensagens</p>
+                            </div>
+                            <div className='img-topico-tres'>
+                                <img className='img-cupom' src='/images/cupons.png' alt='cupons'></img>
+                                <p>Meus Cupons</p>
+                            </div>
+                            <div className='img-topico-dois'>
+                                <img src='/images/pedidos.png' alt='Meus Pedidos'></img>
+                                <p>Meus Pedidos</p>
+                            </div>
                         </div>
-                        <div className='img-topico'>
-                            <img src='/images/pedidos.png' alt='Meus Pedidos'></img>
-                            <p>Meus Pedidos</p>
+                        <hr className="linha" />
+
+                        <div className='div-info'>
+                            <div className='img-topico'>
+                                <img src='/images/curtidos.png' alt='curtidos'></img>
+                                <p>Curtidos</p>
+                            </div>
+                            <div className='img-topico-dois'>
+                                <img src='/images/sacola-perfil.png'></img>
+                                <p>Adicionados ao Carrinho</p>
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <div className='img-topico'>
-                            <img src='/images/curtidos.png' alt='curtidos'></img>
-                            <p>Curtidos</p>
-                        </div>
-                        <div className='img-topico'>
-                            <img src='/images/sacola-perfil.png'></img>
-                            <p>Adicionados ao Carrinho</p>
-                        </div>
-                    </div>
-                    <div>
-                        <div className='img-topico'>
-                            <img src='/images/editar.png'></img>
-                            <p>Editar</p>
-                        </div>
-                        <div className='img-topico'>
-                            <img src='/images/sair.png'></img>
-                            <p>Sair</p>
+                        <hr className="linha" />
+                        
+                        <div className='div-info'>
+                            <div className='img-topico'>
+                                <img src='/images/editar.png'></img>
+                                <p>Editar</p>
+                            </div>
+                            <div className='img-topico-dois'>
+                                <img src='/images/sair.png'></img>
+                                <p>Sair</p>
+                            </div>
                         </div>
                     </div>
                 </div>

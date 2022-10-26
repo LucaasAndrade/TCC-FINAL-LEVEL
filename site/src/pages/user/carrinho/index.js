@@ -76,10 +76,6 @@ useEffect(() => {
             </section>
 
             <section>
-                <FinalizarCompra quantidade='2' frete='R$ 20,00' total='R$ 189,00' botao='continuar compra'/>
-            </section>
-
-            <section>
 
                 {itens.map(item =>
                   <CardCarrinho  
@@ -88,8 +84,11 @@ useEffect(() => {
                     carregarCarrinho={carregarCarrinho} />
     
                     )}
+
+                    <FinalizarCompra botao='continuar compra'/>
+
                  
-                 <div className='fundo-continuar-compra'>
+                 {/*<div className='fundo-continuar-compra'>
                     <div className='div-titulo'>
                         <h5 className='titulo'>RESUMO DA COMPRA</h5>
                   
@@ -121,7 +120,7 @@ useEffect(() => {
                     </div>
                 </div>
                 </div>
-                </div>
+                </div>*/}
 
                
 

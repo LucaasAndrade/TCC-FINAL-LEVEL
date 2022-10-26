@@ -116,6 +116,9 @@
 
 
     .modal-container {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: flex-start;
         background: rgba(0, 0, 0, 0.2);
 
         width: 100%;
@@ -123,35 +126,28 @@
 
         position: fixed;
         left: 0;
-        top: 50px;
-
-        display: grid;
-        place-items: center;
-
+        top: 0;
         opacity: 0;
         pointer-events: none;
-
         transition: opacity 0.15s;
     }
 
     .modal {
         background-color: #ffffff;
+        box-shadow: 0 0 10px 0 #00000070;
 
         width: 0;
         height: 0;
-
-        padding: 15px;
-        border-radius: 5px;
-        box-shadow: 0 0 10px 0 #00000070;
-
+        padding: 0px;
         overflow: hidden;
-
-        transition: width 0.15s, height 0.15s;
+        transition: width 0.15s;
+        border-radius: 0px;
+        border-bottom-left-radius: 5px;
     }
 
     .modal-show>.modal {
-        width: 400px;
-        height: 600px;
+        width: 350px;
+        height: 530px;
     }
 
     .modal-show {
@@ -160,11 +156,88 @@
     }
 
     .fundo-perfil {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         background-color: #987F5B;
+        font-family: 'lexendL';
+        color: #ffffff;
+        padding: 1em 0em 1em;
+    }
+
+    .fundo-perfil h5{
+        margin-top: .5em;
+    }
+
+    .div-info{
+        padding: 1em 0em 1em;
+    }
+
+    .dados{
+        padding: 15px;
     }
 
     .img-topico {
         display: flex;
         flex-direction: row;
+        align-items: center;
+    }
+
+    .div-info-dois{
+        padding: 1em 0em 1em;
+    }
+    
+    .div-info-dois p{
+        margin-left: .5em;
+        cursor: pointer;
+    }
+    
+    .div-info p{
+        margin-left: .5em;
+        cursor: pointer;
+    }
+
+    .img-topico-dois {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-top: .5em;
+        margin-left: .5em;
+    }
+
+    .img-topico-tres {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-top: .5em;
+        margin-left: .3em;
+    }
+
+    .img-topico-quatro {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-top: .5em;
+    }
+
+    .img-msg{
+        margin-left: .5em;
+        margin-right: .1em;
+    }
+
+    .img-topico {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-left: .5em;
+    }
+
+    .img-perfil{
+        width: 6em;
+        cursor: pointer;
+    }
+
+    .p-dois{
+        margin-top: .5em;
     }
 }

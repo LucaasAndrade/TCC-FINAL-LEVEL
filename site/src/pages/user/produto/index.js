@@ -73,9 +73,9 @@ export default function Produto(props) {
       </header>
       <section>
         <div className="fundo-info-produto">
-          <div>
+          {/*<div>
             <p>destaques</p>
-          </div>
+          </div>*/}
           <div>
             <Carousel className="carrosel"
               swipeable={false}
@@ -170,6 +170,17 @@ export default function Produto(props) {
           </div>
         </div>
       </section>
+
+      <section className="fundo-sobre-produto">
+          <div className="div-sobre">
+            <h3 className="titulo-sobre">informações</h3>
+            <div className="texto-info">
+              <p className="titu">{props.texto}Sobre o Produto</p>
+              <p className="texto-sobre">Lorem ipsum dolor dummy text sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+            </div>
+          </div>
+      </section>
+
       <section>
         <Footer />
       </section>

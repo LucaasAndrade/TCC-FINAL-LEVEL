@@ -10,6 +10,7 @@
     .fundo-info-produto{
         display: flex;
         flex-direction: row;
+        padding: 4em 5em 0em;
     }
 
     select{
@@ -161,6 +162,43 @@
     .linha{
         margin: 1em 0em 1em;
         min-width: 90%;
+    }
+
+    .fundo-sobre-produto{
+        background-color: #ffffff;
+        margin-top: 4em;
+    }
+
+    .div-sobre{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .titulo-sobre{
+        font-family: 'lexendR';
+        text-transform: uppercase;
+        padding: 2em 0em 2em;
+    }
+
+    .texto-info{
+        width: 50em;
+    }
+
+    .titu{
+        font-family: 'lexendM';
+        font-size: 15px;
+        color: #595959;
+        padding: 0em 0em 1em;
+    }
+
+    .texto-sobre{
+        font-family: 'lexendEL';
+        color: #333;
+    }
+
+    .componente-footer {
+        background-color: #F5F6F5;
     }
     
     @media (max-width: 1024px) {

@@ -3,16 +3,6 @@ import './index.scss'
 import  Carousel  from  "react-multi-carousel" ; 
 import  "react-multi-carousel/lib/styles.css" ; 
 
-//<div><img src='/images/destaque1.png' alt='dest' /></div>
-//<div><img src='/images/destaque2.png' alt='dest' /></div>
-//<div><img src='/images/destaque4.png' alt='dest' /></div>
-//<div><img src='/images/destaque5.png' alt='dest' /></div>
-//<div><img src='/images/destaque6.png' alt='dest' /></div>
-//<div><img src='/images/destaque7.png' alt='dest' /></div>
-//<div><img src='/images/destaque8.png' alt='dest' /></div>
-//<div><img src='/images/destaque9.png' alt='dest' /></div>
-
-
 
 export default function Carrossel(props) {
     
@@ -52,7 +42,6 @@ export default function Carrossel(props) {
                     //dotListClass="custom-dot-list-style"
                     //itemClass="carousel-item-padding-40-px"
                     >
-
                     <div><img src='/images/destaque1.png' alt='dest' /></div>
                     <div><img src='/images/destaque2.png' alt='dest' /></div>
                     <div><img src='/images/destaque4.png' alt='dest' /></div>
