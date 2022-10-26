@@ -1,10 +1,30 @@
 import './index.scss'
 import '../../common/common.scss'
 
+import { useState } from 'react';
+
 
 
 
 export default function FinalizarCompra(props) {
+    
+
+        const [itens,setItens] = useState([]);
+     
+        function qtdItens() {
+         return itens.length;
+     }
+     
+     function calcularValorTotal() {
+         let total = 0;
+         for (let item of itens) {
+             total = total + item.produto.info.preco * item.qtd;
+         }
+         return total;
+        }
+    
+    
+
     return (
         <main className='componente-compra'>
             <div className='fundo-compra'>
@@ -15,15 +35,15 @@ export default function FinalizarCompra(props) {
                     <div>
                         <div className='info'>
                             <p>Qtd. Produtos:</p>
-                            <p>{props.quantidade}</p>
+                            <p>{qtdItens()}</p>
                         </div>
                         <div className='info-meio'>
                             <p>Frete:</p>
-                            <p>{props.frete}</p>
+                            <p>{}</p>
                         </div>
                         <div className='info'>
                             <p>Total:</p>
-                            <p>{props.total}</p>
+                            <p>{calcularValorTotal()}</p>
                         </div>
                     </div>
                 </div>
