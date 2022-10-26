@@ -11,7 +11,6 @@ import Footer from "../../../components/footer";
 import CardCarrinho from "../../../components/CardCarrinho";
 import { useEffect, useState } from "react";
 import { buscarProdutoPorId } from "../../../api/cadastrarProduto";
-import CarrosselProduto from "../../../components/carroselProduto";
 
 export default function Produto(props) {
   const responsive = {
@@ -51,26 +50,6 @@ export default function Produto(props) {
 
   const navigate = useNavigate("");
 
-  function AcessoriosPage() {
-    navigate("/acessorios");
-  }
-
-  function Destaques() {
-    navigate("/destaques");
-  }
-
-  function Feminino() {
-    navigate("/feminino");
-  }
-
-  function Masculino() {
-    navigate("/masculino");
-  }
-
-  function Infantil() {
-    navigate("/infantil");
-  }
-
   function adicionarAoCarrinho() {
     let carrinho = [];
     if (storage("carrinho")) {
@@ -93,52 +72,63 @@ export default function Produto(props) {
         <Cabecalho />
       </header>
       <section>
-        <div>
-            <div>
-                <p>destaques</p>
-            </div>
-            <div>
-              <Carousel
-                swipeable={false}
-                draggable={false}
-                responsive={responsive}
-                ssr={true}
-                infinite={true}
-                autoPlay={true}
-                autoPlaySpeed={5000}
-                keyBoardControl={true}
-                containerClass="carousel-container"
-                //showDots={true}
-                //customTransition="all .5"
-                //removeArrowOnDeviceType={["tablet", "mobile"]}
-                //dotListClass="custom-dot-list-style"
-                //itemClass="carousel-item-padding-40-px"
-              >
-                <div>
+        <div className="fundo-info-produto">
+          <div>
+            <p>destaques</p>
+          </div>
+          <div>
+            <Carousel className="carrosel"
+              swipeable={false}
+              draggable={false}
+              responsive={responsive}
+              ssr={true}
+              infinite={true}
+              autoPlay={true}
+              autoPlaySpeed={4000}
+              keyBoardControl={true}
+              containerClass="carousel-container"
+            //showDots={true}
+            //customTransition="all .5"
+            //removeArrowOnDeviceType={["tablet", "mobile"]}
+            //dotListClass="custom-dot-list-style"
+            //itemClass="carousel-item-padding-40-px"
+            >
+              <div className="fundo-carrosel">
+              <div className="div-img-principal">
+                <img className="img-principal"
+                  src="/images/produtoteste.png"
+                  alt="produto"
+                />
+              </div>
+                <div className="imgs-carrosel">
                   <div>
                     <img src="/images/produtoteste2.png" alt="dest" />
-                    <img src="/images/produtoteste3.png" alt="dest" />
-                    <img src="/images/produtoteste4.png" alt="dest" />
-                    <img src="/images/produtoteste5.png" alt="dest" />
                   </div>
                   <div>
-                    <img
-                      src="/images/produtoteste.png"
-                      alt="produto"
-                      style={{ width: 300 }}
-                    />
+                    <img src="/images/produtoteste3.png" alt="dest" />
+                  </div>
+                  <div>
+                    <img src="/images/produtoteste4.png" alt="dest" />
+                  </div>
+                  <div>
+                    <img src="/images/produtoteste5.png" alt="dest" />
                   </div>
                 </div>
-              </Carousel>
+              </div>
+            </Carousel>
+          </div>
+          <div className="info-produto">
+            <div className="estrelas">
+              <p>☆</p>
+              <p>☆</p>
+              <p>☆</p>
+              <p>☆</p>
+              <p>☆</p>
             </div>
-          <div>
             <div>
-              <img></img>
-            </div>
-            <div>
-              <h2>{produto.info.produto}</h2>
-              <p>{produto.info.marca}</p>
-              <p>{produto.info.preco}</p>
+              <p className="nome-produto">{produto.info.produto}Camiseta Adidas</p>
+              <p className="marca-produto">{produto.info.marca}Adidas</p>
+              <p className="preco-produto">{produto.info.preco}R$ 129,90</p>
             </div>
             <div>
               <select>
@@ -162,15 +152,15 @@ export default function Produto(props) {
               <button className="botao-adicionar" onClick={adicionarAoCarrinho}>
                 adicionar ao carrinho
               </button>
-              <div className="botao-curti">
-                <button>
-                  <img src="/images/curtidos.png"></img>{" "}
+                <button className="botao-curti">
+                  <img className="img-coracao" src="/images/curtidos.png"></img>
                 </button>
-              </div>
             </div>
             <div>
-              <p>tabela de medidas</p>
+              <a href="" className="medidas">tabela de medidas</a>
             </div>
+
+            <hr className="linha" />
 
             <div>
               <p className="frete">Calcular frete e entrega</p>
