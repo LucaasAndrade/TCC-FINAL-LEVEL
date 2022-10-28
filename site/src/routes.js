@@ -35,8 +35,9 @@ export default function Index() {
         <Route path='/admin/login' element={<LoginAdmin />} />
         <Route path='/admin/home' element={<Homeadmin />} />
         <Route path='/admin/cadastrarproduto' element={<Cadastrarproduto />} />
+        <Route path='/admin/cadastrarproduto/:id' element={<Cadastrarproduto />} />
         <Route path='/admin/produtos' element={<Produtos />} />
-        <Route path='/admin/buscar/pedidos' element={<ConsultarProduto />} />
+        <Route path='/admin/buscar/produtos' element={<ConsultarProduto />} />
         <Route path='/admin/adicionar/cupom' element={<Cupom />} />
 
         {/* área do user */}

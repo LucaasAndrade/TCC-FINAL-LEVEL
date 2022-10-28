@@ -102,15 +102,17 @@ export async function listarTamanhosProduto(id) {
 
 export async function buscarProduto(){
     const comando = 
-    `select  tb_produto.id_produto      as id,
+    `  select  tb_produto.id_produto      as id,
     nm_produto                          as produto,
     vl_preco                            as preco,
+    tb_marca_produto.nm_marca			as marca,
+    tb_categoria.nm_categoria			as categoria,
     ds_informacoes                      as informacoes,
     bl_disponivel                       as disponivel,
     bl_destaque                         as destaque
-from tb_produto
-inner  join tb_categoria on tb_produto.id_categoria = tb_categoria.id_categoria
-inner join tb_marca_produto on tb_produto.id_marca_produto = tb_marca_produto.id_marca_produto;
+        from tb_produto
+    inner  join tb_categoria on tb_produto.id_categoria = tb_categoria.id_categoria
+    inner join tb_marca_produto on tb_produto.id_marca_produto = tb_marca_produto.id_marca_produto;
 `
   const [registros] = await con.query(comando);
   return registros
@@ -119,13 +121,18 @@ inner join tb_marca_produto on tb_produto.id_marca_produto = tb_marca_produto.id
 export async function buscarProdutoPorId(id){
     const comando = 
     `select id_produto         				id,
-   nm_categoria                                       categoria,
    nm_produto              			  				produto,
    vl_preco                		                    preco,
+   tb_categoria.id_categoria                                       id_categoria,
+   nm_categoria                                       categoria,
+   tb_marca_produto.id_marca_produto                      id_marca,
+   nm_marca                                         marca,
    ds_informacoes                                     informacoes,
    bl_disponivel                                      disponivel,
    bl_destaque                                        destaque
   from tb_produto
+  inner join tb_categoria on tb_produto.id_categoria = tb_categoria.id_categoria
+  inner join tb_marca_produto on tb_produto.id_marca_produto = tb_marca_produto.id_marca_produto
     where id_produto = ?
 `
   const [registros] = await con.query(comando,[id]);
@@ -134,13 +141,13 @@ export async function buscarProdutoPorId(id){
 
 export async function buscarProdutoTamanhos(idProduto) {
     const comando = `
-          select img_produto  as imagem
-            from  tb_imagem_produto
-           where id_produto = ?
+    select *  
+     from  tb_produto_tamanho
+     where id_produto = ?
         `
 
     const [registros] = await con.query(comando, [idProduto]);
-    return registros.map(item => item.imagem);
+    return registros.map(item => item.ds_tamanho);
 }
 
 
@@ -155,6 +162,8 @@ export async function buscarProdutoImagens(idProduto) {
     const [registros] = await con.query(comando, [idProduto]);
     return registros.map(item => item.imagem);
 }
+
+/// LISTAR PRODUTOS NA TELA INICIAL
 
 export async function listarProdutosInicio(){
     const comando = 

@@ -28,7 +28,7 @@ export default function Cabecalho() {
     }
 
     function ListarProdutos() {
-        navigate ("/admin/produtos")
+        navigate ("/admin/buscar/produtos")
     }
 
     function Chat() {
