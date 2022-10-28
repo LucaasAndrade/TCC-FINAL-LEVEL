@@ -27,7 +27,7 @@ export default function ConsultarProduto() {
   }
 
   function editar(id) {
-    navigate(`/admin/produto/${id}`);
+    navigate(`/admin/cadastrarproduto/${id}`);
   }
 
   useEffect(() => {
@@ -56,13 +56,14 @@ export default function ConsultarProduto() {
           <table>
             <thead>
               <tr>
-                <th>ID</th>
-                <th>Produto</th>
-                <th>Preço</th>
-                <th>marca</th>
-                <th>informacoes</th>
-                <th>disponivel</th>
-                <th>destaque</th>
+                <th> ID </th>
+                <th> Produto </th>
+                <th> Preço </th>
+                <th> Marca </th>
+                <th> Categoria </th>
+                <th> Informacoes </th>
+                <th> Disponivel </th>
+                <th> Destaque </th>
                 <th></th>
               </tr>
             </thead>
@@ -73,6 +74,7 @@ export default function ConsultarProduto() {
                   <td> {item.produto} </td>
                   <td>R$ {item.preco}</td>
                   <td> {item.marca} </td>
+                  <td> { item.categoria }</td>
                   <td> {item.informacoes} </td>
                   <td> {item.disponivel ? "Sim" : "Não"} </td>
                   <td> {item.destaque ? "Sim" : "Não"} </td>

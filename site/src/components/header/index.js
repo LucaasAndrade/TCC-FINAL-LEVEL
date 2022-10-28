@@ -17,12 +17,12 @@ import { useNavigate } from 'react-router-dom';
     const openModal = () => container.classList.add(activeModalClass);
     const closeModal = () => container.classList.remove(activeModalClass);
 
-    button.addEventListener('click', openModal);
-    container.addEventListener('click', (event) => {
-        if (modal.contains(event.target)) return;
+    // button.addEventListener('click', openModal);
+    // container.addEventListener('click', (event) => {
+    //     if (modal.contains(event.target)) return;
 
-        closeModal();
-    });
+    //     closeModal();
+    // });
 
 export default function Cabecalho(props) {
     const navigate = useNavigate('');

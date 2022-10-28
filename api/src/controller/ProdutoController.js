@@ -1,7 +1,7 @@
 
 import multer from 'multer'
 
-import { AlterarProduto, CadastrarProduto,buscarProduto, buscarProdutoPorId,removerProduto,InserirCategoria, InserirTamanho, listarMarcas, listarCategorias, listarTamanhosProduto, InserirImagem,listarProdutosInicio,buscarProdutoImagens, removerProdutoImagem, removerProdutoTamanho } from '../repository/ProdutoRepository.js';
+import { AlterarProduto, CadastrarProduto,buscarProduto, buscarProdutoPorId,removerProduto,InserirCategoria, InserirTamanho, listarMarcas, listarCategorias, listarTamanhosProduto, InserirImagem,listarProdutosInicio,buscarProdutoImagens, removerProdutoImagem, removerProdutoTamanho, buscarProdutoTamanhos } from '../repository/ProdutoRepository.js';
 
 import { VerificarInformacoesProduto } from '../services/verificacaoProduto.js'
 
@@ -84,41 +84,41 @@ server.post('/produto/tamanho',async(req,resp) =>{
 })
 
 
-server.put('/produto/:id',async(req,resp)=>{
-    try{
-        const {id} = req.params;
-        const produto = req.body;
+// server.put('/produto/:id',async(req,resp)=>{
+//     try{
+//         const {id} = req.params;
+//         const produto = req.body;
 
-        if (!produto.nome)
-            throw new Error('Nome do produto é obrigatorio!');
+//         if (!produto.nome)
+//             throw new Error('Nome do produto é obrigatorio!');
 
-        if (!produto.preco)
-            throw new Error('Preço do produto é obrigatorio!');  
+//         if (!produto.preco)
+//             throw new Error('Preço do produto é obrigatorio!');  
         
-        if (!produto.marca)
-            throw new Error('Marca do produto é obrigatorio!'); 
+//         if (!produto.marca)
+//             throw new Error('Marca do produto é obrigatorio!'); 
         
-        if (!produto.informacoes == undefined || produto.informacoes < 0)
-            throw new Error('Informações do produto é obrigatorio!');   
+//         if (!produto.informacoes == undefined || produto.informacoes < 0)
+//             throw new Error('Informações do produto é obrigatorio!');   
         
-        if (!produto.disponivel == undefined)
-            throw new Error('Verificar se o produto esta disponivel!');  
+//         if (!produto.disponivel == undefined)
+//             throw new Error('Verificar se o produto esta disponivel!');  
             
-        if (!produto.destaque)
-            throw new Error('Destaque é obrigatorio!');  
+//         if (!produto.destaque)
+//             throw new Error('Destaque é obrigatorio!');  
 
-        const resposta = await AlterarProduto(id,produto); 
-        if (resposta !=1)
-         throw new Error('Produto não pode ser alterado');
-     else 
-      resp.status(204).send();
+//         const resposta = await AlterarProduto(id,produto); 
+//         if (resposta !=1)
+//          throw new Error('Produto não pode ser alterado');
+//      else 
+//       resp.status(204).send();
 
-    }catch(err){
-        resp.send(400).send({
-            erro:err.message
-        })
-    }
-})
+//     }catch(err){
+//         resp.send(400).send({
+//             erro:err.message
+//         })
+//     }
+// })
 
 
 server.get('/listarMarcas', async (req, resp) => {
@@ -186,13 +186,13 @@ server.delete('/admin/produto/:id',async(req,resp) => {
     }
 })
 
-server.get('/api/produto/:id',async(req,resp) => {
+server.get('/admin/produto/consulta/:id',async(req,resp) => {
     try{
         const id = req.params.id;
 
-      const produto=  await buscarProdutoPorId(id);
-      const categorias = await buscarProdutoPorId(id);
-      const imagens = await buscarProdutoImagens(id)
+        const produto=  await buscarProdutoPorId(id);
+        const categorias = await buscarProdutoTamanhos(id);
+        const imagens = await buscarProdutoImagens(id)
       
         resp.send({
             info: produto,
@@ -207,7 +207,7 @@ server.get('/api/produto/:id',async(req,resp) => {
     }
 })
 
-server.get('/produto',async(req,resp) => {
+server.get('/produto/listarInicio',async(req,resp) => {
     try{
       
 

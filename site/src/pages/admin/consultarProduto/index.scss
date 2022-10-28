@@ -8,25 +8,27 @@
     .form {
         display: flex;
         flex-direction: column;
-        //font-family: 'lexendEL';
+        font-family: 'lexendEL';
         margin-top: 2em;
         width: 100%;
         max-width: 1024px;
         overflow-x: auto;
-    }
 
+    }
+    
     table {
         border-collapse: collapse;
     }
-
+    
     th {
         background-color: #D1BC9F;
         color: #fff;
         padding: 10px 15px;
         text-align: left;
     }
-
+    
     td {
+        border: solid 1px gray;
         padding: 10px 15px;
     }
 

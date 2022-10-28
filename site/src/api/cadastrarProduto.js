@@ -70,7 +70,7 @@ export async function buscarProdutos(){
 }
 
 export async function buscarProdutoPorId(id){
-    const r = await api.get ('/api/produto/' + id);
+    const r = await api.get ('admin/produto/consulta/' + id);
     return r.data;
 }
 
@@ -81,7 +81,7 @@ export async function removerProduto(id){
 
 
 export async function listarProdutosInicio(){
-    const r = await api.get ('produto/');
+    const r = await api.get ('/produto/listarInicio');
     return r.data;
 }
 

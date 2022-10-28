@@ -90,14 +90,7 @@ export default function Cadastrarproduto() {
     const tam = ['PP', 'P', 'M', 'G', 'GG'];
     setTamanhosSelecionados(tam);
   }
-
-
-  useEffect(() => {
-    carregarMarcas();
-    carregaTamanhosProdutos(produtoId);
-    carregarCategorias();
-  }, [])
-
+  
   function escolherImagem(inputId) {
     document.getElementById(inputId).click();
   }
@@ -118,6 +111,30 @@ export default function Cadastrarproduto() {
     }
   }
 
+  async function carregarProduto() {
+    if (!id) return;
+    
+    const r = await buscarProdutoPorId(id);
+
+    console.log(r)
+
+    setCategoriaId(r.id_categoria);
+    setNome(r.produto);
+    setValor(r.preco);
+    setMarcaId(r.id_marca);
+    setInformacoes(r.informacoes);
+    setDisponivel(r.disponivel);
+    setDestaque(r.destaque);
+  }
+  
+  
+    useEffect(() => {
+      carregarMarcas();
+      carregaTamanhosProdutos(produtoId);
+      carregarCategorias();
+      carregarProduto();
+    }, [])
+  
   return (
     <main className="page-cadastro">
       <header>
