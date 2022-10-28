@@ -4,6 +4,9 @@ import '../../common/common.scss'
 import { useNavigate } from 'react-router-dom';
 
 
+
+export default function Cabecalho(props) {
+    
     ///MODAL 
 
     const getElement = (...queries) => document.querySelector(...queries);
@@ -24,7 +27,7 @@ import { useNavigate } from 'react-router-dom';
         closeModal();
     });
 
-export default function Cabecalho(props) {
+
     const navigate = useNavigate('');
     
     function Home(){

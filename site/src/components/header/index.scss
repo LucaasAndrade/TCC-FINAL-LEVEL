@@ -136,9 +136,10 @@
         background-color: #ffffff;
         box-shadow: 0 0 10px 0 #00000070;
 
+        margin-top: 5%;
         width: 0;
         height: 0;
-        padding: 0px;
+        padding: 0;
         overflow: hidden;
         transition: width 0.15s;
         border-radius: 0px;
@@ -159,9 +160,9 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        background-color: #987F5B;
+        background-color: #F5F6F5;
+        border-bottom: 1px solid #B6B6B6;
         font-family: 'lexendL';
-        color: #ffffff;
         padding: 1em 0em 1em;
     }
 
