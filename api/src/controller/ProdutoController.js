@@ -18,8 +18,8 @@ server.post('/produto', async (req, resp) => {
         
         const produtoInserido = await CadastrarProduto(produtoParaInserir);
         VerificarInformacoesProduto(produtoParaInserir)
-
-        console.log(produtoInserido.idTam);
+    
+        console.log(produtoInserido);
         for (const idTam of produtoParaInserir.tamanhosSelecionados) {
             await InserirTamanho(Number(produtoInserido.id), idTam);
         }
