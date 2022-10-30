@@ -11,6 +11,10 @@ import Footer from "../../../components/footer";
 import CardCarrinho from "../../../components/CardCarrinho";
 import { useEffect, useState } from "react";
 import { buscarProdutoPorId } from "../../../api/cadastrarProduto";
+import EstrelasAvaliacao from '../../../components/estrelasAvaliacao';
+
+
+
 
 export default function Produto(props) {
   const responsive = {
@@ -118,13 +122,7 @@ export default function Produto(props) {
             </Carousel>
           </div>
           <div className="info-produto">
-            <div className="estrelas">
-              <p>☆</p>
-              <p>☆</p>
-              <p>☆</p>
-              <p>☆</p>
-              <p>☆</p>
-            </div>
+              <EstrelasAvaliacao />
             <div>
               <p className="nome-produto">{produto.info.produto}Camiseta Adidas</p>
               <p className="marca-produto">{produto.info.marca}Adidas</p>
