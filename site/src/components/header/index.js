@@ -2,6 +2,11 @@ import './index.scss';
 import '../../common/common.scss'
 
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+
+import Modal from  'react-modal'
+
+Modal.setAppElement('#root')
 
 
 
@@ -9,7 +14,7 @@ export default function Cabecalho(props) {
     
     ///MODAL 
 
-    const getElement = (...queries) => document.querySelector(...queries);
+    {/*const getElement = (...queries) => document.querySelector(...queries);
 
     const button = getElement('.open-modal-button');
     const container = getElement('.modal-container');
@@ -20,12 +25,49 @@ export default function Cabecalho(props) {
     const openModal = () => container.classList.add(activeModalClass);
     const closeModal = () => container.classList.remove(activeModalClass);
 
-    // button.addEventListener('click', openModal);
-    // container.addEventListener('click', (event) => {
-    //     if (modal.contains(event.target)) return;
+     button.addEventListener('click', openModal);
+     container.addEventListener('click', (event) => {
+        if (modal.contains(event.target)) return;
 
-    //     closeModal();
-    // });
+        closeModal();
+     });*/}
+
+   
+    const [abrirModal, setAbrirModal] = useState(false)
+
+    function abrirModalManual(){
+        setAbrirModal(true)
+    }
+
+    function fecharModalManual(){
+        setAbrirModal(false)
+    }
+
+    const customStyles = {
+        content : {
+            top: '50%',
+            left: '50%',
+            right: 'auto',
+            bottom: 'auto',
+            marginRight: '-50%',
+            transform : 'translate(-50%, -50%)',
+            padding: '2em',
+            display: 'flex',
+            alignItems: 'center',
+            flexDirection: 'column',
+            marginTop: '2em',
+            opacity: '76%',
+            backgroundColor: '#595959',
+            width: '45%',
+            height: '59%',
+            border: '1px solid #fff',
+            borderRadius: '1em',
+
+            
+        }
+    
+    }
+
 
 
     const navigate = useNavigate('');
@@ -71,7 +113,7 @@ export default function Cabecalho(props) {
                     <input type="text" id="lupa" placeholder="O que você está procurando?" />
                 </div>
                 <div className='elementos-usuario'>
-                    <img className="open-modal-button" src='/images/perfil.png' alt='perfil' />
+                    <img className="open-modal-button" src='/images/perfil.png' alt='perfil' onClick={abrirModalManual}/>
                     <img className='elemento-img' src='/images/atendimento.png' alt='atendimento' />
                     <hr className='elemento-img'></hr>
                     <img className='elemento-img' src='/images/sacola.png' alt='sacola' />
@@ -79,7 +121,11 @@ export default function Cabecalho(props) {
                 </div>
             </div>
             </div>
-
+            <Modal
+                    isOpen= {abrirModal}
+                    onRequestClose= {fecharModalManual}
+                    style= {customStyles}
+                    >
 
             <div className="modal-container">
                 <div className="modal">
@@ -134,6 +180,7 @@ export default function Cabecalho(props) {
                     </div>
                 </div>
             </div>
+            </ Modal>
         </header>
     )
 }

@@ -119,8 +119,18 @@ async function CadastroEndereco (){
                         </div>
                     </div>
                 </div>
-                <CardFinalizarProduto />
+               
 
+                <div>
+                    <p>SEU PEDIDO FOI CONCLUÍDO COM SUCESSO</p>
+                    <img src='/images/confere.png'></img>
+                </div>
+
+
+                <div>
+                    <CardFinalizarProduto />
+                </div>
+                
             </section>
         </main>
     )
