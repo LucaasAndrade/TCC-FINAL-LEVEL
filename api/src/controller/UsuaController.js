@@ -1,4 +1,4 @@
-import { CadastrarUsuario, UsuaLogin,listar } from "../repository/UsuaRepository.js";
+import {  UsuaLogin,CadastrarUsuario,cadastrarLogin} from "../repository/UsuaRepository.js";
 import  {Router} from 'express';
 const server = Router();
 
@@ -19,21 +19,20 @@ server.post('/usua/login',async(req,resp)=>{
     }
 })
 
-server.get('/api/usuario/:id/endereco',async(req,resp) =>{
+server.post('/usuario/:id/login',async(req,resp)=>{
     try{
-        const id =req.params.id;
-
-        const r = await listar(id);
-
-        resp.send(r);
-    }
-    catch{
-        resp.status(400).send({
+        
+        const id = req.params.id;
+        const login =req.body;
+        
+        const r = await cadastrarLogin(id,login)
+        resp.status(204).send();
+    }catch(err){
+        resp.status(401).send({
             erro:err.message
-        })
+        });
     }
 })
-
 
 server.post('/usuario/',async(req,resp)=>{
   
@@ -53,18 +52,7 @@ server.post('/usuario/',async(req,resp)=>{
             throw new Error('Seu número de telefone não foi informado!');
         if (!client.telefone2)
             throw new Error('Seu número de telefone não foi informado!');
-        if (!client.cep)
-            throw new Error('Seu cep não foi informado!'); 
-        if (!client.rua)
-            throw new Error('Sua Rua  não foi informado!'); 
-        if (!client.estado)
-            throw new Error('Seu Estado não foi informado!'); 
-        if (!client.cidade)
-            throw new Error('Sua Cidade não foi informada!'); 
-        if (!client.numero)
-            throw new Error(' o Numero de sua Residencia não foi informado!');
-        if (!client.referencia)
-            throw new Error(' Ponto de Referencia não foi informado!'); 
+        
                
         
 
@@ -79,6 +67,5 @@ server.post('/usuario/',async(req,resp)=>{
         })
     }
 });
-
 
 export default server;
