@@ -4,6 +4,7 @@ import 'dotenv/config';
 import AdmController from './controller/AdmController.js';
 import ProdutoControlLer from './controller/ProdutoController.js';
 import UsuaController from './controller/UsuaController.js';
+import EnderecoController from  './controller/EnderecoController.js';
 
 
 import express from 'express';
@@ -17,7 +18,7 @@ server.use(express.json());
 server.use(AdmController);
 server.use(ProdutoControlLer);
 server.use(UsuaController);
-
+server.use(EnderecoController)
 
 server.listen(process.env.PORT, 
                             () => console.log(`API ON PORTA: ${process.env.PORT}`));

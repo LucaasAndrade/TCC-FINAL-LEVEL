@@ -1,11 +1,13 @@
 import './index.scss'
 import CardFinalizarProduto from '../../../components/cardFinalizaProduto'
 import LogoContinuarcompa from '../../../components/logoContinuarcompra'
-import{CadastrarUsuario} from '../../../api/Usuario'
 
-import {useState,useEffect} from 'react' 
-import Storage, { set }  from 'local-storage'
-import { toast } from 'react-toastify'
+
+import {useState} from 'react' 
+
+import Storage from 'local-storage'
+import {salvar} from '../../../api/Endereco'
+
 
 
 export default function ContinuarCompra() {
@@ -18,19 +20,22 @@ const [logradouro,setLogradouro] = useState('');
 const [numero,setNumero] = useState('');
 
 
-async function CadastroEndereco (){
-    try{
-        const  r = await CadastrarUsuario(estado,cidade,complemento,cep,bairro,logradouro,numero)
-        alert('Endereço Cadastrado Com Sucesso');
 
-        setTimeout(()=>{
-            
-        },2000 )
-
-    } catch (err) {
-        toast.error(err.response.data.erro)
+async function salvarEndereco() {
+    try {
+        const id = Storage('cliente-logado').id;
+        const r = await salvar(id,  cep, logradouro, bairro, cidade, estado, numero, complemento);
+        alert('Endereço salvo');
+        
+        
+      
     }
-};
+    catch (err) {
+    
+        alert(err.response.data.erro);
+    }
+}   
+
 
 
 
@@ -61,6 +66,7 @@ async function CadastroEndereco (){
                                 <input type="text" placeholder="Logradouro*" id="input-referencia" value={logradouro}  onChange={e =>setLogradouro(e.target.value)}></input>
                                 <input type="number" placeholder="Número*" id="input-numero" value={numero} onChange={e =>setNumero(e.target.value)}></input>
                             </div>
+                            <button onClick={salvarEndereco}>salvar Endereco</button>
                         </div>
                     </div>
                 </div>
