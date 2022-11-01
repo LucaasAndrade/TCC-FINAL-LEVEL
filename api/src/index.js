@@ -20,5 +20,8 @@ server.use(ProdutoControlLer);
 server.use(UsuaController);
 server.use(EnderecoController)
 
+server.use('/storage/produto', express.static('storage/produto'));
+
+
 server.listen(process.env.PORT, 
                             () => console.log(`API ON PORTA: ${process.env.PORT}`));

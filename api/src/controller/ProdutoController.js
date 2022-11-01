@@ -9,7 +9,7 @@ import { Router } from 'express'
 const server = Router();
 
 
-const upload = multer({dest: '/storage/produto'})
+const upload = multer({dest: 'storage/produto'})
 
 server.post('/produto', async (req, resp) => {
     
@@ -55,7 +55,7 @@ server.put('/produto/:id', upload.array('imagens'), async (req, resp) => {
 })
 
 
-server.post('/produto/categoria',async(req,resp) =>{
+server.post('/produto/categoria', async(req,resp) =>{
     try {
         const CategoriaParaInserir = req.body;
 
@@ -191,12 +191,12 @@ server.get('/admin/produto/consulta/:id',async(req,resp) => {
         const id = req.params.id;
 
         const produto=  await buscarProdutoPorId(id);
-        const categorias = await buscarProdutoTamanhos(id);
+        const tamanhos = await buscarProdutoTamanhos(id);
         const imagens = await buscarProdutoImagens(id)
       
         resp.send({
             info: produto,
-            categoria: categorias,
+            tamanhos: tamanhos,
             imagem:imagens
         })
     }

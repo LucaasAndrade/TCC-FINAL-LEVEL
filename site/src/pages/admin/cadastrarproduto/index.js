@@ -9,6 +9,7 @@ import { useState, useEffect } from 'react'
 
 import HeaderAdm from '../../../components/headerAdm'
 import { useParams } from "react-router-dom";
+import { API_URL } from "../../../api/config";
 
 export default function Cadastrarproduto() {
 
@@ -43,9 +44,8 @@ export default function Cadastrarproduto() {
       const PrecoProduto = Number(valor.replace(',', '.'));
 
       const r = await CadastrarProduto(categoriaId, marcaId, nome, PrecoProduto, informacoes, disponivel, destaque, tamanhosSelecionados);
-      await salvarImagens(r.id, imagem1, imagem2, imagem3, imagem4, imagem5);
-      
       alert('Produto Salvo Com Sucesso!')
+      await salvarImagens(r.id, imagem1, imagem2, imagem3, imagem4, imagem5);
 
     } catch (err) {
       console.log(err)
@@ -98,6 +98,8 @@ export default function Cadastrarproduto() {
   function exibirImagem(imagem) {
     if (imagem == undefined) {
       return '/images/adicionar-imagem.png'
+    } else if(typeof(imagem) == 'string') {
+      return `${API_URL}/${imagem}`
     } else {
       return URL.createObjectURL(imagem);
     }
@@ -106,6 +108,8 @@ export default function Cadastrarproduto() {
   function exibirImagemDois(imagem) {
     if (imagem == undefined) {
       return '/images/adicionar2.png'
+    } else if(typeof(imagem) == 'string') {
+      return `${API_URL}/${imagem}`
     } else {
       return URL.createObjectURL(imagem);
     }
@@ -116,15 +120,33 @@ export default function Cadastrarproduto() {
     
     const r = await buscarProdutoPorId(id);
 
-    console.log(r)
+    
+    setNome(r.info.produto);     
+    setValor(r.info.preco);
+    setMarcaId(r.info.id_marca);
+    setCategoriaId(r.info.id_categoria);
+    setInformacoes(r.info.informacoes);
+    setDisponivel(r.info.disponivel);
+    setDestaque(r.info.destaque);
+    setTamanhosSelecionados(r.tamanhos)
+    // console.log(r.tamanhos);
 
-    setCategoriaId(r.id_categoria);
-    setNome(r.produto);
-    setValor(r.preco);
-    setMarcaId(r.id_marca);
-    setInformacoes(r.informacoes);
-    setDisponivel(r.disponivel);
-    setDestaque(r.destaque);
+
+    if (r.imagem.length > 0) {
+      setImagem1(r.imagem[0])
+    }
+    if (r.imagem.length > 1) {
+      setImagem2(r.imagem[1])
+    }
+    if (r.imagem.length > 2) {
+      setImagem3(r.imagem[2])
+    }
+    if (r.imagem.length > 3) {
+      setImagem4(r.imagem[3])
+    }
+    if (r.imagem.length > 4) {
+      setImagem5(r.imagem[4])
+    }
   }
   
   
@@ -211,7 +233,7 @@ export default function Cadastrarproduto() {
                     </select>
                     <button className="botao-adicionar-tamanho" onClick={adicionarTamanhos}> Adicionar Tamanhos </button>
                     <button className="botao-adicionar-tamanho" onClick={todosTamanhos}> Adicionar Todos </button>
-                        <ul>
+                        <ul className="tamanhos" >
                     {tamanhosSelecionados.map(item => 
                       <li> {item}</li>
                       )}
@@ -231,7 +253,7 @@ export default function Cadastrarproduto() {
                 <div>
                   <div className="campo-info">
                     <p>CATEGORIA</p>
-                    <select onChange={e => setCategoriaId(e.target.value)}>
+                    <select value={categoriaId} onChange={e => setCategoriaId(e.target.value)}>
                       <option selected disabled hidden ></option>
                       {categorias.map(item =>
                         <option value={item.id_categoria}> {item.nm_categoria} </option>
