@@ -4,7 +4,7 @@ import HeaderAdm from  '../../../components/headerAdm'
 
 export default function AdicionarCupom() {
     return(
-        <main id='page-adcionar-cupom'>
+        <main className='page-adcionar-cupom'>
             <header>
                 <HeaderAdm />
             </header>
