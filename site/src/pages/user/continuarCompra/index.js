@@ -3,11 +3,11 @@ import CardFinalizarProduto from '../../../components/cardFinalizaProduto'
 import LogoContinuarcompa from '../../../components/logoContinuarcompra'
 
 
-import {useState} from 'react' 
+import {useState,useEffect} from 'react' 
 
 import Storage from 'local-storage'
 import {salvar} from '../../../api/Endereco'
-
+import { useNavigate } from 'react-router-dom';
 
 
 export default function ContinuarCompra() {
@@ -18,23 +18,31 @@ const [cep,setCep] = useState('');
 const [bairro,setBairro] = useState('');
 const [logradouro,setLogradouro] = useState('');
 const [numero,setNumero] = useState('');
+const [usuario, setUsuario] = useState({id: 0, nome: ''});
 
 
+const navigate = useNavigate();
 
-async function salvarEndereco() {
+    useEffect(() =>{
+        if(Storage('usuario-logado')){
+            const UsuarioLogado = Storage('usuario-logado');
+            setUsuario({id:UsuarioLogado.id, nome:UsuarioLogado.nome});
+        }
+    },[]);
+
+
+const CadastroEndereco = async _ =>{
     try {
-        const id = Storage('cliente-logado').id;
-        const r = await salvar(id,  cep, logradouro, bairro, cidade, estado, numero, complemento);
-        alert('Endereço salvo');
+        const r = await salvar(usuario.id, cep, logradouro, bairro, cidade, estado, numero, complemento);
+        alert('Endereço cadastrado com sucesso!');
+
         
-        
-      
+
+    } catch (err) {
+    alert(err.response.data.erro)
     }
-    catch (err) {
-    
-        alert(err.response.data.erro);
-    }
-}   
+};
+
 
 
 
@@ -66,7 +74,7 @@ async function salvarEndereco() {
                                 <input type="text" placeholder="Logradouro*" id="input-referencia" value={logradouro}  onChange={e =>setLogradouro(e.target.value)}></input>
                                 <input type="number" placeholder="Número*" id="input-numero" value={numero} onChange={e =>setNumero(e.target.value)}></input>
                             </div>
-                            <button onClick={salvarEndereco}>salvar Endereco</button>
+                            <button onClick={ CadastroEndereco}>salvar Endereco</button>
                         </div>
                     </div>
                 </div>

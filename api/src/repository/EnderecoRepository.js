@@ -3,16 +3,18 @@ import { con } from "./connection.js";
 
 
 export async function listar(idUsuario){
-    const comando = `select id_usuario  id,
-    ds_cep   				cep,
-    nm_rua   				rua,
+    const comando = 
+  
+    ` select id_usuario_endereco		id,
+    ds_cep					cep,
+    ds_numero               numero,
+    ds_logradouro			logradouro,
+    ds_bairro				bairro,
+    nm_cidade				cidade,
     nm_estado				estado,
-    nm_cidade      		cidade,
-    nr_casa        		numero,
-    ds_ponto_referencia	referencia
-    from tb_usuario
-    where id_usuario = ?
-    `
+    ds_complemento			complemento
+from tb_usuario_endereco 
+where id_usuario = ?`
     const [registros] = await con.query(comando,[idUsuario]);
     return registros;
     }

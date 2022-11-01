@@ -24,6 +24,7 @@ export default function CadastroUser() {
   const [cpf,setCpf] = useState ("");
   const [telefone,setTelefone] = useState("");
   const [telefone2,setTelefone2] = useState ("");
+
   const [email,setEmail] = useState("");
   const [senha,setSenha] = useState("");
 
@@ -36,9 +37,7 @@ export default function CadastroUser() {
     try  {
       const r = await CadastrarUsuario(nome, sobrenome, nascimento, cpf, telefone, telefone2);
        alert('Usuario Cadastrado com sucesso');
-
-
-              
+   
     }
     catch (err) {
       console.log(err)
@@ -46,7 +45,7 @@ export default function CadastroUser() {
     }
  }
 
- 
+
 
 
  
