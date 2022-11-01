@@ -193,6 +193,8 @@ server.get('/admin/produto/consulta/:id',async(req,resp) => {
         const produto=  await buscarProdutoPorId(id);
         const tamanhos = await buscarProdutoTamanhos(id);
         const imagens = await buscarProdutoImagens(id)
+
+        // console.log(produto);
       
         resp.send({
             info: produto,

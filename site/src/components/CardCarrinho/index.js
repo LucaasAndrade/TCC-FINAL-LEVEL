@@ -27,7 +27,7 @@ export default function CardCarrinho({item: {produto:{info,categoria,imagem},qtd
         return API_URL + '/' + imagem[0]
     }
     else{
-       return ''
+       return '/images/acesso2.png';
     }
 
 
@@ -51,7 +51,7 @@ export default function CardCarrinho({item: {produto:{info,categoria,imagem},qtd
         <main id='page-card-carrinho'>
             <div className='cartao-carrinho'>
                 <div className='imagem-carrinho'>
-                    <img src/>
+                    <img src={exibirImagem}/>
                 </div>
                 <div className='info-card'>
                     <div>

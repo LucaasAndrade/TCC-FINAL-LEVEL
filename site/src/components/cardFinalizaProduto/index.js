@@ -23,6 +23,8 @@ export default function FinalizarCompra(props) {
          return total;
         }
     
+
+        
     
 
     return (
