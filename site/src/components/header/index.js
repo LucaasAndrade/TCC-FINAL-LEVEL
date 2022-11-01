@@ -16,7 +16,7 @@ export default function Cabecalho() {
     const navigate = useNavigate('');
     
     function Home(){
-        navigate ("/home")
+        navigate ("/")
     }
 
     function AcessoriosPage(){
