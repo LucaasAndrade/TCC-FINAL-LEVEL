@@ -31,9 +31,9 @@ export default function AcessoriosHome(props) {
     
 
     return (
-        <main id='acessorios-home-page' onClick={() => abrirDetalhes(props.item.id)}>
+        <main className='acessorios-home-page' onClick={() => abrirDetalhes(props.item.id)}>
             <div className='cartao-produto'>
-                <img src= {exibir(props.item.images)} />
+                <img className='imagem' src= {exibir(props.item.images)} />
                 <div>
                     <div className='info'>
                         <p >{props.item.produto}</p>
