@@ -55,7 +55,7 @@ export async function salvarImagens(id, imagem1, imagem2, imagem3, imagem4, imag
     form.append('imagens', imagem5);
 
     console.log(id)
-    const r = await api.put('/produto/' + id, form, {
+    const r = await api.put(`/admin/produto/${id}/imagem`, form, {
         headers: {
             'Content-Type': 'multipart/form-data'
         }
@@ -86,3 +86,15 @@ export async function listarProdutosInicio(){
 }
 
 
+
+export async function AlterarProduto(id, nome, preco, informacoes, destaque, disponivel, tamanhosSelecionados) {
+     await api.put('/admin/produto/alterar/' + id, {
+        nome,
+        preco,
+        informacoes,
+        disponivel,
+        destaque,
+        tamanhosSelecionados,
+        id
+    }); 
+}

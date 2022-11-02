@@ -57,13 +57,18 @@ export  async function AlterarProduto(id,produto){
     `update  tb_produto
     set nm_produto =?,
     vl_preco =      ?,
-    nm_marca=       ?,
     ds_informacoes= ?,
      bl_disponivel= ?,
      bl_destaque =  ?
   where id_produto= ?`
 
-  const [resposta] = await con.query(comando,[produto.nome,produto.preco,produto.marca,produto.informacoes,produto.disponivel,produto.destaque,id])
+    const [resposta] = await con.query(comando, [
+        produto.nome,
+        produto.preco,
+        produto.informacoes,
+        produto.destaque,
+        produto.disponivel,
+        id])
   return resposta.affectedRows;
 }
 
@@ -228,3 +233,18 @@ export async function removerProduto(idProduto){
     const [resp] = await con.query(comando,[idProduto])
     return resp.affectedRows;
 }
+
+
+/// ### LOGICA PARA ALTERAR PRODUTO ####
+
+
+export async function removerProdutoImagemDiferenteDe(imagens){
+    const comando =
+    `delete from tb_imagem_produto
+        where img_produto NOT IN (?)
+    `
+
+    const [resp] = await con.query(comando,[imagens])
+    return resp.affectedRows;
+}
+

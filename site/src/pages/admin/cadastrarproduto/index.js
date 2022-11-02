@@ -4,7 +4,7 @@ import "./index.scss";
 
 import { toast } from 'react-toastify';
 
-import { CadastrarProduto, InserirTamanho,buscarProdutoPorId,listarCategorias, listarMarcas, listarTamanhoProduto, salvarImagens } from "../../../api/cadastrarProduto";
+import { CadastrarProduto, InserirTamanho,buscarProdutoPorId,listarCategorias, listarMarcas, listarTamanhoProduto, salvarImagens, AlterarProduto } from "../../../api/cadastrarProduto";
 import { useState, useEffect } from 'react'
 
 import HeaderAdm from '../../../components/headerAdm'
@@ -43,12 +43,21 @@ export default function Cadastrarproduto() {
     try {
       const PrecoProduto = Number(valor.replace(',', '.'));
 
-      const r = await CadastrarProduto(categoriaId, marcaId, nome, PrecoProduto, informacoes, disponivel, destaque, tamanhosSelecionados);
-      alert('Produto Salvo Com Sucesso!')
-      await salvarImagens(r.id, imagem1, imagem2, imagem3, imagem4, imagem5);
+      if (!id) {
+
+        const r = await CadastrarProduto(categoriaId, marcaId, nome, PrecoProduto, informacoes, disponivel, destaque, tamanhosSelecionados);
+        alert('Produto Salvo Com Sucesso!')
+        await salvarImagens(r.id, imagem1, imagem2, imagem3, imagem4, imagem5);          
+      }
+      else {
+        
+      const r = await AlterarProduto(id, nome, PrecoProduto, informacoes, disponivel, destaque, tamanhosSelecionados);
+      alert('Produto Alterado Com Sucesso!')
+      await salvarImagens(id, imagem1, imagem2, imagem3, imagem4, imagem5);
+
+      }
 
     } catch (err) {
-      console.log(err)
       alert(err.response.data.erro)
 
     }
@@ -90,6 +99,11 @@ export default function Cadastrarproduto() {
     const tam = ['PP', 'P', 'M', 'G', 'GG'];
     setTamanhosSelecionados(tam);
   }
+
+  function removerTamanho(id) {
+    const x = tamanhosSelecionados.filter(item => item != id);
+    setTamanhosSelecionados(x);
+  }
   
   function escolherImagem(inputId) {
     document.getElementById(inputId).click();
@@ -122,7 +136,7 @@ export default function Cadastrarproduto() {
 
     
     setNome(r.info.produto);     
-    setValor(r.info.preco);
+    setValor(r.info.preco.toString());
     setMarcaId(r.info.id_marca);
     setCategoriaId(r.info.id_categoria);
     setInformacoes(r.info.informacoes);
@@ -235,9 +249,10 @@ export default function Cadastrarproduto() {
                     <button className="botao-adicionar-tamanho" onClick={todosTamanhos}> Adicionar Todos </button>
                         <ul className="tamanhos" >
                     {tamanhosSelecionados.map(item => 
-                      <li> {item}</li>
+                      <li onClick={() => removerTamanho(item)}> {item}</li>
                       )}
                       </ul>
+                      
                   </div>
                 <div className="campo-info">
                   <p>MARCA</p>

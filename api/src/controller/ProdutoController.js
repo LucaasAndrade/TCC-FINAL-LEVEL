@@ -1,7 +1,7 @@
 
 import multer from 'multer'
 
-import { AlterarProduto, CadastrarProduto,buscarProduto, buscarProdutoPorId,removerProduto,InserirCategoria, InserirTamanho, listarMarcas, listarCategorias, listarTamanhosProduto, InserirImagem,listarProdutosInicio,buscarProdutoImagens, removerProdutoImagem, removerProdutoTamanho, buscarProdutoTamanhos } from '../repository/ProdutoRepository.js';
+import { AlterarProduto, CadastrarProduto,buscarProduto, buscarProdutoPorId,removerProduto,InserirCategoria, InserirTamanho, listarMarcas, listarCategorias, listarTamanhosProduto, InserirImagem,listarProdutosInicio,buscarProdutoImagens, removerProdutoImagem, removerProdutoTamanho, buscarProdutoTamanhos, removerProdutoImagemDiferenteDe } from '../repository/ProdutoRepository.js';
 
 import { VerificarInformacoesProduto } from '../services/verificacaoProduto.js'
 
@@ -19,7 +19,6 @@ server.post('/produto', async (req, resp) => {
         const produtoInserido = await CadastrarProduto(produtoParaInserir);
         VerificarInformacoesProduto(produtoParaInserir)
     
-        console.log(produtoInserido);
         for (const idTam of produtoParaInserir.tamanhosSelecionados) {
             await InserirTamanho(Number(produtoInserido.id), idTam);
         }
@@ -36,17 +35,25 @@ server.post('/produto', async (req, resp) => {
 })
 
 
-server.put('/produto/:id', upload.array('imagens'), async (req, resp) => {
+server.put('/admin/produto/:id/imagem', upload.array('imagens'), async (req, resp) => {
     try {
         const id = req.params.id
         const imagens = req.files;
+        const imgs = req.body.imagens.filter(item => item != 'undefined');
 
+        console.log(imagens)
+        if(imgs.length > 0)
+            await removerProdutoImagemDiferenteDe(imgs);
+
+        else {
+            await removerProdutoImagem(id)
+        }
+        
         for (const imagem of imagens) {
             await InserirImagem(id, imagem.path, false);
         }
 
     } catch (err) {
-        console.log(err)
         resp.status(400).send({
 
             erro: err.message
@@ -82,43 +89,6 @@ server.post('/produto/tamanho',async(req,resp) =>{
         })
     }
 })
-
-
-// server.put('/produto/:id',async(req,resp)=>{
-//     try{
-//         const {id} = req.params;
-//         const produto = req.body;
-
-//         if (!produto.nome)
-//             throw new Error('Nome do produto é obrigatorio!');
-
-//         if (!produto.preco)
-//             throw new Error('Preço do produto é obrigatorio!');  
-        
-//         if (!produto.marca)
-//             throw new Error('Marca do produto é obrigatorio!'); 
-        
-//         if (!produto.informacoes == undefined || produto.informacoes < 0)
-//             throw new Error('Informações do produto é obrigatorio!');   
-        
-//         if (!produto.disponivel == undefined)
-//             throw new Error('Verificar se o produto esta disponivel!');  
-            
-//         if (!produto.destaque)
-//             throw new Error('Destaque é obrigatorio!');  
-
-//         const resposta = await AlterarProduto(id,produto); 
-//         if (resposta !=1)
-//          throw new Error('Produto não pode ser alterado');
-//      else 
-//       resp.status(204).send();
-
-//     }catch(err){
-//         resp.send(400).send({
-//             erro:err.message
-//         })
-//     }
-// })
 
 
 server.get('/listarMarcas', async (req, resp) => {
@@ -194,12 +164,12 @@ server.get('/admin/produto/consulta/:id',async(req,resp) => {
         const tamanhos = await buscarProdutoTamanhos(id);
         const imagens = await buscarProdutoImagens(id)
 
-        // console.log(produto);
-      
+        console.log(imagens);
+
         resp.send({
             info: produto,
             tamanhos: tamanhos,
-            imagem:imagens
+            imagem: imagens
         })
     }
     catch(err){
@@ -223,6 +193,40 @@ server.get('/produto/listarInicio',async(req,resp) => {
         })
     }
 })
+
+
+/// #### CONTROLLER PARA ALTERAR PRODUTO ###
+
+server.put('/admin/produto/alterar/:id', async (req, resp) => {
+    try {
+        const id = req.params.id;        
+        const produto = req.body;
+
+        console.log(id);
+        console.log(produto);
+
+        
+        
+        // REMOVER INFORMAÇÕES JÁ CADASTRADAS
+        await removerProdutoTamanho(id)
+
+        // INSERIR INFORMAÇÕES APAGADAS
+ 
+        for (const idTam of produto.tamanhosSelecionados) {
+            await InserirTamanho(Number(id), idTam);
+        }
+        await AlterarProduto(id, produto)
+        
+        
+        resp.status(204).send();
+
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
+
 
 
 
