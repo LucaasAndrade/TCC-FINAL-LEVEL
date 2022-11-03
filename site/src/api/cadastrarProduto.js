@@ -17,8 +17,6 @@ export async function CadastrarProduto(categoria, marca_produto, nome, preco, in
         destaque,
         tamanhosSelecionados    
     });
-    console.log('r.data')
-    console.log(r)
     return r.data
 }
 
@@ -87,9 +85,11 @@ export async function listarProdutosInicio(){
 
 
 
-export async function AlterarProduto(id, nome, preco, informacoes, destaque, disponivel, tamanhosSelecionados) {
+export async function AlterarProduto(id, nome, marca, categoria, preco, informacoes, disponivel, destaque, tamanhosSelecionados) {
      await api.put('/admin/produto/alterar/' + id, {
         nome,
+        marca,
+        categoria,
         preco,
         informacoes,
         disponivel,

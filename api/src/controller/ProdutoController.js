@@ -16,8 +16,8 @@ server.post('/produto', async (req, resp) => {
     try {
         const produtoParaInserir = req.body;
         
-        const produtoInserido = await CadastrarProduto(produtoParaInserir);
         VerificarInformacoesProduto(produtoParaInserir)
+        const produtoInserido = await CadastrarProduto(produtoParaInserir);
     
         for (const idTam of produtoParaInserir.tamanhosSelecionados) {
             await InserirTamanho(Number(produtoInserido.id), idTam);
@@ -41,7 +41,6 @@ server.put('/admin/produto/:id/imagem', upload.array('imagens'), async (req, res
         const imagens = req.files;
         const imgs = req.body.imagens.filter(item => item != 'undefined');
 
-        console.log(imagens)
         if(imgs.length > 0)
             await removerProdutoImagemDiferenteDe(imgs);
 
@@ -149,7 +148,6 @@ server.delete('/admin/produto/:id',async(req,resp) => {
         resp.status(204).send();
     }
     catch (err) {
-        console.log(err.message)
         resp.status(400).send({
             erro:err.message
         })
@@ -163,8 +161,6 @@ server.get('/admin/produto/consulta/:id',async(req,resp) => {
         const produto=  await buscarProdutoPorId(id);
         const tamanhos = await buscarProdutoTamanhos(id);
         const imagens = await buscarProdutoImagens(id)
-
-        console.log(imagens);
 
         resp.send({
             info: produto,
@@ -204,14 +200,13 @@ server.put('/admin/produto/alterar/:id', async (req, resp) => {
 
         console.log(id);
         console.log(produto);
-
-        
         
         // REMOVER INFORMAÇÕES JÁ CADASTRADAS
         await removerProdutoTamanho(id)
 
         // INSERIR INFORMAÇÕES APAGADAS
- 
+        
+
         for (const idTam of produto.tamanhosSelecionados) {
             await InserirTamanho(Number(id), idTam);
         }

@@ -49,17 +49,43 @@ export default function Cadastrarproduto() {
         alert('Produto Salvo Com Sucesso!')
         await salvarImagens(r.id, imagem1, imagem2, imagem3, imagem4, imagem5);          
       }
-      else {
-        
-      const r = await AlterarProduto(id, nome, PrecoProduto, informacoes, disponivel, destaque, tamanhosSelecionados);
-      alert('Produto Alterado Com Sucesso!')
-      await salvarImagens(id, imagem1, imagem2, imagem3, imagem4, imagem5);
-
+      else{
+        alert('Não é possivel cadastrar esse produto! Ele já está cadastrado no sitema.')
       }
 
     } catch (err) {
       alert(err.response.data.erro)
 
+    }
+  }
+
+  
+  async function AlterarProduto() {
+    try {
+      const PrecoProduto = Number(valor.replace(',', '.'));
+
+      console.log("TESTE 1")
+
+
+      if (!id) {
+        alert('Não é possível alterar um produto ainda não cadastrado!')
+        console.log("TESTE 2")
+
+      }
+      else {
+        console.log("TESTE 5")
+        await AlterarProduto(id, nome, marcaId, categoriaId,PrecoProduto, informacoes,  disponivel, destaque,tamanhosSelecionados);
+        await salvarImagens(id, imagem1, imagem2, imagem3, imagem4, imagem5);
+        
+        alert('Produto Alterado Com Sucesso!')
+      }
+
+    } catch (err) {
+
+      console.log("TESTE 10")
+      
+      // alert(err.response.data.erro)
+      alert('Erro')
     }
   }
 
@@ -133,7 +159,6 @@ export default function Cadastrarproduto() {
     if (!id) return;
     
     const r = await buscarProdutoPorId(id);
-
     
     setNome(r.info.produto);     
     setValor(r.info.preco.toString());
@@ -143,8 +168,6 @@ export default function Cadastrarproduto() {
     setDisponivel(r.info.disponivel);
     setDestaque(r.info.destaque);
     setTamanhosSelecionados(r.tamanhos)
-    // console.log(r.tamanhos);
-
 
     if (r.imagem.length > 0) {
       setImagem1(r.imagem[0])
@@ -296,7 +319,7 @@ export default function Cadastrarproduto() {
                   <button className="botao-c-d" onClick={salvar}>CADASTRAR PRODUTO</button>
                 </div>
                 <div>
-                  <button className="botao-c-d">SALVAR ALTERAÇÃO</button>
+                  <button className="botao-c-d" onClick={AlterarProduto}>SALVAR ALTERAÇÃO</button>
 
                 </div>
               </div>

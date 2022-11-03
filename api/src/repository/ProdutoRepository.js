@@ -56,6 +56,8 @@ export  async function AlterarProduto(id,produto){
     const comando =
     `update  tb_produto
     set nm_produto =?,
+    id_marca_produto = ?,
+    id_categoria = ?,
     vl_preco =      ?,
     ds_informacoes= ?,
      bl_disponivel= ?,
@@ -64,10 +66,12 @@ export  async function AlterarProduto(id,produto){
 
     const [resposta] = await con.query(comando, [
         produto.nome,
+        produto.marca,
+        produto.categoria,
         produto.preco,
         produto.informacoes,
-        produto.destaque,
         produto.disponivel,
+        produto.destaque,
         id])
   return resposta.affectedRows;
 }
