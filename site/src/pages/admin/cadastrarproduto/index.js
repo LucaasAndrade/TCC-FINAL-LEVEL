@@ -60,32 +60,32 @@ export default function Cadastrarproduto() {
   }
 
   
-  async function AlterarProduto() {
+  async function RealizarAlteracao() {
     try {
       const PrecoProduto = Number(valor.replace(',', '.'));
 
-      console.log("TESTE 1")
-
+      // console.log(id);
+      // console.log(nome);
+      // console.log(marcaId);
+      // console.log(categoriaId);
+      // console.log(PrecoProduto);
+      // console.log(informacoes);
+      // console.log(disponivel);
+      // console.log(destaque);
+      // console.log(tamanhosSelecionados);
 
       if (!id) {
         alert('Não é possível alterar um produto ainda não cadastrado!')
-        console.log("TESTE 2")
-
       }
       else {
-        console.log("TESTE 5")
         await AlterarProduto(id, nome, marcaId, categoriaId,PrecoProduto, informacoes,  disponivel, destaque,tamanhosSelecionados);
+        alert('Produto Alterado Com Sucesso!')
         await salvarImagens(id, imagem1, imagem2, imagem3, imagem4, imagem5);
         
-        alert('Produto Alterado Com Sucesso!')
       }
 
-    } catch (err) {
-
-      console.log("TESTE 10")
-      
-      // alert(err.response.data.erro)
-      alert('Erro')
+    } catch (err) {      
+      alert(err.response.data.erro)
     }
   }
 
@@ -319,7 +319,7 @@ export default function Cadastrarproduto() {
                   <button className="botao-c-d" onClick={salvar}>CADASTRAR PRODUTO</button>
                 </div>
                 <div>
-                  <button className="botao-c-d" onClick={AlterarProduto}>SALVAR ALTERAÇÃO</button>
+                  <button className="botao-c-d" onClick={RealizarAlteracao}>SALVAR ALTERAÇÃO</button>
 
                 </div>
               </div>
