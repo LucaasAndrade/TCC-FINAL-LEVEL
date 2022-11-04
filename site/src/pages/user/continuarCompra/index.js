@@ -115,12 +115,11 @@ const CadastroEndereco = async _ =>{
                                     <div>
                                         <input type="text" placeholder="Número do cartão*"></input>
                                         <select>
-                                            <option value="??" selected disabled hidden> Parcelas</option>
-                                            <option value="??"> ?? </option>
-                                            <option value="??"> ?? </option>
-                                            <option value="??"> ?? </option>
-                                            <option value="??"> ?? </option>
-                                            <option value="??"> ?? </option>
+                                            <option disabled hidden selected> Parcelas</option>
+                                            <option value={1}>01x à Vista</option>
+                                            <option value={1}>01x sem Juros</option>
+                                            <option value={2}>02x sem Juros</option>
+                                            <option value={3}>03x sem Juros</option>
                                         </select>
                                     </div>
                                     <div className="input">

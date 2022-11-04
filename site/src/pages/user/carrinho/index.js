@@ -128,6 +128,8 @@ useEffect(() => {
                
 
                 <CodigoPromocional />
+                <FinalizarCompra />
+                
             
 
 

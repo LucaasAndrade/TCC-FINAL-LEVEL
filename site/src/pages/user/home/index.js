@@ -1,13 +1,13 @@
 import './index.scss'
 
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from 'react';
 
 import Cabecalho from '../../../components/header'
 import Footer from '../../../components/footer'
 import CarroselDestaques from '../../../components/carrosel'
 import CarroselMarcas from '../../../components/carroselmarcas'
 import AcessoriosHome from '../../../components/acessoriosHome'
-import { useEffect, useState } from 'react';
 import { listarProdutosInicio } from "../../../api/cadastrarProduto";
 
 

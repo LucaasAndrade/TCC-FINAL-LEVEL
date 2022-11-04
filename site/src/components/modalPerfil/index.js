@@ -8,7 +8,7 @@ export default function ModalEndereco({ exibir }) {
 
 
         <div className='comp-modal-endereco'>
-            <div className={`modal-endereco ${exibir ? 'exibir' : ''}`}>
+            <div className='modal-endereco'>
                 <div className='conteudo'>
 
                     <div className='fundo-perfil'>
