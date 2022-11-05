@@ -2,7 +2,16 @@
     background-color: #E6E6E6;
     min-height: 100vh;
 
+    .fundo-informacoes{
+        //display: flex;
+        //flex-direction: column;
+        //justify-content: center;
+    }
+
     .div-informacoes{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         background-color: #fff;
     }
 
@@ -19,6 +28,7 @@
 
     *P{
         font-family: 'lexendR';
+        color: #333;
     }
 
     *select{
@@ -27,17 +37,18 @@
     }
 
     .input-cupom{
-        width: 40em;
+        width: 60em;
         min-height: 2.5em;
+    }
+
+    .p-cupom{
+        color: #828282;
+        font-size: 12px;
     }
 
     .input-info{
         width: 10em;
         min-height: 2.5em;
-    }
-
-    .textarea{
-        margin-top: 3em;
     }
     
     .descricao{
@@ -47,5 +58,15 @@
         min-width: 22em;
         min-height: 10em;
         border: 1px solid #828282;
+    }
+
+    .cupom-quant{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .cupom-info-quant{
+        display: flex;
+        flex-direction: column;
     }
 }

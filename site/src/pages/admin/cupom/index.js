@@ -8,12 +8,12 @@ export default function AdicionarCupom() {
             <header>
                 <HeaderAdm />
             </header>
-            <section cl>
-                <div>
+            <section className='fundo-informacoes'>
+                <div className='div-informacoes'>
                     <h1>Cadastrar Cupom</h1>
                     <div>
                         <input className='input-cupom' type='text' placeholder='Cupom*'></input>
-                        <p>O cupom  é a chave do seu desconto. Ele que deve ser divulgado e inserido durante o pagamento  do pedido. Ex:MEUCUPOM</p>
+                        <p className='p-cupom'>O cupom  é a chave do seu desconto. Ele que deve ser divulgado e inserido durante o pagamento  do pedido. Ex:MEUCUPOM</p>
                     </div>
                     <div className='div-informacoes'>                        
                         <p>Valores</p>                       
@@ -34,12 +34,12 @@ export default function AdicionarCupom() {
                                 <option value='4'>PIX</option>
                             </select>
                         </div>
-                        <div>                           
+                        <div className='cupom-quant'>                           
                             <div className="textarea">
                                 <p>Quantidades</p>
                                 <textarea className="descricao" name="story" rows="7" cols="46" placeholder='Descricão*'></textarea>
                             </div>
-                            <div>
+                            <div className='cupom-info-quant'>
                                 <input type='text' placeholder='Limite de usos*'></input>
                                 <input type='text' placeholder='Limite por cliente*'></input>
                             </div>                            
