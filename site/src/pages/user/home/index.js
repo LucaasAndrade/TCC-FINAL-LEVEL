@@ -66,7 +66,7 @@ export default function Home() {
                         <h5 className='p-ver-mais' onClick={Destaques}>Ver mais >> </h5>
                     </div>
                     <div>
-                        <CarroselDestaques />
+                        <CarroselDestaques src={'/images/destaque1.png'}/>
                     </div>
                 </div>
             </section>
