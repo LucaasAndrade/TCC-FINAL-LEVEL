@@ -8,19 +8,19 @@ export default function AdicionarCupom() {
             <header>
                 <HeaderAdm />
             </header>
-            <section>
+            <section cl>
                 <div>
-                    <h1></h1>
+                    <h1>Cadastrar Cupom</h1>
                     <div>
-                        <input type='text' placeholder='Cupom*'></input>
+                        <input className='input-cupom' type='text' placeholder='Cupom*'></input>
                         <p>O cupom  é a chave do seu desconto. Ele que deve ser divulgado e inserido durante o pagamento  do pedido. Ex:MEUCUPOM</p>
                     </div>
-                    <div>                        
+                    <div className='div-informacoes'>                        
                         <p>Valores</p>                       
                         <div>
-                            <input type='text' placeholder='Porcentagem*'></input>
-                            <input type='number' placeholder='Valor*'></input>
-                            <input type='number' placeholder='Valor Mínimo*'></input>
+                            <input className='input-info' type='number' placeholder='Porcentagem*'></input>
+                            <input className='input-info' type='number' placeholder='Valor*'></input>
+                            <input className='input-info' type='number' placeholder='Valor Mínimo*'></input>
                         </div>
                         <p>Configurações</p>                       
                         <div>
@@ -31,21 +31,18 @@ export default function AdicionarCupom() {
                                 <option value='1'>Débito</option>
                                 <option value='2'>Crédito</option>
                                 <option value='3'>Boleto</option>
-                                <option value='4'>PIX/</option>
+                                <option value='4'>PIX</option>
                             </select>
                         </div>
-                        <div>
-                            <p>Quantidades</p>
-                            <div>
-                                <div className="textarea">
-                                    <p>INFORMAÇÕES DO PRODUTO</p>
-                                    <textarea className="descricao" name="story" rows="7" cols="46"></textarea>
-                                </div>
-                                <div>
-                                    <input type='text' placeholder='Limite de usos*'></input>
-                                    <input type='text' placeholder='Limite por cliente*'></input>
-                                </div>
+                        <div>                           
+                            <div className="textarea">
+                                <p>Quantidades</p>
+                                <textarea className="descricao" name="story" rows="7" cols="46" placeholder='Descricão*'></textarea>
                             </div>
+                            <div>
+                                <input type='text' placeholder='Limite de usos*'></input>
+                                <input type='text' placeholder='Limite por cliente*'></input>
+                            </div>                            
                         </div>
                     </div>
                 </div>

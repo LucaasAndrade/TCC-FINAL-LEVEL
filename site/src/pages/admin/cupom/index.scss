@@ -1,4 +1,40 @@
 .page-adicionar-cupom{
+    background-color: #E6E6E6;
+    min-height: 100vh;
+
+    .div-informacoes{
+        background-color: #fff;
+    }
+
+    *input{
+        background-color: #ffffff;
+        border: 1px solid #B6B6B6;
+    }
+
+    *option{
+        font-family: 'lexendM';
+        background-color: #ffffff;
+        color: #828282;
+    }
+
+    *P{
+        font-family: 'lexendR';
+    }
+
+    *select{
+        border: 1px solid #B6B6B6;
+        color: #828282;
+    }
+
+    .input-cupom{
+        width: 40em;
+        min-height: 2.5em;
+    }
+
+    .input-info{
+        width: 10em;
+        min-height: 2.5em;
+    }
 
     .textarea{
         margin-top: 3em;

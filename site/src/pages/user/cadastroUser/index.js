@@ -62,7 +62,7 @@ export default function CadastroUser() {
  
 
   return (
-    <main id="page-user-cadastro">
+    <main className="page-user-cadastro">
       <header>
         <div className="faixa-header">
           <div>
