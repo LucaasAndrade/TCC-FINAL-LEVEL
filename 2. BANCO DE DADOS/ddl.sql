@@ -80,6 +80,7 @@ id_produto_tamanho        	int primary key auto_increment,
  foreign key (id_produto) references  tb_produto(id_produto)
 );
 
+
 create table tb_usuario(
 id_usuario        	 int primary key auto_increment,
   nm_usuario          	 varchar(100),
@@ -87,16 +88,24 @@ id_usuario        	 int primary key auto_increment,
     dt_nascimento      	 datetime,
     ds_cpf 		 varchar(100),
     nr_telefone       	 varchar(100),
-    nr_telefone2         varchar(100),
-    ds_cep           	 varchar(100),
-    nm_rua		 varchar(100),
-    nm_estado         	 varchar(100),
-    nm_cidade         	 varchar(100),
-    nr_casa           	 varchar(100),
-   ds_ponto_referencia	 varchar(100)
+    nr_telefone2         varchar(100)
 );
 
-drop table  tb_usuario;
+
+create table tb_usuario_endereco(
+id_usuario_endereco     int primary key auto_increment,
+id_usuario             	int,
+nm_estado         		varchar(100),
+nm_cidade         		varchar(100),
+ds_complemento          varchar(100),
+ds_cep           	 	varchar(100),
+ds_bairro               varchar(100),
+ds_logradouro           varchar(100),
+ds_numero            	varchar(100),
+ foreign key (id_usuario) references  tb_usuario(id_usuario)
+);
+
+
 
 
 create table tb_usuario_favorito(

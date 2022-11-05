@@ -3,8 +3,8 @@ import "./index.scss";
 import { useNavigate } from "react-router-dom";
 import storage from 'local-storage';
 
-import { CadastrarUsuario } from "../../../api/Usuario";
-import { loginUsua } from "../../../api/loginUsua";
+import { CadastrarUsuario,cadastrarLogin } from "../../../api/Usuario";
+
 
 import Cabecalho from "../../../components/header";
 import Footer from "../../../components/footer";
@@ -25,26 +25,9 @@ export default function CadastroUser() {
   const [telefone,setTelefone] = useState("");
   const [telefone2,setTelefone2] = useState ("");
 
-  const [cep,setCep]= useState("");
-  const [rua,setRua] = useState("");
-  const [estado,setEstado] = useState("");
-
-  const [cidade,setCidade] = useState("");
-  const [numero,setNumero] = useState("");
-  const [referencia,setReferencia] = useState("");
-  
-
   const [email,setEmail] = useState("");
   const [senha,setSenha] = useState("");
 
-  useEffect(()=>{
-    storage.remove('usuario-logado');
-}, []);
-
-useEffect(()=>{
-  if(storage('usuario-logado'));
-     
-}, []);
   
   
  
@@ -52,12 +35,9 @@ useEffect(()=>{
   async function salvar() {
 
     try  {
-      const r = await CadastrarUsuario(nome, sobrenome, nascimento, cpf, telefone, telefone2, cep,rua,estado,cidade,numero,referencia);
+      const r = await CadastrarUsuario(nome, sobrenome, nascimento, cpf, telefone, telefone2);
        alert('Usuario Cadastrado com sucesso');
-
-       const resp = await loginUsua(email,senha)
-      storage('usuario-Cadastrado com sucesso', resp);
-              
+   
     }
     catch (err) {
       console.log(err)
@@ -68,11 +48,18 @@ useEffect(()=>{
 
 
 
+ 
+
+
+
+
 
 
   function Home() {
     navigate("/home");
   }
+
+ 
 
   return (
     <main id="page-user-cadastro">
@@ -104,20 +91,11 @@ useEffect(()=>{
               <input type="tel" placeholder="Telefone*" value={telefone} onChange={e =>(setTelefone(e.target.value))}></input>
               <input className="input-direita" type="tel" placeholder="Outro telefone" value={telefone2} onChange={e =>(setTelefone2(e.target.value))}></input>
             </div>
-            <div className="input">
-              <input type="text" placeholder="Seu CEP*" value={cep} onChange={e =>(setCep(e.target.value))}></input>
-              <input className="input-direita" type="text" placeholder="Nome da rua*" value={rua} onChange={e =>(setRua(e.target.value))}></input>
+           
+            
             </div>
-            <div className="input">
-              <input type="text" placeholder="Estado*" value={estado} onChange={e =>(setEstado(e.target.value))}></input>
-              <input className="input-direita" type="text" placeholder="Cidade*" value={cidade} onChange={e =>(setCidade(e.target.value))}></input>
-            </div>
-            <div className="input">
-              <input type="number" placeholder="Número*" id="input-numero" value={numero} onChange={e =>(setNumero(e.target.value))}></input>
-              <input type="text" placeholder="Ponto de referência" id="input-referencia" value={referencia} onChange={e =>(setReferencia(e.target.value))}></input>
-            </div>
-          </div>
-        </div>
+           
+          </div> 
 
         <div className="fundo-login">
         <div className="login">

@@ -1,12 +1,9 @@
 .page-pesquisar{
-    display: flex;
-    flex-wrap: wrap;
+    padding: 10px 10px;
 
     .cartao-produto{
         background-color: #ffffff;
         border: 1px solid #B6B6B6;
-        margin-left: .5em;
-        margin-right: .5em;
     }
 
     .imagem{

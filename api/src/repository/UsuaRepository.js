@@ -14,30 +14,25 @@ export async function UsuaLogin (email,senha){
     return linhas [0];
 }
 
+export async function cadastrarLogin (idUsuario, usua){
+    const comando = 
+    `insert into  tb_login(id_usuario,ds_email,ds_senha 	) 
+    values(?, ?,?)`
 
-export async function listar(idUsuario){
-    const comando = `select id_usuario  id,
-    ds_cep   				cep,
-    nm_rua   				rua,
-    nm_estado				estado,
-    nm_cidade      		cidade,
-    nr_casa        		numero,
-    ds_ponto_referencia	referencia
-    from tb_usuario
-    where id_usuario = ?
-    `
-    const [registros] = await con.query(comando,[idUsuario]);
-    return registros;
-    }
-    
+    const [linhas] =  await con.query(comando,[idUsuario,usua.email,usua.senha])
+    return linhas [0];
+}
+
+
+
 
 
 export async function CadastrarUsuario(cliente){
     const comando =
-    ` insert into tb_usuario (nm_usuario,nm_sobrenome,dt_nascimento,ds_cpf,nr_telefone,nr_telefone2,ds_cep,nm_rua,nm_estado,nm_cidade,nr_casa,ds_ponto_referencia)
-    values (?,?, ?,?,?,?,?,?,?, ?,?,?)`
+    ` insert into tb_usuario (nm_usuario,nm_sobrenome,dt_nascimento,ds_cpf,nr_telefone,nr_telefone2)
+    values (?,?, ?,?,?,?)`
 
-    const [resposta] = await con.query(comando,[cliente.nome,cliente.sobrenome,cliente.nascimento,cliente.cpf,cliente.telefone,cliente.telefone2,cliente.cep,cliente.rua,cliente.estado,cliente.cidade,cliente.numero,cliente.referencia])
+    const [resposta] = await con.query(comando,[cliente.nome,cliente.sobrenome,cliente.nascimento,cliente.cpf,cliente.telefone,cliente.telefone2])
 
     cliente.id = resposta.insertId;
     return resposta;

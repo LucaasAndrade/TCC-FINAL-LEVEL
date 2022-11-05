@@ -40,11 +40,6 @@ export default function Acessorios() {
                             <Pesquisa item={item} />
                             )}
                     </div> 
-                    <div className='produtos'>
-                    {setprodutos.map(item =>
-                            <Pesquisa item={item} />
-                            )}
-                    </div> 
                 </div>           
             </section>
             <section>

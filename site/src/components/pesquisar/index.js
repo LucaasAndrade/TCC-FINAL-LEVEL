@@ -32,7 +32,7 @@ export default function Pesquisa(props) {
     return (
         <main className='page-pesquisar' onClick={() => abrirDetalhes(props.item.id)}>
                 <div className='cartao-produto'>
-                     <img  src={exibir(props.item.images)}  /> 
+                     <img className='imagem' src={exibir(props.item.images)}  /> 
                     
                     <div>
                         <div className='info'>

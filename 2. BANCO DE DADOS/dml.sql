@@ -142,14 +142,17 @@ where id_produto_tamanho = '6';
 
 -- Cadastra Usuario
 select * from tb_usuario;
-insert into tb_usuario (nm_usuario,nm_sobrenome,dt_nascimento,ds_cpf,nr_telefone,nr_telefone2,ds_cep,nm_rua,nm_estado,nm_cidade,nr_casa,ds_ponto_referencia)
-		values ('Lucas',' Marcelo', '2004-11-10','476.175.558-66','(11)95319-5154','(11)5921-6389','04896-300','Rua Paineira','SP', 'São Paulo','139','Proximo ao mercadinho');
 
-insert into tb_usuario (nm_usuario,nm_sobrenome,dt_nascimento,ds_cpf,nr_telefone,nr_telefone2,ds_cep,nm_rua,nm_estado,nm_cidade,nr_casa,ds_ponto_referencia)
-		values ('Ester',' Queiroz', '2005-08-02','476.175.558-06','(11)95319-5154','(11)5921-6389','04896-300','Rua Paineira','SP', 'São Paulo','139','Proximo ao mercadinho');
+insert into tb_usuario (nm_usuario,nm_sobrenome,dt_nascimento,ds_cpf,nr_telefone,nr_telefone2)
+		values ('Lucas',' Marcelo', '2004-11-10','476.175.558-66','(11)95319-5154','(11)5921-6389');
 
-insert into tb_usuario (nm_usuario,nm_sobrenome,dt_nascimento,ds_cpf,nr_telefone,nr_telefone2,ds_cep,nm_rua,nm_estado,nm_cidade,nr_casa,ds_ponto_referencia)
-		values ('Rayssa',' Rodrigues','Imagem Da Rayssa', '2005-10-27','476.175.558-05','(11)95319-5154','(11)5921-6389','04896-300','Rua Paineira','SP', 'São Paulo','139','Proximo ao mercadinho');
+insert into tb_usuario (nm_usuario,nm_sobrenome,dt_nascimento,ds_cpf,nr_telefone,nr_telefone2)
+		values ('Ester',' Queiroz', '2005-08-02','476.175.558-06','(11)95319-5154','(11)5921-6389');
+
+
+
+
+
 
 
   -- Alterar Cadastro de usuario
@@ -163,6 +166,26 @@ update  tb_usuario
 -- Deleta Dados do Usuario
 delete from tb_usuario
 where id_usuario = '8';
+
+
+-- tela cadastrar Endereco
+
+select * from tb_usuario_endereco;
+
+    insert into tb_usuario_endereco (id_usuario,  ds_cep, ds_logradouro, ds_bairro, nm_cidade, nm_estado, ds_numero, ds_complemento)
+          values (2,  04896300, "proximo a avenida", "vargem-grande", "saõ paulo", "sp", 19, "A");
+                    
+	select id_usuario_endereco		id,
+    ds_cep					cep,
+    ds_numero               numero,
+    ds_logradouro			logradouro,
+    ds_bairro				bairro,
+    nm_cidade				cidade,
+    nm_estado				estado,
+    ds_complemento			complemento
+from tb_usuario_endereco 
+where id_usuario = 2;
+
 
 
  --  Usuario_favorito   

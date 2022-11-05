@@ -6,7 +6,7 @@ import CardCarrinho from '../../../components/CardCarrinho';
 import FinalizarCompra from '../../../components/cardFinalizaProduto';
 
 import CodigoPromocional from '../../../components/codigoPromocional';       
-import { createRef, useEffect, useState } from 'react';
+import {  useEffect, useState } from 'react';
 
 
 
@@ -27,6 +27,7 @@ export default function Carrinho() {
 function calcularValorTotal() {
     let total = 0;
     for (let item of itens) {
+        console.log(item);
         total = total + item.produto.info.preco * item.qtd;
     }
     return total;
@@ -53,6 +54,7 @@ async function carregarCarrinho() {
         
         for (let produto of carrinho) {
             let p = await buscarProdutoPorId(produto.id);
+            console.log(p);
             
             temp.push({
                 produto: p,
@@ -67,6 +69,7 @@ async function carregarCarrinho() {
 
 useEffect(() => {
     carregarCarrinho();
+
 }, [])
 
     return (
@@ -85,10 +88,10 @@ useEffect(() => {
     
                     )}
 
-                    <FinalizarCompra botao='continuar compra'/>
+                  </section>
 
                  
-                 {/*<div className='fundo-continuar-compra'>
+                 <div className='fundo-continuar-compra'>
                     <div className='div-titulo'>
                         <h5 className='titulo'>RESUMO DA COMPRA</h5>
                   
@@ -120,12 +123,14 @@ useEffect(() => {
                     </div>
                 </div>
                 </div>
-                </div>*/}
+                </div>
 
                
 
                 <CodigoPromocional />
-            </section>
+                <FinalizarCompra />
+                
+            
 
 
             <section>

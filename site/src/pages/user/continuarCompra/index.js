@@ -1,11 +1,13 @@
 import './index.scss'
 import CardFinalizarProduto from '../../../components/cardFinalizaProduto'
 import LogoContinuarcompa from '../../../components/logoContinuarcompra'
-import{CadastrarUsuario} from '../../../api/Usuario'
+
 
 import {useState,useEffect} from 'react' 
-import Storage, { set }  from 'local-storage'
-import { toast } from 'react-toastify'
+
+import Storage from 'local-storage'
+import {salvar} from '../../../api/Endereco'
+import { useNavigate } from 'react-router-dom';
 
 
 export default function ContinuarCompra() {
@@ -16,21 +18,32 @@ const [cep,setCep] = useState('');
 const [bairro,setBairro] = useState('');
 const [logradouro,setLogradouro] = useState('');
 const [numero,setNumero] = useState('');
+const [usuario, setUsuario] = useState({id: 0, nome: ''});
 
 
-async function CadastroEndereco (){
-    try{
-        const  r = await CadastrarUsuario(estado,cidade,complemento,cep,bairro,logradouro,numero)
-        alert('Endereço Cadastrado Com Sucesso');
+const navigate = useNavigate();
 
-        setTimeout(()=>{
-            
-        },2000 )
+    useEffect(() =>{
+        if(Storage('usuario-logado')){
+            const UsuarioLogado = Storage('usuario-logado');
+            setUsuario({id:UsuarioLogado.id, nome:UsuarioLogado.nome});
+        }
+    },[]);
+
+
+const CadastroEndereco = async _ =>{
+    try {
+        const r = await salvar(usuario.id, cep, logradouro, bairro, cidade, estado, numero, complemento);
+        alert('Endereço cadastrado com sucesso!');
+
+        
 
     } catch (err) {
-        toast.error(err.response.data.erro)
+    alert(err.response.data.erro)
     }
 };
+
+
 
 
 
@@ -61,6 +74,7 @@ async function CadastroEndereco (){
                                 <input type="text" placeholder="Logradouro*" id="input-referencia" value={logradouro}  onChange={e =>setLogradouro(e.target.value)}></input>
                                 <input type="number" placeholder="Número*" id="input-numero" value={numero} onChange={e =>setNumero(e.target.value)}></input>
                             </div>
+                            <button onClick={ CadastroEndereco}>salvar Endereco</button>
                         </div>
                     </div>
                 </div>
@@ -101,12 +115,11 @@ async function CadastroEndereco (){
                                     <div>
                                         <input type="text" placeholder="Número do cartão*"></input>
                                         <select>
-                                            <option value="??" selected disabled hidden> Parcelas</option>
-                                            <option value="??"> ?? </option>
-                                            <option value="??"> ?? </option>
-                                            <option value="??"> ?? </option>
-                                            <option value="??"> ?? </option>
-                                            <option value="??"> ?? </option>
+                                            <option disabled hidden selected> Parcelas</option>
+                                            <option value={1}>01x à Vista</option>
+                                            <option value={1}>01x sem Juros</option>
+                                            <option value={2}>02x sem Juros</option>
+                                            <option value={3}>03x sem Juros</option>
                                         </select>
                                     </div>
                                     <div className="input">
@@ -119,8 +132,18 @@ async function CadastroEndereco (){
                         </div>
                     </div>
                 </div>
-                <CardFinalizarProduto />
+               
 
+                <div>
+                    <p>SEU PEDIDO FOI CONCLUÍDO COM SUCESSO</p>
+                    <img src='/images/confere.png'></img>
+                </div>
+
+
+                <div>
+                    <CardFinalizarProduto />
+                </div>
+                
             </section>
         </main>
     )

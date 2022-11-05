@@ -252,4 +252,26 @@
         opacity: 100%;
         cursor: pointer;
     }
+
+    .tamanhos{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        margin: 10px;
+
+        list-style: none;
+    }
+
+    .tamanhos li{
+        font-family: 'lexendM';
+        background-color: #987F5B;
+        color: #F5F6F5;
+        border: solid 1px black;
+
+        margin: 0px 2px;
+
+        padding: 5px 10px;
+        width: fit-content;
+    }
 }

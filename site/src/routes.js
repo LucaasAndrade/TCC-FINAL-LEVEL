@@ -41,7 +41,7 @@ export default function Index() {
         <Route path='/admin/adicionar/cupom' element={<Cupom />} />
 
         {/* área do user */}
-        <Route path='/home' element = {<Landing />} />
+        <Route path='/' element = {<Landing />} />
         <Route path='/login' element={<Login />} />
         <Route path='/cadastro' element={<CadastroUser />} />
         <Route path='/produto/:id/detalhe' element = {<Produto />} />
