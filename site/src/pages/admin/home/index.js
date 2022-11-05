@@ -23,7 +23,7 @@ export default function Home() {
     }
 
     function ListarProdutos() {
-        navigate ("/admin/produtos")
+        navigate ("/admin/buscar/produtos")
     }
 
     function Chat() {
