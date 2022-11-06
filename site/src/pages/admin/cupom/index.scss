@@ -2,22 +2,38 @@
     background-color: #E6E6E6;
     min-height: 100vh;
 
-    .fundo-informacoes{
-        //display: flex;
-        //flex-direction: column;
-        //justify-content: center;
-    }
 
     .div-informacoes{
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-top: 2em;
+    }
+
+    .informacoes{
         background-color: #fff;
+        border: 1px solid #B6B6B6;
+        margin-top: 2em;
+        min-width: 50em;
+        max-width: 50em;
+        margin-bottom: 3em;
+    }
+
+    .info-dados{
+        padding: 3em;
+    }
+
+    .div-cupom{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 3em;
     }
 
     *input{
         background-color: #ffffff;
         border: 1px solid #B6B6B6;
+        padding: 1em;
     }
 
     *option{
@@ -41,32 +57,95 @@
         min-height: 2.5em;
     }
 
+    .div-informacoes h2{
+        font-family: 'lexendR';
+        color: rgb(88, 88, 88);
+    }
+
     .p-cupom{
         color: #828282;
         font-size: 12px;
     }
 
-    .input-info{
-        width: 10em;
-        min-height: 2.5em;
+    .informacoes input{
+        width: 13em;
+        height: 2.5em;
     }
-    
+
+    .div-input{
+        margin-top: .5em;
+        margin-bottom: 2em;
+    }
+
+    .input-info{
+        margin-left: 1.5em;
+    }
+
+    .informacoes select{
+        width: 13em;
+        min-height: 2.5em;
+        padding: 0em 0em 0em .5em;
+    }
+
+    textarea{
+        padding: 1em;
+    }
+
     .descricao{
         font-family: 'lexendR';
-        max-width: 19.5em;
+        max-width: 18em;
         max-height: 10em;
-        min-width: 22em;
+        min-width: 18em;
         min-height: 10em;
         border: 1px solid #828282;
     }
-
-    .cupom-quant{
-        display: flex;
-        flex-direction: row;
-    }
-
+    
     .cupom-info-quant{
         display: flex;
+        flex-direction: row;
+        margin-top: .5em;
+    }
+
+    .text-inputs{
+        display: flex;
         flex-direction: column;
+        margin-left: 1.5em;
+    }
+
+    .input-limite{
+        margin-top: 1.5em;
+    }
+
+    .botoes{
+        display: flex;
+        flex-direction: row-reverse;
+        margin-top: 3em;
+    }
+
+    .botao-excluir{
+        font-family: 'lexendR';
+        font-size: 11px;
+        background-color: #BE6161;
+        border: 1px solid #BE6161;
+        color: #ffffff;
+        padding: 1em 2em;
+        width: 14em;
+        cursor: pointer;
+    }
+
+    .botao-c-d{
+        font-family: 'lexendR';
+        font-size: 11px;
+        background-color: #987F5B;
+        border: 1px solid #987F5B;
+        color: #ffffff;
+        padding: 1em 2em;
+        width: 16em;
+        margin-left: 1em;
+        cursor: pointer;
+    }
+
+    .botao-excluir:hover, .botao-c-d:hover{
+        opacity: 90%;
     }
 }
