@@ -31,7 +31,7 @@ export default function Home() {
     }
 
     function Cupons() {
-        navigate ("/cupons")
+        navigate ("/admin/adicionar/cupom")
     }
 
     function Historico() {
@@ -74,7 +74,7 @@ export default function Home() {
                                     <button className='botao-dois'>HISTÓRICO DE PEDIDOS</button>
                                 </div>
                                 <div>
-                                    <button className='botao-dois'>GERENCIAR CUPONS</button>
+                                    <button className='botao-dois' onClick={Cupons}>ADICIONAR CUPONS</button>
                                 </div>
                             </div>
                         </div>

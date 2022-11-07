@@ -5,7 +5,7 @@ import '../../common/common.scss'
 
 export default function ProdutosAdm(props) {
     return (
-        <main id='page-destaque'>
+        <main className='page-destaque'>
             <div className='cartao-produto'>
                 <div>
                     <img className='imagem' src={props.imagem} />

@@ -36,7 +36,7 @@ export default function Cabecalho() {
     }
 
     function Cupons() {
-        navigate ("/cupons")
+        navigate ("/admin/adicionar/cupom")
     }
 
     function Historico() {
@@ -54,7 +54,7 @@ export default function Cabecalho() {
                     <p className='topico' onClick={ListarPedidos}>LISTAR PEDIDOS</p>
                     <p className='topico' onClick={ListarProdutos}>LISTAR PRODUTOS</p>
                     <p className='topico' >CHAT</p>
-                    <p className='topico' >CUPONS</p>
+                    <p className='topico' onClick={Cupons}>CUPONS</p>
                     <div className='filtro-historico'>
                         <p className='h-topico' >HISTÓRICO</p>
                         <select>
