@@ -12,6 +12,7 @@ import CardCarrinho from "../../../components/CardCarrinho";
 import { useEffect, useState } from "react";
 import { buscarProdutoPorId } from "../../../api/cadastrarProduto";
 import EstrelasAvaliacao from '../../../components/estrelasAvaliacao';
+import ComponenteAvaliacao from "../../../components/avaliacao";
 
 
 
@@ -126,7 +127,7 @@ export default function Produto(props) {
             <div>
               <p className="nome-produto">{produto.info.produto}</p>
               <p className="marca-produto">{produto.info.marca}</p>
-              <p className="preco-produto">{produto.info.preco}</p>
+              <p className="preco-produto">R$ {produto.info.preco}</p>
             </div>
             <div>
               <select>
@@ -169,14 +170,31 @@ export default function Produto(props) {
         </div>
       </section>
 
-      <section className="fundo-sobre-produto">
-          <div className="div-sobre">
-            <h3 className="titulo-sobre">informações</h3>
-            <div className="texto-info">
-              <p className="titu">{props.texto}Sobre o Produto</p>
-              <p className="texto-sobre">Lorem ipsum dolor dummy text sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+      <section className="fundo-informacao-produto">
+            <div className="div-sobre">
+              <h3 className="titulo-sobre">informações</h3>
+              <div className="texto-info">
+                <p className="titu">{props.texto}Sobre o Produto</p>
+                <p className="texto-sobre">Lorem ipsum dolor dummy text sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+              </div>
+        </div>
+
+        <hr className="linha" />
+
+        <div className="avalicao-comentario">
+            <div className="titulo-comentario">
+              <h3 className="titulo-sobre">avaliações</h3>
             </div>
-          </div>
+            <div>
+              <div className="avaliacao-estrela">
+                <EstrelasAvaliacao />
+                <span>{props.Avaliacao} 0 </span>
+              </div>
+              <div>
+                <ComponenteAvaliacao />
+              </div>
+            </div>
+        </div>
       </section>
 
       <section>

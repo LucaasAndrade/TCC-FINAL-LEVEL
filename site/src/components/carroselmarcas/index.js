@@ -25,7 +25,7 @@ export default function Carrossel() {
     };
 
     return (
-        <section className='carrosel-destaques'>
+        <section className='carrosel-marcas'>
                 <Carousel
                     swipeable={false}
                     draggable={false}

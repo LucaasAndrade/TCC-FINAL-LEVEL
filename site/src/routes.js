@@ -20,9 +20,9 @@ import LoginAdmin from './pages/admin/login'
 import Homeadmin from './pages/admin/home'
 import Cadastrarproduto from './pages/admin/cadastrarproduto'
 import ConsultarProduto from './pages/admin/consultarProduto'
-import Produtos from './pages/admin/produtos'
-import Cupom from './pages/admin/cupom'
 import ContinuarCompra from './pages/user/continuarCompra';
+import Cupom from './pages/admin/cupom'
+import HistoricoPedidos from './pages/admin/historicoPedido'
 
 
 
@@ -36,9 +36,9 @@ export default function Index() {
         <Route path='/admin/home' element={<Homeadmin />} />
         <Route path='/admin/cadastrarproduto' element={<Cadastrarproduto />} />
         <Route path='/admin/cadastrarproduto/:id' element={<Cadastrarproduto />} />
-        <Route path='/admin/produtos' element={<Produtos />} />
         <Route path='/admin/buscar/produtos' element={<ConsultarProduto />} />
         <Route path='/admin/adicionar/cupom' element={<Cupom />} />
+        <Route path='/admin/historico/pedidos' element={<HistoricoPedidos />} />
 
         {/* área do user */}
         <Route path='/' element = {<Landing />} />

@@ -39,8 +39,8 @@ export default function Cabecalho() {
         navigate ("/admin/adicionar/cupom")
     }
 
-    function Historico() {
-        navigate ("/historico")
+    function HistoricoPedidos() {
+        navigate ("/historico/pedidos")
     }
 
 
@@ -60,7 +60,7 @@ export default function Cabecalho() {
                         <select>
                             <option value="" selected disabled hidden></option>
                             <option value="Disponíveis"> Cupons </option>
-                            <option value="Não Disponíveis"> Pedidos </option>
+                            <option value="Não Disponíveis" onClick={HistoricoPedidos}> Pedidos </option>
                         </select>
                     </div>
                 </div>
