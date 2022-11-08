@@ -19,6 +19,7 @@ export default function Home() {
 
     async function listar() {
         const r = await listarProdutosInicio();
+        console.log(r);
         setProdutos(r);
     }
 

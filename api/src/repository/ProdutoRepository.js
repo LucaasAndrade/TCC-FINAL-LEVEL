@@ -177,27 +177,21 @@ export async function buscarProdutoImagens(idProduto) {
 export async function listarProdutosInicio(){
     const comando = 
    ` select tb_produto.id_produto         				id,
+	nm_produto										produto,
    nm_categoria                                       categoria,
    nm_marca											marca,
-   nm_produto              			  				produto,
    vl_preco                		                    preco,
-   ds_informacoes                                     informacoes,
-   bl_disponivel                                      disponivel,
-   bl_destaque                                        destaque,
-  min(img_produto)                                   imagem
+   min(img_produto)									imagem
    from tb_produto
-   inner join tb_categoria on tb_produto.id_categoria = tb_categoria.id_categoria
-   inner join tb_marca_produto on tb_produto.id_produto = tb_produto.id_produto
-   left join tb_imagem_produto on tb_produto.id_produto = tb_produto.id_produto
-   group 
-   by  tb_produto.id_produto,    				
-   nm_categoria,                                
-   nm_marca,									
-   nm_produto,              			  				
-   vl_preco,                		                    
-   ds_informacoes,                                     
-   bl_disponivel,                                      
-   bl_destaque                                    
+	inner join tb_categoria on tb_produto.id_categoria = tb_categoria.id_categoria
+	INNER JOIN tb_marca_produto on tb_marca_produto.id_marca_produto = tb_produto.id_marca_produto
+    LEFT JOIN tb_imagem_produto on tb_imagem_produto.id_produto = tb_produto.id_produto
+    GROUP BY
+    tb_produto.id_produto,
+	nm_produto,
+   nm_categoria,
+   nm_marca,
+   vl_preco;                                 
   `
   const [ registros] = await con.query(comando)
   return registros;
