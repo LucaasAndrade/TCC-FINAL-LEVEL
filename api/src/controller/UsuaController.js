@@ -19,25 +19,19 @@ server.post('/usua/login',async(req,resp)=>{
     }
 })
 
-server.post('/usuario/:id/login',async(req,resp)=>{
-    try{
-        
-        const id = req.params.id;
-        const login =req.body;
-        
-        const r = await cadastrarLogin(id,login)
-        resp.status(204).send();
-    }catch(err){
-        resp.status(401).send({
-            erro:err.message
-        });
-    }
-})
 
-server.post('/usuario/',async(req,resp)=>{
+
+server.post('/usuario',async(req,resp)=>{
   
     try {
+        const {idUsuario} = req.params;
         const client = req.body;
+
+
+
+        const linhas = await cadastrarLogin(idUsuario);
+        const resposta = await CadastrarUsuario()
+        
         
 
         if (!client.nome)
@@ -52,16 +46,14 @@ server.post('/usuario/',async(req,resp)=>{
             throw new Error('Seu número de telefone não foi informado!');
         if (!client.telefone2)
             throw new Error('Seu número de telefone não foi informado!');
-        
-               
-        
+           
 
-        const resposta = await CadastrarUsuario(client);
-        resp.send(resposta)
+            resp.send(resposta,linhas)
         
     
     
     } catch (err) {
+        
         resp.status(400).send({
             erro: err.message
         })
