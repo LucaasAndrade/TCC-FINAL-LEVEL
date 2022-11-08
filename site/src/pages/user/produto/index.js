@@ -124,9 +124,9 @@ export default function Produto(props) {
           <div className="info-produto">
               <EstrelasAvaliacao />
             <div>
-              <p className="nome-produto">{produto.info.produto}Camiseta Adidas</p>
-              <p className="marca-produto">{produto.info.marca}Adidas</p>
-              <p className="preco-produto">{produto.info.preco}R$ 129,90</p>
+              <p className="nome-produto">{produto.info.produto}</p>
+              <p className="marca-produto">{produto.info.marca}</p>
+              <p className="preco-produto">{produto.info.preco}</p>
             </div>
             <div>
               <select>
