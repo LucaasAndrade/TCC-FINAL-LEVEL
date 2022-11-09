@@ -74,7 +74,7 @@ const CadastroEndereco = async _ =>{
                                 <input type="text" placeholder="Logradouro*" id="input-referencia" value={logradouro}  onChange={e =>setLogradouro(e.target.value)}></input>
                                 <input type="number" placeholder="Número*" id="input-numero" value={numero} onChange={e =>setNumero(e.target.value)}></input>
                             </div>
-                            <button onClick={ CadastroEndereco}>salvar Endereco</button>
+                            <button className='botao-salvar' onClick={ CadastroEndereco}>salvar Endereco</button>
                         </div>
                     </div>
                 </div>
@@ -111,7 +111,7 @@ const CadastroEndereco = async _ =>{
                         <div className='endereco'>
                             <div>
                                 <p className='titulo'>Informações do Cartão</p>
-                                <div>
+                                <div className='inputs-titulo'>
                                     <div>
                                         <input type="text" placeholder="Número do cartão*"></input>
                                         <select>
@@ -134,14 +134,18 @@ const CadastroEndereco = async _ =>{
                 </div>
                
 
-                <div>
+               {/*<div>
                     <p>SEU PEDIDO FOI CONCLUÍDO COM SUCESSO</p>
                     <img src='/images/confere.png'></img>
-                </div>
+                </div>*/}
 
 
                 <div>
-                    <CardFinalizarProduto />
+                    <CardFinalizarProduto botao='finalizar compra'/>
+                    <div className='finaliza'>
+                        <p>ou</p>
+                        <button className="botao-cancelar">cancelar compra</button>
+                    </div>    
                 </div>
                 
             </section>

@@ -51,8 +51,16 @@
         margin-top: 2em;
     }
 
+    .endereco{
+        margin-top: 1.5em;
+    }
+
     .titulo{
         font-family: 'lexendM';
+    }
+
+    .inputs-titulo{
+        margin-top: 1em;
     }
 
     .fundo-pagamento{
@@ -142,6 +150,41 @@
 
     .chek{
         font-family: 'lexendR';
+    }
+
+    .finalizar{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .botao-salvar{
+        font-family: 'lexendR';
+        text-transform: uppercase;
+        font-size: 11px;
+        background-color: #987F5B;
+        border: none;
+        color: #ffffff;
+        margin-top: 1.5em;
+        width: 12em;
+        height: 2.2em;
+    }
+
+    .botao-salvar:hover{
+        opacity: 90%;
+        cursor: pointer;
+    }
+
+    .botao-cancelar{
+        font-family: 'lexendM';
+        text-transform: uppercase;
+        background-color: #ffffff;
+        border: 1px solid #987F5B;
+        color: #987F5B;
+        margin-top: 2em;
+        width: 20em;
+        height: 3.2em;
+        cursor: pointer;
     }
 
 }

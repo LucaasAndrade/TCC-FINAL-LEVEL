@@ -195,10 +195,15 @@
         background-color: #F5F6F5;
     }
 
-    .titulo-comentario{
+    .avalicao-comentario{
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+    
+    .fundo-comentario{
+        display: flex;
+        flex-direction: row;
     }
 
     .avaliacao-estrela{

@@ -182,10 +182,10 @@ export default function Produto(props) {
         <hr className="linha" />
 
         <div className="avalicao-comentario">
-            <div className="titulo-comentario">
+            <div>
               <h3 className="titulo-sobre">avaliações</h3>
             </div>
-            <div>
+            <div className="fundo-comentario">
               <div className="avaliacao-estrela">
                 <EstrelasAvaliacao />
                 <span>{props.Avaliacao} 0 </span>
