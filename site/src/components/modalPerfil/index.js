@@ -1,14 +1,14 @@
 import './index.scss'
 
 
-export default function ModalEndereco({ exibir }) {
+export default function ModalEndereco({ exibir, fechar }) {
 
 
     return (
 
 
         <div className='comp-modal-endereco'>
-            <div className='modal-endereco'>
+            <div className={`modal-endereco ${exibir ? 'exibir' : ''}`}>
                 <div className='conteudo'>
 
                     <div className='fundo-perfil'>

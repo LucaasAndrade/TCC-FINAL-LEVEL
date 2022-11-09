@@ -4,7 +4,7 @@ import '../../common/common.scss'
 //import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react'
-import ModalVerificado from '../modalVerificado'
+import ModalPerfil from '../modalPerfil'
 
 import Modal from 'react-modal'
 
@@ -54,7 +54,7 @@ export default function Cabecalho() {
         <header className='componente-header'>
 
 
-            <ModalVerificado exibir={false} />
+            
 
             <div className='frete'>
                 <img src='/images/caminhao.png' alt='caminhao' />
@@ -73,7 +73,7 @@ export default function Cabecalho() {
                         <input type="text" id="lupa" placeholder="O que você está procurando?" />
                     </div>
                     <div className='elementos-usuario'>
-                        <img className="open-modal-button" src='/images/perfil.png' alt='perfil' onClick={abrirModalManual} />
+                        <img className="open-modal-button" src='/images/perfil.png' alt='perfil' onClick={<ModalPerfil exibir={true} />} />
                         <img className='elemento-img' src='/images/atendimento.png' alt='atendimento' />
                         <hr className='elemento-img'></hr>
                         <img className='elemento-img' src='/images/sacola.png' alt='sacola' />
@@ -84,10 +84,9 @@ export default function Cabecalho() {
 
 
 
-            <Modal
+            {/*<Modal
                 isOpen={abrirModal}
                 onRequestClose={fecharModalManual}
-
             >
 
                 <div className='modal-container'>
@@ -149,7 +148,7 @@ export default function Cabecalho() {
 
                     </div>
                 </div>
-            </Modal>
+    </Modal>*/}
         </header>
     )
 }
