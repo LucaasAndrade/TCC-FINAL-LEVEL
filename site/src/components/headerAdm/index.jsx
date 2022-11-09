@@ -11,7 +11,7 @@ export default function Cabecalho() {
     const navigate = useNavigate('');
     
     function Home(){
-        navigate('/home')
+        navigate('/')
     }
 
     function HomeAdm(){
@@ -39,8 +39,8 @@ export default function Cabecalho() {
         navigate ("/admin/adicionar/cupom")
     }
 
-    function Historico() {
-        navigate ("/historico")
+    function HistoricoPedidos() {
+        navigate ("/historico/pedidos")
     }
 
 
@@ -48,7 +48,7 @@ export default function Cabecalho() {
         <header id='componente-header-adm'>
             <div>
             <div className='faixa-header'>
-                <img className='logo' onClick={HomeAdm} src='/images/logoo.png' alt='logo' />
+                <img className='logo' onClick={Home} src='/images/logoo.png' alt='logo' />
                 <div className='topicos-p'>
                     <p className='topicoo' onClick={Adicionar}>ADICIONAR PRODUTOS</p>
                     <p className='topico' onClick={ListarPedidos}>LISTAR PEDIDOS</p>
@@ -60,7 +60,7 @@ export default function Cabecalho() {
                         <select>
                             <option value="" selected disabled hidden></option>
                             <option value="Disponíveis"> Cupons </option>
-                            <option value="Não Disponíveis"> Pedidos </option>
+                            <option value="Não Disponíveis" onClick={HistoricoPedidos}> Pedidos </option>
                         </select>
                     </div>
                 </div>

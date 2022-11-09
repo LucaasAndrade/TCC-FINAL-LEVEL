@@ -1,18 +1,20 @@
 .componente-compra{
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border: 1px solid #B6B6B6;
 
-    .fundo-compra{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        min-width: 40%;
-        max-width: 40%;
-        min-height: 55%;
-        max-height: 55%;
-        background-color: #ffffff;
+    .espacamento{
+        padding: 2em 3em;
     }
 
-    .titulo{
+    .titulo-resumo{
         font-family: 'lexendEL';
+        color: #494949;
+    }
+
+    .informacoes{
+        margin-top: 1.5em;
     }
 
     .info{
@@ -31,6 +33,17 @@
         margin: .2em 0em .2em;
     }
 
+    .resumo-compra{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .resumo{
+        display: flex;
+        flex-direction: column;
+    }
+
     .compra{
         display: flex;
         flex-direction: column;
@@ -39,6 +52,10 @@
 
     .img-pagamento{
         margin-left: 1em;
+    }
+
+    .pagamentos{
+        margin-top: 1.5em;
     }
 
     .linha{

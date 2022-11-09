@@ -1,0 +1,32 @@
+.componente-avaliacao{
+
+    .gostou-avaliacao{
+        display: flex;
+        flex-direction: row;
+        align-items: center;  
+        margin-top: 1em;
+    }
+
+    .gostou{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-left: .5em;
+    }
+
+    .titulo{
+        font-family: 'lexendM';
+    }
+
+    .comentario{
+        font-family: 'lexendEL';
+        color: #595959;
+        width: 40em;
+    }
+
+    .util{
+        font-family: 'lexendM';
+        font-size: 13px;
+        color: #595959;
+    }
+}
