@@ -25,7 +25,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin: 3em 5em 0em;
+        margin: 0em 5em 0em;
         background-color: #ffffff;
         border: 1px solid #B6B6B6;
         width: 50vw;
@@ -39,20 +39,8 @@
         padding: 0em 1em; 
     }
 
-    .principal-endereco-envio select{
-        width: 15em;
-        height: 3.2em;
-        border: 1px solid #B6B6B6;  
-        padding: 0em 1em; 
-        margin-left: 2em;
-    }
-
     .todos-inputs{
         margin-top: 2em;
-    }
-
-    .endereco{
-        margin-top: 1.5em;
     }
 
     .titulo{
@@ -75,14 +63,8 @@
         height: 40vh;
     }
 
-    .fundo-endereco{
-        display: flex;
-        flex-direction: column;
-        border: 1px solid#ffffff; 
-    }
-
     .endereco select{
-        width: 15em;
+        width: 17em;
         height: 3.2em;
         border: 1px solid #B6B6B6;  
         padding: 0em 1em; 
@@ -129,6 +111,10 @@
         margin-left: 2em;
     }
 
+    .div-check{
+        margin-top: 1.5em;
+    }
+
     .pagamento{
         display: flex;
         flex-direction: row;
@@ -150,12 +136,40 @@
 
     .chek{
         font-family: 'lexendR';
+        color: #494949;
     }
 
     .finalizar{
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+
+    .fundo-endereco{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .endereco{
+        margin-top: 2em;
+    }
+
+    .fundo{
+        display: flex;
+        flex-direction: row;
+        margin: 3em 0em 3em;
+    }
+
+    .finaliza{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .finaliza p{
+        font-family: 'lexendEL';
+        text-transform: uppercase;
+        margin-top: 2em;
     }
     
     .botao-salvar{

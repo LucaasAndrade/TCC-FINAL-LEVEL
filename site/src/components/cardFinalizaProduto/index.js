@@ -32,7 +32,7 @@ export default function FinalizarCompra(props) {
             <div className='espacamento'>
                 <div className='resumo'>
                     <div className='resumo-compra'>
-                        <h4 className='titulo'>RESUMO DA COMPRA</h4>
+                        <h4 className='titulo-resumo'>RESUMO DA COMPRA</h4>
                     </div>
                     <div className='informacoes'>
                         <div className='info'>
@@ -57,7 +57,7 @@ export default function FinalizarCompra(props) {
                     <div>
                         <button className='botao-compra'>{props.botao}</button>
                     </div>
-                    <div className='pagamento'>
+                    <div className='pagamentos'>
                         <img src='/images/cartao-azul.png' />
                         <img className='img-pagamento' src='/images/cartao-amarelo.png' />
                         <img className='img-pagamento' src='/images/boleto.png' />
