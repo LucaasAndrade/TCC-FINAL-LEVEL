@@ -73,7 +73,7 @@ export default function Cabecalho() {
                         <input type="text" id="lupa" placeholder="O que você está procurando?" />
                     </div>
                     <div className='elementos-usuario'>
-                        <img className="open-modal-button" src='/images/perfil.png' alt='perfil' onClick={<ModalPerfil exibir={true} />} />
+                        <img className="open-modal-button" src='/images/perfil.png' alt='perfil' onClick={abrirModalManual} />
                         <img className='elemento-img' src='/images/atendimento.png' alt='atendimento' />
                         <hr className='elemento-img'></hr>
                         <img className='elemento-img' src='/images/sacola.png' alt='sacola' />
@@ -84,7 +84,7 @@ export default function Cabecalho() {
 
 
 
-            {/*<Modal
+            <Modal
                 isOpen={abrirModal}
                 onRequestClose={fecharModalManual}
             >
@@ -148,7 +148,7 @@ export default function Cabecalho() {
 
                     </div>
                 </div>
-    </Modal>*/}
+    </Modal>
         </header>
     )
 }

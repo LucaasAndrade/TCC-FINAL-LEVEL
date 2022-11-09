@@ -33,7 +33,6 @@ export default function Pesquisa(props) {
         <main className='page-pesquisar' onClick={() => abrirDetalhes(props.item.id)}>
                 <div className='cartao-produto'>
                      <img className='imagem' src={exibir(props.item.imagem)}  /> 
-                    
                     <div>
                         <div className='info'>
                         <div> {props.item.categoria} </div>

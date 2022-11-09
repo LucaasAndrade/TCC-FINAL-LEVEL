@@ -1,5 +1,5 @@
 .acessorios-home-page{
-    
+     
     .cartao-produto{
         background-color: #ffffff;
         border: 1px solid #B6B6B6;
@@ -10,6 +10,10 @@
     .imagem{
         min-width: none;
         border-bottom: 1px solid #B6B6B6;
+        min-width: 9em;
+        max-width: 9em;
+        min-height: 10em;
+        max-height: 10em;
     }
 
     .info{
