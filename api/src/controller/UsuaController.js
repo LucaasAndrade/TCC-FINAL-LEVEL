@@ -21,43 +21,24 @@ server.post('/usua/login',async(req,resp)=>{
 
 
 
-server.post('/usuario',async(req,resp)=>{
-  
-    try {
-        const {idUsuario} = req.params;
+server.post('/usuario',async(req,resp) =>{
+    try{
         const client = req.body;
+        const usua = client.login;
+        const idUsuario = client.id;
+
+        console.log(client);
 
 
+      const linhas = await cadastrarLogin(idUsuario, usua.email, usua.senha);
+      const resposta= await CadastrarUsuario(client);
 
-        const linhas = await cadastrarLogin(idUsuario);
-        const resposta = await CadastrarUsuario()
-        
-        
-
-        if (!client.nome)
-            throw new Error('Seu Nome não foi informado!');
-        if (!client.sobrenome)
-            throw new Error('Seu Sobrenome não foi informado!');
-        if (!client.nascimento)
-            throw new Error('Sua Data De Nascimento não foi informada!');
-        if (!client.cpf)
-            throw new Error('Seu CPF não foi informado!');
-        if (!client.telefone)
-            throw new Error('Seu número de telefone não foi informado!');
-        if (!client.telefone2)
-            throw new Error('Seu número de telefone não foi informado!');
-           
-
-            resp.send(resposta,linhas)
-        
-    
-    
-    } catch (err) {
-        
-        resp.status(400).send({
-            erro: err.message
-        })
+        resp.status(200).send({resposta,linhas})
+      
+    }catch(err){
+        resp.status(401).send({
+            erro:err.message
+        });
     }
-});
-
+})
 export default server;

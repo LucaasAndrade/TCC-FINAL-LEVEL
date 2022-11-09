@@ -14,13 +14,13 @@ export async function UsuaLogin (email,senha){
     return linhas [0];
 }
 
-export async function cadastrarLogin ( usua){
+export async function cadastrarLogin (idUsuario,usua){
     const comando = 
-    `insert into  tb_login(id_usuario,ds_email,ds_senha 	) 
-    values(?, ?,?)`
+    `insert into  tb_login(id_usuario, ds_email,ds_senha) 
+    values(?,?,?)`
 
     const [linhas] =  await con.query(comando,[idUsuario,usua.email,usua.senha])
-    usua.id =linhas.insertId;
+   usua.id = linhas.insertId;
     return usua;
 }
 
@@ -34,6 +34,6 @@ export async function CadastrarUsuario(client){
     values (?,?, ?,?,?,?)`
 
     const [resposta] = await con.query(comando,[client.nome,client.sobrenome,client.nascimento,client.cpf,client.telefone,client.telefone2])
-
-    return resposta;
+    client.id = resposta.insertId;
+    return client;
 }
