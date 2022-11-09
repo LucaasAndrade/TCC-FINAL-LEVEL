@@ -15,7 +15,7 @@ import { useNavigate } from "react-router-dom";
 export default function Acessorios() {
     const navigate = useNavigate();
    
-    const[setprodutos,setProdutos] = useState([]);
+    const[produtos ,setProdutos] = useState([]);
     
     async function listar(){
      const r = await  listarProdutosInicio();
@@ -36,7 +36,7 @@ export default function Acessorios() {
             <section className='fundo-cartao'>
                 <div className='div-cartao'>
                     <div className='produtos'>
-                    {setprodutos.map(item =>
+                    {produtos.map(item =>
                             <Pesquisa item={item} />
                             )}
                     </div> 

@@ -12,7 +12,7 @@ export default function Pesquisa(props) {
     function exibir(images) {
         if (!images)
         
-            return `/images/produto04.png`;
+            return `/images/imagem-nao-encontrada.jfif`;
             
            
             
@@ -32,7 +32,7 @@ export default function Pesquisa(props) {
     return (
         <main className='page-pesquisar' onClick={() => abrirDetalhes(props.item.id)}>
                 <div className='cartao-produto'>
-                     <img className='imagem' src={exibir(props.item.images)}  /> 
+                     <img className='imagem' src={exibir(props.item.imagem)}  /> 
                     
                     <div>
                         <div className='info'>
