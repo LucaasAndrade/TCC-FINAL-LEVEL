@@ -19,7 +19,7 @@ export default function AcessoriosHome(props) {
 
     function exibir(imagem){
         if(!imagem)
-        return '/images/acesso2.png';
+        return '/images/imagem-nao-encontrada.jfif';
 
         else
         return`${API_URL}/${imagem}`
