@@ -1,6 +1,5 @@
 .comp-modal-endereco {
     
-
     .modal-endereco {
         position: fixed;
         top: 0px;
@@ -31,9 +30,9 @@
 
     .conteudo {
         position: relative;
-        top: -50px;
-        width: 600px;
-        padding: 20px 20px 35px 20px;
+        top: -20px;
+        width: 400px;
+        padding: 10px 20px 10px 20px;
         margin: 10px;
         border-radius: 5px;
 
@@ -41,26 +40,6 @@
         flex-direction: column;
         background-color: #fff;
     }
-
-
-
-
-
-
-    @media (max-width: 425px) {
-        .form > div label {
-            min-width: auto;
-        }
-        .conteudo {
-            overflow: scroll;
-            height: 80vh;
-            top: 0px;
-        }
-    }
-
-
-
-
 
 
 
@@ -192,6 +171,37 @@
     .p-dois{
         margin-top: .5em;
     }
+
+    .div-fechar{
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .fechar{
+        font-family: 'lexendM';
+        font-size: 24px;
+        position: absolute;
+        right: 15px;
+        top: 6px;
+        opacity: 70%;
+    }
+
+    .fechar:hover {
+        opacity: 100%;
+        cursor: pointer; 
+    }
+    
+    @media (max-width: 425px) {
+        .form > div label {
+            min-width: auto;
+        }
+        .conteudo {
+            overflow: scroll;
+            height: 80vh;
+            top: 0px;
+        }
+    }
+
 
 
 }

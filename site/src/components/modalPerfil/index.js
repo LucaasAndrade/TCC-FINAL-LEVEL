@@ -1,8 +1,11 @@
 import './index.scss'
 
 
-export default function ModalEndereco({ exibir, fechar }) {
+export default function ModalPerfil({ exibir, fechar }) {
 
+
+
+    
 
     return (
 
@@ -10,7 +13,10 @@ export default function ModalEndereco({ exibir, fechar }) {
         <div className='comp-modal-endereco'>
             <div className={`modal-endereco ${exibir ? 'exibir' : ''}`}>
                 <div className='conteudo'>
-
+                    
+                    <div className='div-fechar'>
+                        <buttton className='fechar' onClick={fechar}> x </buttton>
+                    </div>
                     <div className='fundo-perfil'>
                         <img className='img-perfil' src='/images/usuario-perfil.png'></img>
                         <h5>Nome Sobrenome</h5>

@@ -8,6 +8,7 @@ import { useState, useEffect } from 'react'
 import Storage from 'local-storage'
 import { salvar } from '../../../api/Endereco'
 import { useNavigate } from 'react-router-dom';
+import ModalVerificado from '../../../components/modalVerificado'
 
 
 export default function ContinuarCompra() {
@@ -22,6 +23,17 @@ export default function ContinuarCompra() {
 
 
     const navigate = useNavigate();
+
+    const [ exibir, setExibir] = useState(false)
+
+    function exibirModal(){
+        setExibir(true)
+    }
+
+    function fechar(){
+        setExibir(false)
+    }
+
 
     useEffect(() => {
         if (Storage('usuario-logado')) {
@@ -46,11 +58,11 @@ export default function ContinuarCompra() {
 
 
 
-
-
     return (
         <main className='page-continuar-compra'>
             <LogoContinuarcompa />
+            
+            <ModalVerificado exibir={exibir} fechar={fechar} />
 
             <section className='fundo-endereco'>
 

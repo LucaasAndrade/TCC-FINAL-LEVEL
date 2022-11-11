@@ -1,7 +1,9 @@
 import './index.scss'
 
 
-export default function ModalEndereco({ exibir }) {
+
+
+export default function ModalVerificado({ exibir, fechar }) {
 
 
     return (
@@ -10,6 +12,10 @@ export default function ModalEndereco({ exibir }) {
         <div className='comp-modal-verificado'>
             <div className={`modal-endereco ${exibir ? 'exibir' : ''}`}>
                 <div className='conteudo'>
+
+                    <div className='div-fechar'>
+                        <buttton className='fechar' onClick={fechar}> x </buttton>
+                    </div>
                     <p className='p-verificado'>seu pedido foi concluído com sucesso</p>
                     <img className='img-verificado' src='/images/confere.png'></img>
                 
