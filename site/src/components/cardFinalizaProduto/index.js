@@ -59,9 +59,9 @@ export default function FinalizarCompra(props) {
                     </div>
                     <div className='pagamentos'>
                         <img src='/images/cartao-azul.png' />
-                        <img className='img-pagamento' src='/images/cartao-amarelo.png' />
-                        <img className='img-pagamento' src='/images/boleto.png' />
-                        <img className='img-pagamento' src='/images/pix.png' />
+                        <img className='img-pag' src='/images/cartao-amarelo.png' />
+                        <img className='img-pag' src='/images/boleto.png' />
+                        <img className='img-pag' src='/images/pix.png' />
                     </div>
                 </div>
             </div>

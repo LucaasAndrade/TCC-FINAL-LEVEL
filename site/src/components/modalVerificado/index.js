@@ -13,9 +13,8 @@ export default function ModalVerificado({ exibir, fechar }) {
             <div className={`modal-endereco ${exibir ? 'exibir' : ''}`}>
                 <div className='conteudo'>
 
-                    <div className='div-fechar'>
-                        <buttton className='fechar' onClick={fechar}> x </buttton>
-                    </div>
+                    <buttton className='fechar' onClick={fechar}> x </buttton>
+
                     <p className='p-verificado'>seu pedido foi concluído com sucesso</p>
                     <img className='img-verificado' src='/images/confere.png'></img>
                 

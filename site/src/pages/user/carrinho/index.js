@@ -14,9 +14,6 @@ import Storage from 'local-storage'
 import {buscarProdutoPorId} from '../../../api/cadastrarProduto';
 
 
-
-
-
 export default function Carrinho() {
    const [itens,setItens] = useState([]);
 
@@ -123,15 +120,10 @@ useEffect(() => {
                     </div>
                 </div>
                 </div>
-                </div>
-
-               
+                </div>           
 
                 <CodigoPromocional />
-                <FinalizarCompra />
-                
-            
-
+                <FinalizarCompra />              
 
             <section>
                 <Footer />

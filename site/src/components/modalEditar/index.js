@@ -1,13 +1,13 @@
 import './index.scss'
 
 
-export default function ModalPerfil({ exibir, fechar }) {
+export default function ModalEditar({ exibir, fechar }) {
 
 
     return (
 
-        <div className='comp-modal-endereco'>
 
+        <div className='comp-modal-endereco'>
             <div className={`modal-endereco ${exibir ? 'exibir' : ''}`}>
                 <div className='conteudo'>
                     
@@ -15,12 +15,12 @@ export default function ModalPerfil({ exibir, fechar }) {
                     
                     <div className='fundo-perfil'>
                         <img className='img-perfil' src='/images/usuario-perfil.png'></img>
-                        <h5>Nome Sobrenome</h5>
+                        <h5>5omrenome</h5>
                     </div>
                     <div className='dados'>
                         <div className='div-info-dois'>
-                            <p>E-mail</p>
-                            <p className='p-dois'>Telefone</p>
+                            <p>Eil</p>
+                            <p className='p-dois'>lefone</p>
                         </div>
                         <hr className="linha" />
                         <div className='div-info'>

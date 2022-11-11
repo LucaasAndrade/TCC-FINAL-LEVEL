@@ -10,7 +10,7 @@ export default function Home() {
     const navigate = useNavigate('');
 
     function Home(){
-        navigate('/home')
+        navigate('/')
     }
 
     function Adicionar(){

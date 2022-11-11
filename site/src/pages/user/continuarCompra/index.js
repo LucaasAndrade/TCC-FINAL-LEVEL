@@ -24,6 +24,10 @@ export default function ContinuarCompra() {
 
     const navigate = useNavigate();
 
+    function cancelarCompra() {
+        navigate('/carrinho')
+    }
+
     const [ exibir, setExibir] = useState(false)
 
     function exibirModal(){
@@ -61,7 +65,7 @@ export default function ContinuarCompra() {
     return (
         <main className='page-continuar-compra'>
             <LogoContinuarcompa />
-            
+
             <ModalVerificado exibir={exibir} fechar={fechar} />
 
             <section className='fundo-endereco'>
@@ -148,17 +152,11 @@ export default function ContinuarCompra() {
                         </div>
                     </div>
 
-                    {/*<div>
-                    <p>SEU PEDIDO FOI CONCLUÍDO COM SUCESSO</p>
-                    <img src='/images/confere.png'></img>
-                    </div>*/}
-
-
                     <div>
                         <CardFinalizarProduto botao='finalizar compra' />
                         <div className='finaliza'>
-                            <p>ou</p>
-                            <button className="botao-cancelar">cancelar compra</button>
+                            <p>---------- ou ----------</p>
+                            <button className="botao-cancelar" onClick={cancelarCompra} > cancelar compra </button>
                         </div>
                     </div>
                 </div>

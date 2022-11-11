@@ -12,9 +12,9 @@ export default function Cabecalho() {
 
     const navigate = useNavigate('');
 
-    const [ exibir, setExibir] = useState(false)
+    const [ exibir, setExibir ] = useState(false)
 
-    function exibirModal(){
+    function Perfil(){
         setExibir(true)
     }
 
@@ -67,7 +67,7 @@ export default function Cabecalho() {
                         <input type="text" id="lupa" placeholder="O que você está procurando?" />
                     </div>
                     <div className='elementos-usuario'>
-                        <img className="open-modal-button" src='/images/perfil.png' alt='perfil' onClick={exibirModal} />
+                        <img className="open-modal-button" src='/images/perfil.png' alt='perfil' onClick={Perfil} />
                         <img className='elemento-img' src='/images/atendimento.png' alt='atendimento' />
                         <hr className='elemento-img'></hr>
                         <img className='elemento-img' src='/images/sacola.png' alt='sacola' />
