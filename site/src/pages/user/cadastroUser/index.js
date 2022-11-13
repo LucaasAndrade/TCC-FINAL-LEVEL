@@ -3,7 +3,7 @@ import "./index.scss";
 import { useNavigate } from "react-router-dom";
 import storage from 'local-storage';
 
-import { cadastrarLogin, CadastrarUsuario } from "../../../api/Usuario";
+import { CadastrarUsuario } from "../../../api/Usuario";
 
 
 import Cabecalho from "../../../components/header";
@@ -28,45 +28,29 @@ export default function CadastroUser() {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
-
-  console.log(email)
-
-
   async function salvar() {
 
     try {
-      const r = await CadastrarUsuario(nome, sobrenome, nascimento, cpf, telefone, telefone2);
+      const r = await CadastrarUsuario(nome, sobrenome, nascimento, cpf, telefone, telefone2, email, senha);
       alert('Usuario Cadastrado com sucesso');
 
     }
     catch (err) {
-      console.log(err)
       alert(err.response.data.erro)
     }
   }
 
-  async function login() {
-    const r = await cadastrarLogin();
-    
-
-  }
+  // async function cadLogin() {
+  //   const r = await cadastrarLogin();
+  // }
 
 
-  useEffect(() => {
-    login();
-  }, [])
-
-
-
-
-
-
-
-
-
+  // useEffect(() => {
+  //   cadLogin();
+  // }, [])
 
   function Home() {
-    navigate("/home");
+    navigate("/");
   }
 
 

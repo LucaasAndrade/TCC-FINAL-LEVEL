@@ -3,7 +3,7 @@ import  {Router} from 'express';
 const server = Router();
 
 
-server.post('/usua/login',async(req,resp)=>{
+server.get('/usua/login', async(req,resp)=>{
     try{
         const {email,senha} = req.body;
 
@@ -24,16 +24,14 @@ server.post('/usua/login',async(req,resp)=>{
 server.post('/usuario',async(req,resp) =>{
     try{
         const client = req.body;
-        const usua = client.login;
-        const idUsuario = client.id;
-
+        const resposta= await CadastrarUsuario(client);
+        
         console.log(client);
+        
+        const linhas = await cadastrarLogin(client.id, client.usua.email, client.usua.senha);
+        
 
-
-      const linhas = await cadastrarLogin(idUsuario, usua.email, usua.senha);
-      const resposta= await CadastrarUsuario(client);
-
-        resp.status(200).send({resposta,linhas})
+        resp.status(200).send({resposta, linhas})
       
     }catch(err){
         resp.status(401).send({

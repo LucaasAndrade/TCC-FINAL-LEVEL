@@ -14,19 +14,12 @@ export async function UsuaLogin (email,senha){
     return linhas [0];
 }
 
-export async function cadastrarLogin (idUsuario,usua){
-    const comando = 
-    `insert into  tb_login(id_usuario, ds_email,ds_senha) 
-    values(?,?,?)`
-
-    const [linhas] =  await con.query(comando,[idUsuario,usua.email,usua.senha])
-   usua.id = linhas.insertId;
-    return usua;
+export async function cadastrarLogin (idUsuario,email, senha){
+    const comando =
+        `insert into  tb_login(id_usuario, ds_email,ds_senha) 
+    values(?,?,?)`;
+    const [linhas] =  await con.query(comando,[idUsuario,email,senha]) 
 }
-
-
-
-
 
 export async function CadastrarUsuario(client){
     const comando =
