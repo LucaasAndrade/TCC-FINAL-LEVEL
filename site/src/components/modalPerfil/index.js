@@ -6,9 +6,9 @@ export default function ModalPerfil({ exibir, fechar }) {
 
     return (
 
-        <div className='comp-modal-endereco'>
+        <div className='comp-modal-perfil'>
 
-            <div className={`modal-endereco ${exibir ? 'exibir' : ''}`}>
+            <div className={`modal-perfil ${exibir ? 'exibir' : ''}`}>
                 <div className='conteudo'>
                     
                     <buttton className='fechar' onClick={fechar}> x </buttton>

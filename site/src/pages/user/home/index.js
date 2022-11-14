@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 
 import Cabecalho from '../../../components/header'
 import Footer from '../../../components/footer'
-import CarroselDestaques from '../../../components/carrosel'
+import ComponenteDestaques from '../../../components/destaques'
 import CarroselMarcas from '../../../components/carroselmarcas'
 import AcessoriosHome from '../../../components/acessoriosHome'
 import { listarProdutosInicio } from "../../../api/cadastrarProduto";
@@ -60,17 +60,19 @@ export default function Home() {
                     <img className='imagem-inicio' src='/images/imagem-inicio.png' alt='imagem-principal' />
                 </div>
             </section>
-            <section>
-                <div>
+
+            <section className='fundo-acessorios'>
+                <div className='acesso'>
                     <div className='acessorios-info'>
                         <button className='botao-acessorios'>DESTAQUES</button>
                         <h5 className='p-ver-mais' onClick={Destaques}>Ver mais >> </h5>
                     </div>
-                    <div>
-                        <CarroselDestaques src={'/images/destaque1.png'}/>
+                    <div className='produtos'>
+                            <ComponenteDestaques />
                     </div>
                 </div>
             </section>
+
             <section className='categorias'>
                 <div className='fundo-categorias'>
                     <button className='p-categoria'>COMPRE POR CATEGORIA</button>
@@ -81,6 +83,7 @@ export default function Home() {
                     <img className='imagem-cate' src='/images/infantil.png' alt='img-infantil' onClick={Infantil} />
                 </div>
             </section>
+
             <section className='fundo-acessorios'>
                 <div className='acesso'>
                     <div className='acessorios-info'>
@@ -94,6 +97,7 @@ export default function Home() {
                     </div>
                 </div>
             </section>
+
             <section className='fundo-marcas'>
                 <div>
                     <div className='div-marcas'>
@@ -107,7 +111,6 @@ export default function Home() {
             <section>
                 <Footer />
             </section>
-
 
         </main>
     )
