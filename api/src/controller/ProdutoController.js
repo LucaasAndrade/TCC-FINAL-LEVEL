@@ -1,7 +1,7 @@
 
 import multer from 'multer'
 
-import { AlterarProduto, CadastrarProduto,buscarProduto, buscarProdutoPorId,removerProduto,InserirCategoria, InserirTamanho, listarMarcas, listarCategorias, listarTamanhosProduto, InserirImagem,listarProdutosInicio,buscarProdutoImagens, removerProdutoImagem, removerProdutoTamanho, buscarProdutoTamanhos, removerProdutoImagemDiferenteDe } from '../repository/ProdutoRepository.js';
+import { AlterarProduto, CadastrarProduto,buscarProduto, buscarProdutoPorId,removerProduto,InserirCategoria, InserirTamanho, listarMarcas, listarCategorias, listarTamanhosProduto, InserirImagem,listarProdutosInicio,buscarProdutoImagens, removerProdutoImagem, removerProdutoTamanho, buscarProdutoTamanhos, removerProdutoImagemDiferenteDe, buscarProutosPorCategoria } from '../repository/ProdutoRepository.js';
 
 import { VerificarInformacoesProduto } from '../services/verificacaoProduto.js'
 
@@ -179,7 +179,7 @@ server.get('/produto/listarInicio',async(req,resp) => {
     try{
       
 
-      const r=  await listarProdutosInicio();
+      const r =  await listarProdutosInicio();
        resp.send(r)
 
     }
@@ -224,9 +224,23 @@ server.put('/admin/produto/alterar/:id', async (req, resp) => {
 
 
 
+// ## Consultar Produtos por Categoria ##
+
+server.get('/user/produto/:categoria', async (req, resp) => {
+    try {
+        const categoria = req.params.categoria;
+
+        const r = await buscarProutosPorCategoria(categoria);
+        resp.send(r);
 
 
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
 
+})
 
 
 

@@ -98,3 +98,9 @@ export async function AlterarProduto(id, nome, marca, categoria, preco, informac
         id
     }); 
 }
+
+
+export async function listarProdutosPorCategoria(categoria) {
+    const r = await api.get('/user/produto/' + categoria);
+    return r.data
+}

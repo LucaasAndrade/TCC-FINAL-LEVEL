@@ -1,4 +1,4 @@
-    import {con} from './connection.js';
+import {con} from './connection.js';
 
 
 export async function CadastrarProduto(produto) {
@@ -246,3 +246,25 @@ export async function removerProdutoImagemDiferenteDe(imagens){
     return resp.affectedRows;
 }
 
+
+
+
+// ## BUSCAR PRODUTOS COM WHERE ##
+
+export async function buscarProutosPorCategoria(categoria) {
+    const comando =
+        `select 
+        nm_produto						as		produto,
+        nm_marca 						as		marca,
+        nm_categoria					as		categoria,
+        vl_preco						as		preco,
+        img_produto						as		imagem
+    from tb_produto
+inner join tb_marca_produto 	on  tb_produto.id_marca_produto = tb_marca_produto.id_marca_produto
+inner join tb_categoria			on	tb_produto.id_categoria		= tb_categoria.id_categoria
+left join tb_imagem_produto	on	tb_produto.id_produto		= tb_imagem_produto.id_produto
+    where nm_categoria like ?
+        `
+    const [resp] = await con.query(comando, `%${categoria}%`);
+    return resp;
+}

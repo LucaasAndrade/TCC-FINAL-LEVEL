@@ -14,8 +14,6 @@ export default function Pesquisa(props) {
         
             return `/images/imagem-nao-encontrada.jfif`;
             
-           
-            
         else 
             return `${API_URL}/${images}`
     }

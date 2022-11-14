@@ -3,7 +3,7 @@ import './index.scss'
 import Cabecalho from '../../../components/header';
 import Footer from '../../../components/footer';
 import Pesquisa from '../../../components/pesquisar';
-import { listarProdutosInicio} from "../../../api/cadastrarProduto";
+import { listarProdutosInicio, listarProdutosPorCategoria} from "../../../api/cadastrarProduto";
 import { useState,useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -18,7 +18,7 @@ export default function Acessorios() {
     const[produtos ,setProdutos] = useState([]);
     
     async function listar(){
-     const r = await  listarProdutosInicio();
+     const r = await  listarProdutosPorCategoria("ace");
      setProdutos(r);
     }
  
