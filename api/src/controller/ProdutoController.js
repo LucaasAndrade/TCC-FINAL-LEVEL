@@ -42,7 +42,7 @@ server.put('/admin/produto/:id/imagem', upload.array('imagens'), async (req, res
         const imgs = req.body.imagens.filter(item => item != 'undefined');
 
         if(imgs.length > 0)
-            await removerProdutoImagemDiferenteDe(imgs);
+            await removerProdutoImagemDiferenteDe(imgs, id);
 
         else {
             await removerProdutoImagem(id)
@@ -198,9 +198,6 @@ server.put('/admin/produto/alterar/:id', async (req, resp) => {
         const id = req.params.id;        
         const produto = req.body;
 
-        console.log(id);
-        console.log(produto);
-        
         // REMOVER INFORMAÇÕES JÁ CADASTRADAS
         await removerProdutoTamanho(id)
 

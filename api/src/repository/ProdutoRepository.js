@@ -236,13 +236,13 @@ export async function removerProduto(idProduto){
 /// ### LOGICA PARA ALTERAR PRODUTO ####
 
 
-export async function removerProdutoImagemDiferenteDe(imagens){
+export async function removerProdutoImagemDiferenteDe(imagens, id){
     const comando =
     `delete from tb_imagem_produto
-        where img_produto NOT IN (?)
+        where img_produto NOT IN (?) and id_produto = ?
     `
 
-    const [resp] = await con.query(comando,[imagens])
+    const [resp] = await con.query(comando,[imagens, id])
     return resp.affectedRows;
 }
 
