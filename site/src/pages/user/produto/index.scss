@@ -10,7 +10,28 @@
     .fundo-info-produto{
         display: flex;
         flex-direction: row;
-        padding: 4em 5em 0em;
+        padding: 4em 8em 0em;
+    }
+
+    .info-produto{
+        margin-left: 5em;
+    }
+
+    .destacar{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .destaque{
+        font-family: 'lexendM';
+        text-transform: uppercase;
+        background-color: #D1BC9F;
+        border: none;
+        color: #ffffff;
+        width: 10em;
+        height: 2.5em;
+        margin-bottom: 1.5em;
     }
 
     select{
@@ -39,7 +60,6 @@
 
     .carrosel button{
         opacity: 80%;
-        margin-left: 5em;
     }
 
     .botoes{
@@ -54,33 +74,21 @@
     }
 
     .carrosel{
-        width: 35em;
+       width: 30em;
     }
 
-    .fundo-carrosel{
-        display: flex;
-        flex-direction: row;
-    }
-
-    .imgs-carrosel{
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-    }
-
-    .div-img-principal{
+    .div-img-carrosel{
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         background-color: #ffffff;
         border: 1px solid #B6B6B6;  
-        position: relative;
     }
 
-    .img-principal{
-        padding: 2em 3.9em 2em;
-        //border: 1px solid #B6B6B6;
+    .img-carrosel{
+        margin: 2em;
+        border: 1px solid #e6e6e6; 
     }
 
     .nome-produto{
@@ -110,6 +118,7 @@
         border-radius: 100%;
         height: 2.7em;
         margin-left: 1em;
+        cursor: pointer;
     }
 
     .img-coracao{
@@ -209,6 +218,17 @@
     .avaliacao-estrela{
         display: flex;
         flex-direction: row;
+        margin-left: 10em;
+    }
+
+    .avaliacao{
+        margin-left: 10em;
+        padding: 0em 0em 3em;
+    }
+
+    .linha-dois{
+        margin: 3em 0em 0em;
+        min-width: 60%;
     }
     
     @media (max-width: 1024px) {

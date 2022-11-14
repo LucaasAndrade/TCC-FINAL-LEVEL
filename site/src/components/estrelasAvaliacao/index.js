@@ -12,12 +12,15 @@ export default function EstrelasAvaliacao(props){
             return 'star-icon'
     }
     return(
-        <ul className='cont-avaliacao-star'>
-            <li className={lerEstrelas(props, 1)} ></li>
-            <li className={lerEstrelas(props, 2)} ></li>
-            <li className={lerEstrelas(props, 3)} ></li>
-            <li className={lerEstrelas(props, 4)} ></li>
-            <li className={lerEstrelas(props, 5)} ></li>
-        </ul>
+        <div>
+            <ul className='cont-avaliacao-star'>
+                <li className={lerEstrelas(props, 1)} ></li>
+                <li className={lerEstrelas(props, 2)} ></li>
+                <li className={lerEstrelas(props, 3)} ></li>
+                <li className={lerEstrelas(props, 4)} ></li>
+                <li className={lerEstrelas(props, 5)} ></li>
+                <span className='est-aval'>{props.avaliacao}</span>
+            </ul>
+        </div>
     )
 }

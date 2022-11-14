@@ -11,11 +11,8 @@ import Footer from "../../../components/footer";
 import CardCarrinho from "../../../components/CardCarrinho";
 import { useEffect, useState } from "react";
 import { buscarProdutoPorId } from "../../../api/cadastrarProduto";
-import EstrelasAvaliacao from '../../../components/estrelasAvaliacao';
+import EstrelasAvaliacao from "../../../components/estrelasAvaliacao";
 import ComponenteAvaliacao from "../../../components/avaliacao";
-
-
-
 
 export default function Produto(props) {
   const responsive = {
@@ -68,7 +65,7 @@ export default function Produto(props) {
       });
       storage("carrinho", carrinho);
     }
-    alert("Produto Adicionada Ao Carrinho!");
+    alert("Produto adicionado ao carrinho!");
   }
 
   return (
@@ -78,11 +75,10 @@ export default function Produto(props) {
       </header>
       <section>
         <div className="fundo-info-produto">
-          {/*<div>
-            <p>destaques</p>
-          </div>*/}
-          <div>
-            <Carousel className="carrosel"
+          <div className="destacar">
+            <button className="destaque">destaques</button>
+            <Carousel
+              className="carrosel"
               swipeable={false}
               draggable={false}
               responsive={responsive}
@@ -92,38 +88,53 @@ export default function Produto(props) {
               autoPlaySpeed={4000}
               keyBoardControl={true}
               containerClass="carousel-container"
-            //showDots={true}
-            //customTransition="all .5"
-            //removeArrowOnDeviceType={["tablet", "mobile"]}
-            //dotListClass="custom-dot-list-style"
-            //itemClass="carousel-item-padding-40-px"
+              //showDots={true}
+              //customTransition="all .5"
+              //removeArrowOnDeviceType={["tablet", "mobile"]}
+              //dotListClass="custom-dot-list-style"
+              //itemClass="carousel-item-padding-40-px"
             >
-              <div className="fundo-carrosel">
-              <div className="div-img-principal">
-                <img className="img-principal"
+              <div className="div-img-carrosel">
+                <img
+                  className="img-carrosel"
                   src="/images/produtoteste.png"
                   alt="produto"
                 />
               </div>
-                <div className="imgs-carrosel">
-                  <div>
-                    <img src="/images/produtoteste2.png" alt="dest" />
-                  </div>
-                  <div>
-                    <img src="/images/produtoteste3.png" alt="dest" />
-                  </div>
-                  <div>
-                    <img src="/images/produtoteste4.png" alt="dest" />
-                  </div>
-                  <div>
-                    <img src="/images/produtoteste5.png" alt="dest" />
-                  </div>
-                </div>
+
+              <div className="div-img-carrosel">
+                <img
+                  className="img-carrosel"
+                  src="/images/produtoteste.png"
+                  alt="dest"
+                />
+              </div>
+              <div className="div-img-carrosel">
+                <img
+                  className="img-carrosel"
+                  src="/images/produtoteste.png"
+                  alt="dest"
+                />
+              </div>
+              <div className="div-img-carrosel">
+                <img
+                  className="img-carrosel"
+                  src="/images/produtoteste.png"
+                  alt="dest"
+                />
+              </div>
+              <div className="div-img-carrosel">
+                <img
+                  className="img-carrosel"
+                  src="/images/produtoteste.png"
+                  alt="dest"
+                />
               </div>
             </Carousel>
           </div>
+
           <div className="info-produto">
-              <EstrelasAvaliacao />
+            <EstrelasAvaliacao />
             <div>
               <p className="nome-produto">{produto.info.produto}</p>
               <p className="marca-produto">{produto.info.marca}</p>
@@ -151,12 +162,14 @@ export default function Produto(props) {
               <button className="botao-adicionar" onClick={adicionarAoCarrinho}>
                 adicionar ao carrinho
               </button>
-                <button className="botao-curti">
-                  <img className="img-coracao" src="/images/curtidos.png"></img>
-                </button>
+              <button className="botao-curti">
+                <img className="img-coracao" src="/images/curtidos.png"></img>
+              </button>
             </div>
             <div>
-              <a href="" className="medidas">tabela de medidas</a>
+              <a href="" className="medidas">
+                tabela de medidas
+              </a>
             </div>
 
             <hr className="linha" />
@@ -171,29 +184,39 @@ export default function Produto(props) {
       </section>
 
       <section className="fundo-informacao-produto">
-            <div className="div-sobre">
-              <h3 className="titulo-sobre">informações</h3>
-              <div className="texto-info">
-                <p className="titu">{props.texto}Sobre o Produto</p>
-                <p className="texto-sobre">Lorem ipsum dolor dummy text sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
-              </div>
+        <div className="div-sobre">
+          <h3 className="titulo-sobre">informações</h3>
+          <div className="texto-info">
+            <p className="titu">Sobre o Produto</p>
+            <p className="texto-sobre">
+              {props.texto} SobreLorem ipsum dolor dummy text sit amet,
+              consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+              labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+              nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate
+              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+              occaecat cupidatat non proident, sunt in culpa qui officia
+              deserunt mollit anim id est laborum.{" "}
+            </p>
+          </div>
         </div>
 
-        <hr className="linha" />
+        <hr className="linha-dois" />
 
         <div className="avalicao-comentario">
-            <div>
-              <h3 className="titulo-sobre">avaliações</h3>
+          <div>
+            <h3 className="titulo-sobre">avaliações</h3>
+          </div>
+          <div className="fundo-comentario">
+            <div className="avaliacao-estrela">
+              <EstrelasAvaliacao avaliacao="4.20" />
             </div>
-            <div className="fundo-comentario">
-              <div className="avaliacao-estrela">
-                <EstrelasAvaliacao />
-                <span>{props.Avaliacao} 0 </span>
-              </div>
-              <div>
-                <ComponenteAvaliacao />
-              </div>
+            <div className="avaliacao">
+              <ComponenteAvaliacao />
+
+              <hr className="linha" />
             </div>
+          </div>
         </div>
       </section>
 
