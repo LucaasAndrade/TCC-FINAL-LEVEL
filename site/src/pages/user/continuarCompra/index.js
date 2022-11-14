@@ -73,8 +73,7 @@ export default function ContinuarCompra() {
                 <div className='fundo'>
                     <div>
                         <div className='principal-endereco-envio'>
-                            <div>
-
+                            <div className='f-pag'>
                                 <p className='titulo'>Endereço de Envio</p>
                                 <div className='todos-inputs'>
                                     <div>
@@ -98,7 +97,7 @@ export default function ContinuarCompra() {
                         </div>
 
                         <div className='fundo-pagamento'>
-                            <div>
+                            <div className='f-pag'>
                                 <p className='titulo'>Forma de Pagamento</p>
                                 <div className='div-check'>
                                     <div className='pagamento'>
@@ -119,7 +118,7 @@ export default function ContinuarCompra() {
                                             <img className='img-pagamento' src='/images/boleto.png'></img>
                                             <p className="chek">Boleto</p>
                                         </div>
-                                        <div className="checkbox-dois">
+                                        <div className="checkbox-pix">
                                             <input type="checkbox"></input>
                                             <img className='img-pagamento' src='/images/pix.png'></img>
                                             <p className="chek">PIX</p>

@@ -11,7 +11,7 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        margin-left: .5em;
+        padding: 0em .5em 0em .5em;
     }
 
     .titulo{
@@ -28,5 +28,17 @@
         font-family: 'lexendM';
         font-size: 13px;
         color: #595959;
+    }
+
+    span{
+        margin-left: .5em;
+    }
+
+    .estrelas{
+        padding: .5em 0em .5em 0em;
+    }
+
+    .gost{
+        cursor: pointer;
     }
 }

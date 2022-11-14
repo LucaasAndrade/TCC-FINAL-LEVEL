@@ -28,8 +28,8 @@
         margin: 0em 5em 0em;
         background-color: #ffffff;
         border: 1px solid #B6B6B6;
-        width: 50vw;
-        height: 40vh;
+        min-width: 50vw;
+        min-height: 40vh;
     }
 
     .principal-endereco-envio input{
@@ -59,8 +59,12 @@
         margin: 2em 5em 0em;
         background-color: #ffffff;
         border: 1px solid #B6B6B6;
-        width: 50vw;
-        height: 40vh;
+        min-width: 50vw;
+        min-height: 40vh;
+    }
+
+    .f-pag{
+        padding: 1.5em;
     }
 
     .endereco select{
@@ -132,6 +136,11 @@
 
     .checkbox-dois{
         display: flex;  
+    }
+
+    .checkbox-pix{
+        display: flex;
+        margin-right: 6.5em;  
     }
 
     .chek{

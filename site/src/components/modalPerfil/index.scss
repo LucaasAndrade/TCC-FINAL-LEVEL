@@ -1,6 +1,6 @@
-.comp-modal-endereco {
+.comp-modal-perfil {
     
-    .modal-endereco {
+    .modal-perfil {
         position: fixed;
         top: 0px;
         left: 0px;
@@ -9,7 +9,7 @@
         background-color: rgba(0, 0, 0, 0.7);
 
         display: flex;
-        justify-content: center;
+        justify-content: flex-end;
         align-items: center;
     }
 

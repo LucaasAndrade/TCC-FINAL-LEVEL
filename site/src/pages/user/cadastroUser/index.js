@@ -8,7 +8,7 @@ import { CadastrarUsuario } from "../../../api/Usuario";
 
 import Cabecalho from "../../../components/header";
 import Footer from "../../../components/footer";
-import CarroselDestaques from "../../../components/carrosel";
+import ComponenteDestaques from "../../../components/destaques";
 import CarroselMarcas from "../../../components/carroselmarcas";
 import AcessoriosHome from "../../../components/acessoriosHome";
 import { useState, useEffect, useRef } from "react";

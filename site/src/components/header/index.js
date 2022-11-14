@@ -5,6 +5,7 @@ import '../../common/common.scss'
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react'
 import ModalPerfil from '../modalPerfil'
+import ModalEditar from '../modalEditar'
 
 
 
@@ -48,7 +49,9 @@ export default function Cabecalho() {
 
         <header className='componente-header'>
     
-            <ModalPerfil  exibir={exibir} fechar={fechar} />   
+            <ModalPerfil  exibir={exibir} fechar={fechar} /> 
+            {/*<ModalEditar  exibir={exibir} fechar={fechar} />*/}
+            
 
             <div className='frete'>
                 <img src='/images/caminhao.png' alt='caminhao' />

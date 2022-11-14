@@ -7,8 +7,8 @@ export default function ModalEditar({ exibir, fechar }) {
     return (
 
 
-        <div className='comp-modal-endereco'>
-            <div className={`modal-endereco ${exibir ? 'exibir' : ''}`}>
+        <div className='comp-modal-editar'>
+            <div className={`modal-editar ${exibir ? 'exibir' : ''}`}>
                 <div className='conteudo'>
                     
                     <buttton className='fechar' onClick={fechar}> x </buttton>
