@@ -268,3 +268,24 @@ left join tb_imagem_produto	on	tb_produto.id_produto		= tb_imagem_produto.id_pro
     const [resp] = await con.query(comando, `%${categoria}%`);
     return resp;
 }
+
+
+export async function buscarDestaques() {
+    const comando =
+        `    
+        select 
+            nm_produto						as		nome,
+            nm_marca 						as		marca,
+            nm_categoria					as		categoria,
+            vl_preco						as		preco,
+            img_produto						as		imagem,
+            bl_destaque						as		destaque
+        from tb_produto
+            inner join tb_marca_produto 	on  tb_produto.id_marca_produto = tb_marca_produto.id_marca_produto
+            inner join tb_categoria			on	tb_produto.id_categoria		= tb_categoria.id_categoria
+            left join tb_imagem_produto	    on	tb_produto.id_produto		= tb_imagem_produto.id_produto
+        where bl_destaque = 1;
+        `
+    const [resp] = await con.query(comando);
+    return resp;
+}

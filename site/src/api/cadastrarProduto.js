@@ -104,3 +104,10 @@ export async function listarProdutosPorCategoria(categoria) {
     const r = await api.get('/user/produto/' + categoria);
     return r.data
 }
+
+
+
+export async function listarDestaques() {
+    const r = await api.get('/user/destaques');
+    return r.data
+}

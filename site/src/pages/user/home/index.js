@@ -8,7 +8,8 @@ import Footer from '../../../components/footer'
 import ComponenteDestaques from '../../../components/destaques'
 import CarroselMarcas from '../../../components/carroselmarcas'
 import AcessoriosHome from '../../../components/acessoriosHome'
-import { listarProdutosInicio } from "../../../api/cadastrarProduto";
+import { listarDestaques, listarProdutosInicio, listarProdutosPorCategoria } from "../../../api/cadastrarProduto";
+import Pesquisa from '../../../components/pesquisar';
 
 
 
@@ -16,15 +17,22 @@ import { listarProdutosInicio } from "../../../api/cadastrarProduto";
 export default function Home() {
 
     const [produtos, setProdutos] = useState([]);
+    const [produtosDestaque, setProdutosDestaque] = useState([]);
 
     async function listar() {
-        const r = await listarProdutosInicio();
-        console.log(r);
+        const r = await listarProdutosPorCategoria("ace");
         setProdutos(r);
+    }
+
+    
+    async function listarProdutosDestaques() {
+        const r = await listarDestaques();
+        setProdutosDestaque(r);
     }
 
     useEffect(() => {
         listar();
+        listarProdutosDestaques();
     }, [])
 
     const navigate = useNavigate('');
@@ -68,7 +76,9 @@ export default function Home() {
                         <h5 className='p-ver-mais' onClick={Destaques}>Ver mais >> </h5>
                     </div>
                     <div className='produtos'>
-                            <ComponenteDestaques />
+                        {produtosDestaque.map(item =>
+                                <Pesquisa item={item} />
+                                )}
                     </div>
                 </div>
             </section>
