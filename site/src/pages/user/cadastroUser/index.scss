@@ -6,6 +6,7 @@
 .page-user-cadastro{
     display: flex;
     flex-direction: column;
+    background-color: #E6E6E6;
     min-height: 100vh;
 
     .faixa-header{
@@ -13,6 +14,7 @@
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
+        background-color: #fff;
         color: #ffffff;
         border-bottom: 1px solid #B6B6B6;
     }
@@ -39,18 +41,19 @@
     .fundo-cadastro{
         display: flex;
         flex-direction: row;
-        background-color: #E6E6E6;
-        min-height: 100vh;
+        justify-content: center;
+        align-items: center;
     }
 
-    .cadastro{
+    .cadastro-user{
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         background-color: #ffffff;
-        //margin: 5em 5em;
-        min-width: 60vw;
+        border: 1px solid #B6B6B6;
+        width: 40em;
+        height: 25em;
     }
 
     *input{
@@ -88,8 +91,11 @@
     }
     
     .fundo-login{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         font-family: 'lexendSB';
-        background-color: #e6e6e6;
+        margin-left: 5em;
     }
     
     .login{
@@ -125,6 +131,22 @@
         margin-top: 3em;
         width: 20em;
         height: 3.2em;
+        cursor: pointer;
+    }
+
+    .botao-ajuda{
+        font-family: 'lexendR';
+        text-transform: uppercase;
+        background-color: #987F5B;
+        border: none;
+        color: #ffffff;
+        margin-top: 2.5em;
+        width: 15em;
+        height: 3.2em;
+    }
+    
+    .botao-ajuda:hover{
+        opacity: 90%;
         cursor: pointer;
     }
 

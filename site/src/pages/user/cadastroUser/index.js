@@ -71,8 +71,7 @@ export default function CadastroUser() {
         </div>
       </header>
       <section className="fundo-cadastro">
-        <div className="cadastro">
-          <div>
+        <div className="cadastro-user">
             <div>
               <input type="text" placeholder="Nome*" value={nome} onChange={e => (setNome(e.target.value))}></input>
               <input className="input-direita" type="text" placeholder="Sobrenome*" value={sobrenome} onChange={e => (setSobrenome(e.target.value))}></input>
@@ -87,10 +86,6 @@ export default function CadastroUser() {
               <input type="tel" placeholder="Telefone*" value={telefone} onChange={e => (setTelefone(e.target.value))}></input>
               <input className="input-direita" type="tel" placeholder="Outro telefone" value={telefone2} onChange={e => (setTelefone2(e.target.value))}></input>
             </div>
-
-
-          </div>
-
         </div>
 
         <div className="fundo-login">
@@ -112,6 +107,7 @@ export default function CadastroUser() {
               <p className="mensagem-erro"></p>
             </div>
           </div>
+            <button className="botao-ajuda">precisa de ajuda?</button>
         </div>
       </section>
     </main>
