@@ -8,7 +8,6 @@
     .form {
         display: flex;
         flex-direction: column;
-        font-family: 'lexendEL';
         margin-top: 2em;
         width: 100%;
         max-width: 1024px;
@@ -21,6 +20,8 @@
     }
     
     th {
+        font-family: 'lexendL';
+        font-size: 14px;
         background-color: #D1BC9F;
         color: #fff;
         padding: 10px 15px;
@@ -28,7 +29,7 @@
     }
     
     td {
-        border: solid 1px gray;
+        font-family: 'lexendEL';
         padding: 10px 15px;
     }
 
@@ -98,8 +99,6 @@
         margin-left: 1em;
         cursor: pointer;
     }
-
-    
 
     @media (max-width: 425px) {
         .form > div {

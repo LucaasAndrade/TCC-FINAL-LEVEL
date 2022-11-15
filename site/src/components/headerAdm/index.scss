@@ -1,6 +1,6 @@
-#componente-header-adm{
+.componente-header-adm{
 
-    .faixa-header{
+    .header{
         display: flex;
         flex-direction: row;
         justify-content: space-around;
@@ -13,19 +13,23 @@
         cursor: pointer;
     }
 
+    *p {
+        cursor: pointer;
+    }
+
     .topicos-p{
         display: flex;
         flex-direction: row;
         font-family: 'lexendM';
     }
     
-    .topico{
+    .topico {
         position: relative;
         margin-left: 2em;
     }
-    
+
     .topico::after {
-    content: "";
+        content: "";
         position: absolute;
         border-bottom: 2px solid #987F5B;
         height: 2px;
@@ -35,14 +39,10 @@
         transition: 0.3s;
     }
 
-    .topicoo{
+    .topicoo {
         position: relative;
     }
 
-    .h-topico:hover {
-        color: #987F5B;
-    }
-    
     .topicoo::after {
         content: "";
         position: absolute;
@@ -53,6 +53,11 @@
         bottom: -10px;
         transition: 0.3s;
     }
+
+    .h-topico:hover {
+        color: #987F5B;
+    }
+    
 
     .faixa-header p:hover{
         opacity: 70%;

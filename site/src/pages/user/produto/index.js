@@ -13,6 +13,7 @@ import { useEffect, useState } from "react";
 import { buscarProdutoPorId } from "../../../api/cadastrarProduto";
 import EstrelasAvaliacao from "../../../components/estrelasAvaliacao";
 import ComponenteAvaliacao from "../../../components/avaliacao";
+import AvaliacaoCliente from "../../../components/avaliacaoCliente";
 
 export default function Produto(props) {
   const responsive = {

@@ -39,13 +39,13 @@
     }
 
     .topico {
-        position: relative;
+        //position: relative;
         margin-left: 2em;
     }
 
     .topico::after {
         content: "";
-        position: absolute;
+        //position: absolute;
         border-bottom: 2px solid #987F5B;
         height: 2px;
         width: 0;
@@ -55,12 +55,12 @@
     }
 
     .topicoo {
-        position: relative;
+        //position: relative;
     }
 
     .topicoo::after {
         content: "";
-        position: absolute;
+        //position: absolute;
         border-bottom: 2px solid #987F5B;
         height: 2px;
         width: 0;

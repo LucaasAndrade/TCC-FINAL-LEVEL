@@ -8,6 +8,7 @@ import Login from './pages/user/login'
 import CadastroUser from './pages/user/cadastroUser'
 import Produto from './pages/user/produto'
 import Buscar from './pages/user/buscar'
+import CentralAtendimento from './pages/user/centralAtendimento';
 import Destaques from './pages/user/destaques'
 import Acessorios from '../src/pages/user/acessorios'
 import Masculino from '../src/pages/user/masculino'
@@ -46,6 +47,7 @@ export default function Index() {
         <Route path='/cadastro' element={<CadastroUser />} />
         <Route path='/produto/:id/detalhe' element = {<Produto />} />
         <Route path='/buscar' element = {<Buscar />} />
+        <Route path='/atendimento' element = {<CentralAtendimento />} />  
         <Route path='/destaques' element = {<Destaques />} />
         <Route path='/acessorios' element={<Acessorios />} />
         <Route path='/masculino' element={<Masculino />} />

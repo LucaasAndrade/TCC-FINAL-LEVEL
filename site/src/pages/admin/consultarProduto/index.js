@@ -65,6 +65,7 @@ export default function ConsultarProduto() {
                 <th> Disponivel </th>
                 <th> Destaque </th>
                 <th></th>
+                <th></th>
               </tr>
             </thead>
             <tbody>

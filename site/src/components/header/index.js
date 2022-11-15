@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { useState } from 'react'
 import ModalPerfil from '../modalPerfil'
 import ModalEditar from '../modalEditar'
+import AvaliacaoCliente from '../avaliacaoCliente'
 
 
 
@@ -14,6 +15,8 @@ export default function Cabecalho() {
     const navigate = useNavigate('');
 
     const [ exibir, setExibir ] = useState(false)
+    const [ exibirAvaliacao, setExibirAvaliacao ] = useState(false)
+
 
     function Perfil(){
         setExibir(true)
@@ -21,6 +24,14 @@ export default function Cabecalho() {
 
     function fechar(){
         setExibir(false)
+    }
+
+    function avaliar(){
+        setExibirAvaliacao(true)
+    }
+
+    function fecharAvaliacao(){
+        setExibirAvaliacao(false)
     }
 
     function Home() {
@@ -50,6 +61,7 @@ export default function Cabecalho() {
         <header className='componente-header'>
     
             <ModalPerfil  exibir={exibir} fechar={fechar} /> 
+            {/*<AvaliacaoCliente exibirAvaliacao={exibirAvaliacao} fecharAvaliacao={fecharAvaliacao} />
             {/*<ModalEditar  exibir={exibir} fechar={fechar} />*/}
             
 
@@ -71,7 +83,7 @@ export default function Cabecalho() {
                     </div>
                     <div className='elementos-usuario'>
                         <img className="open-modal-button" src='/images/perfil.png' alt='perfil' onClick={Perfil} />
-                        <img className='elemento-img' src='/images/atendimento.png' alt='atendimento' />
+                        <img className='elemento-img' src='/images/atendimento.png' alt='atendimento' onClick={avaliar}/>
                         <hr className='elemento-img'></hr>
                         <img className='elemento-img' src='/images/sacola.png' alt='sacola' />
                         <img className='elemento-img' src='/images/coracao.png' alt='coracao' />
