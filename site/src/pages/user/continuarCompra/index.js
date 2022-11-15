@@ -9,6 +9,7 @@ import Storage from 'local-storage'
 import { salvar } from '../../../api/Endereco'
 import { useNavigate } from 'react-router-dom';
 import ModalVerificado from '../../../components/modalVerificado'
+import CodigoPromocional from '../../../components/codigoPromocional'
 
 
 export default function ContinuarCompra() {
@@ -153,6 +154,9 @@ export default function ContinuarCompra() {
 
                     <div>
                         <CardFinalizarProduto botao='finalizar compra' />
+                        <div>
+                            <CodigoPromocional />
+                        </div>
                         <div className='finaliza'>
                             <p>---------- ou ----------</p>
                             <button className="botao-cancelar" onClick={cancelarCompra} > cancelar compra </button>

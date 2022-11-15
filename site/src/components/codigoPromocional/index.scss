@@ -1,14 +1,13 @@
-#page-codigo-promocional{
+.page-codigo-promocional{
     display: flex;
-    flex-direction: row-reverse;
-   
-    margin-right: 22em;
-    
+    flex-direction: column;
+   align-items: center;    
+    margin-top: 2em;
 
     .fundo-codigo{
         background-color: #ffffff;
         border: 1px solid #B6B6B6;
-        width: 25em;
+        width: 20em;
     }
 
     .info-codigo{
@@ -17,18 +16,14 @@
         align-items: center;
         padding: 1em 0em 1em;
     }
-
-    .input-pesquisa{
-        display: flex;
-        flex-direction: row;
-        margin-right: 4em;
-    }
     
     *input{
         background-color: #ffffff;
         border: 1px solid #B6B6B6;
         padding: .5em 2em .5em 1.5em;
         width: 19em;
+        font-size: 12px;
+        cursor: pointer;
     }
 
     #pesquisa{
@@ -41,7 +36,7 @@
     .paragrafo{
         font-family: 'lexendL';
         font-size: 12px;
-        width: 30em;
-        margin-top: 1em;
+        width: 21em;
+        margin-top: .5em;
     }
 }

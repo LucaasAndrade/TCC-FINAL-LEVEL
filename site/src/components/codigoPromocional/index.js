@@ -6,7 +6,7 @@ import '../../common/common.scss'
 
 export default function CodigoPromocional() {
     return (
-        <main id='page-codigo-promocional'>
+        <main className='page-codigo-promocional'>
             <div className='fundo-codigo'>
                 <div className='info-codigo'>
                     <div className="input-pesquisa">
