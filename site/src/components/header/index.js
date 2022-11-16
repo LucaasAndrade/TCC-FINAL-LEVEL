@@ -1,11 +1,9 @@
 import './index.scss';
 import '../../common/common.scss'
 
-//import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react'
 import ModalPerfil from '../modalPerfil'
-import ModalEditar from '../modalEditar'
 import AvaliacaoCliente from '../avaliacaoCliente'
 
 
@@ -61,8 +59,7 @@ export default function Cabecalho() {
         <header className='componente-header'>
     
             <ModalPerfil  exibir={exibir} fechar={fechar} /> 
-            {/*<AvaliacaoCliente exibirAvaliacao={exibirAvaliacao} fecharAvaliacao={fecharAvaliacao} />
-            {/*<ModalEditar  exibir={exibir} fechar={fechar} />*/}
+            {/*<AvaliacaoCliente exibirAvaliacao={exibirAvaliacao} fecharAvaliacao={fecharAvaliacao} />*/}
             
 
             <div className='frete'>

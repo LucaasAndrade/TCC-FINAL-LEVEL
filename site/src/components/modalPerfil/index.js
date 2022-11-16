@@ -3,7 +3,6 @@ import './index.scss'
 
 export default function ModalPerfil({ exibir, fechar }) {
 
-
     return (
 
         <div className='comp-modal-perfil'>

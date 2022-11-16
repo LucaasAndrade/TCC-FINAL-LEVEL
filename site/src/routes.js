@@ -47,15 +47,14 @@ export default function Index() {
         <Route path='/cadastro' element={<CadastroUser />} />
         <Route path='/produto/:id/detalhe' element = {<Produto />} />
         <Route path='/buscar' element = {<Buscar />} />
-        <Route path='/atendimento' element = {<CentralAtendimento />} />  
         <Route path='/destaques' element = {<Destaques />} />
         <Route path='/acessorios' element={<Acessorios />} />
         <Route path='/masculino' element={<Masculino />} />
         <Route path='/feminino' element={<Feminino />} />
         <Route path='/infantil' element={<Infantil />} />
         <Route path='/carrinho' element={<Carrinho />} />
-        <Route path='/continuarCompra' element={<ContinuarCompra />} />
-       
+        <Route path='/continuar/compra' element={<ContinuarCompra />} />
+        {/*<Route path='/atendimento' element = {<CentralAtendimento />} />*/}  
 
 
       </Routes>

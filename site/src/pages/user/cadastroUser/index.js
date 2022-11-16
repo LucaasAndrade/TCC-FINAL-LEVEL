@@ -62,7 +62,7 @@ export default function CadastroUser() {
           <div>
             <img src="/images/retan-branco.png" alt="retangulo" />
           </div>
-          <img className="logo" src="/images/logoo.png" alt="logo" />
+          <img className="logo" src="/images/logoo.png" alt="logo" onClick={Home} />
           <div>
             <button className="botao-painel" onClick={Home}>
               VOLTAR
