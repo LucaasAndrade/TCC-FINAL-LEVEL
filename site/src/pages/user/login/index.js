@@ -30,7 +30,7 @@ useEffect(()=>{
   
 
   function Cadastrar(){
-    navigate ("/Cadastrar")
+    navigate ("/cadastro")
   }
 
   function Home(){
@@ -48,7 +48,7 @@ useEffect(()=>{
       const resp = await loginUsua(email,senha)
       storage('usuario-logado', resp);
                setTimeout(() =>{
-                navigate ("/home")
+                navigate ("/")
                }, 3000);
     }
     catch (err) {

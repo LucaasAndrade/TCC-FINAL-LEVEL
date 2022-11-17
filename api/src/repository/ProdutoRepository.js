@@ -1,6 +1,7 @@
 import {con} from './connection.js';
 
 
+
 export async function CadastrarProduto(produto) {
     const comando =
     `insert into tb_produto (id_categoria, id_marca_produto, nm_produto, vl_preco, ds_informacoes, bl_disponivel, bl_destaque)
