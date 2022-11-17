@@ -282,7 +282,7 @@ export async function buscarDestaques() {
         `    
         select
             tb_produto.id_produto           as      id, 
-            nm_produto						as		nome,
+            nm_produto						as		produto,
             nm_marca 						as		marca,
             nm_categoria					as		categoria,
             vl_preco						as		preco,
