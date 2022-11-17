@@ -254,16 +254,23 @@ export async function removerProdutoImagemDiferenteDe(imagens, id){
 export async function buscarProutosPorCategoria(categoria) {
     const comando =
         `select 
-        nm_produto						as		produto,
-        nm_marca 						as		marca,
-        nm_categoria					as		categoria,
-        vl_preco						as		preco,
-        img_produto						as		imagem
+        tb_produto.id_produto           		as      id,
+        nm_produto								as		produto,
+        nm_marca 								as		marca,
+        nm_categoria							as		categoria,
+        vl_preco								as		preco,
+        min(img_produto)						as		imagem
     from tb_produto
 inner join tb_marca_produto 	on  tb_produto.id_marca_produto = tb_marca_produto.id_marca_produto
 inner join tb_categoria			on	tb_produto.id_categoria		= tb_categoria.id_categoria
 left join tb_imagem_produto	on	tb_produto.id_produto		= tb_imagem_produto.id_produto
-    where nm_categoria like ?
+	where nm_categoria like ?
+    group by
+		tb_produto.id_produto           		,
+        nm_produto								,
+        nm_marca 								,
+        nm_categoria							,
+        vl_preco								;
         `
     const [resp] = await con.query(comando, `%${categoria}%`);
     return resp;
@@ -273,18 +280,26 @@ left join tb_imagem_produto	on	tb_produto.id_produto		= tb_imagem_produto.id_pro
 export async function buscarDestaques() {
     const comando =
         `    
-        select 
+        select
+            tb_produto.id_produto           as      id, 
             nm_produto						as		nome,
             nm_marca 						as		marca,
             nm_categoria					as		categoria,
             vl_preco						as		preco,
-            img_produto						as		imagem,
+            max(img_produto)				as		imagem,
             bl_destaque						as		destaque
         from tb_produto
             inner join tb_marca_produto 	on  tb_produto.id_marca_produto = tb_marca_produto.id_marca_produto
             inner join tb_categoria			on	tb_produto.id_categoria		= tb_categoria.id_categoria
             left join tb_imagem_produto	    on	tb_produto.id_produto		= tb_imagem_produto.id_produto
-        where bl_destaque = 1;
+        where bl_destaque = 1
+        group by
+        tb_produto.id_produto,
+        nm_produto,
+        nm_marca,
+        nm_categoria,
+        vl_preco,
+        bl_destaque;
         `
     const [resp] = await con.query(comando);
     return resp;
