@@ -6,6 +6,9 @@ import storage from "local-storage";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
+import { API_URL } from "../../../api/config";
+
+
 import Cabecalho from "../../../components/header";
 import Footer from "../../../components/footer";
 import CardCarrinho from "../../../components/CardCarrinho";
@@ -39,12 +42,28 @@ export default function Produto(props) {
     imagem: [],
     info: [],
   });
-
+  const [imagemPrincipal, setImagemPrincipal] = useState(0);
   const { id } = useParams();
 
   async function carregarPagina() {
     const r = await buscarProdutoPorId(id);
     setProduto(r);
+  }
+
+  function exibirImagemPrincipal() {
+    if (produto.imagens.length > 0) {
+        return API_URL + '/' + produto.imagens[imagemPrincipal];
+    }
+    else {
+        return '/produto-padrao.png';
+    }
+  } 
+
+  
+
+  function exibirImagemProduto(imagem) {
+      return API_URL + '/' + imagem;
+    
   }
 
   useEffect(() => {
@@ -96,40 +115,11 @@ export default function Produto(props) {
               //itemClass="carousel-item-padding-40-px"
             >
               <div className="div-img-carrosel">
-                <img
-                  className="img-carrosel"
-                  src="/images/produtoteste.png"
-                  alt="produto"
-                />
-              </div>
-
-              <div className="div-img-carrosel">
-                <img
-                  className="img-carrosel"
-                  src="/images/produtoteste.png"
-                  alt="dest"
-                />
-              </div>
-              <div className="div-img-carrosel">
-                <img
-                  className="img-carrosel"
-                  src="/images/produtoteste.png"
-                  alt="dest"
-                />
-              </div>
-              <div className="div-img-carrosel">
-                <img
-                  className="img-carrosel"
-                  src="/images/produtoteste.png"
-                  alt="dest"
-                />
-              </div>
-              <div className="div-img-carrosel">
-                <img
-                  className="img-carrosel"
-                  src="/images/produtoteste.png"
-                  alt="dest"
-                />
+                {
+                  produto.imagem.map((item, pos) => 
+                    <img src={exibirImagemProduto(item)} onClick={() => setImagemPrincipal(pos)} />
+                  )
+                }
               </div>
             </Carousel>
           </div>
@@ -190,14 +180,7 @@ export default function Produto(props) {
           <div className="texto-info">
             <p className="titu">Sobre o Produto</p>
             <p className="texto-sobre">
-              {props.texto} SobreLorem ipsum dolor dummy text sit amet,
-              consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-              labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-              nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-              occaecat cupidatat non proident, sunt in culpa qui officia
-              deserunt mollit anim id est laborum.{" "}
+              {props.texto} {produto.info.informacoes} {" "}
             </p>
           </div>
         </div>

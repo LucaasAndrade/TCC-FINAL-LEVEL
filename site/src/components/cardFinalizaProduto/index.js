@@ -51,9 +51,6 @@ export default function FinalizarCompra(props) {
                 </div>
                 <hr className='linha' />
                 <div className='compra'>
-                    <div className='teste'>
-                        <p>Nao sou um robo</p>
-                    </div>
                     <div>
                         <button className='botao-compra'>{props.botao}</button>
                     </div>
