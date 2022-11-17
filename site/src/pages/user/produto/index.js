@@ -3,8 +3,6 @@ import "./index.scss";
 import { useNavigate, useParams } from "react-router-dom";
 
 import storage from "local-storage";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
 
 import { API_URL } from "../../../api/config";
 
@@ -19,23 +17,6 @@ import ComponenteAvaliacao from "../../../components/avaliacao";
 import AvaliacaoCliente from "../../../components/avaliacaoCliente";
 
 export default function Produto(props) {
-  const responsive = {
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 1,
-      slidesToSlide: 3,
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 1,
-      slidesToSlide: 2,
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
-      slidesToSlide: 1,
-    },
-  };
 
   const [produto, setProduto] = useState({
     categoria: [],
@@ -58,8 +39,6 @@ export default function Produto(props) {
         return '/produto-padrao.png';
     }
   } 
-
-  
 
   function exibirImagemProduto(imagem) {
       return API_URL + '/' + imagem;
@@ -96,32 +75,32 @@ export default function Produto(props) {
       <section>
         <div className="fundo-info-produto">
           <div className="destacar">
-            <button className="destaque">destaques</button>
-            <Carousel
-              className="carrosel"
-              swipeable={false}
-              draggable={false}
-              responsive={responsive}
-              ssr={true}
-              infinite={true}
-              autoPlay={true}
-              autoPlaySpeed={4000}
-              keyBoardControl={true}
-              containerClass="carousel-container"
-              //showDots={true}
-              //customTransition="all .5"
-              //removeArrowOnDeviceType={["tablet", "mobile"]}
-              //dotListClass="custom-dot-list-style"
-              //itemClass="carousel-item-padding-40-px"
-            >
-              <div className="div-img-carrosel">
+            <div>
+                <div className="div-img">
+                  <img className="imagens" src="/images/produto01.png">{props.imagem}</img>
+                </div>
+                <div className="div-img">
+                  <img className="imagens" src="/images/produto01.png">{props.imagem}</img>
+                </div>
+                <div className="div-img">
+                  <img className="imagens" src="/images/produto01.png">{props.imagem}</img>
+                </div>
+                <div className="div-img">
+                  <img className="imagens" src="/images/produto01.png">{props.imagem}</img>
+                </div>
+            </div>
+
+            <div className="alinhamento-destac">
+              <button className="destaque">destaques</button>
+            
+              <div className="div-img">
                 {
                   produto.imagem.map((item, pos) => 
-                    <img src={exibirImagemProduto(item)} onClick={() => setImagemPrincipal(pos)} />
+                    <img className="img-principal" src={exibirImagemProduto(item)} onClick={() => setImagemPrincipal(pos)} />
                   )
                 }
               </div>
-            </Carousel>
+            </div>
           </div>
 
           <div className="info-produto">
