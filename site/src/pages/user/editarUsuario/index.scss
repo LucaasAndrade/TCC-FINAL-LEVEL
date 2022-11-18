@@ -26,7 +26,7 @@
         background-color: #ffffff;
         border: 1px solid #B6B6B6;
         width: 50em;
-        height: 38em;
+        height: 40em;
         margin-top: 4em;
     }
 
@@ -105,6 +105,21 @@
 
     .input-direita{
         margin-left: 2em;
+    }
+
+    .botao-enviar {
+        font-family: 'lexendR';
+        background-color: #D1BC9F;
+        border: none;
+        color: #ffffff;
+        width: 7em;
+        height: 3em;
+        margin-top: 2.5em;
+    }
+    
+    .botao-enviar:hover{
+        opacity: 90%;
+        cursor: pointer;
     }
     
 }

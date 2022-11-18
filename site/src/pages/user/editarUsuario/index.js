@@ -44,6 +44,7 @@ export default function EditarPerfil() {
                                 <textarea className="descricao" name="story" rows="7" cols="46" placeholder='Descreva o ponto de referência mais próximo de sua residência...' />
                                 <input className="input-direita" type="tel" placeholder="Número" />
                             </div>
+                            <button className="botao-enviar">ENVIAR</button>
                     </div>
                 </div>
             </section>

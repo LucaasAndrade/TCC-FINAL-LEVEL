@@ -1,7 +1,14 @@
+import { useNavigate } from 'react-router-dom'
 import './index.scss'
 
 
 export default function ModalPerfil({ exibir, fechar }) {
+
+    const navigate = useNavigate('');
+
+    function Editar() {
+        navigate('/perfil')
+    }
 
     return (
 
@@ -52,8 +59,8 @@ export default function ModalPerfil({ exibir, fechar }) {
 
                         <div className='div-info'>
                             <div className='img-topico'>
-                                <img src='/images/editar.png'></img>
-                                <p>Editar</p>
+                                <img src='/images/editar.png' onClick={Editar} />
+                                <p onClick={Editar}>Editar</p>
                             </div>
                             <div className='img-topico-dois'>
                                 <img src='/images/sair.png'></img>
