@@ -11,6 +11,10 @@ export default function ModalPerfil({ exibir, fechar }) {
         navigate('/perfil')
     }
 
+    function carrinho() {
+        navigate('/carrinho')
+    }
+
     return (
         <div className='comp-modal-perfil'>
             <div className={`modal-perfil ${exibir ? 'exibir' : ''}`}>
@@ -50,8 +54,8 @@ export default function ModalPerfil({ exibir, fechar }) {
                                 <p>Curtidos</p>
                             </div>
                             <div className='img-topico-dois'>
-                                <img src='/images/sacola-perfil.png'></img>
-                                <p>Adicionados ao Carrinho</p>
+                                <img src='/images/sacola-perfil.png' onClick={carrinho}/>
+                                <p onClick={carrinho}>Adicionados ao Carrinho</p>
                             </div>
                         </div>
                         <hr className="linha" />

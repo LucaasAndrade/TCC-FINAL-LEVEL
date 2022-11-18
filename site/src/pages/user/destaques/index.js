@@ -24,11 +24,7 @@ export default function Destaques() {
                     </div>  
                 </div>           
             </section>
-            {/*Tela de meus pedidos -  teste*/}
-            <section>
-                <DadosPedidos data='23/11/2022' preco='R$ 409,90' situacao='entregue' />
-                <CardMeusPedidos imagem='/images/produto31.png' nome='Moletom Street Masculino' marca='Street' tamanho='G' quantidade='1' />
-            </section>
+                                                                                                    
             <section>
                 <Footer />
             </section>
