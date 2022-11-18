@@ -1,0 +1,109 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+}
+
+.editar-perfil{
+    background-color: #E6E6E6;
+    min-height: 100vh;
+
+    header{
+        background-color: #fff;
+    }
+
+    .editar{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .editar-user{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #ffffff;
+        border: 1px solid #B6B6B6;
+        width: 40em;
+        height: 30em;
+        margin-top: 3em;
+    }
+
+    .descricao{
+        font-family: 'lexendR';
+        max-width: 20em;
+        max-height: 10em;
+        min-width: 10em;
+        min-height: 10em;
+        border: 1px solid #828282;
+    }
+
+    textarea {
+        padding: 10px;
+        max-width: 100%;
+        line-height: 1.5;
+        border: 1px solid #B6B6B6;
+    }
+
+    .fundo-perfil {
+        border: 1px solid #B6B6B6;
+        cursor: pointer;
+    }
+
+    .fundo-editar{
+        background-color: #fff;
+    }
+
+    .img-perfil{
+        margin: .5em;
+        opacity: 50%;
+    }
+
+    .espaco-input{
+        margin-top: 2em;
+    }
+
+    *input{
+        width: 20em;
+        height: 3.2em;
+        border: 1px solid #B6B6B6;  
+        padding: 0em 1em; 
+    }
+
+    #input-numero{
+        width: 9em;
+    }
+
+    #input-referencia{
+        margin-left: 2em;
+        min-width: 31em;
+    }
+
+    .inputs{
+        margin-top: .5em;
+    }
+
+    .input{
+        margin-top: 2.5em;
+    }
+
+    .input-login{
+        display: flex;
+        flex-direction: column;
+        margin-top: 1.5em;
+    }
+
+    .input-direita{
+        margin-left: 2em;
+    }
+    
+    .fundo-login{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: 'lexendSB';
+        margin-left: 5em;
+        margin-top: 3em;
+    }
+}

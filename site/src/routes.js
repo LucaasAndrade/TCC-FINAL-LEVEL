@@ -6,6 +6,7 @@ import Landing from './pages/user/home'
 // Area / usuario
 import Login from './pages/user/login'
 import CadastroUser from './pages/user/cadastroUser'
+import Perfil from './pages/user/editarUsuario'
 import Produto from './pages/user/produto'
 import Buscar from './pages/user/buscar'
 import CentralAtendimento from './pages/user/centralAtendimento';
@@ -45,6 +46,7 @@ export default function Index() {
         <Route path='/' element = {<Landing />} />
         <Route path='/login' element={<Login />} />
         <Route path='/cadastro' element={<CadastroUser />} />
+        <Route path='/perfil' element={<Perfil />} />
         <Route path='/produto/:id/detalhe' element = {<Produto />} />
         <Route path='/buscar' element = {<Buscar />} />
         <Route path='/destaques' element = {<Destaques />} />
