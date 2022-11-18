@@ -27,9 +27,9 @@ export default function EditarPerfil() {
             <section>
                 <div className='fundo-editar'>
                     <div className="editar-user">
-                        <div>
-                            <img src='/images/usuario-perfil.png' />
-                        </div>
+                            <div>
+                                <img className='img-perfil' src='/images/usuario-perfil.png' />
+                            </div>
                             <div className="espaco-input">
                                 <input type="text" placeholder="E-mail*" />
                                 <input className="input-direita" type="text" placeholder="Telefone*" />
@@ -40,7 +40,7 @@ export default function EditarPerfil() {
                                 <input className="input-direita" type="text" placeholder="Nome da rua*" />
                             </div>
 
-                            <div className="input">
+                            <div className="input-text">
                                 <textarea className="descricao" name="story" rows="7" cols="46" placeholder='Descreva o ponto de referência mais próximo de sua residência...' />
                                 <input className="input-direita" type="tel" placeholder="Número" />
                             </div>
