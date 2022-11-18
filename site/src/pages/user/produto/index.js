@@ -11,18 +11,21 @@ import Cabecalho from "../../../components/header";
 import Footer from "../../../components/footer";
 import CardCarrinho from "../../../components/CardCarrinho";
 import { useEffect, useState } from "react";
-import { buscarProdutoPorId } from "../../../api/cadastrarProduto";
+import { buscarProdutoPorId, listarProdutosInicio } from "../../../api/cadastrarProduto";
 import EstrelasAvaliacao from "../../../components/estrelasAvaliacao";
 import ComponenteAvaliacao from "../../../components/avaliacao";
 import AvaliacaoCliente from "../../../components/avaliacaoCliente";
 
 export default function Produto(props) {
 
+  
   const [produto, setProduto] = useState({
     categoria: [],
     imagem: [],
     info: [],
   });
+  
+  const tamanhos = [1, 2, 3, 4, 5]
 
   const [imagemPrincipal, setImagemPrincipal] = useState(0);
   const [imagem2, setImagem2] = useState();
@@ -31,6 +34,21 @@ export default function Produto(props) {
   const [imagem5, setImagem5] = useState();
   
   const { id } = useParams();
+
+  function formatarPreco(preco) {
+    preco = String(preco);
+    for (let i = 0; i <= preco.length; i++){
+      if (preco[i] == ',' || preco[i] == '.') {
+        return preco;
+      }
+      else {
+        return preco + ',00'
+      }
+    }
+
+  }
+
+  const precoNovo = produto.info.preco;
 
   async function carregarPagina() {
     const r = await buscarProdutoPorId(id);
@@ -141,11 +159,11 @@ export default function Produto(props) {
             <div>
               <p className="nome-produto">{produto.info.produto}</p>
               <p className="marca-produto">{produto.info.marca}</p>
-              <p className="preco-produto">R$ {produto.info.preco}</p>
+              <p className="preco-produto">R$ {formatarPreco(precoNovo)}</p>
             </div>
             <div>
               <select>
-                <option value="" selected disabled hidden></option>
+                <option value="" selected disabled hidden> Tamanhos</option>
                 <option value="PP"> PP </option>
                 <option value="P"> P </option>
                 <option value="M"> M </option>
@@ -154,8 +172,12 @@ export default function Produto(props) {
               </select>
 
               <select className="select">
-                <option value="" selected disabled hidden></option>
-                <option>{props.quantidade}</option>
+                <option value="" selected disabled hidden> Quantidade </option>
+                {
+                  tamanhos.map(item => 
+                    <option> {item}</option>
+                    )
+                }
               </select>
             </div>
             <div>

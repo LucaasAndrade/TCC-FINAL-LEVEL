@@ -10,4 +10,9 @@
         padding: 2em 0em 0em 3.5em;
         min-height: 100vh;
     }
+    .produtos{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
 }
