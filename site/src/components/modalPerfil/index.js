@@ -1,12 +1,11 @@
 import './index.scss'
 
+import 'local-storage'
 
 export default function ModalPerfil({ exibir, fechar }) {
 
     return (
-
         <div className='comp-modal-perfil'>
-
             <div className={`modal-perfil ${exibir ? 'exibir' : ''}`}>
                 <div className='conteudo'>
                     
@@ -60,7 +59,6 @@ export default function ModalPerfil({ exibir, fechar }) {
                                 <p>Sair</p>
                             </div>
                         </div>
-
                     </div>
                 </div>
 
