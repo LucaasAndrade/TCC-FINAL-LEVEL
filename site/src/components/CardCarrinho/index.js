@@ -48,7 +48,7 @@ export default function CardCarrinho({item: {produto:{info,categoria,imagem},qtd
     
 
     return (
-        <main id='page-card-carrinho'>
+        <main className='page-card-carrinho'>
             <div className='cartao-carrinho'>
                 <div className='imagem-carrinho'>
                     <img src={exibirImagem}/>
@@ -78,10 +78,10 @@ export default function CardCarrinho({item: {produto:{info,categoria,imagem},qtd
                         </select>
                     </div>
                 </div>
-                <div className='subtotal'>
+                {/*<div className='subtotal'>
                         <div>Subtotal</div>
                         <div>R$ {calcularSubtotal()}</div>
-                    </div>
+                </div>*/}
                 <div className='excluir-salvar'>
                     <div>
                         <div className='botao'>
