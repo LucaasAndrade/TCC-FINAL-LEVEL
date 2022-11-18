@@ -313,9 +313,6 @@ export default function Cadastrarproduto() {
 
               <div className="botoes" >
                 <div>
-                  <button className="botao-excluir">EXCLUIR PRODUTO</button>
-                </div>
-                <div>
                   <button className="botao-c-d" onClick={salvar}>CADASTRAR PRODUTO</button>
                 </div>
                 <div>

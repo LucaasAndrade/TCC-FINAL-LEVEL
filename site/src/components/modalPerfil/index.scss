@@ -11,23 +11,24 @@
         display: flex;
         justify-content: flex-end;
         align-items: center;
+
     }
 
     .form>div label {
         min-width: 8em;
     }
-
+    
     .form>div:last-child {
         justify-content: flex-end;
     }
-
-
+    
+    
     visibility: hidden;
-
+    
     .exibir {
         visibility: visible !important;
     }
-
+    
     .conteudo {
         position: relative;
         top: -60px;

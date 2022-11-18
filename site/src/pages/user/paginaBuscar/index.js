@@ -12,8 +12,6 @@ import Pesquisa from '../../../components/pesquisar';
 
 export default function PaginaBuscar() {
     
- 
-    
 
     return (
         <main className='pagina-buscar' >
