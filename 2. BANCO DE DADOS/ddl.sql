@@ -131,13 +131,16 @@ id_produto_avaliacao	         int primary key auto_increment,
     foreign key (id_usuario) references   tb_usuario(id_usuario)
 );
 
+alter table tb_pedido
+	modify vl_total decimal(15,2);
+
 create table tb_pedido(
 	id_pedido        int primary key auto_increment,
     id_produto       int,
     id_usuario       int,
     id_cupom         int,
     dt_pedido        datetime,
-    vl_total         decimal(4,2),
+    vl_total         decimal(15,2),
     ds_situacao      varchar(100),
    foreign key (id_produto) references  tb_produto(id_produto),
    foreign key (id_usuario) references   tb_usuario(id_usuario)

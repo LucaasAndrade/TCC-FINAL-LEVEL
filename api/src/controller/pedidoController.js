@@ -1,8 +1,8 @@
 import  {Router} from 'express';
 import { salvar,listar } from "../repository/EnderecoRepository.js";
-import { inserirPagamento, inserirPedido } from '../repository/pedidoRepository.js';
+import { inserirPagamento, inserirPedido, inserirPedidoItem } from '../repository/pedidoRepository.js';
 import { buscarProdutoPorId } from '../repository/ProdutoRepository.js';
-import { criarNovoPedido } from '../services/novoPedidoServices.js';
+import { acharCupom, criarNovoPedido } from '../services/novoPedidoServices.js';
 const server = Router();
 
 
@@ -20,12 +20,11 @@ server.post('/api/pedido/:idUsuario',async(req,resp) =>{
 
         for (let item of info.produtos) {
             const prod = await buscarProdutoPorId(item.id);
+            console.log(prod);
             await inserirPedidoItem(idPedidoCriado, prod.id);
-            resp.status(204).send();
-
-            resp.status(204).send();
-
         }
+
+        resp.status(204).send();
     }
         catch (err) {
             console.log(err);

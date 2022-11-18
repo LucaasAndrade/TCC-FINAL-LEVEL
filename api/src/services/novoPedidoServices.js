@@ -29,7 +29,7 @@ export async function criarNovoPedido(idUsuario,idCupom,info){
         idUsuario:idUsuario,
         idCupom:idCupom,
         data:agora,
-        total:info,
+        total:info.total,
         situacao: 'Confirmando Pagamento'
     }
 }
