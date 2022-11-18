@@ -4,7 +4,7 @@ USE TCC2022;
 select* from tb_adm;
 
 insert into tb_adm (nm_adm,ds_cpf,dt_nascimento,ds_cargo)
-		values ('ADM','016.558.990-67', '2000-10-05 ', 'Vendedor');
+		values ('ADM','016.558.990-67', '2000-10-05 ', 'Vendedor'); 
         
   select  * from tb_categoria;
   select * from tb_produto_tamanho;
@@ -70,9 +70,16 @@ update  tb_marca_produto
 delete from tb_marca_produto
 where id_marca_produto = '2';
 
+alter table tb_pagamento_cartao
+   modify nr_cartao varchar(50);
 
 -- Produto
 select * from tb_produto; 
+
+select * from tb_pagamento_cartao;
+select * from tb_pedido;
+select * from tb_usuario;
+desc tb_pagamento_cartao;
 
 -- Inserir Produto
 insert into tb_produto (id_categoria,id_marca_produto,nm_produto,vl_preco,ds_informacoes,bl_disponivel, bl_destaque)
@@ -113,7 +120,7 @@ where id_produto = '1';
 
 
 -- Cadastra Tamanho do Produto
-select * from tb_produto_tamanho;
+select * from tb_pedido;
 
 insert into tb_produto_tamanho (id_produto,ds_tamanho)
 		values ('1','PP');

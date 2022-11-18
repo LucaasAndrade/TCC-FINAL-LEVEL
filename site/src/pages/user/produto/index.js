@@ -75,6 +75,10 @@ export default function Produto(props) {
 
   const navigate = useNavigate("");
 
+  function carrinho() {
+    navigate('/carrinho')
+  }
+
   function adicionarAoCarrinho() {
     let carrinho = [];
     if (storage("carrinho")) {
@@ -180,7 +184,7 @@ export default function Produto(props) {
               <p>{props.situacao}</p>
             </div>
             <div className="botoes">
-              <button className="botao-adicionar" onClick={adicionarAoCarrinho}>
+              <button className="botao-adicionar" onClick={adicionarAoCarrinho} >
                 adicionar ao carrinho
               </button>
               <button className="botao-curti">
