@@ -28,10 +28,10 @@ export default function Produto(props) {
   const tamanhos = [1, 2, 3, 4, 5]
 
   const [imagemPrincipal, setImagemPrincipal] = useState(0);
-  const [imagem2, setImagem2] = useState();
-  const [imagem3, setImagem3] = useState();
-  const [imagem4, setImagem4] = useState();
-  const [imagem5, setImagem5] = useState();
+  //const [imagem2, setImagem2] = useState(0);
+  //const [imagem3, setImagem3] = useState();
+  //const [imagem4, setImagem4] = useState();
+  //const [imagem5, setImagem5] = useState();
   
   const { id } = useParams();
 
@@ -95,28 +95,6 @@ export default function Produto(props) {
     alert("Produto adicionado ao carrinho!");
   }
 
-  async function carregarProduto() {
-    if (!id) return;
-    
-    const r = await buscarProdutoPorId(id);
-
-    if (r.imagem.length > 2) {
-      setImagem2(r.imagem[2])
-    }
-    if (r.imagem.length > 3) {
-      setImagem3(r.imagem[3])
-    }
-    if (r.imagem.length > 4) {
-      setImagem4(r.imagem[4])
-    }
-    if (r.imagem.length > 5) {
-      setImagem5(r.imagem[5])
-    }
-  }
-
-  useEffect(() => {
-    carregarProduto();
-  }, [])
 
   return (
     <main className="page-produto">
@@ -126,20 +104,7 @@ export default function Produto(props) {
       <section>
         <div className="fundo-info-produto">
           <div className="destacar">
-            <div>
-                <div className="div-img">
-                  <img src={exibirImagemProduto(imagem2)} alt="" />
-                </div>
-                <div className="div-img">
-                <img src={exibirImagemProduto(imagem3)} alt="" />
-                </div>
-                <div className="div-img">
-                <img src={exibirImagemProduto(imagem4)} alt="" />
-                </div>
-                <div className="div-img">
-                <img src={exibirImagemProduto(imagem4)} alt="" />
-                </div>
-            </div>
+            
 
             <div className="alinhamento-destac">
               <button className="destaque">destaques</button>

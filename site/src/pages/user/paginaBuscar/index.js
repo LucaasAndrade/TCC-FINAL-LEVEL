@@ -8,19 +8,9 @@ import { useEffect, useState } from 'react';
 import { listarProdutosPorNome } from '../../../api/cadastrarProduto';
 
 export default function PaginaBuscar() {
-    const [produtos, setProdutos] = useState([]);
-    const { nome } = useParams();
-
-    async function listarProdutos() {
-        let a = await listarProdutosPorNome(nome)
-        setProdutos(a);
-    }
-
-    console.log(produtos);
-
-    useEffect(() => {
-        listarProdutos();
-    }, [nome])
+    
+ 
+    
 
     return (
         <main className='pagina-buscar' >

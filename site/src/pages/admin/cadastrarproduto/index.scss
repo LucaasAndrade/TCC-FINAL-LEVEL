@@ -209,16 +209,6 @@
         margin-top: 6em;
     }
 
-    .botao-excluir{
-        font-family: 'lexendR';
-        font-size: 11px;
-        background-color: #BE6161;
-        border: 1px solid #BE6161;
-        color: #ffffff;
-        padding: 1em 2em;
-        width: 14em;
-        cursor: pointer;
-    }
 
     .botao-c-d{
         font-family: 'lexendR';
@@ -232,7 +222,7 @@
         cursor: pointer;
     }
 
-    .botao-excluir:hover, .botao-c-d:hover{
+    .botao-c-d:hover{
         opacity: 90%;
     }
 

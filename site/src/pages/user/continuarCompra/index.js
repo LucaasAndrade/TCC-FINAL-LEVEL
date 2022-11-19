@@ -10,6 +10,7 @@ import { salvar } from '../../../api/Endereco'
 import { useNavigate } from 'react-router-dom';
 import ModalVerificado from '../../../components/modalVerificado'
 import CodigoPromocional from '../../../components/codigoPromocional'
+import { salvarNovoPedido } from '../../../api/pedido'
 
 
 export default function ContinuarCompra() {
@@ -21,6 +22,18 @@ export default function ContinuarCompra() {
     const [logradouro, setLogradouro] = useState('');
     const [numero, setNumero] = useState('');
     const [usuario, setUsuario] = useState({ id: 0, nome: '' });
+
+    
+
+    const[nome,setNome] = useState('');
+    const [cartao,setCartao] = useState('');
+    const[vencimento,setVencimento] = useState('');
+    const[cvv,setCvv] = useState('');
+    const [parcelas,setParcelas] = useState('');
+    const[tipo,setTipo] = useState('');
+
+
+
 
 
     const navigate = useNavigate();
@@ -38,6 +51,44 @@ export default function ContinuarCompra() {
     function fechar(){
         setExibir(false)
     }
+
+      async function salvarPedido(){
+
+        try{
+            let produtos = Storage('carrinho');
+            let id = Storage('cliente-logado').id
+
+            let  pedido = 
+            {
+               
+                idProduto:1,
+                total:100,
+                cartao:{
+                  nome: nome ,
+                  cartao: cartao,
+                  vencimento: vencimento,
+                  codSeguranca :cvv,
+                  formaPagamento:tipo,
+                  parcelas: parcelas
+                },
+                produtos: produtos
+              }
+              const r = await salvarNovoPedido(id,pedido);
+              alert('pedido foi inserido com sucesso');
+              Storage('carrinho',[]);
+              navigate('/');
+        }
+        catch (err){
+           alert(err.response.data.erro);
+           console.log(err)
+        }
+
+       
+    }
+
+
+        
+    
 
 
     useEffect(() => {
@@ -99,7 +150,7 @@ export default function ContinuarCompra() {
 
                         <div className='fundo-pagamento'>
                             <div className='f-pag'>
-                                <p className='titulo'>Forma de Pagamento</p>
+                                <p className='titulo' value={tipo} onChange={e =>(setTipo(e.target.value))} >Forma de Pagamento</p>
                                 <div className='div-check'>
                                     <div className='pagamento'>
                                         <div className="checkbox">
@@ -131,9 +182,9 @@ export default function ContinuarCompra() {
                                         <p className='titulo'>Informações do Cartão</p>
                                         <div className='inputs-titulo'>
                                             <div>
-                                                <input type="text" placeholder="Número do cartão*"></input>
+                                                <input type="text" placeholder="Número do cartão*"  value={cartao} onChange={e =>(setCartao(e.target.value))}></input>
                                                 <select>
-                                                    <option disabled hidden selected> Parcelas</option>
+                                                    <option disabled hidden selected  value={parcelas} onChange={e =>(setParcelas(e.target.value))}> Parcelas</option>
                                                     <option value={1}>01x à Vista</option>
                                                     <option value={1}>01x sem Juros</option>
                                                     <option value={2}>02x sem Juros</option>
@@ -141,9 +192,11 @@ export default function ContinuarCompra() {
                                                 </select>
                                             </div>
                                             <div className="input">
-                                                <input type="date"></input>
-                                                <input className="input-direita" type="text" placeholder="CVV*"></input>
+                                                <input type="date"   value={vencimento} onChange={e =>(setVencimento(e.target.value))}></input>
+                                                <input className="input-direita" type="text" placeholder="CVV*"  value={cvv} onChange={e =>(setCvv(e.target.value))}></input>
+                                               
                                             </div>
+                                            <button className='botao' onClick={salvarPedido}> salva </button>
                                         </div>
 
                                     </div>
@@ -153,13 +206,13 @@ export default function ContinuarCompra() {
                     </div>
 
                     <div>
-                        <CardFinalizarProduto botao='finalizar compra' />
+                        <CardFinalizarProduto botao='finalizar compra'  />
                         <div>
                             <CodigoPromocional />
                         </div>
                         <div className='finaliza'>
                             <p>---------- ou ----------</p>
-                            <button className="botao-cancelar" onClick={cancelarCompra} > cancelar compra </button>
+                            <button className="botao-cancelar"  > cancelar compra </button>
                         </div>
                     </div>
                 </div>
@@ -167,4 +220,4 @@ export default function ContinuarCompra() {
             </section>
         </main>
     )
-}
+    }
