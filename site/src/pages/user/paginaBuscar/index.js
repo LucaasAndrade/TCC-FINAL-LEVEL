@@ -18,7 +18,7 @@ export default function PaginaBuscar() {
     }
 
     useEffect(() => {
-        listarProdutos();
+        listarProdutos();   
     }, [nome])
     
 
