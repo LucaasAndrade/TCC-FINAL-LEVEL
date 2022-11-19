@@ -1,7 +1,7 @@
 
 import multer from 'multer'
 
-import { AlterarProduto, CadastrarProduto,buscarProduto, buscarProdutoPorId,removerProduto,InserirCategoria, InserirTamanho, listarMarcas, listarCategorias, listarTamanhosProduto, InserirImagem,listarProdutosInicio,buscarProdutoImagens, removerProdutoImagem, removerProdutoTamanho, buscarProdutoTamanhos, removerProdutoImagemDiferenteDe, buscarProutosPorCategoria, buscarDestaques } from '../repository/ProdutoRepository.js';
+import { AlterarProduto, CadastrarProduto,buscarProduto, buscarProdutoPorId,removerProduto,InserirCategoria, InserirTamanho, listarMarcas, listarCategorias, listarTamanhosProduto, InserirImagem,listarProdutosInicio,buscarProdutoImagens, removerProdutoImagem, removerProdutoTamanho, buscarProdutoTamanhos, removerProdutoImagemDiferenteDe, buscarProutosPorCategoria, buscarDestaques, buscarProdutoPorNome } from '../repository/ProdutoRepository.js';
 
 import { VerificarInformacoesProduto } from '../services/verificacaoProduto.js'
 
@@ -250,6 +250,23 @@ server.get('/user/destaques', async (req, resp) => {
             erro: err.message
         })
     }
+})
+
+
+
+server.get('/user/produto/consulta/:nome', async (req, resp) => {
+    try {
+        const nome = req.params.nome;
+        const r = await buscarProdutoPorNome(nome);
+        resp.send(r);
+
+
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+
 })
 
 

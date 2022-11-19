@@ -305,3 +305,32 @@ export async function buscarDestaques() {
     const [resp] = await con.query(comando);
     return resp;
 }
+
+
+
+export async function buscarProdutoPorNome(nome) {
+    const comando = 
+        `
+    select tb_produto.id_produto         				id,
+    nm_produto              			  				produto,
+    vl_preco                		                    preco,
+    ds_informacoes                                     informacoes,
+    bl_disponivel                                      disponivel,
+    bl_destaque                                        destaque,
+    max(img_produto)										  imagem
+   from tb_produto
+        inner join tb_categoria on  tb_produto.id_produto = tb_categoria.id_categoria
+        inner join tb_marca_produto on  tb_produto.id_produto = tb_marca_produto.id_marca_produto
+        inner join tb_imagem_produto on tb_produto.id_produto = tb_imagem_produto.id_produto
+     where nm_produto like ?
+     group by
+        tb_produto.id_produto,
+        nm_produto,
+        vl_preco,
+        ds_informacoes,
+        bl_disponivel,
+        bl_destaque;
+        `
+    const [resp] = await con.query(comando, `%${nome}%`);
+    return resp;   
+}

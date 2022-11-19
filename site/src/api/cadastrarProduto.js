@@ -111,3 +111,9 @@ export async function listarDestaques() {
     const r = await api.get('/user/destaques');
     return r.data
 }
+
+
+export async function listarProdutosPorNome(nome) {
+    const r = await api.get('/user/produto/consulta/' + nome );
+    return r.data
+}

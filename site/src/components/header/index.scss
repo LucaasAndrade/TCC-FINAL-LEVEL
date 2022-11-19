@@ -81,6 +81,16 @@
     .input-pesquisa {
         display: flex;
         flex-direction: row;
+        
+    }  
+
+    .input-pesquisa img{
+        margin-left: 5px;
+    }
+
+    .input-pesquisa img:hover{
+        cursor: pointer;
+        transform: scale(1.2, 1.03);
     }
 
     *input {
@@ -88,7 +98,7 @@
         border: 1px solid #B6B6B6;
         padding: .5em 0em .5em 1.5em;
         border-radius: 10px;
-        width: 19em;
+        width: 16em;
     }
 
     #lupa {

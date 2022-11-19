@@ -52,11 +52,13 @@ export default function Cabecalho() {
         navigate("/infantil")
     }
 
+    const [prod, setProd] = useState(); 
 
 
     return (
 
         <header className='componente-header'>
+
     
             <ModalPerfil  exibir={exibir} fechar={fechar} /> 
             {/*<AvaliacaoCliente exibirAvaliacao={exibirAvaliacao} fecharAvaliacao={fecharAvaliacao} />*/}
@@ -76,7 +78,8 @@ export default function Cabecalho() {
                         <p className='topico' onClick={Infantil}>INFANTIL</p>
                     </div>
                     <div className="input-pesquisa">
-                        <input type="text" id="lupa" placeholder="O que você está procurando?" />
+                        <input type="text" placeholder="O que você está procurando?" value={prod} onChange={e => setProd(e.target.value)}  />
+                        <img src='/images/lupa.png' onClick={() => navigate('/consulta/' + prod)} />
                     </div>
                     <div className='elementos-usuario'>
                         <img className="open-modal-button" src='/images/perfil.png' alt='perfil' onClick={Perfil} />
