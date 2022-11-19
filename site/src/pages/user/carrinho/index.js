@@ -5,6 +5,9 @@ import Footer from '../../../components/footer';
 import CardCarrinho from '../../../components/CardCarrinho';
 import FinalizarCompra from '../../../components/cardFinalizaProduto';
 
+import LogoContinuarcompa from '../../../components/logoContinuarcompra'
+import CardFinalizarProduto from '../../../components/cardFinalizaProduto'
+
 import CodigoPromocional from '../../../components/codigoPromocional';       
 import {  useEffect, useState } from 'react';
 
@@ -70,28 +73,44 @@ useEffect(() => {
 }, [])
 
     return (
-        <main className='page-carrinho'>
-            <section>
+
+            <main className='page-carrinho'>
+         
                 <Cabecalho />
-            </section>
+           
 
-            <section>
 
-                {itens.map(item =>
-                  <CardCarrinho  
-                  item={item}
-                   removerItem={removerItem}
+            <section className='fundo-carrinho'>
+                <div className='div-carrinho'>
+                    <div className='componente-pedido'>
+                    {itens.map(item =>
+                    <CardCarrinho  
+                    item={item}
+                    removerItem={removerItem}
                     carregarCarrinho={carregarCarrinho} />
     
                     )}
 
-                  </section>
+{itens.map(item =>
+                    <CardCarrinho  
+                    item={item}
+                    removerItem={removerItem}
+                    carregarCarrinho={carregarCarrinho} />
+    
+                    )}
+                    
+                    </div>
+                    <div className='card-finalizar'>
+                        <CardFinalizarProduto botao='continuar compra' />
+                    </div>
+                </div>
 
-                <FinalizarCompra botao='continuar compra'/>              
+            </section>
 
-            <section>
-                {/*<Footer />*/}
+            <section className='footer'>
+                <Footer />
             </section>
         </main>
     )
+        
 }

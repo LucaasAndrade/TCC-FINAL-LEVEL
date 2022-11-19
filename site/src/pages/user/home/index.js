@@ -19,8 +19,6 @@ export default function Home() {
     const [produtos, setProdutos] = useState([]);
     const [produtosDestaque, setProdutosDestaque] = useState([]);
 
-    console.log(produtosDestaque);
-
     async function listar() {
         const r = await listarProdutosPorCategoria("ace");
         setProdutos(r);

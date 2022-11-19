@@ -6,8 +6,9 @@ import Landing from './pages/user/home'
 // Area / usuario
 import Login from './pages/user/login'
 import CadastroUser from './pages/user/cadastroUser'
+import Perfil from './pages/user/editarUsuario'
 import Produto from './pages/user/produto'
-import Buscar from './pages/user/buscar'
+import PaginaBuscar from './pages/user/paginaBuscar'
 import CentralAtendimento from './pages/user/centralAtendimento';
 import Destaques from './pages/user/destaques'
 import Acessorios from '../src/pages/user/acessorios'
@@ -26,6 +27,8 @@ import Cupom from './pages/admin/cupom'
 import HistoricoPedidos from './pages/admin/historicoPedido'
 
 
+//<Route path='/admin/adicionar/cupom' element={<Cupom />} />
+//<Route path='/atendimento' element = {<CentralAtendimento />} />  
 
 export default function Index() {
   return (
@@ -38,15 +41,15 @@ export default function Index() {
         <Route path='/admin/cadastrarproduto' element={<Cadastrarproduto />} />
         <Route path='/admin/cadastrarproduto/:id' element={<Cadastrarproduto />} />
         <Route path='/admin/buscar/produtos' element={<ConsultarProduto />} />
-        <Route path='/admin/adicionar/cupom' element={<Cupom />} />
         <Route path='/admin/historico/pedidos' element={<HistoricoPedidos />} />
 
         {/* área do user */}
         <Route path='/' element = {<Landing />} />
         <Route path='/login' element={<Login />} />
         <Route path='/cadastro' element={<CadastroUser />} />
+        <Route path='/perfil' element={<Perfil />} />
+        <Route path='/buscar' element={<PaginaBuscar />} />
         <Route path='/produto/:id/detalhe' element = {<Produto />} />
-        <Route path='/buscar' element = {<Buscar />} />
         <Route path='/destaques' element = {<Destaques />} />
         <Route path='/acessorios' element={<Acessorios />} />
         <Route path='/masculino' element={<Masculino />} />
@@ -54,8 +57,6 @@ export default function Index() {
         <Route path='/infantil' element={<Infantil />} />
         <Route path='/carrinho' element={<Carrinho />} />
         <Route path='/continuar/compra' element={<ContinuarCompra />} />
-        {/*<Route path='/atendimento' element = {<CentralAtendimento />} />*/}  
-
 
       </Routes>
     </BrowserRouter>

@@ -72,7 +72,10 @@ export default function CadastroUser() {
       </header>
       <section className="fundo-cadastro">
         <div className="cadastro-user">
-            <div>
+            <div className='fundo-perfil'>
+              <img className='img-perfil' src='/images/usuario-perfil.png'></img>
+            </div>
+            <div className="espaco-input">
               <input type="text" placeholder="Nome*" value={nome} onChange={e => (setNome(e.target.value))}></input>
               <input className="input-direita" type="text" placeholder="Sobrenome*" value={sobrenome} onChange={e => (setSobrenome(e.target.value))}></input>
             </div>

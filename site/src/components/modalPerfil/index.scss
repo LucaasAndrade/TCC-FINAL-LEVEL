@@ -11,26 +11,27 @@
         display: flex;
         justify-content: flex-end;
         align-items: center;
+
     }
 
     .form>div label {
         min-width: 8em;
     }
-
+    
     .form>div:last-child {
         justify-content: flex-end;
     }
-
-
+    
+    
     visibility: hidden;
-
+    
     .exibir {
         visibility: visible !important;
     }
-
+    
     .conteudo {
         position: relative;
-        top: -150px;
+        top: -60px;
         width: 400px;
         padding: 10px 20px 10px 20px;
         margin: 10px;
@@ -107,6 +108,7 @@
         display: flex;
         flex-direction: row;
         align-items: center;
+        cursor: pointer;
     }
 
     .div-info-dois{
@@ -133,6 +135,7 @@
         align-items: center;
         margin-top: .5em;
         margin-left: .5em;
+        cursor: pointer;
     }
 
     .img-topico-tres {
@@ -164,6 +167,7 @@
 
     .img-perfil{
         width: 6em;
+        opacity: 70%;
         cursor: pointer;
     }
 

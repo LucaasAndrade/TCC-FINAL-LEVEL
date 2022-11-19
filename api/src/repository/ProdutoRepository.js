@@ -1,10 +1,10 @@
-import {con} from './connection.js';
+import { con } from './connection.js';
 
 
 
 export async function CadastrarProduto(produto) {
     const comando =
-    `insert into tb_produto (id_categoria, id_marca_produto, nm_produto, vl_preco, ds_informacoes, bl_disponivel, bl_destaque)
+        `insert into tb_produto (id_categoria, id_marca_produto, nm_produto, vl_preco, ds_informacoes, bl_disponivel, bl_destaque)
     values (?,?,?,?,?,?,?)`
     const [resposta] = await con.query(comando,
         [
@@ -24,38 +24,38 @@ export async function CadastrarProduto(produto) {
 
 
 
-export async function InserirCategoria(categoria){
+export async function InserirCategoria(categoria) {
     const comando =
-    `insert into tb_categoria (nm_categoria)
+        `insert into tb_categoria (nm_categoria)
     values (?)`
 
-    const [resposta] = await con.query(comando,[categoria.nm_categoria])
-    categoria.id =resposta.insertId;
+    const [resposta] = await con.query(comando, [categoria.nm_categoria])
+    categoria.id = resposta.insertId;
 
     return categoria;
 }
 
-export async function InserirImagem(id_produto,imagem, bl_principal){
+export async function InserirImagem(id_produto, imagem, bl_principal) {
     const comando =
-    `insert into tb_imagem_produto(id_produto, img_produto, bl_principal)
+        `insert into tb_imagem_produto(id_produto, img_produto, bl_principal)
     values (?, ?, ?)`
 
     const [resposta] = await con.query(comando, [id_produto, imagem, bl_principal]);
 }
 
-export async function InserirTamanho(tamanhoProduto,tamanho){
-    const comando = 
-    `insert into tb_produto_tamanho (id_produto,ds_tamanho)
+export async function InserirTamanho(tamanhoProduto, tamanho) {
+    const comando =
+        `insert into tb_produto_tamanho (id_produto,ds_tamanho)
     values (?,?)`
 
-    const [resposta] = await con.query(comando,[tamanhoProduto,tamanho])
+    const [resposta] = await con.query(comando, [tamanhoProduto, tamanho])
     return tamanho;
 
 }
 
-export  async function AlterarProduto(id,produto){
+export async function AlterarProduto(id, produto) {
     const comando =
-    `update  tb_produto
+        `update  tb_produto
     set nm_produto =?,
     id_marca_produto = ?,
     id_categoria = ?,
@@ -74,7 +74,7 @@ export  async function AlterarProduto(id,produto){
         produto.disponivel,
         produto.destaque,
         id])
-  return resposta.affectedRows;
+    return resposta.affectedRows;
 }
 
 export async function listarMarcas() {
@@ -89,7 +89,7 @@ export async function listarMarcas() {
 
 
 export async function listarCategorias() {
-    const comando = 
+    const comando =
         `
         select *
             from tb_categoria
@@ -110,9 +110,9 @@ export async function listarTamanhosProduto(id) {
     return resposta
 }
 
-export async function buscarProduto(){
-    const comando = 
-    `  select  tb_produto.id_produto      as id,
+export async function buscarProduto() {
+    const comando =
+        `  select  tb_produto.id_produto      as id,
     nm_produto                          as produto,
     vl_preco                            as preco,
     tb_marca_produto.nm_marca			as marca,
@@ -124,13 +124,13 @@ export async function buscarProduto(){
     inner  join tb_categoria on tb_produto.id_categoria = tb_categoria.id_categoria
     inner join tb_marca_produto on tb_produto.id_marca_produto = tb_marca_produto.id_marca_produto;
 `
-  const [registros] = await con.query(comando);
-  return registros
+    const [registros] = await con.query(comando);
+    return registros
 }
 
-export async function buscarProdutoPorId(id){
-    const comando = 
-    `select id_produto         				id,
+export async function buscarProdutoPorId(id) {
+    const comando =
+        `select id_produto         				id,
    nm_produto              			  				produto,
    vl_preco                		                    preco,
    tb_categoria.id_categoria                                       id_categoria,
@@ -145,8 +145,8 @@ export async function buscarProdutoPorId(id){
   inner join tb_marca_produto on tb_produto.id_marca_produto = tb_marca_produto.id_marca_produto
     where id_produto = ?
 `
-  const [registros] = await con.query(comando,[id]);
-  return registros [0];
+    const [registros] = await con.query(comando, [id]);
+    return registros[0];
 }
 
 export async function buscarProdutoTamanhos(idProduto) {
@@ -175,9 +175,9 @@ export async function buscarProdutoImagens(idProduto) {
 
 /// LISTAR PRODUTOS NA TELA INICIAL
 
-export async function listarProdutosInicio(){
-    const comando = 
-   ` select tb_produto.id_produto         				id,
+export async function listarProdutosInicio() {
+    const comando =
+        ` select tb_produto.id_produto         				id,
 	nm_produto										produto,
    nm_categoria                                       categoria,
    nm_marca											marca,
@@ -194,42 +194,42 @@ export async function listarProdutosInicio(){
    nm_marca,
    vl_preco;                                 
   `
-  const [ registros] = await con.query(comando)
-  return registros;
+    const [registros] = await con.query(comando)
+    return registros;
 }
 
 
 /// ### REMOVER PRODUTO //
 
 
-export async function removerProdutoImagem(idProduto){
+export async function removerProdutoImagem(idProduto) {
     const comando =
-    `delete from tb_imagem_produto
+        `delete from tb_imagem_produto
         where id_produto = ?
     `
 
-    const [resp] = await con.query(comando,[idProduto])
+    const [resp] = await con.query(comando, [idProduto])
     return resp.affectedRows;
 }
 
-export async function removerProdutoTamanho(idProduto){
+export async function removerProdutoTamanho(idProduto) {
     const comando =
-    `delete from tb_produto_tamanho
+        `delete from tb_produto_tamanho
         where id_produto = ?
     `
 
-    const [resp] = await con.query(comando,[idProduto])
+    const [resp] = await con.query(comando, [idProduto])
     return resp.affectedRows;
 }
 
 
-export async function removerProduto(idProduto){
+export async function removerProduto(idProduto) {
     const comando =
-    `delete from tb_produto
+        `delete from tb_produto
         where id_produto = ?
     `
 
-    const [resp] = await con.query(comando,[idProduto])
+    const [resp] = await con.query(comando, [idProduto])
     return resp.affectedRows;
 }
 
@@ -237,13 +237,13 @@ export async function removerProduto(idProduto){
 /// ### LOGICA PARA ALTERAR PRODUTO ####
 
 
-export async function removerProdutoImagemDiferenteDe(imagens, id){
+export async function removerProdutoImagemDiferenteDe(imagens, id) {
     const comando =
-    `delete from tb_imagem_produto
+        `delete from tb_imagem_produto
         where img_produto NOT IN (?) and id_produto = ?
     `
 
-    const [resp] = await con.query(comando,[imagens, id])
+    const [resp] = await con.query(comando, [imagens, id])
     return resp.affectedRows;
 }
 
@@ -260,7 +260,7 @@ export async function buscarProutosPorCategoria(categoria) {
         nm_marca 								as		marca,
         nm_categoria							as		categoria,
         vl_preco								as		preco,
-        min(img_produto)						as		imagem
+        max(img_produto)						as		imagem
     from tb_produto
 inner join tb_marca_produto 	on  tb_produto.id_marca_produto = tb_marca_produto.id_marca_produto
 inner join tb_categoria			on	tb_produto.id_categoria		= tb_categoria.id_categoria

@@ -1,12 +1,12 @@
-#page-card-carrinho{
+.page-card-carrinho{
 
     .cartao-carrinho{
         display: flex;
         flex-direction: row;
         justify-content: space-around;
         background-color: #ffffff;
-        min-width: 42%;
-        max-width: 42%;
+        min-width: 35em;
+        max-width: 35em;
         height: 10em;
         margin-top: .5em;
     }

@@ -1,12 +1,22 @@
+import { useNavigate } from 'react-router-dom'
 import './index.scss'
 
+import 'local-storage'
 
 export default function ModalPerfil({ exibir, fechar }) {
 
+    const navigate = useNavigate('');
+
+    function Editar() {
+        navigate('/perfil')
+    }
+
+    function carrinho() {
+        navigate('/carrinho')
+    }
+
     return (
-
         <div className='comp-modal-perfil'>
-
             <div className={`modal-perfil ${exibir ? 'exibir' : ''}`}>
                 <div className='conteudo'>
                     
@@ -44,23 +54,22 @@ export default function ModalPerfil({ exibir, fechar }) {
                                 <p>Curtidos</p>
                             </div>
                             <div className='img-topico-dois'>
-                                <img src='/images/sacola-perfil.png'></img>
-                                <p>Adicionados ao Carrinho</p>
+                                <img src='/images/sacola-perfil.png' onClick={carrinho}/>
+                                <p onClick={carrinho}>Adicionados ao Carrinho</p>
                             </div>
                         </div>
                         <hr className="linha" />
 
                         <div className='div-info'>
                             <div className='img-topico'>
-                                <img src='/images/editar.png'></img>
-                                <p>Editar</p>
+                                <img src='/images/editar.png' onClick={Editar} />
+                                <p onClick={Editar}>Editar</p>
                             </div>
                             <div className='img-topico-dois'>
                                 <img src='/images/sair.png'></img>
                                 <p>Sair</p>
                             </div>
                         </div>
-
                     </div>
                 </div>
 
