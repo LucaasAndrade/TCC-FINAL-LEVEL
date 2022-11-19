@@ -9,7 +9,17 @@ import { listarProdutosPorNome } from '../../../api/cadastrarProduto';
 
 export default function PaginaBuscar() {
     
- 
+    const [produtos, setProdutos] = useState([]);
+    const { nome } = useParams();
+
+    async function listarProdutos() {
+        let a = await listarProdutosPorNome(nome);
+        setProdutos(a);
+    }
+
+    useEffect(() => {
+        listarProdutos();
+    }, [nome])
     
 
     return (
