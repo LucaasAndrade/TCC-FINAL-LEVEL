@@ -11,17 +11,26 @@ export default function ModalPerfil({ exibir, fechar }) {
     
     const [usuario, setUsuario] = useState();
     const [nome, setNome] = useState();
+    const [sobrenome, setSobrenome] = useState();
     const [email, setEmail] = useState();
     const [numero, setNumero] = useState();
+    const [id, setId] = useState();
+
     const user = storage('usuario-logado')
-    const id = user.id
     
+    function sairClick() {
+        storage.remove('usuario-logado');
+        navigate('/')
+    }
+
     async function carregarUsuario() {
         const r = await buscarUsuario(id);
+        setId(r.id);
         setUsuario(r);
         setEmail(r.email);
         setNome(r.nome);
         setNumero(r.numero);
+        setSobrenome(r.sobrenome);
     }
 
     function Editar() {
@@ -33,9 +42,9 @@ export default function ModalPerfil({ exibir, fechar }) {
     }
 
     useEffect(() => {
-        carregarUsuario();
-    }, [id])
-
+        if(storage('usuario-logado')) carregarUsuario();
+    }, [])
+    
     return (
         <div className='comp-modal-perfil'>
             <div className={`modal-perfil ${exibir ? 'exibir' : ''}`}>
@@ -45,7 +54,7 @@ export default function ModalPerfil({ exibir, fechar }) {
                     
                     <div className='fundo-perfil'>
                         <img className='img-perfil' src='/images/usuario-perfil.png'></img>
-                        <h5> {nome}</h5>
+                        <h5> {nome} {sobrenome} </h5>
                     </div>
                     <div className='dados'>
                         <div className='div-info-dois'>
@@ -88,7 +97,7 @@ export default function ModalPerfil({ exibir, fechar }) {
                             </div>
                             <div className='img-topico-dois'>
                                 <img src='/images/sair.png'></img>
-                                <p>Sair</p>
+                                <p onClick={sairClick}>Sair</p>
                             </div>
                         </div>
                     </div>
