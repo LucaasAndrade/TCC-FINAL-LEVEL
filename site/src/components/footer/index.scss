@@ -71,8 +71,9 @@
         margin-top: .5em;
     }
 
-    .redes-sociais img{
+    .redes-sociais img:hover{
         cursor: pointer;
+        transform: scale(1.1, 1.01);
     }
 
     .icones{

@@ -26,10 +26,6 @@ export default function Home() {
         navigate ("/admin/buscar/produtos")
     }
 
-    function Chat() {
-        navigate ("/chat")
-    }
-
     function Cupons() {
         navigate ("/admin/adicionar/cupom")
     }
@@ -60,9 +56,6 @@ export default function Home() {
                                 </div>
                                 <div>
                                     <button className='botao'onClick={ListarProdutos}>LISTAR PRODUTOS</button>
-                                </div>
-                                <div>
-                                    <button className='botao'>CHAT DE ATENDIMENTO</button>
                                 </div>
                             </div>
 

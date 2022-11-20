@@ -37,26 +37,6 @@ export default function Cabecalho() {
         setExibirAvaliacao(false)
     }
 
-    function Home() {
-        navigate("/")
-    }
-
-    function AcessoriosPage() {
-        navigate("/acessorios")
-    }
-
-    function Feminino() {
-        navigate("/feminino")
-    }
-
-    function Masculino() {
-        navigate("/masculino")
-    }
-
-    function Infantil() {
-        navigate("/infantil")
-    }
-
     const [prod, setProd] = useState(); 
 
 
@@ -75,12 +55,12 @@ export default function Cabecalho() {
             </div>
             <div>
                 <div className='header'>
-                    <img className='logo' src='/images/logoo.png' alt='logo' onClick={Home} />
+                    <img className='logo' src='/images/logoo.png' alt='logo' onClick={() => navigate('/')} />
                     <div className='topicos-p'>
-                        <p className='topicoo' onClick={AcessoriosPage}>ACESSÓRIOS</p>
-                        <p className='topico' onClick={Masculino}>MASCULINO</p>
-                        <p className='topico' onClick={Feminino}>FEMININO</p>
-                        <p className='topico' onClick={Infantil}>INFANTIL</p>
+                        <p className='topicoo' onClick={() => navigate('/acessorios')}>ACESSÓRIOS</p>
+                        <p className='topico' onClick={() => navigate('/masculino')}>MASCULINO</p>
+                        <p className='topico' onClick={() => navigate('/feminino')}>FEMININO</p>
+                        <p className='topico' onClick={() => navigate('/infantil')}>INFANTIL</p>
                     </div>
                     <div className="input-pesquisa">
                         <input type="text" placeholder="O que você está procurando?" value={prod} onChange={e => setProd(e.target.value)}  />
