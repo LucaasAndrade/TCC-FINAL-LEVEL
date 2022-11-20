@@ -14,11 +14,18 @@ export default function ModalPerfil({ exibir, fechar }) {
     const [sobrenome, setSobrenome] = useState();
     const [email, setEmail] = useState();
     const [numero, setNumero] = useState();
+    const [id, setId] = useState();
+
     const user = storage('usuario-logado')
-    const id = user.id
     
+    function sairClick() {
+        storage.remove('usuario-logado');
+        navigate('/')
+    }
+
     async function carregarUsuario() {
         const r = await buscarUsuario(id);
+        setId(r.id);
         setUsuario(r);
         setEmail(r.email);
         setNome(r.nome);
@@ -35,9 +42,9 @@ export default function ModalPerfil({ exibir, fechar }) {
     }
 
     useEffect(() => {
-        carregarUsuario();
-    }, [id])
-
+        if(storage('usuario-logado')) carregarUsuario();
+    }, [])
+    
     return (
         <div className='comp-modal-perfil'>
             <div className={`modal-perfil ${exibir ? 'exibir' : ''}`}>
@@ -90,7 +97,7 @@ export default function ModalPerfil({ exibir, fechar }) {
                             </div>
                             <div className='img-topico-dois'>
                                 <img src='/images/sair.png'></img>
-                                <p>Sair</p>
+                                <p onClick={sairClick}>Sair</p>
                             </div>
                         </div>
                     </div>
