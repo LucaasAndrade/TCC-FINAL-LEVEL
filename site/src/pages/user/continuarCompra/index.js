@@ -4,6 +4,8 @@ import LogoContinuarcompa from '../../../components/logoContinuarcompra'
 
 
 import { useState, useEffect } from 'react'
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 import Storage from 'local-storage'
 import { salvar } from '../../../api/Endereco'
@@ -74,7 +76,7 @@ export default function ContinuarCompra() {
                 produtos: produtos
               }
               const r = await salvarNovoPedido(id,pedido);
-              alert('pedido foi inserido com sucesso');
+              toast.success('Pedido foi inserido com sucesso!', {autoClose: 1000, delay: 0, pauseOnHover: false});
               Storage('carrinho',[]);
               navigate('/');
         }
@@ -85,10 +87,6 @@ export default function ContinuarCompra() {
 
        
     }
-
-
-        
-    
 
 
     useEffect(() => {
@@ -102,7 +100,7 @@ export default function ContinuarCompra() {
     const CadastroEndereco = async _ => {
         try {
             const r = await salvar(usuario.id, cep, logradouro, bairro, cidade, estado, numero, complemento);
-            alert('Endereço cadastrado com sucesso!');
+            toast.success('Endereço cadastrado com sucesso!', {autoClose: 1000, delay: 0, pauseOnHover: false});
 
 
 
@@ -116,6 +114,7 @@ export default function ContinuarCompra() {
 
     return (
         <main className='page-continuar-compra'>
+            <ToastContainer />
             <LogoContinuarcompa />
 
             <ModalVerificado exibir={exibir} fechar={fechar} />

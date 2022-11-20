@@ -1,7 +1,9 @@
 {
   "dependencies": {
+    "nodemailer": "^6.8.0",
     "react-modal": "^3.16.1",
     "react-responsive-modal": "^6.2.0",
+    "react-toastify": "^9.1.1",
     "usestate": "^1.1.3"
   }
 }

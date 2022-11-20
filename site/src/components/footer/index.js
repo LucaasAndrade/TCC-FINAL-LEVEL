@@ -1,9 +1,44 @@
 import "./index.scss";
 import "../../common/common.scss";
 
+import { useState } from "react";
+
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+
+import { enviarEmail } from "../../api/enviarEmail";
+
 export default function Footer() {
+
+  const [podeClicar, setPodeClicar] = useState(true);
+  const [usuario, setUsuario] = useState({email: ''});
+
+
+  async function inserir() {
+    try {           
+        if(podeClicar){
+            setPodeClicar(false);
+            const validar = await (usuario);
+            
+            try {
+                enviarEmail(usuario, validar);
+            } catch (error) {
+                console.log(error);
+            }
+
+            toast.success('Cadastro do e-mail feito com sucesso!', {closeOnClick: true, pauseOnHover: false, autoClose: 1000})
+            
+        }
+    } catch (error) {
+        toast.error('❗ ' + error.response.data.error, {closeOnClick: false, pauseOnHover: false, autoClose: 1000});
+        setPodeClicar(true);
+    }
+}
+
   return (
     <footer className="componente-footer">
+      <ToastContainer />
+
       <div className="msg-email">
         <div className="carta-mensagem">
           <img src="/images/carta.png" alt="mensagem" />
@@ -11,7 +46,7 @@ export default function Footer() {
         </div>
         <div className="div-input">
           <input className="input" type="text" placeholder="E-mail"></input>
-          <button className="botao-enviar">ENVIAR</button>
+          <button className="botao-enviar" onClick={()=>inserir()}>ENVIAR</button>
         </div>
       </div>
       <hr className="linha" />

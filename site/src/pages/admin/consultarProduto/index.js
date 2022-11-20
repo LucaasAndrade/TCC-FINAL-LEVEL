@@ -3,6 +3,8 @@ import "./index.scss";
 import { useEffect, useState } from "react";
 import { buscarProdutos, removerProduto } from "../../../api/cadastrarProduto";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 import HeaderAdm from "../../../components/headerAdm";
 
@@ -20,7 +22,7 @@ export default function ConsultarProduto() {
     try {
       await removerProduto(id);
       await carregarProdutos();
-      alert("Produto removido com sucesso");
+      toast.success("Produto removido com sucesso", {autoClose: 1000, delay: 0, pauseOnHover: false});
     } catch (err) {
       alert(err.response.data.erro);
     }
@@ -36,6 +38,7 @@ export default function ConsultarProduto() {
 
   return (
     <main id="page-consultar-produto">
+      <ToastContainer />
       <header>
         <HeaderAdm />
       </header>
