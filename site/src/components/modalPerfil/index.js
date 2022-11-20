@@ -11,6 +11,7 @@ export default function ModalPerfil({ exibir, fechar }) {
     
     const [usuario, setUsuario] = useState();
     const [nome, setNome] = useState();
+    const [sobrenome, setSobrenome] = useState();
     const [email, setEmail] = useState();
     const [numero, setNumero] = useState();
     const user = storage('usuario-logado')
@@ -22,6 +23,7 @@ export default function ModalPerfil({ exibir, fechar }) {
         setEmail(r.email);
         setNome(r.nome);
         setNumero(r.numero);
+        setSobrenome(r.sobrenome);
     }
 
     function Editar() {
@@ -45,7 +47,7 @@ export default function ModalPerfil({ exibir, fechar }) {
                     
                     <div className='fundo-perfil'>
                         <img className='img-perfil' src='/images/usuario-perfil.png'></img>
-                        <h5> {nome}</h5>
+                        <h5> {nome} {sobrenome} </h5>
                     </div>
                     <div className='dados'>
                         <div className='div-info-dois'>
