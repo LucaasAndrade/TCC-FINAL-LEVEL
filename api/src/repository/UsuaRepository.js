@@ -30,3 +30,21 @@ export async function CadastrarUsuario(client){
     client.id = resposta.insertId;
     return client;
 }
+
+
+export async function buscarUsuario(id) {
+    const comando = 
+        `    
+    select 
+	    tb_usuario.id_usuario 		as 		id,
+	    nm_usuario					as		nome,
+	    nm_sobrenome				as		sobrenome,
+        ds_email					as		email,
+        nr_telefone					as		numero
+	        from tb_usuario
+        inner join tb_login on tb_usuario.id_usuario = tb_login.id_usuario
+        where tb_usuario.id_usuario = ?;
+    `
+    const [resp] = await con.query(comando, [id])
+    return resp
+}

@@ -1,11 +1,28 @@
 import { useNavigate } from 'react-router-dom'
 import './index.scss'
 
-import 'local-storage'
+import storage from 'local-storage';
+import { useEffect, useState } from 'react';
+import { buscarUsuario } from '../../api/Usuario';
 
 export default function ModalPerfil({ exibir, fechar }) {
-
     const navigate = useNavigate('');
+    
+    
+    const [usuario, setUsuario] = useState();
+    const [nome, setNome] = useState();
+    const [email, setEmail] = useState();
+    const [numero, setNumero] = useState();
+    const user = storage('usuario-logado')
+    const id = user.id
+    
+    async function carregarUsuario() {
+        const r = await buscarUsuario(id);
+        setUsuario(r);
+        setEmail(r.email);
+        setNome(r.nome);
+        setNumero(r.numero);
+    }
 
     function Editar() {
         navigate('/perfil')
@@ -14,6 +31,10 @@ export default function ModalPerfil({ exibir, fechar }) {
     function carrinho() {
         navigate('/carrinho')
     }
+
+    useEffect(() => {
+        carregarUsuario();
+    }, [id])
 
     return (
         <div className='comp-modal-perfil'>
@@ -24,15 +45,15 @@ export default function ModalPerfil({ exibir, fechar }) {
                     
                     <div className='fundo-perfil'>
                         <img className='img-perfil' src='/images/usuario-perfil.png'></img>
-                        <h5>Nome Sobrenome</h5>
+                        <h5> {nome}</h5>
                     </div>
                     <div className='dados'>
                         <div className='div-info-dois'>
-                            <p>E-mail</p>
-                            <p className='p-dois'>Telefone</p>
+                            <p>E-mail: { email }</p>
+                            <p className='p-dois'>Telefone: { numero }</p>
                         </div>
                         <hr className="linha" />
-                        <div className='div-info'>
+                        {/* <div className='div-info'>
                             <div className='img-topico-quatro'>
                                 <img className='img-msg' src='/images/mensagens.png' alt='mensagens'></img>
                                 <p>Minhas Mensagens</p>
@@ -46,13 +67,13 @@ export default function ModalPerfil({ exibir, fechar }) {
                                 <p>Meus Pedidos</p>
                             </div>
                         </div>
-                        <hr className="linha" />
+                        <hr className="linha" /> */}
 
                         <div className='div-info'>
-                            <div className='img-topico'>
+                            {/* <div className='img-topico'>
                                 <img src='/images/curtidos.png' alt='curtidos'></img>
                                 <p>Curtidos</p>
-                            </div>
+                            </div> */}
                             <div className='img-topico-dois'>
                                 <img src='/images/sacola-perfil.png' onClick={carrinho}/>
                                 <p onClick={carrinho}>Adicionados ao Carrinho</p>
@@ -72,8 +93,6 @@ export default function ModalPerfil({ exibir, fechar }) {
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </div>
     )

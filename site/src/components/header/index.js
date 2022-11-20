@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { useState } from 'react'
 import ModalPerfil from '../modalPerfil'
 import AvaliacaoCliente from '../avaliacaoCliente'
-
+import storage from 'local-storage';
 
 
 export default function Cabecalho() {
@@ -17,7 +17,12 @@ export default function Cabecalho() {
 
 
     function Perfil(){
-        setExibir(true)
+        if (!storage('usuario-logado')) {
+            navigate('/login')
+        }
+        else {
+            setExibir(true)
+        }
     }
 
     function fechar(){
@@ -85,7 +90,7 @@ export default function Cabecalho() {
                         <img className="open-modal-button" src='/images/perfil.png' alt='perfil' onClick={Perfil} />
                         <img className='elemento-img' src='/images/atendimento.png' alt='atendimento' onClick={avaliar}/>
                         <hr className='elemento-img'></hr>
-                        <img className='elemento-img' src='/images/sacola.png' alt='sacola' />
+                        <img className='elemento-img' src='/images/sacola.png' onClick={() => navigate('/carrinho')} alt='sacola' />
                         <img className='elemento-img' src='/images/coracao.png' alt='coracao' />
                     </div>
                 </div>

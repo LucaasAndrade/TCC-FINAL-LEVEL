@@ -16,3 +16,7 @@ export async function CadastrarUsuario(nome, sobrenome, nascimento, cpf, telefon
     return r.data;
 }
 
+export async function buscarUsuario(id) {
+    const r = await api.get('/usuario/infos/' + id);
+    return r.data
+}

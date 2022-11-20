@@ -8,7 +8,7 @@ import Storage from 'local-storage';
 
 export default function CardCarrinho({item: {produto:{info,categoria,imagem},qtd},  removerItem, carregarCarrinho}) {
     const[qtdProduto,setQtdProduto] = useState(qtd);
-
+    console.log(imagem);
 
     
     function remover() {
@@ -25,19 +25,13 @@ export default function CardCarrinho({item: {produto:{info,categoria,imagem},qtd
     function exibirImagem(){
         if(imagem.length >0){
         return API_URL + '/' + imagem[0]
+    } else {
+       return '/images/imagem-nao-encontrada.jfif';
+        }
     }
-    else{
-       return '/images/acesso2.png';
-    }
 
-
-}
-
- function alterarQuantidade(novaQtd) {
-            
-
+    function alterarQuantidade(novaQtd) {
         setQtdProduto(novaQtd);
-        
         let carrinho = Storage('carrinho');
         let itemStorage = carrinho.find(item => item.id == info.id);
         itemStorage.qtd = novaQtd;

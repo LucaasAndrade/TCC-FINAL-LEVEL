@@ -22,9 +22,9 @@ export default function Carrinho() {
 
    function qtdItens() {
     return itens.length;
-}
+    }
 
-function calcularValorTotal() {
+    function calcularValorTotal() {
     let total = 0;
     for (let item of itens) {
         console.log(item);
@@ -34,8 +34,8 @@ function calcularValorTotal() {
 }
 
 
-function removerItem(id) {
-    alert('aki tambem' + id);
+    function removerItem(id) {
+    alert('Item' + id + 'removido');
     let carrinho = Storage('carrinho');
     carrinho = carrinho.filter(item => item.id != id);
           
@@ -67,10 +67,9 @@ async function carregarCarrinho() {
 
 }
 
-useEffect(() => {
-    carregarCarrinho();
-
-}, [])
+    useEffect(() => {
+        calcularValorTotal();
+    }, [])
 
     return (
 
@@ -83,20 +82,15 @@ useEffect(() => {
             <section className='fundo-carrinho'>
                 <div className='div-carrinho'>
                     <div className='componente-pedido'>
-                    {itens.map(item =>
-                    <CardCarrinho  
-                    item={item}
-                    removerItem={removerItem}
-                    carregarCarrinho={carregarCarrinho} />
-    
-                    )}
+ 
 
-{itens.map(item =>
-                    <CardCarrinho  
-                    item={item}
-                    removerItem={removerItem}
-                    carregarCarrinho={carregarCarrinho} />
-    
+                    {itens.map(item =>
+                        <CardCarrinho
+                            item={item}        
+                            carregarCarrinho={carregarCarrinho}
+                            removerItem={removerItem}  
+                            />
+                    
                     )}
                     
                     </div>
