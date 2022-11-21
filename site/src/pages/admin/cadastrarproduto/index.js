@@ -2,10 +2,12 @@
 
 import "./index.scss";
 
-import { toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import LoadingBar from 'react-top-loading-bar';
 
 import { CadastrarProduto, InserirTamanho,buscarProdutoPorId,listarCategorias, listarMarcas, listarTamanhoProduto, salvarImagens, AlterarProduto } from "../../../api/cadastrarProduto";
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 import HeaderAdm from '../../../components/headerAdm'
 import { useParams } from "react-router-dom";
@@ -37,6 +39,7 @@ export default function Cadastrarproduto() {
   const [imagem4, setImagem4] = useState();
   const [imagem5, setImagem5] = useState();
 
+  const ref = useRef();
   const {id} = useParams();
 
   async function salvar() {
@@ -46,11 +49,11 @@ export default function Cadastrarproduto() {
       if (!id) {
 
         const r = await CadastrarProduto(categoriaId, marcaId, nome, PrecoProduto, informacoes, disponivel, destaque, tamanhosSelecionados);
-        alert('Produto Salvo Com Sucesso!')
+        toast.success('Produto salvo com sucesso!', {autoClose: 1000, delay: 0, pauseOnHover: false})
         await salvarImagens(r.id, imagem1, imagem2, imagem3, imagem4, imagem5);          
       }
       else{
-        alert('Não é possivel cadastrar esse produto! Ele já está cadastrado no sitema.')
+        toast.error('Não é possivel cadastrar esse produto! Ele já está cadastrado no sitema.', {autoClose: 1000, delay: 0, pauseOnHover: false})
       }
 
     } catch (err) {
@@ -64,12 +67,23 @@ export default function Cadastrarproduto() {
     try {
       const PrecoProduto = Number(valor.replace(',', '.'));
 
-      if (!id) {
-        alert('Não é possível alterar um produto ainda não cadastrado!')
+      // console.log(id);
+      // console.log(nome);
+      // console.log(marcaId);
+      // console.log(categoriaId);
+      // console.log(PrecoProduto);
+      // console.log(informacoes);
+      // console.log(disponivel);
+      // console.log(destaque);
+      // console.log(tamanhosSelecionados);
+
+      if (!id) {  
+        toast.error('Não é possível alterar um produto ainda não cadastrado!', {autoClose: 1000, delay: 0, pauseOnHover: false});
+ fb76df5d20a2b6e7dcb0ce974f5b05d63798f877
       }
       else {
         await AlterarProduto(id, nome, marcaId, categoriaId,PrecoProduto, informacoes,  disponivel, destaque,tamanhosSelecionados);
-        alert('Produto Alterado Com Sucesso!')
+        toast.success('Produto alterado com sucesso!', {autoClose: 1000, delay: 0, pauseOnHover: false})
         await salvarImagens(id, imagem1, imagem2, imagem3, imagem4, imagem5);
         
       }
@@ -97,12 +111,12 @@ export default function Cadastrarproduto() {
   function adicionarTamanhos() {
     let permissao = true;
     if (!tamanho) {
-      alert('Por favor, escolha um tamanho')
+      toast.error('Por favor, escolha um tamanho', {autoClose: 1000, delay: 0, pauseOnHover: false})
       permissao = false;
     }
     for (let i = 0; i < tamanhosSelecionados.length; i++) {
       if (tamanho === tamanhosSelecionados[i]) {
-        alert('Este tamanho já foi selecionado')
+        toast.error('Este tamanho já foi selecionado', {autoClose: 1000, delay: 0, pauseOnHover: false})
         permissao = false
       }
     }
@@ -186,6 +200,7 @@ export default function Cadastrarproduto() {
   
   return (
     <main className="page-cadastro">
+      <ToastContainer />
       <header>
         <HeaderAdm />
       </header>

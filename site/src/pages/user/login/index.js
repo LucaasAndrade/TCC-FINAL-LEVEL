@@ -5,7 +5,7 @@ import storage from 'local-storage';
 
 import LoadingBar from 'react-top-loading-bar';
 import { useState,useEffect, useRef  } from "react";
-import {loginUsua} from '../../../api/loginUsua';
+import {loginUsua  } from '../../../api/loginUsua';
 
 
 
@@ -29,19 +29,9 @@ useEffect(()=>{
 }, []);
   
 
-  function Cadastrar(){
-    navigate ("/cadastro")
-  }
-
-  function Home(){
-    navigate ("/")
-  }
-
   const loginClick= async () =>{
     ref.current.continuousStart();
     setCarregando(true);
-
-
 
 
     try{
@@ -70,9 +60,9 @@ useEffect(()=>{
           <div>
             <img src="/images/retan-branco.png" alt="retangulo" />
           </div>
-          <img className="logo" src="/images/logoo.png" alt="logo" onClick={Home} />
+          <img className="logo" src="/images/logoo.png" alt="logo" onClick={() => navigate('/')} />
           <div>
-            <button className="botao-painel" onClick={Home}>VOLTAR</button>
+            <button className="botao-painel" onClick={() => navigate('/')}>VOLTAR</button>
           </div>
         </div>
       </header>
@@ -97,7 +87,7 @@ useEffect(()=>{
           </div>
           <h5 className="criar-conta">Crie uma conta</h5>
           <h6 className="p-informacao">Ainda não tem conta na Street Elegance?</h6>
-          <button className="botao-cadastrar" onClick={Cadastrar}>CADASTRE-SE</button>
+          <button className="botao-cadastrar" onClick={() => navigate('/cadastro')}>CADASTRE-SE</button>
           <p className="mensagem-erro">{erro}</p>
           </div>
         </div>

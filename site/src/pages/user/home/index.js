@@ -2,6 +2,8 @@ import './index.scss'
 
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from 'react';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
 
 import Cabecalho from '../../../components/header'
 import Footer from '../../../components/footer'
@@ -15,7 +17,8 @@ import Pesquisa from '../../../components/pesquisar';
 
 
 export default function Home() {
-
+    
+    const navigate = useNavigate('');
     const [produtos, setProdutos] = useState([]);
     const [produtosDestaque, setProdutosDestaque] = useState([]);
 
@@ -35,31 +38,11 @@ export default function Home() {
         listarProdutosDestaques();
     }, [])
 
-    const navigate = useNavigate('');
-
-    function AcessoriosPage() {
-        navigate("/acessorios")
-    }
-
-    function Destaques() {
-        navigate("/destaques")
-    }
-
-    function Feminino() {
-        navigate("/feminino")
-    }
-
-    function Masculino() {
-        navigate("/masculino")
-    }
-
-    function Infantil() {
-        navigate("/infantil")
-    }
 
 
     return (
         <main className='page-lading'>
+            <ToastContainer />
             <header className='cabecalho'>
                 <Cabecalho />
             </header>
@@ -73,7 +56,7 @@ export default function Home() {
                 <div className='acesso'>
                     <div className='acessorios-info'>
                         <button className='botao-acessorios'>DESTAQUES</button>
-                        <h5 className='p-ver-mais' onClick={Destaques}>Ver mais >> </h5>
+                        <h5 className='p-ver-mais' onClick={() => navigate('/destaques')}>Ver mais >> </h5>
                     </div>
                     <div className='produtos'>
                         {produtosDestaque.map(item =>
@@ -88,9 +71,9 @@ export default function Home() {
                     <button className='p-categoria'>COMPRE POR CATEGORIA</button>
                 </div>
                 <div className='img-categoria'>
-                    <img src='/images/feminino.png' alt='img-feminino' onClick={Feminino} />
-                    <img className='imagem-cate' src='/images/masculino1.png' alt='img-masculino' onClick={Masculino} />
-                    <img className='imagem-cate' src='/images/infantil.png' alt='img-infantil' onClick={Infantil} />
+                    <img src='/images/feminino.png' alt='img-feminino' onClick={() => navigate('/feminino')} />
+                    <img className='imagem-cate' src='/images/masculino1.png' alt='img-masculino' onClick={() => navigate('/masculino')} />
+                    <img className='imagem-cate' src='/images/infantil.png' alt='img-infantil' onClick={() => navigate('infantil')} />
                 </div>
             </section>
 
@@ -98,7 +81,7 @@ export default function Home() {
                 <div className='acesso'>
                     <div className='acessorios-info'>
                         <button className='botao-acessorios'>ACESSÓRIOS</button>
-                        <h5 className='p-ver-mais' onClick={AcessoriosPage}>Ver mais >> </h5>
+                        <h5 className='p-ver-mais' onClick={() => navigate('/acessorios')}>Ver mais >> </h5>
                     </div>
                     <div className='produtos'>
                         {produtos.map(item =>

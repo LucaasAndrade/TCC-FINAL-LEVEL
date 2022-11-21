@@ -2,6 +2,8 @@ import "./index.scss";
 
 import { useNavigate } from "react-router-dom";
 import storage from 'local-storage';
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 import { CadastrarUsuario } from "../../../api/Usuario";
 
@@ -32,7 +34,7 @@ export default function CadastroUser() {
 
     try {
       const r = await CadastrarUsuario(nome, sobrenome, nascimento, cpf, telefone, telefone2, email, senha);
-      alert('Usuario Cadastrado com sucesso');
+      toast.success('Usuário cadastrado com sucesso', {autoClose: 1000, delay: 0, pauseOnHover: false});
 
     }
     catch (err) {
@@ -49,22 +51,19 @@ export default function CadastroUser() {
   //   cadLogin();
   // }, [])
 
-  function Home() {
-    navigate("/");
-  }
-
 
 
   return (
     <main className="page-user-cadastro">
+      <ToastContainer />
       <header>
         <div className="faixa-header">
           <div>
             <img src="/images/retan-branco.png" alt="retangulo" />
           </div>
-          <img className="logo" src="/images/logoo.png" alt="logo" onClick={Home} />
+          <img className="logo" src="/images/logoo.png" alt="logo" onClick={() => navigate('/')} />
           <div>
-            <button className="botao-painel" onClick={Home}>
+            <button className="botao-painel" onClick={() => navigate('/')}>
               VOLTAR
             </button>
           </div>

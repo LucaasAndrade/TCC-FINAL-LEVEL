@@ -1,8 +1,10 @@
 import './index.scss';
 
 import { useNavigate } from 'react-router-dom';
-
 import { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import { loginAdm } from '../../../api/loginAdm';
 
 
@@ -34,6 +36,8 @@ export default function Login() {
 
   return (
     <main className="page-login">
+      <ToastContainer />
+
       <section className="fundo-tela-login">
         <div className="bem-vindo-login">
           <h2 className="bem-vindo-p">

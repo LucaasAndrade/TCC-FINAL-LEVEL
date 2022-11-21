@@ -1,7 +1,8 @@
 import "./index.scss";
 
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
 import { useNavigate, useParams } from "react-router-dom";
-
 import storage from "local-storage";
 
 import { API_URL } from "../../../api/config";
@@ -75,10 +76,6 @@ export default function Produto(props) {
 
   const navigate = useNavigate("");
 
-  function carrinho() {
-    navigate('/carrinho')
-  }
-
   function adicionarAoCarrinho() {
     let carrinho = [];
     if (storage("carrinho")) {
@@ -92,19 +89,33 @@ export default function Produto(props) {
       });
       storage("carrinho", carrinho);
     }
-    alert("Produto adicionado ao carrinho!");
+    toast.success("Produto adicionado ao carrinho!", {autoClose: 1000, delay: 0, pauseOnHover: false});
   }
 
 
   return (
     <main className="page-produto">
+      <ToastContainer />
       <header className="cabecalho">
         <Cabecalho />
       </header>
       <section>
         <div className="fundo-info-produto">
           <div className="destacar">
-            
+            <div>
+                <div className="div-img">
+                  <img src='' alt="" />
+                </div>
+                <div className="div-img">
+                <img src='' alt="" />
+                </div>
+                <div className="div-img">
+                <img src='' alt="" />
+                </div>
+                <div className="div-img">
+                <img src='' alt="" />
+                </div>
+            </div>
 
             <div className="alinhamento-destac">
               <button className="destaque">destaques</button>
