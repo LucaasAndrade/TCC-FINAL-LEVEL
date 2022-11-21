@@ -155,10 +155,12 @@ export default function Produto(props) {
             <div>
               <p>{props.situacao}</p>
             </div>
-            <div className="botoes" onClick={() => navigate('/carrinho')}>
+            <div className="botoes" >
+              <div onClick={() => navigate('/carrinho')}>
               <button className="botao-adicionar" onClick={adicionarAoCarrinho} >
                 adicionar ao carrinho
               </button>
+              </div>
               <button className="botao-curti">
                 <img className="img-coracao" src="/images/curtidos.png"></img>
               </button>

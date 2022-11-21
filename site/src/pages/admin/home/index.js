@@ -52,7 +52,7 @@ export default function Home() {
                                     <button className='botao'onClick={Adicionar}>ADICIONAR PRODUTOS</button>
                                 </div>
                                 <div>
-                                    <button className='botao'onClick={ListarPedidos}>LISTAR PEDIDOS</button>
+                                    <button className='botao'>LISTAR PEDIDOS</button>
                                 </div>
                                 <div>
                                     <button className='botao'onClick={ListarProdutos}>LISTAR PRODUTOS</button>
@@ -64,10 +64,10 @@ export default function Home() {
                                     <button className='botao-dois'>HISTÓRICO DE CUPONS</button>
                                 </div>
                                 <div>
-                                    <button className='botao-dois' onClick={HistoricoPedidos}>HISTÓRICO DE PEDIDOS</button>
+                                    <button className='botao-dois'>HISTÓRICO DE PEDIDOS</button>
                                 </div>
                                 <div>
-                                    <button className='botao-dois' onClick={Cupons}>ADICIONAR CUPONS</button>
+                                    <button className='botao-dois'>ADICIONAR CUPONS</button>
                                 </div>
                             </div>
                         </div>
