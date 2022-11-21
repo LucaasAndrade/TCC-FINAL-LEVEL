@@ -67,7 +67,7 @@ export default function Cadastrarproduto() {
     try {
       const PrecoProduto = Number(valor.replace(',', '.'));
 
-      if (!id) {  
+        if (!id) {  
         toast.error('Não é possível alterar um produto ainda não cadastrado!', {autoClose: 1000, delay: 0, pauseOnHover: false});
       }
       else {

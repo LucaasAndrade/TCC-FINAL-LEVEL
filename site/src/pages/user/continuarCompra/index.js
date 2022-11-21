@@ -97,7 +97,7 @@ export default function ContinuarCompra() {
     }, []);
 
 
-    const CadastroEndereco = async _ => {
+    const CadastroEndereco = async () => {
         try {
             const r = await salvar(usuario.id, cep, logradouro, bairro, cidade, estado, numero, complemento);
             toast.success('Endereço cadastrado com sucesso!', {autoClose: 1000, delay: 0, pauseOnHover: false});
