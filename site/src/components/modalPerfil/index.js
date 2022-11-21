@@ -24,8 +24,8 @@ export default function ModalPerfil({ exibir, fechar }) {
     }
 
     async function carregarUsuario() {
+        setId(user.id)
         const r = await buscarUsuario(id);
-        setId(r.id);
         setUsuario(r);
         setEmail(r.email);
         setNome(r.nome);
@@ -42,8 +42,8 @@ export default function ModalPerfil({ exibir, fechar }) {
     }
 
     useEffect(() => {
-        if(storage('usuario-logado')) carregarUsuario();
-    }, [])
+        carregarUsuario();
+    }, [id])
     
     return (
         <div className='comp-modal-perfil'>
