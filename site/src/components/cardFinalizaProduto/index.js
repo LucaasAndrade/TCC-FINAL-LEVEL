@@ -1,31 +1,13 @@
 import './index.scss'
 import '../../common/common.scss'
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-
+import storage from 'local-storage'
+import { buscarProdutoPorId } from '../../api/cadastrarProduto';
 
 
 export default function FinalizarCompra(props) {
-
-
-    const [itens, setItens] = useState([]);
-
-    function qtdItens() {
-        return itens.length;
-    }
-
-    function calcularValorTotal() {
-        let total = 0;
-        for (let item of itens) {
-            total = total + item.produto.info.preco * item.qtd;
-        }
-        return total;
-    }
-
-
-
-
 
     return (
         <main className='componente-compra'>
@@ -37,15 +19,15 @@ export default function FinalizarCompra(props) {
                     <div className='informacoes'>
                         <div className='info'>
                             <p>Qtd. Produtos:</p>
-                            <p>{qtdItens()}</p>
+                            <p>{props.quantidade}</p>
                         </div>
                         <div className='info-meio'>
                             <p>Frete:</p>
-                            <p>{ }</p>
+                            <p>{props.frete}</p>
                         </div>
                         <div className='info'>
                             <p>Total:</p>
-                            <p>{calcularValorTotal()}</p>
+                            <p>{props.total}</p>
                         </div>
                     </div>
                 </div>
@@ -66,3 +48,4 @@ export default function FinalizarCompra(props) {
     )
 }
 
+    
