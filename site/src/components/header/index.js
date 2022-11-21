@@ -33,6 +33,15 @@ export default function Cabecalho() {
         setExibirAvaliacao(true)
     }
 
+    function navegarCarrinho() {
+        if (!storage('usuario-logado')) {
+            navigate('/login')
+        }
+        else {
+            navigate('/carrinho')
+        }
+    }
+
     function fecharAvaliacao(){
         setExibirAvaliacao(false)
     }
@@ -70,7 +79,7 @@ export default function Cabecalho() {
                         <img className="open-modal-button" src='/images/perfil.png' alt='perfil' onClick={Perfil} />
                         <img className='elemento-img' src='/images/atendimento.png' alt='atendimento' onClick={avaliar}/>
                         <hr className='elemento-img'></hr>
-                        <img className='elemento-img' src='/images/sacola.png' onClick={() => navigate('/carrinho')} alt='sacola' />
+                        <img className='elemento-img' src='/images/sacola.png' onClick={navegarCarrinho} alt='sacola' />
                         <img className='elemento-img' src='/images/coracao.png' alt='coracao' />
                     </div>
                 </div>
