@@ -5,11 +5,28 @@ import Footer from '../../../components/footer';
 import Destacar from '../../../components/destacar';
 import CardMeusPedidos from '../../../components/cardMeusPedidos';
 import DadosPedidos from '../../../components/dadosCardPedidos';
+import { listarProdutosInicio, listarProdutosPorCategoria} from "../../../api/cadastrarProduto";
+
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 
 
 export default function Destaques() {
+
+    const navigate = useNavigate();
+   
+    const[produtos ,setProdutos] = useState([]);
+    
+    async function listar(){
+     const r = await  listarProdutosPorCategoria("des");
+     setProdutos(r);
+    }
+ 
+    useEffect(() => {
+     listar();
+    }, [])
 
     return (
         <main className='page-destaques'>
@@ -19,8 +36,10 @@ export default function Destaques() {
             <section className='fundo-cartao'>
                 <div className='div-cartao'>
                     <div className='produtos'>
-                        <Destacar imagem='/images/produto31.png' numero= '212' nome='Moletom Street Masculino' preco='R$ 60,00' />
-                        <Destacar imagem='/images/produto32.png' numero='6' nome='Tênis Adidas Masculino' preco='R$ 60,00' />
+                        {produtos.map(item =>
+                            <Destacar item={item} />
+                        )}
+                        
                     </div>  
                 </div>           
             </section>

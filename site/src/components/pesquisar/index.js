@@ -33,9 +33,9 @@ export default function Pesquisa(props) {
                      <img className='imagem' src={exibir(props.item.imagem)}  /> 
                     <div>
                         <div className='info'>
-                        <div> {props.item.categoria} </div>
-                    <div> {props.item.produto} </div>
-                    <div> R$ {formatarPreco(props.item.preco)} 
+                        <div className='nome-produto'> {props.item.categoria} </div>
+                    
+                    <div className='preco-produto'> R$ {formatarPreco(props.item.preco)} 
                     </div>
                         </div>
                     </div>

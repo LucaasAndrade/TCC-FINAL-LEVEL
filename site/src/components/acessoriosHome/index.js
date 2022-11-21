@@ -36,8 +36,8 @@ export default function AcessoriosHome(props) {
                 <img className='imagem' src= {exibir(props.item.imagem)} />
                 <div>
                     <div className='info'>
-                        <p >{props.item.produto}</p>
-                        <p> R$ {formatarPreco(props.item.preco)}  </p>
+                        <p className='nome-produto'>{props.item.produto}</p>
+                        <p className='preco-produto'> R$ {formatarPreco(props.item.preco)}  </p>
                     </div>
                 </div>
             </div>

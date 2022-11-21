@@ -13,7 +13,7 @@ import Footer from "../../../components/footer";
 import CardCarrinho from "../../../components/CardCarrinho";
 import { useEffect, useState } from "react";
 import { buscarProdutoPorId, listarProdutosInicio } from "../../../api/cadastrarProduto";
-import EstrelasAvaliacao from "../../../components/estrelasAvaliacao";
+import { estrelasAvaliacao } from "../../../components/estrelasAvaliacao";
 import ComponenteAvaliacao from "../../../components/avaliacao";
 import AvaliacaoCliente from "../../../components/avaliacaoCliente";
 
@@ -131,7 +131,7 @@ export default function Produto(props) {
           </div>
 
           <div className="info-produto">
-            <EstrelasAvaliacao />
+            <estrelasAvaliacao />
             <div>
               <p className="nome-produto">{produto.info.produto}</p>
               <p className="marca-produto">{produto.info.marca}</p>
@@ -203,7 +203,7 @@ export default function Produto(props) {
           </div>
           <div className="fundo-comentario">
             <div className="avaliacao-estrela">
-              <EstrelasAvaliacao avaliacao="4.20" />
+              <estrelasAvaliacao avaliacao="4.20" />
             </div>
             <div className="avaliacao">
               <ComponenteAvaliacao />

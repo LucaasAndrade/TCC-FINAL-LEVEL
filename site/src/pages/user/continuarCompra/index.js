@@ -195,7 +195,7 @@ export default function ContinuarCompra() {
                                                 <input className="input-direita" type="text" placeholder="CVV*"  value={cvv} onChange={e =>(setCvv(e.target.value))}></input>
                                                
                                             </div>
-                                            <button className='botao' onClick={salvarPedido}> salva </button>
+                                            <button className='botao-salvar' onClick={salvarPedido}> salvar pagamento </button>
                                         </div>
 
                                     </div>
@@ -206,9 +206,9 @@ export default function ContinuarCompra() {
 
                     <div>
                         <CardFinalizarProduto botao='finalizar compra'  />
-                        <div>
+                        {/*<div>
                             <CodigoPromocional />
-                        </div>
+                        </div>*/}
                         <div className='finaliza'>
                             <p>---------- ou ----------</p>
                             <button className="botao-cancelar"  > cancelar compra </button>

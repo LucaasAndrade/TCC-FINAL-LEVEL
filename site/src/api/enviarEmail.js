@@ -8,9 +8,9 @@ const api = axios.create({
 
 
 export async function enviarEmail(usuario) {
-    const resposta = await api.post('/enviar-email', {
+    const r = await api.post('/enviar-email', {
         email:          usuario.email.trim()
     });
 
-    return resposta.data
+    return r.data
 }

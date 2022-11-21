@@ -1,9 +1,9 @@
 import './index.scss'
 
-import EstrelasAvaliacao from '../estrelasAvaliacao'
+import { estrelasAvaliacao } from '../estrelasAvaliacao'
 
 
-export default function AvaliacaoCliente({ exibirAvaliacao, fecharAvaliacao }) {
+export default function AvaliacaoCliente(props) {
 
     {/*function lerEstrelas(valor, estrela) {
       
@@ -18,9 +18,8 @@ export default function AvaliacaoCliente({ exibirAvaliacao, fecharAvaliacao }) {
 
         <div className='comp-modal-avaliacao'>
 
-            <div className={`modal-avaliacao ${exibirAvaliacao ? 'exibirAvaliacao' : ''}`}>
+            <div className='modal-avaliacao' >
                 <div className='conteudo-avaliacao'>
-                    <button className='fechar' onClick={fecharAvaliacao}>x</button>
                         <h4 className='h4-avaliacao'>avaliação de clientes</h4>
 
                         <hr className='linha' />
@@ -28,7 +27,7 @@ export default function AvaliacaoCliente({ exibirAvaliacao, fecharAvaliacao }) {
                         <p className='p-avaliacao'>Deixe sua Avaliação</p>
                     <div>
                         <div className='aval'>
-                            <EstrelasAvaliacao />
+                            {estrelasAvaliacao(props.item.avaliacao)}
                         </div>
                         <div>
                             <div className="input">
