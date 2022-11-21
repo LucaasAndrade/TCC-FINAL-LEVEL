@@ -155,7 +155,7 @@ export default function Produto(props) {
             <div>
               <p>{props.situacao}</p>
             </div>
-            <div className="botoes">
+            <div className="botoes" onClick={() => navigate('/carrinho')}>
               <button className="botao-adicionar" onClick={adicionarAoCarrinho} >
                 adicionar ao carrinho
               </button>
@@ -188,23 +188,6 @@ export default function Produto(props) {
             <p className="texto-sobre">
               {props.texto} {produto.info.informacoes} {" "}
             </p>
-          </div>
-        </div>
-
-        <hr className="linha-dois" />
-
-        <div className="avalicao-comentario">
-          <div>
-            <h3 className="titulo-sobre">avaliações</h3>
-          </div>
-          <div className="fundo-comentario">
-            <div className="avaliacao-estrela">
-              <estrelasAvaliacao avaliacao="4.20" />
-            </div>
-            <div className="avaliacao">
-
-              <hr className="linha" />
-            </div>
           </div>
         </div>
       </section>

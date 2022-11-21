@@ -116,8 +116,7 @@ export default function Carrinho() {
 
                     </div>
                     <div className='card-finalizar'>
-                        <CardFinalizarProduto
-                            alizarProduto botao='Continuar Compra'
+                        <CardFinalizarProduto botao='Continuar Compra'
                             quantidade={qtdItens()}
                             total={formatarPreco(calcularValorTotal())}
                             frete={"sem frete"}
