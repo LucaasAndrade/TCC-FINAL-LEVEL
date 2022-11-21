@@ -1,4 +1,4 @@
-import './index.scss'
+{/*import './index.scss'
 import '../../common/common.scss'
 
 import { estrelasAvaliacao } from '../estrelasAvaliacao'
@@ -29,4 +29,4 @@ export default function ComponenteAvaliacao(props) {
             </div>
         </div>
     )
-}
+}*/}

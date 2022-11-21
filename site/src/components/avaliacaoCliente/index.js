@@ -1,18 +1,18 @@
-import './index.scss'
+{/*import './index.scss'
 
 import { estrelasAvaliacao } from '../estrelasAvaliacao'
 
 
 export default function AvaliacaoCliente(props) {
 
-    {/*function lerEstrelas(valor, estrela) {
+    function lerEstrelas(valor, estrela) {
       
         if (valor <= estrela)
             return 'star-icon2 ativo'
         else
             return 'star-icon2'
 
-    }*/}
+    }
 
     return (
 
@@ -55,4 +55,4 @@ export default function AvaliacaoCliente(props) {
             </div>
         </div>
     )
-}
+}*/}

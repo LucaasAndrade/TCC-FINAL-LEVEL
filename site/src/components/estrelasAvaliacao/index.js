@@ -1,4 +1,4 @@
-import './index.scss';
+{/*import './index.scss';
 
 export function estrelasAvaliacao(props){
 
@@ -23,4 +23,4 @@ export function estrelasAvaliacao(props){
             </ul>
         </div>
     )
-}
+}*/}

@@ -1,4 +1,4 @@
-import './index.scss'
+{/*import './index.scss'
 import '../../common/common.scss'
 
 import { API_URL } from '../../api/config';
@@ -51,4 +51,4 @@ export default function Destacar(props) {
             </div>
         </main>
     )
-}
+}*/}
