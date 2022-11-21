@@ -1,6 +1,6 @@
 import './index.scss';
 
-export default function EstrelasAvaliacao(props){
+export function estrelasAvaliacao(props){
 
     function lerEstrelas(valor, estrela) {
         if (valor > 5) {

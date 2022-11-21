@@ -19,9 +19,7 @@ export default function Cabecalho() {
           <img className='logo' src='/images/logoo.png' alt='logo' onClick={() => navigate('/')} />
           <div className='topicos-p'>
             <p className='topicoo' onClick={() => navigate('/admin/cadastrarproduto')} >ADICIONAR PRODUTOS</p>
-            <p className='topico' onClick={() => navigate('/admin/buscar/pedidos')}>LISTAR PEDIDOS</p>
             <p className='topico' onClick={() => navigate('/admin/buscar/produtos')}> LISTAR PRODUTOS</p>
-            <p className='topico' onClick={() => navigate('/admin/adicionar/cupom')}>CUPONS</p>
           </div>
           <div>
             <button className="botao-painel" onClick={() => navigate('/admin/home')}>

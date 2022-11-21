@@ -16,6 +16,7 @@ import Masculino from '../src/pages/user/masculino'
 import Feminino from '../src/pages/user/feminino'
 import Infantil from './pages/user/infantil'
 import Carrinho from '../src/pages/user/carrinho'
+import AvaliacaoCliente from './components/avaliacaoCliente';
 
 // Area / Admin
 import LoginAdmin from './pages/admin/login'
@@ -29,12 +30,13 @@ import HistoricoPedidos from './pages/admin/historicoPedido'
 
 //<Route path='/admin/adicionar/cupom' element={<Cupom />} />
 //<Route path='/atendimento' element = {<CentralAtendimento />} />  
+//<Route path='/teste' element={< AvaliacaoCliente />} />
 
 export default function Index() {
   return (
     <BrowserRouter>
-      <Routes>
-        
+      <Routes>      
+
         {/* área de admin */}
         <Route path='/admin/login' element={<LoginAdmin />} />
         <Route path='/admin/home' element={<Homeadmin />} />

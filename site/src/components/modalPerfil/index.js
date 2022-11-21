@@ -97,7 +97,7 @@ export default function ModalPerfil({ exibir, fechar }) {
                             </div>
                             <div className='img-topico-dois'>
                                 <img src='/images/sair.png'></img>
-                                <p onClick={sairClick}>Sair</p>
+                                <div onClick={fechar}> <p onClick={sairClick}>Sair</p> </div>
                             </div>
                         </div>
                     </div>
